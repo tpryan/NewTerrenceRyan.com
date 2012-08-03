@@ -11,14 +11,14 @@ mysql_select_db($oldDB['db'], $oldBDConnection) or die(mysql_error());
 // Retrieve all the data from the "example" table
 $entries = mysql_query("SELECT e.title, e.name, e.last_modified, e.content, p.posted_on FROM entry e INNER JOIN post p on e.id=p.id", $oldBDConnection) or die(mysql_error());  
 
+$categories = mysql_query("SELECT name, title FROM category", $oldBDConnection) or die(mysql_error());  
+
 // store the record of the "example" table into $row
 //$row = mysql_fetch_array( $entries );
 
 mysql_select_db($newDB['db'], $newBDConnection) or die(mysql_error());
 mysql_query("DELETE FROM wp_posts WHERE id > 3", $newBDConnection) or die(mysql_error());  
 mysql_query("ALTER TABLE wp_posts AUTO_INCREMENT = 4", $newBDConnection) or die(mysql_error());  
-
-
 
 while ($row = mysql_fetch_array($entries)) {
 	$title = mysql_real_escape_string($row['title']);
@@ -34,6 +34,30 @@ while ($row = mysql_fetch_array($entries)) {
 	$insertSQL = "INSERT INTO wp_posts(" . $columns . ") VALUES (" . $values .  ")"; 
 	mysql_query($insertSQL, $newBDConnection) or die(mysql_error());  
 
+}
+
+mysql_query("DELETE FROM wp_terms WHERE term_id > 2", $newBDConnection) or die(mysql_error());  
+mysql_query("ALTER TABLE wp_terms AUTO_INCREMENT = 3", $newBDConnection) or die(mysql_error()); 
+
+mysql_query("DELETE FROM wp_term_taxonomy WHERE term_taxonomy_id > 2 ", $newBDConnection) or die(mysql_error());
+mysql_query("ALTER TABLE wp_term_taxonomy AUTO_INCREMENT = 3", $newBDConnection) or die(mysql_error());  
+
+while ($row = mysql_fetch_array($categories)) {
+	$title = mysql_real_escape_string($row['title']);
+	$name = $row['name'];
+
+	$columns = "name, slug";
+	$values = "'" . $title . "','" . $name . "'"; 
+
+	$insertSQL = "INSERT INTO wp_terms(" . $columns . ") VALUES (" . $values .  ")"; 
+	mysql_query($insertSQL, $newBDConnection) or die(mysql_error());
+	
+	$categoryid = mysql_insert_id(); 
+
+	$columns = "term_id, taxonomy";
+	$values = "'" . $categoryid . "','post_tag'"; 
+	$insertSQL = "INSERT INTO wp_term_taxonomy(" . $columns . ") VALUES (" . $values .  ")"; 
+	mysql_query($insertSQL, $newBDConnection) or die(mysql_error());
 
 }
 

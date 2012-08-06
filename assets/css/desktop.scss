@@ -1,0 +1,114 @@
+.center{
+	width: 1000px;
+	margin: 0 auto;
+}
+
+body{
+	font-size: 1.2em;
+}
+
+hr{
+	@extend .center;
+	margin-top: 10px;
+}
+
+header{
+	#masthead{
+		@extend .center;
+		padding-top: 5px;
+	}
+	hgroup{
+		display: table-cell;
+		vertical-align: top;
+		width: 530px;
+		h1{
+			font-size: 90px;
+			margin-bottom: 15px;
+		}
+		p{
+			font-size: 25px;
+			line-height: 1.5;
+		}
+	}
+	nav{
+		display: table-cell;
+		ul{
+			li{
+				display: table-cell;
+				position: relative;
+				padding-right: 20px;
+				span{
+					position: absolute;
+					display: block;
+					bottom: 6px;
+					text-align: center;
+					width: 161px;
+					font-size: 35px;
+					background-color: rgba(200, 200, 200, 0.7);
+					padding-top: 5px;
+					border-top: 1px solid #F00;
+
+				}
+			}	
+		}
+		
+	}
+
+}
+
+#content{
+	padding-top: 20px;
+	section{
+
+		&:first-child{
+			padding-bottom: 20px;
+		}	
+		section{
+			display: table-cell;
+			padding: 5px 0 15px 0;
+			position:relative;
+
+			&:first-child{
+				padding-right: 30px;
+			}
+
+			&:last-child{
+				padding-left: 30px;
+			}
+
+			article{
+				padding-bottom: 15px;	
+			}
+			.externalref{
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				padding-right: 30px;
+			}
+		}
+		@extend .center;
+
+		hr{
+			display: none;
+		}
+	}
+}
+
+footer{
+	margin-top: 20px;
+	nav{
+		@extend .center;
+
+		ul{
+			clear: both;
+			height: 20px;	
+			li{
+				float: left;
+				margin-right: 20px;
+			}
+		}
+	}
+	small{
+		@extend .center;
+	}
+}

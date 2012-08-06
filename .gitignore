@@ -2,3 +2,7 @@
 *.properties
 
 import/creds.php
+
+.DS_Store
+
+*.scssc

@@ -1,0 +1,148 @@
+@import 'all';
+@import 'meyer-reset';
+
+
+body{
+	font-family: "ACaslonPro-Regular", "adobe-caslon-pro";
+	font-weight: 400;
+}
+
+a{
+	color: #F00;
+	@include transition(color .1s ease-in);
+}	
+
+.heading {
+	font-family: "MyriadPro-SemiboldCond", "myriad-pro-condensed";
+}
+
+h1{
+	@extend .heading;
+	font-weight: 600;
+	font-variant: small-caps;
+}
+
+hr{
+	clear: both;
+    padding: 0;
+    border: none;
+    border-top: medium double #E00;
+    color: #E00;
+    text-align: center;
+    margin-top: 30px;
+}
+
+hr:after {
+    content: "§";
+    display: inline-block;
+    position: relative; 
+    top: -0.7em;  
+    font-size: 1.5em;
+    padding: 0 0.25em;
+    background: white;
+    color: #E00;
+}
+
+p{
+	font-weight: 400;
+}
+
+header{
+	padding: 0 10px;
+	background-color: #000;
+
+	h1{
+		color: #F00;
+		font-size: 50px;
+		a{
+			color: #F00;
+			text-decoration: none;
+		}
+	}
+
+	p{
+		color: #FFF;
+	}
+	img{
+		border: 1px solid #F00;
+	}
+}
+
+nav{
+	@extend .heading;
+	font-weight: 700;
+	font-size: 25px;
+	a{
+		&:link{color: #FF0000; text-decoration: none;}
+		&:visited{color: #FF0000; text-decoration: none;}
+		&:hover{color: #555555;text-decoration:underline;}
+		&:active{color: #FF0000;text-decoration:underline;}
+	}
+}
+
+#content{
+	padding: 0 10px;
+	section{
+		margin-bottom: 20px;
+		h1{
+			font-size: 40px;
+			font-variant: normal;
+			a{
+				color: #000;
+				text-decoration: none;
+			}
+		}
+
+		article{
+			margin-bottom: 5px;
+			line-height: 1.5;
+			h1{
+				font-size: 25px;
+				color: #F00;
+				a{
+					
+					&:link{color: #FF0000; text-decoration: none;}
+					&:visited{color: #FF0000; text-decoration: none;}
+					&:hover{color: #555555;text-decoration:underline;}
+					&:active{color: #FF0000;text-decoration:underline;}
+				}
+				
+			}
+		}
+	}
+}
+
+footer{
+	padding: 0 10px 20px 10px;
+	background-color: #000;
+	p{
+		color: #FFF;
+	}
+
+	nav{
+		padding-top: 10px;
+	}
+	small{
+		padding-top: 15px;
+		color: #FFF;
+		display: block;
+	}
+	#copyright{
+		color: #F00;
+	}
+
+}
+
+@media screen and (max-width: 500px) {
+	@import 'phone';
+}
+
+
+
+// @media screen and (min-width: 768px) {
+// 	@import 'tablet';
+// } 
+
+@media screen and (min-width: 1000px) {
+	@import 'desktop'
+} 

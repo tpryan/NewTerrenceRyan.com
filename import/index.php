@@ -10,18 +10,23 @@ mysql_select_db($oldDB['db'], $oldBDConnection) or die(mysql_error());
 
 // Retrieve all the data from the "example" table
 $entries = mysql_query("SELECT e.*, p.posted_on FROM entry e INNER JOIN post p on e.id=p.id", $oldBDConnection) or die(mysql_error());  
-
 $categories = mysql_query("SELECT * FROM category", $oldBDConnection) or die(mysql_error()); 
-
 $comments = mysql_query("SELECT * FROM comment", $oldBDConnection) or die(mysql_error()); 
-
 $categoriesToPosts = mysql_query("SELECT * FROM post_category", $oldBDConnection) or die(mysql_error()); 
+$categoryCount = mysql_query("select count(post_id) as entries, category_id from post_category GROUP By category_id ", $oldBDConnection) or die(mysql_error());
+$commentCount = mysql_query("select count(id) as comments, entry_id from comment GROUP BY entry_id ", $oldBDConnection) or die(mysql_error());
 
 mysql_select_db($newDB['db'], $newBDConnection) or die(mysql_error());
 
 // Handle Entries
 echo "<p>Handling posts</p>";
 clearTable("wp_posts", 4, $newBDConnection);
+
+
+while ($row = mysql_fetch_array($commentCount)) {
+	$commentCountHash[$row['entry_id']] = $row['comments'];
+}
+
 
 while ($row = mysql_fetch_array($entries)) {
 	$title = mysql_real_escape_string($row['title']);
@@ -31,9 +36,11 @@ while ($row = mysql_fetch_array($entries)) {
 	$id = $row['id'];
 	$modified = $row['last_modified'];
 	$content = mysql_real_escape_string($row['content']);
+	$excerpt = mysql_real_escape_string($row['excerpt']);
+	$commentCount = $commentCountHash[$id];
 
-	$columns = "post_title, post_name, post_author, post_date, post_date_gmt, post_modified, post_modified_gmt, post_content";
-	$values = "'" . $title . "','" . $name . "'," . $author . ",'" .$posted. "'," .  "'" .$posted. "'," ."'" .$modified. "'," ."'" .$modified. "'," . "'" . $content . "'" ; 
+	$columns = "post_title, post_name, post_author, post_date, post_date_gmt, post_modified, post_modified_gmt, post_content, post_excerpt, comment_count";
+	$values = "'" . $title . "','" . $name . "'," . $author . ",'" .$posted. "'," .  "'" .$posted. "'," ."'" .$modified. "'," ."'" .$modified. "'," . "'" . $content . "','" . $excerpt . "','" . $commentCount . "'" ; 
 
 	$insertSQL = "INSERT INTO wp_posts(" . $columns . ") VALUES (" . $values .  ")"; 
 	mysql_query($insertSQL, $newBDConnection) or die(mysql_error());
@@ -69,10 +76,17 @@ while ($row = mysql_fetch_array($comments)) {
 
 
 
+
+
 //Handle Tags
 echo "<p>Handling tags </p>";
 clearTable("wp_terms", 3, $newBDConnection); 
 clearTable("wp_term_taxonomy", 3, $newBDConnection); 
+
+
+while ($row = mysql_fetch_array($categoryCount)) {
+	$categoryCountHash[$row['category_id']] = $row['entries'];
+}
 
 while ($row = mysql_fetch_array($categories)) {
 	$title = mysql_real_escape_string($row['title']);
@@ -82,22 +96,26 @@ while ($row = mysql_fetch_array($categories)) {
 	$columns = "name, slug";
 	$values = "'" . $title . "','" . $name . "'"; 
 
-	$insertSQL = "INSERT INTO wp_terms(" . $columns . ") VALUES (" . $values .  ")"; 
+	$insertSQL = "INSERT INTO wp_terms(" . $columns . ") VALUES (" . $values .  ")";
 	mysql_query($insertSQL, $newBDConnection) or mysql_error();
-	
+
 	$categoryid = mysql_insert_id(); 
 	$tagHash[$id]  = $categoryid; 
 
-	$columns = "term_id, taxonomy";
-	$values = "'" . $categoryid . "','post_tag'"; 
-	$insertSQL = "INSERT INTO wp_term_taxonomy(" . $columns . ") VALUES (" . $values .  ")"; 
+	$tagCount = $categoryCountHash[$id];
+
+	$columns = "term_id, taxonomy, count";
+	$values = "'" . $categoryid . "','post_tag', " . $tagCount; 
+	$insertSQL = "INSERT INTO wp_term_taxonomy(" . $columns . ") VALUES (" . $values .  ")";
 	mysql_query($insertSQL, $newBDConnection) or mysql_error();
 
 }
 
 //handle tags to posts
 echo "<p>Handling tags to post</p>";
-var_dump($categoriesToPosts);
+
+
+
 mysql_query("DELETE FROM wp_term_relationships WHERE term_taxonomy_id > 2 ", $newBDConnection) or die(mysql_error());  
 
 while ($row = mysql_fetch_array($categoriesToPosts)) {
@@ -110,7 +128,7 @@ while ($row = mysql_fetch_array($categoriesToPosts)) {
 	$columns = "object_id, term_taxonomy_id";
 	$values = "'" . $postID . "','" . $tagID . "'"; 
 	$insertSQL = "INSERT INTO wp_term_relationships(" . $columns . ") VALUES (" . $values .  ")"; 
-	mysql_query($insertSQL, $newBDConnection) or die(mysql_error());
+	mysql_query($insertSQL, $newBDConnection) or mysql_error();
 
 }
 

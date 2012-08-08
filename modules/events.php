@@ -17,7 +17,7 @@
 	}
 	else{
 		try {
-			$lanyrd_html = refreshHTML($lanyrd_url, $count,$lanyrd_cache);
+			$lanyrd_html = refreshLanyrdHTML($lanyrd_url, $count,$lanyrd_cache);
 		} catch (Exception $e) {
 			$lanyrd_html = "<p>No upcoming events</p>";
 			var_dump($e);
@@ -28,7 +28,7 @@
 
 
 
-	function refreshHTML($lanyrd_url, $count, $lanyrd_cache){
+	function refreshLanyrdHTML($lanyrd_url, $count, $lanyrd_cache){
 		$lanyrd_content = get_content_from_lanyrd($lanyrd_url);
 		$lanyrd_html = generateEventHTML($lanyrd_content,$count);
 		$cache_html = "<!-- From Cache --->" . $lanyrd_html;

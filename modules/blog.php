@@ -12,7 +12,7 @@ $entries = mysql_query("SELECT post_title, post_excerpt, guid, DATE_FORMAT(post_
 
 
 
-
+echo "<!-- pulled in from blog -->" ."\n";
 while ($row = mysql_fetch_array($entries)) {
 	$title = $row['post_title'];
 	$excerpt = $row['post_excerpt'];

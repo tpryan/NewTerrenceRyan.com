@@ -38,9 +38,10 @@ while ($row = mysql_fetch_array($entries)) {
 	$content = mysql_real_escape_string($row['content']);
 	$excerpt = mysql_real_escape_string($row['excerpt']);
 	$commentCount = $commentCountHash[$id];
+	$guid = "http://blog.terrenceryan.dev/" .  $name;
 
-	$columns = "post_title, post_name, post_author, post_date, post_date_gmt, post_modified, post_modified_gmt, post_content, post_excerpt, comment_count";
-	$values = "'" . $title . "','" . $name . "'," . $author . ",'" .$posted. "'," .  "'" .$posted. "'," ."'" .$modified. "'," ."'" .$modified. "'," . "'" . $content . "','" . $excerpt . "','" . $commentCount . "'" ; 
+	$columns = "post_title, post_name, post_author, post_date, post_date_gmt, post_modified, post_modified_gmt, post_content, post_excerpt, comment_count, guid";
+	$values = "'" . $title . "','" . $name . "'," . $author . ",'" .$posted. "'," .  "'" .$posted. "'," ."'" .$modified. "'," ."'" .$modified. "'," . "'" . $content . "','" . $excerpt . "','" . $commentCount . "','" . $guid . "'" ; 
 
 	$insertSQL = "INSERT INTO wp_posts(" . $columns . ") VALUES (" . $values .  ")"; 
 	mysql_query($insertSQL, $newBDConnection) or die(mysql_error());

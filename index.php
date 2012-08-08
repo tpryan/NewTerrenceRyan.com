@@ -81,20 +81,9 @@
 		<section>
 			<h1><a href="https://github.com/tpryan">I Code</a></h1>
 
-			<article>
-				<h1><a href="https://api.github.com/repos/tpryan/brackets">brackets</a></h1>
-				<p>An open source code editor for the web, written in JavaScript, HTML and CSS.</p>
-			</article>
-
-			<article>
-				<h1><a href="https://api.github.com/repos/tpryan/brackets-phonegapbuild">brackets-phonegapbuild</a></h1>
-				<p>Brackets Extension for interacting with PhoneGap Build</p>
-			</article>
-
-			<article>
-				<h1><a href="https://api.github.com/repos/tpryan/DevCon-5-Mobile-Schedule">DevCon-5-Mobile-Schedule</a></h1>
-				<p>A Mobile Schedule for DevCon 5 </p>
-			</article>
+			<?php 
+				include './modules/projects.php';
+			?>
 
 			<p class="externalref">View more on <a href="https://github.com/tpryan">github.com</a>.</p>
 		</section>

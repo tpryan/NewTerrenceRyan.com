@@ -1,0 +1,45 @@
+header{
+	padding-top: 10px;
+	hgroup{
+		display: inline-block;
+		vertical-align: top;
+		width: 420px;
+
+		h1{
+			font-size: 50px;
+			margin-bottom: 40px;
+		}
+		p{
+
+			font-size: 25px;
+		}
+	}
+	nav{
+		display: inline-block;
+		padding-left: 0;
+		padding-right: 0;
+		ul{
+			padding-right: 0;
+			li{
+				padding-right: 0;
+				display: table-cell;
+				position: relative;
+				
+				span{
+					position: absolute;
+					display: block;
+					bottom: 6px;
+					text-align: center;
+					width: 161px;
+					font-size: 35px;
+					background-color: rgba(200, 200, 200, 0.7);
+					padding-top: 5px;
+					border-top: 1px solid #F00;
+
+				}
+			}	
+		}
+		
+	}
+
+}

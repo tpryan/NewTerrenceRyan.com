@@ -144,7 +144,7 @@ footer {
   footer #copyright {
     color: #F00; }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 767px) {
   header {
     padding: 0 10px; }
     header nav ul li {
@@ -155,6 +155,38 @@ footer {
 
   .hidesmall {
     display: none; } }
+@media screen and (min-width: 768px) {
+  header {
+    padding-top: 10px; }
+    header hgroup {
+      display: inline-block;
+      vertical-align: top;
+      width: 420px; }
+      header hgroup h1 {
+        font-size: 50px;
+        margin-bottom: 40px; }
+      header hgroup p {
+        font-size: 25px; }
+    header nav {
+      display: inline-block;
+      padding-left: 0;
+      padding-right: 0; }
+      header nav ul {
+        padding-right: 0; }
+        header nav ul li {
+          padding-right: 0;
+          display: table-cell;
+          position: relative; }
+          header nav ul li span {
+            position: absolute;
+            display: block;
+            bottom: 6px;
+            text-align: center;
+            width: 161px;
+            font-size: 35px;
+            background-color: rgba(200, 200, 200, 0.7);
+            padding-top: 5px;
+            border-top: 1px solid #F00; } }
 @media screen and (min-width: 1000px) {
   .center, hr, header #masthead, #content section, footer nav, footer small {
     width: 1000px;

@@ -134,15 +134,15 @@ footer{
 
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 767px) {
 	@import 'phone';
 }
 
 
 
-// @media screen and (min-width: 768px) {
-// 	@import 'tablet';
-// } 
+@media screen and (min-width: 768px) {
+	@import 'tablet';
+} 
 
 @media screen and (min-width: 1000px) {
 	@import 'desktop'

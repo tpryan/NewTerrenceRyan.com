@@ -8,3 +8,5 @@ import/creds.php
 *.scssc
 
 assets/cache/events.html
+
+assets/cache/projects.html

@@ -6,4 +6,13 @@
 	    )
 	);
 
+	function shouldStillBeCached($file, $cache_age){
+		if (file_exists($file) &&(time() - filemtime($file) < $cache_age)){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+
 ?>

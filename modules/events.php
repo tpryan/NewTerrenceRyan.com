@@ -1,5 +1,5 @@
 <?php
-	include_once 'error.php';
+	include_once 'module_common.php';
 	
 	$lanyrd_url = "http://lanyrd.com/people/tpryan/tpryan.ics";
 	$count = 3;
@@ -27,27 +27,6 @@
 	echo $lanyrd_html;
 
 
-	function customError($errno, $errstr){
-		if (strpos($errstr,"failed to open stream") !== false){
-			$lanyrd_html = "<p>No upcoming events</p>";
-
-		}
-		else{
-			echo "<b>Error:</b> [$errno] $errstr<br />";
-			echo "Ending Script";
-			die();
-		}
-		
-	}
-
-	function shouldStillBeCached($file, $cache_age){
-		if (file_exists($file) &&(time() - filemtime($file) < $cache_age)){
-			return true;
-		}
-		else{
-			return false;
-		}
-	}
 
 	function refreshHTML($lanyrd_url, $count, $lanyrd_cache){
 		$lanyrd_content = get_content_from_lanyrd($lanyrd_url);

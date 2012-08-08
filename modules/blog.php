@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/config/creds.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/config/creds.php';
 include_once 'module_common.php';
 $count = 3;
 $blog_cache = $_SERVER['DOCUMENT_ROOT'] . "/assets/cache/blog.html";

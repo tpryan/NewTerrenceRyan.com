@@ -1,4 +1,5 @@
 <?php
+	include_once 'error.php';
 	
 	$lanyrd_url = "http://lanyrd.com/people/tpryan/tpryan.ics";
 	$count = 3;
@@ -10,14 +11,6 @@
 	if (isset($_GET['reset_cache']) && file_exists($lanyrd_cache)){
 		unlink($lanyrd_cache);
 	}
-	
-	set_error_handler(
-	    create_function(
-	        '$severity, $message, $file, $line',
-	        'throw new ErrorException($message, $severity, $severity, $file, $line);'
-	    )
-	);
-
 
 	if (shouldStillBeCached($lanyrd_cache, $cache_age)){
 		$lanyrd_html = file_get_contents($lanyrd_cache);

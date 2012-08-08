@@ -10,3 +10,7 @@ import/creds.php
 assets/cache/events.html
 
 assets/cache/projects.html
+
+assets/cache/blog.html
+
+config/creds.php

@@ -43,7 +43,6 @@
 			<h1><a href="/blog">I Write</a></h1>
 			 
 			<?php 
-				include './import/creds.php';
 				include './modules/blog.php';
 			?>
 				

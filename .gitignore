@@ -6,3 +6,5 @@ import/creds.php
 .DS_Store
 
 *.scssc
+
+assets/cache/events.html

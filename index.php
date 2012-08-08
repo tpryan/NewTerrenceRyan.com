@@ -42,9 +42,7 @@
 		<section>
 			<h1><a href="/blog">I Write</a></h1>
 			 
-			<?php 
-				include './modules/blog.php';
-			?>
+			<?php include './modules/blog.php';?>
 				
 			<p class="externalref">View more on <a href="http://blog.terrenceryan.dev">my blog</a>.</p>
 		</section>
@@ -52,9 +50,7 @@
 		<section>
 			<h1><a href="http://lanyrd.com/profile/tpryan/">I Speak</a></h1>
 
-			<?php 
-				include './modules/events.php';
-			?>
+			<?php include './modules/events.php';?>
 
 			<p class="externalref">View more on <a href="http://lanyrd.com/profile/tpryan/">lanyrd.com</a></p>
 		</section>
@@ -64,30 +60,15 @@
 		<section>
 			<h1><a href="https://github.com/tpryan">I Code</a></h1>
 
-			<?php 
-				include './modules/projects.php';
-			?>
+			<?php include './modules/projects.php';?>
 
 			<p class="externalref">View more on <a href="https://github.com/tpryan">github.com</a>.</p>
 		</section>
 		<hr />
 		<section>
-			<h1><a href="">I Present</a></h1>
+			<h1><a href="http://www.slideshare.net/tpryan/">I Present</a></h1>
 
-			<article>
-				<h1><a href="http://www.slideshare.net/tpryan/edge-13047885">The Future of HTML Motion Design</a></h1>
-				<p>Talk about Adobe's plans for HTML motion.  Talk about the present with Adobe Edge and the future with potential Adobe contributions to Webkit.</p>
-			</article>
-
-			<article>
-				<h1><a href="http://www.slideshare.net/tpryan/skip-the-ide-with-phonegap-build">Skip the IDE with PhoneGap Build</a></h1>
-				<p>Tour through the options around automating PhoneGap Build so that you can install applications during development easily with a smart workflow.</p>
-			</article>
-
-			<article>
-				<h1><a href="http://www.slideshare.net/tpryan/d2wc-keynote">D2WC Keynote</a></h1>
-				<p>An explanation of where Adobe sees developers and designers coming together in the modern world of HTML development. </p>
-			</article>
+			<?php include './modules/presos.php';?>
 
 			<p class="externalref">View more on <a href="http://www.slideshare.net/tpryan/">slideshare.com</a>.</p>
 		</section>

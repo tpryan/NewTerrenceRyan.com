@@ -53,25 +53,9 @@
 		<section>
 			<h1><a href="http://lanyrd.com/profile/tpryan/">I Speak</a></h1>
 
-			<article>
-				<h1><a href="http://lanyrd.com/2012/devcon-5-july/">DevCon 5</a></h1>
-				<time>July 23 - 24</time>
-				<address>New York, United States</address>
-				<p>HTML5 Designer's and Developer's Conference</p>
-			</article>
-
-			<article>
-				<h1><a href="http://lanyrd.com/2012/an-event-apart-dc/">An Event Apart DC 2012</a></h1>
-				<time>August 6 - 7</time>
-				<address>Alexandria, United States</address>
-				<p>Three days of design\, code\, and content for people who make websites.</p>
-			</article>
-
-			<article>
-				<h1><a href="http://lanyrd.com/2013/adobe-max/">Adobe MAX</a></h1>
-				<time>May 4 - 8</time>
-				<address>Los Angeles, United States</address>
-			</article>
+			<?php 
+				include './modules/events.php';
+			?>
 
 			<p class="externalref">View more on <a href="http://lanyrd.com/profile/tpryan/">lanyrd.com</a></p>
 		</section>

@@ -1,7 +1,12 @@
 .center{
-	width: 1000px;
+	width: 760px;
 	margin: 0 auto;
 }
+
+.center_home{
+	width: 1000px;
+	margin: 0 auto;
+}	
 
 body{
 	font-size: 1.2em;
@@ -10,6 +15,14 @@ body{
 hr{
 	@extend .center;
 	margin-top: 10px;
+}
+
+h2{
+	font-size: 35px;
+}
+
+h3{
+	font-size: 25px;
 }
 
 header{
@@ -23,7 +36,7 @@ header{
 		width: 480px;
 		padding-right: 20px;
 		h1{
-			font-size: 90px;
+			font-size: 50px;
 			margin-bottom: 15px;
 		}
 		p{
@@ -45,7 +58,7 @@ header{
 					bottom: 6px;
 					text-align: center;
 					width: 161px;
-					font-size: 35px;
+					font-size: 25px;
 					background-color: rgba(200, 200, 200, 0.7);
 					padding-top: 5px;
 					border-top: 1px solid #F00;
@@ -61,7 +74,7 @@ header{
 #content{
 	padding-top: 20px;
 	section{
-
+		@extend .center;
 			padding-bottom: 20px;
 		section{
 			position: relative;
@@ -86,7 +99,7 @@ header{
 				padding-right: 30px;
 			}
 		}
-		@extend .center;
+		
 
 		hr{
 			display: none;
@@ -112,3 +125,52 @@ footer{
 		@extend .center;
 	}
 }
+
+#home {
+	header{
+		#masthead{
+			@extend .center_home;
+		}
+	}	
+
+	hr{
+		@extend .center_home;
+	}
+	#content{
+		section{
+			@extend .center_home;
+			section{
+				width: 475px;
+			}
+		}
+	}
+	footer{
+		nav{
+			@extend .center_home;
+
+		}
+		small{
+			@extend .center_home;
+		}
+	}		
+}
+
+.wf-active {        
+  	header{
+  		hgroup{
+  			h1{
+  				font-size: 90px;
+  			}
+  		}
+  		nav{
+  			ul{
+  				li{
+  					span{	
+  						font-size: 35px;
+  					}
+  				}
+  			}
+
+  		}
+  	} 
+} 

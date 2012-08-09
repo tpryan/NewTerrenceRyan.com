@@ -31,7 +31,7 @@ table {
   border-spacing: 0; }
 
 body {
-  font-family: "ACaslonPro-Regular", "adobe-caslon-pro";
+  font-family: "adobe-caslon-pro", "Georgia", "Times New Roman", serif;
   font-weight: 400; }
 
 a {
@@ -42,12 +42,18 @@ a {
   -webkit-transition: color 0.1s ease-in;
   transition: color 0.1s ease-in; }
 
-.heading, h1, header p, nav {
-  font-family: "MyriadPro-SemiboldCond", "myriad-pro-condensed"; }
+.heading, h1, h2, h3, header p, nav {
+  font-family: "myriad-pro-condensed", "Gill Sans", "Helvetica Neue", sans-serif; }
 
 h1 {
   font-weight: 600;
   font-variant: small-caps; }
+
+h2 {
+  font-weight: 600; }
+
+h3 {
+  font-weight: 600; }
 
 hr {
   clear: both;
@@ -129,6 +135,9 @@ nav {
         #content section article h1 a:active {
           color: #FF0000;
           text-decoration: underline; }
+      #content section article p {
+        line-height: 1.6;
+        padding-bottom: 20px; }
 
 footer {
   padding: 0 10px 20px 10px;
@@ -143,6 +152,11 @@ footer {
     display: block; }
   footer #copyright {
     color: #F00; }
+
+.picture {
+  border: 1px solid #FF0000;
+  float: right;
+  margin: 10px  10px 10px; }
 
 @media screen and (max-width: 767px) {
   header {
@@ -189,6 +203,10 @@ footer {
             border-top: 1px solid #F00; } }
 @media screen and (min-width: 1000px) {
   .center, hr, header #masthead, #content section, footer nav, footer small {
+    width: 760px;
+    margin: 0 auto; }
+
+  .center_home, #home header #masthead, #home hr, #home #content section, #home footer nav, #home footer small {
     width: 1000px;
     margin: 0 auto; }
 
@@ -198,6 +216,12 @@ footer {
   hr {
     margin-top: 10px; }
 
+  h2 {
+    font-size: 35px; }
+
+  h3 {
+    font-size: 25px; }
+
   header #masthead {
     padding-top: 5px; }
   header hgroup {
@@ -206,7 +230,7 @@ footer {
     width: 480px;
     padding-right: 20px; }
     header hgroup h1 {
-      font-size: 90px;
+      font-size: 50px;
       margin-bottom: 15px; }
     header hgroup p {
       font-size: 25px;
@@ -224,7 +248,7 @@ footer {
         bottom: 6px;
         text-align: center;
         width: 161px;
-        font-size: 35px;
+        font-size: 25px;
         background-color: rgba(200, 200, 200, 0.7);
         padding-top: 5px;
         border-top: 1px solid #F00; }
@@ -264,4 +288,12 @@ footer {
       height: 20px; }
       footer nav ul li {
         float: left;
-        margin-right: 20px; } }
+        margin-right: 20px; }
+
+  #home #content section section {
+    width: 475px; }
+
+  .wf-active header hgroup h1 {
+    font-size: 90px; }
+  .wf-active header nav ul li span {
+    font-size: 35px; } }

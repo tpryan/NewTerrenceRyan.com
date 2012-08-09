@@ -1,9 +1,12 @@
 @import 'all';
 @import 'meyer-reset';
 
+$serif: "adobe-caslon-pro", "Georgia","Times New Roman", serif;
+$sans: "myriad-pro-condensed","Gill Sans", "Helvetica Neue",  sans-serif;
+
 
 body{
-	font-family: "ACaslonPro-Regular", "adobe-caslon-pro";
+	font-family: $serif;
 	font-weight: 400;
 }
 
@@ -13,13 +16,23 @@ a{
 }	
 
 .heading {
-	font-family: "MyriadPro-SemiboldCond", "myriad-pro-condensed";
+	font-family: $sans;
 }
 
 h1{
 	@extend .heading;
 	font-weight: 600;
 	font-variant: small-caps;
+}
+
+h2{
+	@extend .heading;
+	font-weight: 600;
+}
+
+h3{
+	@extend .heading;
+	font-weight: 600;
 }
 
 hr{
@@ -46,6 +59,8 @@ hr:after {
 p{
 	font-weight: 400;
 }
+
+
 
 header{
 	padding: 0 10px;
@@ -109,6 +124,10 @@ nav{
 				}
 				
 			}
+			p{
+				line-height: 1.6;
+				padding-bottom: 20px;
+			}
 		}
 	}
 }
@@ -133,6 +152,15 @@ footer{
 	}
 
 }
+
+.picture{
+	border: 1px solid #FF0000;
+	float: right;
+	margin: 10px  10px 10px;
+}
+
+
+
 
 @media screen and (max-width: 767px) {
 	@import 'phone';

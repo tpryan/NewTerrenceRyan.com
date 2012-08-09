@@ -4,10 +4,10 @@
 	<meta charset="utf-8" />
 	<title>TerrenceRyan.com</title>
 	<link rel="stylesheet" href="/assets/css/main.css" type="text/css" media="screen" />
-	<!--<script type="text/javascript" src="http://use.typekit.com/puk0eup.js"></script>
-	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>-->
+	<script type="text/javascript" src="http://use.typekit.com/puk0eup.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
-<body>
+<body id="home">
 <header>
 	<div id="masthead">
 		<hgroup>
@@ -80,7 +80,7 @@
 			<li><a href="/">Home</a></li>
 			<li><a href="/sitemap">Sitemap</a></li>      
 			<li><a href="/search">Search</a></li>
-			<li><a href="/about">Contact</a></li>
+			<li><a href="/contact">Contact</a></li>
 		</ul>
 	</nav>
 	<small id="copyright">Copyright 2008 - 2012 Terrence Ryan</small>

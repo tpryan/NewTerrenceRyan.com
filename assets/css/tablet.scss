@@ -46,7 +46,7 @@ header{
 
 		hgroup{
 			display: inline-block;
-			width: 415px;
+			width: 400px;
 			vertical-align: top;
 			h1{
 				display: block;
@@ -56,13 +56,20 @@ header{
 			p{
 				display: block;
 				font-size: 2.3em;
+				line-height: 1.1;
 			}
 		}
 
 		nav{
+			img{
+				display: block;
+				height: 230px;
+				width: 160px;
+			}
 			padding-top: 10px;
 			li{
 				display: inline-block;
+				padding-right: 0;
 				a{
 					&:hover{
 						color: #FFFFFF;
@@ -76,7 +83,7 @@ header{
 						position:absolute;
 						padding: 5px 0;
 						left: 0;
-						bottom: 8px;
+						bottom: 0;
 						width: 160px;
 						text-align: center;
 						border: 1px solid #FF0000;

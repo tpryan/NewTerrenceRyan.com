@@ -1,0 +1,43 @@
+
+.hidesmall{
+	display: none;
+}
+
+#home{
+	header{
+		nav{
+			padding-top: 0;
+			display: block;
+
+			img{
+				display: none;
+			}
+
+			ul{
+				padding-top: 0;
+				li{
+					a{
+						span{
+							text-align: left;
+							position: static;
+							border: none;
+							background-color: transparent;
+							text-shadow: none;
+						}
+					}
+				}
+			}
+
+		}
+	}
+}
+
+#content{
+	h1{
+		line-height: 1;
+		padding-bottom: 10px;
+	}
+	img{
+		max-width: 100%;
+	}
+}

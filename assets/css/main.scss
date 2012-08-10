@@ -84,36 +84,116 @@ header{
 	p{
 		@extend .heading;
 		color: #FFF;
+		font-size: 1.7em;
+		line-height: 1.2;
+		padding: 10px 0;
 	}
 	img{
 		border: 1px solid #F00;
 	}
+	hgroup{
+		display: inline-block;
+		padding-right: 20px;
+	}
+
+	nav{
+		display: inline-block;
+		vertical-align: top;
+	}
 }
+
+#home{
+	header{
+
+
+		nav{
+			img{
+				display: block;
+				height: 161px;
+				width: 112px;
+			}
+			padding-top: 10px;
+			li{
+				display: inline-block;
+				padding-right: 0;
+				a{
+					&:hover{
+						color: #FFFFFF;
+					}
+
+					position: relative;
+					span{
+
+						text-shadow: #333 2px 2px 2px;
+						z-index: 9999;
+						background-color: rgba(100,100,100, .5);
+						position:absolute;
+						padding: 5px 0;
+						left: 0;
+						bottom: 0;
+						width: 112px;
+						text-align: center;
+						border: 1px solid #FF0000;
+						display: inline-block;
+					}
+				}
+			}
+		}
+	}			
+}
+
 
 nav{
 	@extend .heading;
 	font-weight: 700;
 	font-size: 2em;
+	ul{
+		padding: 10px 0;
+	}
+	
 	a{
 		&:link{color: #FF0000; text-decoration: none;}
 		&:visited{color: #FF0000; text-decoration: none;}
 		&:hover{color: #555555;text-decoration:underline;}
 		&:active{color: #FF0000;text-decoration:underline;}
 	}
+
+	img{
+		display: none;
+	}
 }
 
 #content{
 	padding: 15px 10px 0 10px;
+
+
+
+
 	section{
-		margin-bottom: 20px;
+
 		h1{
-			font-size: 1.9em;
+			font-size: 2.5em;
 			font-variant: normal;
 			a{
 				color: #000;
 				text-decoration: none;
 			}
 		}
+		h2{
+			font-size: 2.2em;
+			color: #444444;
+		}
+		h3{
+			font-size: 1.5em;
+			color: #999999;
+		}
+		p{
+			font-size: 1.3em;
+		}
+
+
+		margin-bottom: 20px;
+		
 
 		article{
 			margin-bottom: 5px;
@@ -175,7 +255,7 @@ footer{
 
 
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 550px) {
 	@import 'phone';
 }
 

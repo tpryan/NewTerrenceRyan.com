@@ -93,13 +93,50 @@ header {
       color: #F00;
       text-decoration: none; }
   header p {
-    color: #FFF; }
+    color: #FFF;
+    font-size: 1.7em;
+    line-height: 1.2;
+    padding: 10px 0; }
   header img {
     border: 1px solid #F00; }
+  header hgroup {
+    display: inline-block;
+    padding-right: 20px; }
+  header nav {
+    display: inline-block;
+    vertical-align: top; }
+
+#home header nav {
+  padding-top: 10px; }
+  #home header nav img {
+    display: block;
+    height: 161px;
+    width: 112px; }
+  #home header nav li {
+    display: inline-block;
+    padding-right: 0; }
+    #home header nav li a {
+      position: relative; }
+      #home header nav li a:hover {
+        color: #FFFFFF; }
+      #home header nav li a span {
+        text-shadow: #333 2px 2px 2px;
+        z-index: 9999;
+        background-color: rgba(100, 100, 100, 0.5);
+        position: absolute;
+        padding: 5px 0;
+        left: 0;
+        bottom: 0;
+        width: 112px;
+        text-align: center;
+        border: 1px solid #FF0000;
+        display: inline-block; }
 
 nav {
   font-weight: 700;
   font-size: 2em; }
+  nav ul {
+    padding: 10px 0; }
   nav a:link {
     color: #FF0000;
     text-decoration: none; }
@@ -112,17 +149,27 @@ nav {
   nav a:active {
     color: #FF0000;
     text-decoration: underline; }
+  nav img {
+    display: none; }
 
 #content {
   padding: 15px 10px 0 10px; }
   #content section {
     margin-bottom: 20px; }
     #content section h1 {
-      font-size: 1.9em;
+      font-size: 2.5em;
       font-variant: normal; }
       #content section h1 a {
         color: #000;
         text-decoration: none; }
+    #content section h2 {
+      font-size: 2.2em;
+      color: #444444; }
+    #content section h3 {
+      font-size: 1.5em;
+      color: #999999; }
+    #content section p {
+      font-size: 1.3em; }
     #content section article {
       margin-bottom: 5px;
       line-height: 1.5; }
@@ -168,6 +215,29 @@ footer {
   float: right;
   margin: 10px  10px 10px; }
 
+@media screen and (max-width: 550px) {
+  .hidesmall {
+    display: none; }
+
+  #home header nav {
+    padding-top: 0;
+    display: block; }
+    #home header nav img {
+      display: none; }
+    #home header nav ul {
+      padding-top: 0; }
+      #home header nav ul li a span {
+        text-align: left;
+        position: static;
+        border: none;
+        background-color: transparent;
+        text-shadow: none; }
+
+  #content h1 {
+    line-height: 1;
+    padding-bottom: 10px; }
+  #content img {
+    max-width: 100%; } }
 @media screen and (min-width: 768px) {
   .centered, #masthead, #content, footer nav, footer small, hr {
     width: 760px;
@@ -192,7 +262,7 @@ footer {
 
   #home header hgroup {
     display: inline-block;
-    width: 415px;
+    width: 400px;
     vertical-align: top; }
     #home header hgroup h1 {
       display: block;
@@ -200,11 +270,17 @@ footer {
       margin-bottom: 20px; }
     #home header hgroup p {
       display: block;
-      font-size: 2.3em; }
+      font-size: 2.3em;
+      line-height: 1.1; }
   #home header nav {
     padding-top: 10px; }
+    #home header nav img {
+      display: block;
+      height: 230px;
+      width: 160px; }
     #home header nav li {
-      display: inline-block; }
+      display: inline-block;
+      padding-right: 0; }
       #home header nav li a {
         position: relative; }
         #home header nav li a:hover {
@@ -216,7 +292,7 @@ footer {
           position: absolute;
           padding: 5px 0;
           left: 0;
-          bottom: 8px;
+          bottom: 0;
           width: 160px;
           text-align: center;
           border: 1px solid #FF0000;
@@ -252,4 +328,27 @@ footer {
 @media screen and (min-width: 1000px) {
   .centered, #masthead, #content, footer nav, footer small, hr {
     width: 1000px;
-    margin: 0 auto; } }
+    margin: 0 auto; }
+
+  #home header hgroup {
+    width: 515px; }
+    #home header hgroup h1 {
+      font-size: 5em;
+      margin-bottom: 0; }
+    #home header hgroup p {
+      padding-top: 0;
+      font-size: 2.6em;
+      line-height: 1.1; }
+  #home header nav {
+    padding-top: 15px; }
+
+  #content section section {
+    vertical-align: top;
+    display: inline-block;
+    width: 455px; }
+    #content section section:first-child {
+      padding-right: 40px;
+      margin-right: 0; }
+    #content section section:last-child {
+      padding-left: 40px;
+      margin-left: 0; } }

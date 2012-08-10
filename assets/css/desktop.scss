@@ -18,3 +18,38 @@ footer nav, footer small{
 hr{
 	@extend .centered;
 }
+
+
+#home{
+	header{
+
+		hgroup{
+			width: 515px;
+			h1{
+				font-size: 5em;
+				margin-bottom: 0;
+			}
+			p{
+				padding-top: 0;
+				font-size: 2.6em;
+				line-height: 1.1;
+			}
+		}
+		nav{
+			padding-top: 15px;
+		}
+	}	
+}
+
+#content {
+	section{
+		section{
+			vertical-align: top;
+			display: inline-block;
+			width: 455px;
+
+			&:first-child{ padding-right: 40px; margin-right: 0; };
+			&:last-child{ padding-left: 40px; margin-left: 0; };
+		}
+	}
+}

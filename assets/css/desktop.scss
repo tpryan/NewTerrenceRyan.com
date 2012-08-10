@@ -7,7 +7,7 @@
 	@extend .centered;
 }
 
-#content{
+#content > section{
 	@extend .centered;
 }
 
@@ -39,6 +39,10 @@ hr{
 			padding-top: 15px;
 		}
 	}	
+}
+
+#job blockquote{
+	max-width: 600px;
 }
 
 #content {

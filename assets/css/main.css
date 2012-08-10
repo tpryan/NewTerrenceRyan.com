@@ -32,7 +32,8 @@ table {
 
 body {
   font-family: "adobe-caslon-pro", "Georgia", "Times New Roman", serif;
-  font-weight: 400; }
+  font-weight: 400;
+  background-color: #000; }
 
 a {
   color: #F00;
@@ -82,6 +83,20 @@ address, em {
 
 strong {
   font-weight: 700; }
+
+blockquote {
+  display: block;
+  padding: .5em 2em .1em 2em;
+  margin-bottom: 20px;
+  font-style: italic;
+  color: #F00;
+  border-left: 3px solid #F00;
+  border-top: 1px solid #EEE;
+  border-right: 1px solid #EEE;
+  border-bottom: 1px solid #EEE;
+  background-color: #F3F3F3; }
+  blockquote p {
+    margin-top: 10px; }
 
 header {
   padding: 0 10px;
@@ -153,7 +168,8 @@ nav {
     display: none; }
 
 #content {
-  padding: 15px 10px 0 10px; }
+  padding: 15px 10px 0 10px;
+  background-color: #FFF; }
   #content section {
     margin-bottom: 20px; }
     #content section h1 {
@@ -174,7 +190,6 @@ nav {
       margin-bottom: 5px;
       line-height: 1.5; }
       #content section article h1 {
-        font-size: 2em;
         color: #F00; }
         #content section article h1 a:link {
           color: #FF0000;
@@ -209,11 +224,18 @@ footer {
 
 #home time {
   color: #999; }
+#home section article h1 {
+  font-size: 2em; }
 
-.picture {
-  border: 1px solid #FF0000;
+.image, .picture {
   float: right;
   margin: 10px  10px 10px; }
+
+.picture {
+  border: 1px solid #FF0000; }
+
+#job blockquote {
+  max-width: 300px; }
 
 @media screen and (max-width: 550px) {
   .hidesmall {
@@ -239,7 +261,7 @@ footer {
   #content img {
     max-width: 100%; } }
 @media screen and (min-width: 768px) {
-  .centered, #masthead, #content, footer nav, footer small, hr {
+  .centered, #masthead, #content > section, footer nav, footer small, hr {
     width: 760px;
     margin: 0 auto; }
 
@@ -298,6 +320,9 @@ footer {
           border: 1px solid #FF0000;
           display: inline-block; }
 
+  #job blockquote {
+    max-width: 390px; }
+
   #content p, #content address, #content time {
     font-size: 1.3em; }
   #content section h1 {
@@ -326,7 +351,7 @@ footer {
     display: inline-block;
     padding-right: 20px; } }
 @media screen and (min-width: 1000px) {
-  .centered, #masthead, #content, footer nav, footer small, hr {
+  .centered, #masthead, #content > section, footer nav, footer small, hr {
     width: 1000px;
     margin: 0 auto; }
 
@@ -341,6 +366,9 @@ footer {
       line-height: 1.1; }
   #home header nav {
     padding-top: 15px; }
+
+  #job blockquote {
+    max-width: 600px; }
 
   #content section section {
     vertical-align: top;

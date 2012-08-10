@@ -7,7 +7,7 @@
 	@extend .centered;
 }
 
-#content{
+#content > section{
 	@extend .centered;
 }
 
@@ -93,6 +93,10 @@ header{
 			}
 		}
 	}			
+}
+
+#job blockquote{
+	max-width: 390px;
 }
 
 #content {

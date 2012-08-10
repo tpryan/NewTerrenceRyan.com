@@ -8,6 +8,7 @@ $sans: "myriad-pro-condensed","Gill Sans", "Helvetica Neue",  sans-serif;
 body{
 	font-family: $serif;
 	font-weight: 400;
+	background-color: #000;
 }
 
 a{
@@ -67,6 +68,22 @@ address, em{
 strong{
 	font-weight: 700;
 }
+
+blockquote {
+  display: block;
+  padding: .5em 2em .1em 2em;
+  margin-bottom: 20px;
+  font-style: italic;
+  color: #F00;
+  border-left: 3px solid #F00;
+  border-top: 1px solid #EEE;
+  border-right: 1px solid #EEE;
+  border-bottom: 1px solid #EEE;
+  background-color: #F3F3F3; 
+  p {
+    margin-top: 10px; }
+}    
+
 
 header{
 	padding: 0 10px;
@@ -165,7 +182,7 @@ nav{
 
 #content{
 	padding: 15px 10px 0 10px;
-
+	background-color: #FFF;
 
 
 
@@ -199,7 +216,7 @@ nav{
 			margin-bottom: 5px;
 			line-height: 1.5;
 			h1{
-				font-size: 2em;
+				
 				color: #F00;
 				a{
 					
@@ -238,20 +255,35 @@ footer{
 		font-family: $sans;
 	}
 
+
 }
 
 #home{
 	time{
 		color: #999;
 	}
+	section{
+		article{
+			h1{
+				font-size: 2em;
+			}
+		}
+	}
 }
 
-.picture{
-	border: 1px solid #FF0000;
+.image{
 	float: right;
 	margin: 10px  10px 10px;
 }
 
+.picture{
+	border: 1px solid #FF0000;
+	@extend .image;
+}
+
+#job blockquote{
+	max-width: 300px;
+}
 
 
 

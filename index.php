@@ -12,9 +12,10 @@
 	<div id="masthead">
 		<hgroup>
 			<h1><a href="/">TerrenceRyan.com</a></h1>
-			<p>I'm a 35 year old redhead geek from Philly. <br /> 
-				<span class="hidesmall">I'm an Evangelist for <a href="/job">Adobe</a>.<br />
-				Also wrote <a href="/book">Driving Technical Change</a></span>
+			<p>I'm a 35 year old web geek <br /> 
+				<span class="hidesmall">I live in Philly. <br /> 
+				I'm an Evangelist for <a href="/job">Adobe</a>.<br />
+				Wrote <a href="/book">Driving Technical Change</a></span>
 			</p>
 		</hgroup>	
 		<nav>

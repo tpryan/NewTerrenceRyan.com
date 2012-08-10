@@ -60,7 +60,13 @@ p{
 	font-weight: 400;
 }
 
+address, em{
+	font-style: italic;
+}
 
+strong{
+	font-weight: 700;
+}
 
 header{
 	padding: 0 10px;
@@ -68,7 +74,7 @@ header{
 
 	h1{
 		color: #F00;
-		font-size: 50px;
+		font-size: 3em;
 		a{
 			color: #F00;
 			text-decoration: none;
@@ -87,7 +93,7 @@ header{
 nav{
 	@extend .heading;
 	font-weight: 700;
-	font-size: 25px;
+	font-size: 2em;
 	a{
 		&:link{color: #FF0000; text-decoration: none;}
 		&:visited{color: #FF0000; text-decoration: none;}
@@ -97,11 +103,11 @@ nav{
 }
 
 #content{
-	padding: 0 10px;
+	padding: 15px 10px 0 10px;
 	section{
 		margin-bottom: 20px;
 		h1{
-			font-size: 40px;
+			font-size: 1.9em;
 			font-variant: normal;
 			a{
 				color: #000;
@@ -113,7 +119,7 @@ nav{
 			margin-bottom: 5px;
 			line-height: 1.5;
 			h1{
-				font-size: 25px;
+				font-size: 2em;
 				color: #F00;
 				a{
 					
@@ -149,8 +155,15 @@ footer{
 	}
 	#copyright{
 		color: #F00;
+		font-family: $sans;
 	}
 
+}
+
+#home{
+	time{
+		color: #999;
+	}
 }
 
 .picture{

@@ -1,176 +1,20 @@
-.center{
-	width: 760px;
-	margin: 0 auto;
-}
-
-.center_home{
+.centered{
 	width: 1000px;
 	margin: 0 auto;
-}	
-
-body{
-	font-size: 1.2em;
 }
 
-hr{
-	@extend .center;
-	margin-top: 10px;
-}
-
-h2{
-	font-size: 35px;
-}
-
-h3{
-	font-size: 25px;
-}
-
-header{
-	#masthead{
-		@extend .center;
-		padding-top: 5px;
-	}
-	hgroup{
-		display: inline-block;
-		vertical-align: top;
-		width: 480px;
-		padding-right: 20px;
-		h1{
-			font-size: 50px;
-			margin-bottom: 15px;
-		}
-		p{
-			font-size: 25px;
-			line-height: 1.5;
-		}
-	}
-	nav{
-		display: inline-block;
-		padding-left: 20px;
-		ul{
-			li{
-				display: table-cell;
-				position: relative;
-				padding-right: 20px;
-				span{
-					position: absolute;
-					display: block;
-					bottom: 6px;
-					text-align: center;
-					width: 161px;
-					font-size: 25px;
-					background-color: rgba(200, 200, 200, 0.7);
-					padding-top: 5px;
-					border-top: 1px solid #F00;
-
-				}
-			}	
-		}
-		
-	}
-
+#masthead{
+	@extend .centered;
 }
 
 #content{
-	padding-top: 20px;
-	section{
-		@extend .center;
-			padding-bottom: 20px;
-		section{
-			position: relative;
-			width: 475px;
-
-			display: inline-block;
-			vertical-align: top;
-			padding-bottom: 35px;
-			padding: 5px 0 35px 0;
-			position:relative;
-
-			&:first-child{ padding-right: 20px; margin-right: 0};
-			&:last-child{ padding-left: 20px; margin-left: 0};
-
-			article{
-				padding-bottom: 15px;	
-			}
-			.externalref{
-				position: absolute;
-				bottom: -10px;
-				right: 0;
-				padding-right: 30px;
-			}
-		}
-		
-
-		hr{
-			display: none;
-		}
-	}
+	@extend .centered;
 }
 
-footer{
-	margin-top: 20px;
-	nav{
-		@extend .center;
-
-		ul{
-			clear: both;
-			height: 20px;	
-			li{
-				float: left;
-				margin-right: 20px;
-			}
-		}
-	}
-	small{
-		@extend .center;
-	}
+footer nav, footer small{
+	@extend .centered;
 }
 
-#home {
-	header{
-		#masthead{
-			@extend .center_home;
-		}
-	}	
-
-	hr{
-		@extend .center_home;
-	}
-	#content{
-		section{
-			@extend .center_home;
-			section{
-				width: 475px;
-			}
-		}
-	}
-	footer{
-		nav{
-			@extend .center_home;
-
-		}
-		small{
-			@extend .center_home;
-		}
-	}		
+hr{
+	@extend .centered;
 }
-
-.wf-active {        
-  	header{
-  		hgroup{
-  			h1{
-  				font-size: 90px;
-  			}
-  		}
-  		nav{
-  			ul{
-  				li{
-  					span{	
-  						font-size: 35px;
-  					}
-  				}
-  			}
-
-  		}
-  	} 
-} 

@@ -285,6 +285,25 @@ footer{
 	max-width: 300px;
 }
 
+form{
+	label{
+		font-weight: 700;
+	}
+
+	.textcontrol {
+		width: 400px;
+		margin-bottom: 20px;
+		font-size: 2em;
+	}
+	input[type=text]{
+		height: 1.2em;
+		@extend .textcontrol;
+	}
+	textarea{
+		@extend .textcontrol;
+	}
+}
+
 
 
 @media screen and (max-width: 550px) {

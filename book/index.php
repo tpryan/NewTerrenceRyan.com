@@ -31,7 +31,7 @@
 	<section id="primary">		
 		<article>
 			<h1>Driving Technical Change</h1>
-			<img class="image" src="bookfull.png"  width="317" height="377">
+			<img class="image" src="/assets/img/bookfull.png"  width="317" height="377">
 			
 			<h2>About the Book</h2>
 			<p>Ever go to a technology conference, read a coding book, or just get inspired by a 

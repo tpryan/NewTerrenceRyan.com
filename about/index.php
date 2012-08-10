@@ -31,7 +31,7 @@
 	<section id="primary">		
 		<article>
 			<h1>About Me</h1>
-			<img class="picture" src="headshot2011.jpg"  width="200" height="300">
+			<img class="picture" src="/assets/img/headshot2011.jpg"  width="200" height="300">
 			
 			
 			<h2>Current</h2>	

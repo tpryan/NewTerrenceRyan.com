@@ -31,7 +31,7 @@
 	<section id="primary">
 		<article>		
 		<h1>Job</h1>
-			<img class="image" src="adobelogo.png" width="283" height="355" id="adobelogo">
+			<img class="image" src="/assets/img/adobelogo.png" width="283" height="355" id="adobelogo">
 			
 			<p>I work as a Worldwide Developer Evangelist for Adobe Systems. My job basically entails me traveling the world and 
 			talking about the developer tools and technologies that Adobe has to offer or that we support.</p> 

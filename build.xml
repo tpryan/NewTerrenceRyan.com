@@ -69,6 +69,9 @@
 		<delete dir='${build.dir}/sql'/>
 		<delete dir='${build.dir}/scripts'/>
 		<delete dir='${build.dir}/TerryRyansORMCodeJumpstart'/>
+
+		<echo message="Adding Dirs"/>
+		<mkdir dir="${build.dir}/assets/cache/"/>
 		
 		<!-- <echo message="Tweak ColdSpring Config File" />
 		<replace dir="${build.dir}/config/local" summary="${verbose}">

@@ -17,16 +17,22 @@
 	</target>
 
 
-	<target name="build" depends="clean,copyFilesToBuild,polish,zip" description="Creating a clean copy of the site" />
+	<target name="build" depends="clean,copyFilesToBuild,polish" description="Creating a clean copy of the site" />
 
 
 	
 	<target name="copyFilesToBuild" description="Create a gitless version of the source code.">
 		<echo message="Copying Files to Build Location"/>
-		<copy todir="${build.dir}" preservelastmodified="true">
-			<fileset dir="${basedir}">
+		<copy todir="${build.dir}" preservelastmodified="true" verbose="true" >
+			<fileset dir="${basedir}/">
 				<exclude name='.gitignore'/>
 				<exclude name='.git/**'/>
+				<exclude name='build.properties'/>
+				<exclude name='build.xml'/>
+				<exclude name='build.log'/>
+				<exclude name='lib/**'/>
+				<exclude name='.project'/>
+				<exclude name='README.MD'/>
 			</fileset>	
 		</copy>
 	</target>
@@ -56,7 +62,7 @@
 		<delete dir='${build.dir}/scripts'/>
 		<delete dir='${build.dir}/TerryRyansORMCodeJumpstart'/>
 		
-		<echo message="Tweak ColdSpring Config File" />
+		<!-- <echo message="Tweak ColdSpring Config File" />
 		<replace dir="${build.dir}/config/local" summary="${verbose}">
 				<include name="coldspring.xml.cfm"/>
 				<replacefilter token="$$$$$$version$$$$$$" value="${app.version}"/>
@@ -64,7 +70,7 @@
 		<replace dir="${build.dir}/config/prod" summary="${verbose}">
 				<include name="coldspring.xml.cfm"/>
 				<replacefilter token="$$$$$$version$$$$$$" value="${app.version}"/>
-		</replace>
+		</replace> -->
 	</target>
 
 	<target name="zip" description="Creates a zip file of the build.">

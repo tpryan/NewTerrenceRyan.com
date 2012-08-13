@@ -72,6 +72,8 @@
 
 		<echo message="Adding Dirs"/>
 		<mkdir dir="${build.dir}/assets/cache/"/>
+		<echo message="Setting Permissions"/>
+		<chmod file="${build.dir}/assets/cache/" perm="777"/>
 		
 		<!-- <echo message="Tweak ColdSpring Config File" />
 		<replace dir="${build.dir}/config/local" summary="${verbose}">

@@ -37,6 +37,14 @@
 		</copy>
 	</target>
 
+	<target name="copyCredsToBuild" description="Copy DB creds to correct spot">
+		<echo message="Copying Files to Build Location"/>
+		<copy todir="${build.dir}/config" preservelastmodified="true" verbose="true" >
+			<fileset dir="${creds.dir}/">
+			</fileset>	
+		</copy>
+	</target>
+
 	<target name="setVersion">
 		<echo message="Generating a Build number"/>
 		<buildnumber/>

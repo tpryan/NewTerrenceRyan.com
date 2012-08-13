@@ -1,22 +1,22 @@
-.centered{
+.desktop_centered{
 	width: 1000px;
 	margin: 0 auto;
 }
 
 #masthead{
-	@extend .centered;
+	@extend .desktop_centered;
 }
 
 #content > section{
-	@extend .centered;
+	@extend .desktop_centered;
 }
 
 footer nav, footer small{
-	@extend .centered;
+	@extend .desktop_centered;
 }
 
 hr{
-	@extend .centered;
+	@extend .desktop_centered;
 }
 
 

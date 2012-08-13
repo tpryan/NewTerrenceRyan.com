@@ -297,15 +297,39 @@ form{
 		margin-bottom: 20px;
 		font-size: 2em;
 	}
-	input[type=text]{
+	input{
 		height: 1.2em;
+		width: 100%;
 		@extend .textcontrol;
 	}
 	textarea{
 		@extend .textcontrol;
+		width: 100%;
+
+	}
+
+	.submit{
+		border: 1px solid #CCC;
+		font-size: 2.2em;
+		@extend .textcontrol;
+		color: #FF0000;
+		background-color: #FFFFFF;
+		border-radius: 8px;
+	}
+	.submit:hover{
+		border: 1px solid #FF0000;
+		background-color: #000000;
 	}
 }
 
+td{
+	vertical-align: middle;
+	padding-top: 10px;
+	padding-right: 30px;
+}
+td img.twitter{
+	margin-left: -5px;
+}
 
 
 @media screen and (max-width: 550px) {

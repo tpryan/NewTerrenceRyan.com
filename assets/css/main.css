@@ -239,12 +239,32 @@ footer {
 
 form label {
   font-weight: 700; }
-form .textcontrol, form input[type=text], form textarea {
+form .textcontrol, form input, form textarea, form .submit {
   width: 400px;
   margin-bottom: 20px;
   font-size: 2em; }
-form input[type=text] {
-  height: 1.2em; }
+form input {
+  height: 1.2em;
+  width: 100%; }
+form textarea {
+  width: 100%; }
+form .submit {
+  border: 1px solid #CCC;
+  font-size: 2.2em;
+  color: #FF0000;
+  background-color: #FFFFFF;
+  border-radius: 8px; }
+form .submit:hover {
+  border: 1px solid #FF0000;
+  background-color: #000000; }
+
+td {
+  vertical-align: middle;
+  padding-top: 10px;
+  padding-right: 30px; }
+
+td img.twitter {
+  margin-left: -5px; }
 
 @media screen and (max-width: 550px) {
   .hidesmall {
@@ -270,7 +290,7 @@ form input[type=text] {
   #content img {
     max-width: 100%; } }
 @media screen and (min-width: 768px) {
-  .centered, #masthead, #content > section, footer nav, footer small, hr {
+  .table_centered, #masthead, #content > section, footer nav, footer small, hr {
     width: 760px;
     margin: 0 auto; }
 
@@ -360,7 +380,7 @@ form input[type=text] {
     display: inline-block;
     padding-right: 20px; } }
 @media screen and (min-width: 1000px) {
-  .centered, #masthead, #content > section, footer nav, footer small, hr {
+  .desktop_centered, #masthead, #content > section, footer nav, footer small, hr {
     width: 1000px;
     margin: 0 auto; }
 

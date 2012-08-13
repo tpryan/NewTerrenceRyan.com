@@ -49,7 +49,7 @@ function getPostsFromDataBase($dbInfo, $count){
 	mysql_select_db($dbInfo['db'], $dbConn) or die(mysql_error());
 
 	// Retrieve all the data from the "example" table
-	$entries = mysql_query("SELECT post_title, post_excerpt, guid, DATE_FORMAT(post_date, '%M %d, %Y') as formatted_post_date FROM wp_posts WHERE LENGTH(post_excerpt) > 0  ORDER BY post_date desc LIMIT 0, ". $count, $dbConn) or die(mysql_error()); 
+	$entries = mysql_query("SELECT post_title, post_excerpt, guid, DATE_FORMAT(post_date, '%M %d, %Y') as formatted_post_date FROM wp_posts WHERE LENGTH(post_excerpt) > 0 AND post_status = 'publish'  ORDER BY post_date desc LIMIT 0, ". $count, $dbConn) or die(mysql_error()); 
 
 	return $entries;
 }

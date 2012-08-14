@@ -31,7 +31,7 @@
 	</target>
 
 
-	<target name="build" depends="clean,copyFilesToBuild,copyCredsToBuild,polish" description="Creating a clean copy of the site" />
+	<target name="build" depends="copyFilesToBuild,copyCredsToBuild,polish" description="Creating a clean copy of the site" />
 
 
 	

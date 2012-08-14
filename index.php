@@ -41,11 +41,11 @@
 <div id="content">
 	<section id="primary">		
 		<section>
-			<h1><a href="/blog">I Write</a></h1>
+			<h1><a href="http://blog.terrenceryan.com">I Write</a></h1>
 			 
 			<?php include './modules/blog.php';?>
 				
-			<p class="externalref">View more on <a href="http://blog.terrenceryan.dev">my blog</a>.</p>
+			<p class="externalref">View more on <a href="http://blog.terrenceryan.com">my blog</a>.</p>
 		</section>
 		<hr />
 		<section>

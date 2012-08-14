@@ -15,7 +15,12 @@ body{
 
 a{
 	color: #F00;
+	text-decoration: none;
 	@include transition(color .1s ease-in);
+}
+
+a:hover, a:active{
+	text-decoration: underline;
 }	
 
 .heading {

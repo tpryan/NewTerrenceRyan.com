@@ -11,8 +11,9 @@
 
 	<target name="clean">
 		<echo message="Revert Ownership" />
-		<chown file="${build.dir}/assets/cache/" owner="${creds.own}">
-			<fileset dir="${build.dir}/assets/cache/" includes="**/**.**"/>
+		<chown file="${build.dir}/assets/cache/" owner="${creds.own}" />
+		<chown owner="${creds.own}">
+			<fileset dir="${build.dir}/assets/cache/" includes="**/**.html"/>
 		</chown>	
 
 		<echo message="Cleaning Build Space"/>

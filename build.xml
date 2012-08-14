@@ -10,6 +10,12 @@
 	</target>
 
 	<target name="clean">
+		<echo message="Setting Permissions"/>
+		<chmod file="${build.dir}/assets/cache/" perm="777"/>
+		<chmod perm="777">
+			<fileset dir="${build.dir}/assets/cache/" includes="**/**.html"/>
+		</chmod>	
+
 		<echo message="Revert Ownership" />
 		<chown file="${build.dir}/assets/cache/" owner="${creds.own}" />
 		<chown owner="${creds.own}">

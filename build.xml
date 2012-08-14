@@ -89,7 +89,7 @@
 		<echo message="Setting Permissions"/>
 		<chmod file="${build.dir}/assets/cache/" perm="777"/>
 		<echo message="Changing owner"/>
-		<chown file="${build.dir}/assets/cache/" owner="www-data"/>
+		<chown file="${build.dir}/assets/cache/" owner="www-data" />
 		
 		<!-- <echo message="Tweak ColdSpring Config File" />
 		<replace dir="${build.dir}/config/local" summary="${verbose}">

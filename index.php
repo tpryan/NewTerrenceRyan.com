@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width" />
 	<title>TerrenceRyan.com</title>
 	<link rel="stylesheet" href="/assets/css/main.css" type="text/css" media="screen" />
 	<script type="text/javascript" src="http://use.typekit.com/puk0eup.js"></script>
@@ -45,7 +46,7 @@
 			 
 			<?php include './modules/blog.php';?>
 				
-			<p class="externalref">View more on <a href="http://blog.terrenceryan.com">my blog</a>.</p>
+			<p class="externalref">View more on <a href="http://blog.terrenceryan.comcd">my blog</a>.</p>
 		</section>
 		<hr />
 		<section>

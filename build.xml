@@ -10,20 +10,6 @@
 	</target>
 
 	<target name="clean">
-			
-<!-- 
-		<echo message="Revert Ownership" />
-		<chown file="${build.dir}/assets/cache/" owner="${creds.own}" />
-		<chown owner="${creds.own}">
-			<fileset dir="${build.dir}/assets/cache/" includes="**/**.html"/>
-		</chown>
-
-		<echo message="Setting Permissions"/>
-		<chmod file="${build.dir}/assets/cache/" perm="777"/>
-		<chmod perm="777">
-			<fileset dir="${build.dir}/assets/cache/" includes="**/**.html"/>
-		</chmod>	 -->
-
 		<echo message="Cleaning Build Space"/>
 		<delete includeemptydirs="true">
 			<fileset dir="${build.dir}" includes="**/*" defaultexcludes="no" />
@@ -45,6 +31,8 @@
 				<exclude name='build.xml'/>
 				<exclude name='build.log'/>
 				<exclude name='lib/**'/>
+				<exclude name='**/*.scss'/>
+				<exclude name='**/cache/*.html'/>
 				<exclude name='.project'/>
 				<exclude name='README.MD'/>
 			</fileset>	
@@ -91,15 +79,6 @@
 		<echo message="Changing owner"/>
 		<chown file="${build.dir}/assets/cache/" owner="www-data" />
 		
-		<!-- <echo message="Tweak ColdSpring Config File" />
-		<replace dir="${build.dir}/config/local" summary="${verbose}">
-				<include name="coldspring.xml.cfm"/>
-				<replacefilter token="$$$$$$version$$$$$$" value="${app.version}"/>
-		</replace>
-		<replace dir="${build.dir}/config/prod" summary="${verbose}">
-				<include name="coldspring.xml.cfm"/>
-				<replacefilter token="$$$$$$version$$$$$$" value="${app.version}"/>
-		</replace> -->
 	</target>
 
 	<target name="zip" description="Creates a zip file of the build.">

@@ -92,7 +92,7 @@
 
 
 		  <h2>Get Your Copy</h2>
-			<a href="http://www.pragprog.com/titles/trevan/driving-technical-change"><img src="pragprog.png" width="192" height="56"></a>
+			<a href="http://www.pragprog.com/titles/trevan/driving-technical-change"><img src="/assets/img/pragprog.png" width="192" height="56"></a>
 			<p>The publisher, <a href="http://www.pragprog.com/">Pragmatic Bookshelf</a>, 
 			sells both the paper copy of the book and the electronic copy. 
 			<strong>It is the only place to puchase the <a href="http://www.pragprog.com/titles/trevan/driving-technical-change">electronic copy</a>.</strong>  
@@ -102,9 +102,8 @@
 			<p>In addition to being able to 
 			purchase the book on this site, you can access the forum for the book, connect with other readers, and get tips on other great books.</p>
 			
-			<br /><br/>
 			
-			<a href="http://www.amazon.com/Driving-Technical-Change-Terrence-Ryan/dp/1934356603/ref=sr_1_1?ie=UTF8&qid=1291412156&sr=8-1"><img src="amazon.png" ></a>
+			<a href="http://www.amazon.com/Driving-Technical-Change-Terrence-Ryan/dp/1934356603/ref=sr_1_1?ie=UTF8&qid=1291412156&sr=8-1"><img src="/assets/img/amazon.png" ></a>
 			<p>For many people, books, means Amazon. If that's you, have no fear, 
 			<a href="http://www.amazon.com/Driving-Technical-Change-Terrence-Ryan/dp/1934356603/ref=sr_1_1?ie=UTF8&qid=1291412156&sr=8-1">you can get the book from them</a>.  
 			But please note 

@@ -270,13 +270,12 @@ td {
 td img.twitter {
   margin-left: -5px; }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 600px) {
   .hidesmall {
     display: none; }
 
   #home header nav {
-    padding-top: 0;
-    display: block; }
+    padding-top: 0; }
     #home header nav img {
       display: none; }
     #home header nav ul {
@@ -287,6 +286,14 @@ td img.twitter {
         border: none;
         background-color: transparent;
         text-shadow: none; }
+
+  header nav {
+    display: block; }
+    header nav ul {
+      padding-top: 0; }
+      header nav ul li {
+        display: inline-block;
+        padding-right: 20px; }
 
   #content h1 {
     line-height: 1;
@@ -306,7 +313,7 @@ td img.twitter {
         font-size: 3.5em;
         display: inline-block;
         vertical-align: top;
-        margin-right: .8em; }
+        margin-right: .7em; }
       header hgroup p {
         font-size: 1.3em;
         padding-top: .3em;

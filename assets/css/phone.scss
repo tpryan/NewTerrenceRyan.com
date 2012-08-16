@@ -7,7 +7,7 @@
 	header{
 		nav{
 			padding-top: 0;
-			display: block;
+			
 
 			img{
 				display: none;
@@ -16,6 +16,7 @@
 			ul{
 				padding-top: 0;
 				li{
+
 					a{
 						span{
 							text-align: left;
@@ -31,6 +32,21 @@
 		}
 	}
 }
+
+header{
+	nav{
+		display: block;
+
+		ul{
+			padding-top: 0;
+			li{
+				display:inline-block;
+				padding-right: 20px;
+			}
+		}
+	}	
+}
+
 
 #content{
 	h1{

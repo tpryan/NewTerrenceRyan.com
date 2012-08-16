@@ -46,7 +46,7 @@ function generateGithubHTML($github_content, $count){
 		$item = "";
 		$item .= '			<article>' . "\n";
 		$item .= '				<h1>';
-		$item .= '<a href="' . $github_content[$i]['url'] . '">';
+		$item .= '<a href="' . $github_content[$i]['html_url'] . '">';
 		$item .= $github_content[$i]['name'];
 		$item .= '</a>';
 		$item .= '</h1>' . "\n";

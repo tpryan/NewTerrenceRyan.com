@@ -5,6 +5,7 @@
 
 #masthead{
 	@extend .desktop_centered;
+	position: relative;
 }
 
 #content > section{
@@ -19,6 +20,19 @@ hr{
 	@extend .desktop_centered;
 }
 
+header{
+	hgroup{
+		h1{
+			padding-right: .3em;
+			font-size: 5em;
+		}
+	}
+	nav{
+		position:absolute;
+		right: 0;
+		padding-right: 20px;
+	}
+}	
 
 #home{
 	header{
@@ -28,6 +42,7 @@ hr{
 			h1{
 				font-size: 5em;
 				margin-bottom: 0;
+
 			}
 			p{
 				padding-top: 0;
@@ -37,6 +52,7 @@ hr{
 		}
 		nav{
 			padding-top: 15px;
+			position: static;
 		}
 	}	
 }

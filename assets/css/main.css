@@ -133,23 +133,23 @@ header {
     width: 112px; }
   #home header nav li {
     display: inline-block;
-    padding-right: 0; }
-    #home header nav li a {
-      position: relative; }
-      #home header nav li a:hover {
-        color: #FFFFFF; }
-      #home header nav li a span {
-        text-shadow: #333 2px 2px 2px;
-        z-index: 9999;
-        background-color: rgba(100, 100, 100, 0.5);
-        position: absolute;
-        padding: 5px 0;
-        left: 0;
-        bottom: 0;
-        width: 112px;
-        text-align: center;
-        border: 1px solid #FF0000;
-        display: inline-block; }
+    padding-right: 0;
+    position: relative; }
+    #home header nav li a:hover {
+      color: #FFFFFF; }
+    #home header nav li a span {
+      text-shadow: #333 2px 2px 2px;
+      z-index: 9999;
+      background: #646464;
+      background-color: rgba(100, 100, 100, 0.5);
+      position: absolute;
+      padding: 5px 0;
+      left: 0;
+      bottom: 0;
+      width: 113px;
+      text-align: center;
+      border-top: 1px solid #FF0000;
+      display: inline-block; }
 
 nav {
   font-weight: 700;
@@ -307,20 +307,28 @@ td img.twitter {
 
   header {
     padding-bottom: .7em; }
+    header #masthead {
+      position: relative; }
     header hgroup {
-      display: inline-block; }
+      display: inline-block;
+      padding-right: 0; }
       header hgroup h1 {
         font-size: 3.5em;
         display: inline-block;
         vertical-align: top;
-        margin-right: .7em; }
+        margin-right: .3em; }
       header hgroup p {
         font-size: 1.3em;
         padding-top: .3em;
-        margin-right: .8em;
+        margin-right: .3em;
         display: inline-block; }
     header nav {
-      display: inline-block; }
+      display: inline-block;
+      position: absolute;
+      right: 0;
+      padding-right: 20px; }
+      header nav ul li {
+        padding-right: 0; }
 
   #home header hgroup {
     display: inline-block;
@@ -342,23 +350,22 @@ td img.twitter {
       width: 160px; }
     #home header nav li {
       display: inline-block;
-      padding-right: 0; }
-      #home header nav li a {
-        position: relative; }
-        #home header nav li a:hover {
-          color: #FFFFFF; }
-        #home header nav li a span {
-          text-shadow: #333 2px 2px 2px;
-          z-index: 9999;
-          background-color: rgba(100, 100, 100, 0.5);
-          position: absolute;
-          padding: 5px 0;
-          left: 0;
-          bottom: 0;
-          width: 160px;
-          text-align: center;
-          border: 1px solid #FF0000;
-          display: inline-block; }
+      padding-right: 0;
+      position: relative; }
+      #home header nav li a:hover {
+        color: #FFFFFF; }
+      #home header nav li a span {
+        text-shadow: #333 2px 2px 2px;
+        z-index: 9999;
+        background-color: rgba(100, 100, 100, 0.5);
+        position: absolute;
+        padding: 5px 0;
+        left: 0;
+        bottom: 0;
+        width: 160px;
+        text-align: center;
+        border: 1px solid #FF0000;
+        display: inline-block; }
 
   #job blockquote {
     max-width: 390px; }
@@ -395,6 +402,17 @@ td img.twitter {
     width: 1000px;
     margin: 0 auto; }
 
+  #masthead {
+    position: relative; }
+
+  header hgroup h1 {
+    padding-right: .3em;
+    font-size: 5em; }
+  header nav {
+    position: absolute;
+    right: 0;
+    padding-right: 20px; }
+
   #home header hgroup {
     width: 515px; }
     #home header hgroup h1 {
@@ -405,7 +423,8 @@ td img.twitter {
       font-size: 2.6em;
       line-height: 1.1; }
   #home header nav {
-    padding-top: 15px; }
+    padding-top: 15px;
+    position: static; }
 
   #job blockquote {
     max-width: 600px; }
@@ -420,3 +439,11 @@ td img.twitter {
     #content section section:last-child {
       padding-left: 40px;
       margin-left: 0; } }
+@media screen and (min-width: 600px) and (max-width: 767px) {
+  header nav {
+    display: block; }
+    header nav ul {
+      padding-top: 0; }
+      header nav ul li {
+        display: inline-block;
+        padding-right: 20px; } }

@@ -20,23 +20,38 @@ hr{
 
 
 header{
+	#masthead{
+		position: relative;
+	}
 	hgroup{
+		
 		display: inline-block;
+		padding-right: 0;
 		h1{
 			font-size: 3.5em; 
 			display: inline-block;
 			vertical-align: top;
-			margin-right: .7em;
+			margin-right: .3em;
 		}
 		p{
 			font-size: 1.3em;
 			padding-top: .3em;
-			margin-right: .8em;
+			margin-right: .3em;
 			display: inline-block;
 		}
 	}
 	nav{
 		display: inline-block;
+		position: absolute;
+		right: 0;
+		padding-right: 20px;
+		ul{
+			li{
+				
+
+				padding-right: 0;
+			}
+		}
 	}
 	padding-bottom: .7em;
 }
@@ -70,12 +85,13 @@ header{
 			li{
 				display: inline-block;
 				padding-right: 0;
+				position: relative;
 				a{
 					&:hover{
 						color: #FFFFFF;
 					}
 
-					position: relative;
+					
 					span{
 						text-shadow: #333 2px 2px 2px;
 						z-index: 9999;

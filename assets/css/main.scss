@@ -140,25 +140,27 @@ header{
 			li{
 				display: inline-block;
 				padding-right: 0;
+				position: relative;
 				a{
 					&:hover{
 						color: #FFFFFF;
 					}
 
-					position: relative;
+					
 					span{
 
-						text-shadow: #333 2px 2px 2px;
-						z-index: 9999;
-						background-color: rgba(100,100,100, .5);
-						position:absolute;
-						padding: 5px 0;
-						left: 0;
-						bottom: 0;
-						width: 112px;
-						text-align: center;
-						border: 1px solid #FF0000;
-						display: inline-block;
+					text-shadow: #333 2px 2px 2px;
+					z-index: 9999;
+					background: rgb(100,100,100);
+					background-color: rgba(100,100,100, .5);
+					position:absolute;
+					padding: 5px 0;
+					left: 0;
+					bottom: 0;
+					width: 113px;
+					text-align: center;
+					border-top: 1px solid #FF0000;
+					display: inline-block;
 					}
 				}
 			}
@@ -349,4 +351,8 @@ td img.twitter{
 
 @media screen and (min-width: 1000px) {
 	@import 'desktop'
+} 
+
+@media screen and (min-width: 600px) and (max-width: 767px) {
+	@import 'inbetween'
 } 

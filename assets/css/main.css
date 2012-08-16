@@ -348,6 +348,8 @@ td img.twitter {
       display: block;
       height: 230px;
       width: 160px; }
+    #home header nav ul {
+      padding-left: 20px; }
     #home header nav li {
       display: inline-block;
       padding-right: 0;

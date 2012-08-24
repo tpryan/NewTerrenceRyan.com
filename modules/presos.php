@@ -28,7 +28,7 @@ else{
 		$slideShare_html = refreshSlideShareHTML($urlToGet, $slideShare_cache);
 	} catch (Exception $e) {
 		$slideShare_html = "<p>No presentations</p>";
-		var_dump($e);
+		//var_dump($e);
 	}
 }
 

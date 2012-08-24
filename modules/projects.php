@@ -6,8 +6,8 @@ $github_url = "https://api.github.com/users/tpryan/repos";
 $github_cache = $_SERVER['DOCUMENT_ROOT'] . "/assets/cache/projects.html";
 $cache_age = 2 * 60 * 60;
 
-$github_content = get_content_from_github($github_url);
-$github_content = sort_github_results($github_content);
+//$github_content = get_content_from_github($github_url);
+//$github_content = sort_github_results($github_content);
 
 
 if (isset($_GET['reset_cache']) && file_exists($github_cache)){
@@ -22,8 +22,8 @@ else{
 	try {
 		$github_html = refreshGitHubHTML($github_url, $count,$github_cache);
 	} catch (Exception $e) {
-		$github_html = "<p>No upcoming events</p>";
-		var_dump($e);
+		$github_html = "<article><p>No current projects</p></article>";
+		//var_dump($e);
 	}
 }
 

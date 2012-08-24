@@ -19,8 +19,8 @@ else{
 	try {
 		$lanyrd_html = refreshLanyrdHTML($lanyrd_url, $count,$lanyrd_cache);
 	} catch (Exception $e) {
-		$lanyrd_html = "<p>No upcoming events</p>";
-		var_dump($e);
+		$lanyrd_html = "<article><p>No upcoming events</p></article>";
+		//var_dump($e);
 	}
 }
 

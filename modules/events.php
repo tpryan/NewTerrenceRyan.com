@@ -44,6 +44,14 @@ function generateEventHTML($lanyrd_content,$count){
 	$result = ""; 
 	$result .=  "<!-- pulled in from lanyrd -->" ."\n";
 	for ($i=0; $i<$count; $i++){
+		
+		$compstr = date("Ymd", $lanyrd_content[$i]['start']);
+		$compnow = date("Ymd", time());
+		
+		if($compnow > $compstr){
+			continue;
+		}
+
 		$entry = "";
 		$entry .=  '			<article>' . "\n";
 		$entry .=  '				<h1>';

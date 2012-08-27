@@ -338,6 +338,30 @@ td img.twitter{
 	margin-left: -5px;
 }
 
+#error{
+	article{
+		img{
+			max-width: 100%;
+			@include box-shadow (3px, 3px, 5px, #333333);
+			border: 1px solid #FF0000;
+		}
+
+		
+		p{
+			clear: none;
+		}
+		&:after {
+			    content: ".";
+			    display: block;
+			    height: 0;
+			    clear: both;
+			    visibility: hidden;
+			}
+	}
+}
+
+
+
 
 @media screen and (max-width: 600px) {
 	@import 'phone';

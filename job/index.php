@@ -63,5 +63,6 @@
 	<small id="disclaimer">This is a personal blog. While Adobe paying my salary might 
 	not make me completely  objective, the opinions expressed here are mine and not theirs.</small>
 </footer>
+<?php include '../modules/google.php';?>
 </body>
 </html>

@@ -72,6 +72,10 @@
 		<delete dir='${build.dir}/scripts'/>
 		<delete dir='${build.dir}/TerryRyansORMCodeJumpstart'/>
 
+		<replace dir="${build.dir}" summary="${verbose}">
+				<replacefilter token="terrenceryan.dev" value="terrenceryan.com"/>
+		</replace>
+
 		<echo message="Adding Dirs"/>
 		<mkdir dir="${build.dir}/assets/cache/"/>
 		<echo message="Setting Permissions"/>

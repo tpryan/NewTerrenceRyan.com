@@ -4,6 +4,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width" />
 	<title>TerrenceRyan.com</title>
+	<link rel="alternate" type="application/rss+xml" title="RSS Feeds" href="http://feeds.feedburner.com/Terrenceryan" />
 	<link rel="stylesheet" href="/assets/css/main.css" type="text/css" media="screen" />
 	<script type="text/javascript" src="http://use.typekit.com/puk0eup.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>

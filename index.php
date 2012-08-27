@@ -47,7 +47,7 @@
 			 
 			<?php include './modules/blog.php';?>
 				
-			<p class="externalref">View more on <a href="http://blog.terrenceryan.comcd">my blog</a>.</p>
+			<p class="externalref">View more on <a href="http://blog.terrenceryan.com">my blog</a>.</p>
 		</section>
 		<hr />
 		<section>

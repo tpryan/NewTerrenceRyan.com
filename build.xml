@@ -76,12 +76,12 @@
 				<replacefilter token="terrenceryan.dev" value="terrenceryan.com"/>
 		</replace>
 
-		<echo message="Adding Dirs"/>
+		<!-- <echo message="Adding Dirs"/>
 		<mkdir dir="${build.dir}/assets/cache/"/>
 		<echo message="Setting Permissions"/>
 		<chmod file="${build.dir}/assets/cache/" perm="777"/>
 		<echo message="Changing owner"/>
-		<chown file="${build.dir}/assets/cache/" owner="www-data" />
+		<chown file="${build.dir}/assets/cache/" owner="www-data" /> -->
 		
 	</target>
 

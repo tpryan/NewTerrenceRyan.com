@@ -73,7 +73,11 @@
 		<delete dir='${build.dir}/TerryRyansORMCodeJumpstart'/>
 
 		<replace summary="${verbose}">
-			<fileset dir="${build.dir}" excludes="**/assets/cache/**"/>
+			<fileset dir="${build.dir}">
+				<exclude name="**/assets/cache/**"/>
+				<exclude name="**/examples/**"/>
+			</fileset>	
+
 			<replacefilter token="terrenceryan.dev" value="terrenceryan.com"/>
 		</replace>
 

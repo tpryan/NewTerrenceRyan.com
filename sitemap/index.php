@@ -44,7 +44,7 @@
 
 					</ul>
 				</li>
-				<li><h2><a href="blog.terrenceryan.com">Blog</a></h2>
+				<li><h2><a href="http://blog.terrenceryan.com">Blog</a></h2>
 					<?php include '../modules/sitemap.php';?>
 				</li>	
 			</ul>

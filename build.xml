@@ -76,6 +76,7 @@
 			<fileset dir="${build.dir}">
 				<exclude name="**/assets/cache/**"/>
 				<exclude name="**/examples/**"/>
+				<exclude name="**/createtheweb/**"/>
 			</fileset>	
 
 			<replacefilter token="terrenceryan.dev" value="terrenceryan.com"/>

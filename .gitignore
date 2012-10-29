@@ -18,3 +18,5 @@ config/creds.php
 assets/cache/presos.html
 
 *.sql
+
+assets/cache/sitemap.html

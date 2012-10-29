@@ -285,6 +285,11 @@ td img.twitter {
   clear: both;
   visibility: hidden; }
 
+#content ul {
+  list-style: disc;
+  margin-left: 20px;
+  font-size: 1.3rem; }
+
 @media screen and (max-width: 600px) {
   .hidesmall {
     display: none; }

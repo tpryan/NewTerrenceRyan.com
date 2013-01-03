@@ -70,7 +70,7 @@ function generateBlogHTML($entries){
 		$item .= '			<article>'. "\n";
 		$item .= '				<h1><a href="' . $url . '">' . $title .'</a></h1>'. "\n";
 		$item .= '				<time>' . $date . '</time>'. "\n";
-		$item .= '				<div><p>' . $excerpt . '</p></div>'. "\n";
+		$item .= '				<div><p>' . strip_tags($excerpt) . '</p></div>'. "\n";
 		$item .= '			</article>'. "\n";	
 		$results .= $item; 
 	}

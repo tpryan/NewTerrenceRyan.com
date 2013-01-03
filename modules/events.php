@@ -40,6 +40,10 @@ function refreshLanyrdHTML($lanyrd_url, $count, $lanyrd_cache){
 function generateEventHTML($lanyrd_content,$count){
 
 	date_default_timezone_set('America/New_York');
+
+	if ($count > count($lanyrd_content)){
+		$count = count($lanyrd_content);
+	}
 	
 	$result = ""; 
 	$result .=  "<!-- pulled in from lanyrd -->" ."\n";

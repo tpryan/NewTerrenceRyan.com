@@ -31,7 +31,7 @@ echo $lanyrd_html;
 function refreshLanyrdHTML($lanyrd_url, $count, $lanyrd_cache){
 	$lanyrd_content = get_content_from_lanyrd($lanyrd_url);
 	$lanyrd_html = generateEventHTML($lanyrd_content,$count);
-	$cache_html = "<!-- From Cache --->" . $lanyrd_html;
+	$cache_html = "<!-- From Cache -->" . $lanyrd_html;
 	file_put_contents($lanyrd_cache, $cache_html);
 	return $lanyrd_html;
 }
@@ -76,7 +76,7 @@ function generateEventHTML($lanyrd_content,$count){
 			$date_string = $date_string . " - " . $last_day; 
 		}
 
-		$entry .= '				<time>';
+		$entry .= '				<time datetime="' . date("Y-m-d", $lanyrd_content[$i]['start']) .'">';
 		$entry .= $date_string;
 		$entry .= '</time>' . "\n";
 

@@ -34,7 +34,7 @@ echo $blog_html;
 function refreshBlogHTML($dbInfo, $count, $blog_cache){
 	$blog_content = getPostsFromDataBase($dbInfo, $count);
 	$blog_html = generateBlogHTML($blog_content);
-	$cache_html = "<!-- From Cache --->" . $blog_html;
+	$cache_html = "<!-- From Cache -->" . $blog_html;
 	file_put_contents($blog_cache, $cache_html);
 	return $blog_html;
 }
@@ -49,7 +49,7 @@ function getPostsFromDataBase($dbInfo, $count){
 	mysql_select_db($dbInfo['db'], $dbConn) or die(mysql_error());
 
 	// Retrieve all the data from the "example" table
-	$entries = mysql_query("SELECT post_title, post_excerpt, guid, DATE_FORMAT(post_date, '%M %d, %Y') as formatted_post_date FROM wp_posts WHERE LENGTH(post_excerpt) > 0 AND post_status = 'publish'  ORDER BY post_date desc LIMIT 0, ". $count, $dbConn) or die(mysql_error()); 
+	$entries = mysql_query("SELECT post_title, post_excerpt, guid, post_date, DATE_FORMAT(post_date, '%M %d, %Y') as formatted_post_date FROM wp_posts WHERE LENGTH(post_excerpt) > 0 AND post_status = 'publish'  ORDER BY post_date desc LIMIT 0, ". $count, $dbConn) or die(mysql_error()); 
 
 	return $entries;
 }
@@ -63,13 +63,14 @@ function generateBlogHTML($entries){
 	$results .=  "<!-- pulled in from blog -->" ."\n";
 	while ($row = mysql_fetch_array($entries)) {
 		$title = $row['post_title'];
+		$post_date = $row['post_date'];
 		$excerpt = $row['post_excerpt'];
 		$url = $row['guid'];
 		$date = $row['formatted_post_date'];
 		$item = "";
 		$item .= '			<article>'. "\n";
 		$item .= '				<h1><a href="' . $url . '">' . $title .'</a></h1>'. "\n";
-		$item .= '				<time>' . $date . '</time>'. "\n";
+		$item .= '				<time datetime="' . $post_date . '">' . $date . '</time>'. "\n";
 		$item .= '				<div><p>' . strip_tags($excerpt) . '</p></div>'. "\n";
 		$item .= '			</article>'. "\n";	
 		$results .= $item; 

@@ -71,6 +71,7 @@
 		<delete dir='${build.dir}/log'/>
 		<delete dir='${build.dir}/sql'/>
 		<delete dir='${build.dir}/scripts'/>
+		<delete dir='${build.dir}/assets/css/.sass-cache'/>
 		<delete dir='${build.dir}/TerryRyansORMCodeJumpstart'/>
 
 		<replace summary="${verbose}">

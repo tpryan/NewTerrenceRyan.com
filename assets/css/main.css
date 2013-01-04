@@ -261,6 +261,14 @@ form .submit {
 form .submit:hover {
   border: 1px solid #FF0000;
   background-color: #000000; }
+form input[disabled] {
+  color: #CCCCCC;
+  background-color: #999999;
+  border: 1px solid #000; }
+form input[disabled]:hover {
+  color: #CCCCCC;
+  background-color: #999999;
+  border: 1px solid #000; }
 
 td {
   vertical-align: middle;
@@ -289,6 +297,29 @@ td img.twitter {
   list-style: disc;
   margin-left: 20px;
   font-size: 1.3rem; }
+
+.alert {
+  background-color: #FFFFCC;
+  color: #FF0000;
+  font-weight: bold; }
+
+.delay {
+  -moz-transition-property: background-color, color;
+  -moz-transition-duration: 2s, 2s;
+  -moz-transition-delay: 0s, 0s;
+  -o-transition-property: background-color, color;
+  -o-transition-duration: 2s, 2s;
+  -o-transition-delay: 0s, 0s;
+  -webkit-transition-property: background-color, color;
+  -webkit-transition-duration: 2s, 2s;
+  -webkit-transition-delay: 0s, 0s;
+  transition-property: background-color, color;
+  transition-duration: 2s, 2s;
+  transition-delay: 0s, 0s; }
+
+.alertclear {
+  background-color: #FFFFFF;
+  color: #000000; }
 
 @media screen and (max-width: 600px) {
   .hidesmall {

@@ -22,6 +22,7 @@
 
 			var datastr ='name=' + name + '&email=' + mail + '&text=' + text;
 			send(datastr);
+			$("#submit").attr("disabled", "disabled");
 			return false;
 		}
 
@@ -38,8 +39,15 @@
 		}
 
 		function handleSuccess(e){
+			$("#response").addClass("alert");
+			$("#response").addClass("delay");
 			$("#response").html("Your mail is on it's way.");
+			setTimeout(makeAlertFade, 2000);
 		}
+		function makeAlertFade(){
+			$("#response").addClass("alertclear");
+		}
+
 		function handleFailure(e){
 			alert("failure.");
 		}

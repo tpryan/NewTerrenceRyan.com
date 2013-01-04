@@ -112,6 +112,14 @@ header{
 		line-height: 1.2;
 		padding: 10px 0;
 	}
+	h2{
+		@extend .heading;
+		color: #FFF;
+		font-size: 1.7em;
+		line-height: 1.2;
+		padding: 10px 0;
+		font-weight: normal;
+	}
 	img{
 		border: 1px solid #F00;
 	}

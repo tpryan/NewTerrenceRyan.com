@@ -66,6 +66,7 @@
 		<delete file='${build.dir}/.project'/>
 		<delete file='${build.dir}/settings.xml'/>
 		<delete file='${build.dir}/sql/cleanDatabase.sql'/>
+		<delete file='${build.dir}/assets/css/*.scss'/>
 		<delete dir='${build.dir}/trunk'/>
 		<delete dir='${build.dir}/test'/>
 		<delete dir='${build.dir}/log'/>

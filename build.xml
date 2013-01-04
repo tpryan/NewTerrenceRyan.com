@@ -17,7 +17,7 @@
 	</target>
 
 
-	<target name="build" depends="copyFilesToBuild,polish" description="Creating a clean copy of the site" />
+	<target name="build" depends="compressCSS,copyFilesToBuild,polish" description="Creating a clean copy of the site" />
 
 
 	
@@ -33,6 +33,7 @@
 				<exclude name='lib/**'/>
 				<exclude name='**/*.scss'/>
 				<exclude name='**/cache/*.html'/>
+				<exclude name='**/import/**'/>
 				<exclude name='.project'/>
 				<exclude name='README.MD'/>
 			</fileset>	
@@ -91,6 +92,20 @@
 		<zip destfile="${package.dir}\${app.name}.${app.version}.zip" basedir="${build.dir}"/>
 	</target>
 
+	<!-- ****************************  -->
+	<!-- SASS TASKS  -->
+	<!-- ****************************  -->
+	<target name="compressCSS" description="Compresses the CSS with SASS">
+		<echo message="Compress"/>
+		
+		<exec executable="${sass.exe}" spawn="false" dir="${basedir}">
+			<arg line="--update"/>
+			<arg line="assets/css/main.scss:assets/css/main.css"/>
+			<arg line="--style"/>
+			<arg line="compressed"/>
+		</exec>
+		
+	</target>
 
 
 	<!-- ****************************  -->

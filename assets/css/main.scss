@@ -414,20 +414,13 @@ td img.twitter{
 	color: #000000;
 }
 
-@media screen and (max-width: 600px) {
+
 	@import 'phone';
-}
 
 
 
-@media screen and (min-width: 768px) {
 	@import 'tablet';
-} 
 
-@media screen and (min-width: 1000px) {
 	@import 'desktop'
-} 
 
-@media screen and (min-width: 600px) and (max-width: 767px) {
 	@import 'inbetween'
-} 

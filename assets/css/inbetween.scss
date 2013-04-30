@@ -1,16 +1,18 @@
-header{
-	hgroup{
-	}
-	nav{
-		display: block;
-		ul{
-			padding-top: 0;
-			li{
-				display: inline-block;
-				padding-right: 20px;
-
-			}
+@media screen and (min-width: 600px) and (max-width: 767px) {
+	header{
+		hgroup{
 		}
+		nav{
+			display: block;
+			ul{
+				padding-top: 0;
+				li{
+					display: inline-block;
+					padding-right: 20px;
 
-	}
+				}
+			}
+
+		}
+	}	
 }	

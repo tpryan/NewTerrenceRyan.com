@@ -23,7 +23,6 @@ else{
 		$blog_html = refreshBlogHTML($dbInfo, $count,$blog_cache);
 	} catch (Exception $e) {
 		$blog_html = "<p>No posts</p>";
-		var_dump($e);
 	}
 }
 

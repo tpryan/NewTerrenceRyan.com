@@ -49,10 +49,18 @@ function generateEventHTML($lanyrd_content,$count){
 	$result .=  "<!-- pulled in from lanyrd -->" ."\n";
 	for ($i=0; $i<$count; $i++){
 		
-		$compstr = date("Ymd", $lanyrd_content[$i]['start']);
+		
+		if (strlen($lanyrd_content[$i]['end']) > 0 ){
+			$compstr = date("Ymd", $lanyrd_content[$i]['end']);
+		}
+		else{
+			$compstr = date("Ymd", $lanyrd_content[$i]['start']);
+		}
+
 		$compnow = date("Ymd", time());
 		
-		if($compnow > $compstr){
+
+		if($compnow >= $compstr){
 			continue;
 		}
 
@@ -81,11 +89,11 @@ function generateEventHTML($lanyrd_content,$count){
 		$entry .= '</time>' . "\n";
 
 		$entry .= '				<address>';
-		$entry .= $lanyrd_content[$i]['location'];
+		$entry .= str_replace("\,", ",", $lanyrd_content[$i]['location']);
 		$entry .= '</address>' . "\n";
 
 		$entry .= '				<p>';
-		$entry .= $lanyrd_content[$i]['description'];
+		$entry .= convert_smart_quotes($lanyrd_content[$i]['description']);
 		$entry .= '</p>' . "\n";
 		
 		$entry .= '			</article>' . "\n";
@@ -97,11 +105,29 @@ function generateEventHTML($lanyrd_content,$count){
 	return $result;
 }
 
-
+function convert_smart_quotes($string) 
+{ 
+    $search = array(chr(145), 
+                    chr(146), 
+                    chr(147), 
+                    chr(148), 
+                    chr(151),
+                    "’"); 
+ 
+    $replace = array("'", 
+                     "'", 
+                     '"', 
+                     '"', 
+                     '-',
+                     "'"); 
+ 
+    return str_replace($search, $replace, $string); 
+} 
 
 
 function get_content_from_lanyrd($url) {
 	date_default_timezone_set('Europe/London');
+	
 	$content = file_get_contents($url);
 	$content = explode("\n", $content);
 	$j = 0;

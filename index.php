@@ -70,11 +70,24 @@
 		</section>
 		<hr />
 		<section>
-			<h1><a href="http://www.slideshare.net/tpryan/">I Present</a></h1>
+			<!-- <h1><a href="http://www.slideshare.net/tpryan/">I Present</a></h1> -->
+			<?php //include './modules/presos.php';?>
+			<!-- <p class="externalref">View more on <a href="http://www.slideshare.net/tpryan/">slideshare.com</a>.</p> -->
+			<h1>I Present</h1>
+			<article>
+				<h1><a href="/max/2013/programmingcss/preso">Max 2013 Programming CSS</a></h1>
+				<p>An Adobe MAX 2013 presentation about programming topics in CSS.</p>
+			</article>	
+			<article>
+				<h1><a href="/max/2013/practical/preso">Max 2013 Practical CSS</a></h1>
+				<p>An Adobe MAX 2013 presentation about creating interfaces entirely in CSS.</p>
+			</article>
+			<article>
+				<h1><a href="/createtheweb">Create The Web</a></h1>
+				<p>A series of presentations about Adobe Edge Tools &amp; Services..</p>
+			</article>		
 
-			<?php include './modules/presos.php';?>
-
-			<p class="externalref">View more on <a href="http://www.slideshare.net/tpryan/">slideshare.com</a>.</p>
+			
 		</section>
 	</section>	
 </div>

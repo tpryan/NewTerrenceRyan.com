@@ -42,7 +42,7 @@
 			To find out more, see about my <a href="/job">Job</a>. 
 			</p>
 			
-			<p>I'm also the author of <em>Driving Technical Change.</em> It's about convinving reluctant co-workers 
+			<p>I'm also the author of <em>Driving Technical Change.</em> It's about convincing reluctant co-workers 
 			to adopt new tools and techniques.  To find out more, see about my <a href="/book">Book</a>. </p>
 			
 			

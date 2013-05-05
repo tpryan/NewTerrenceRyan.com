@@ -98,10 +98,10 @@
 	<!-- ****************************  -->
 	<target name="compressCSS" description="Compresses the CSS with SASS">
 		<echo message="Compress"/>
-		<echo message="${sass.exe} --update assets/css/scss/main.scss:assets/css/main.css --style compressed"/>
-		<exec executable="${sass.exe}" spawn="false" dir="${basedir}" versbose="true">
+		<echo message="${sass.exe} --update assets/css/scss/main.scss:${build.dir}/assets/css/main.css --style compressed"/>
+		<exec executable="${sass.exe}" spawn="false" dir="${basedir}">
 			<arg line="--update"/>
-			<arg line="assets/css/scss/main.scss:assets/css/main.css"/>
+			<arg line="assets/css/scss/main.scss:${build.dir}/assets/css/main.css"/>
 			<arg line="--style"/>
 			<arg line="compressed"/>
 		</exec>

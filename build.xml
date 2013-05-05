@@ -17,7 +17,7 @@
 	</target>
 
 
-	<target name="build" depends="compressCSS,copyFilesToBuild,polish" description="Creating a clean copy of the site" />
+	<target name="build" depends="compressCSS,copyFilesToBuild,polish,resetcache" description="Creating a clean copy of the site" />
 
 
 	
@@ -101,7 +101,7 @@
 		
 		<exec executable="${sass.exe}" spawn="false" dir="${basedir}">
 			<arg line="--update"/>
-			<arg line="assets/css/main.scss:assets/css/main.css"/>
+			<arg line="assets/css/scss/main.scss:assets/css/main.css"/>
 			<arg line="--style"/>
 			<arg line="compressed"/>
 		</exec>
@@ -122,7 +122,12 @@
 		
 	</target>
 
-
+	<target name="resetcache" description="Overwrites caches.">
+		<echo message="Resetting cache"/>
+		
+		<get src="http://terrenceryan.com/?reset_cache" dest="/dev/null"/>
+		
+	</target>
 
 
 

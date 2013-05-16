@@ -1,131 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width" />
-	<title>Book - TerrenceRyan.com</title>
-	<link rel="stylesheet" href="/assets/css/main.css" type="text/css" media="screen" />
-	<script type="text/javascript" src="http://use.typekit.com/puk0eup.js"></script>
-	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-</head>
-<body>
-<header>
-	<div id="masthead">
-		<hgroup>
-			<h1><a href="/">TerrenceRyan.com</a></h1>
-			<p>I'm a 36 year old redhead geek from Philly. <br /> 
-				<span class="hidesmall">I'm an Evangelist for <a href="/job">Adobe</a>.<br />
-				Also wrote <a href="/book">Driving Technical Change</a></span>
-			</p>
-		</hgroup>	
-		<nav>
-			<ul>
-				<li><a href="/about">About Me</a></li>
-				<li><a href="/book">My Book</a></li>
-			</ul>
-		</nav>
-	</div>	
+<?php $page_title="Book - TerrenceRyan.com";  include '../modules/head.php';?>
+<body class="sub-page">
+<?php $show_images=false; $show_tagline=false;  include '../modules/page-header.php';?>  
+
+<div class="content">
+	<h1>Driving Technical Change</h1>
+	<img class="image" src="/assets/img/bookfull.png">
 	
-</header>   
+	<h2>About the Book</h2>
+	<p>Ever go to a technology conference, read a coding book, or just get inspired by a 
+    blog post to try something new? You try it, you love it, you want everyone else at 
+    work to do it. 
+    </p>
+    <p>Everyone else says "No- not just no, hell no!"</p> 
+    <p>It's easy to blame your coworkers. But the responsibility lies with you. If 
+        something is great, and your coworkers aren't buying, then you need to up your game.</p> 
+    <p>I had this problem. I worked through it. I started changing what I did. If it 
+        worked, I did it more. </p> 
+    <p>I started recording what I was doing and started shaping it into a presentation and 
+        a book.</p> 
+    <p>In a moment of hubris, I pitched the book to 
+        <a href="http://www.pragprog.com/">
+            Pragmatic Bookshelf
+        </a>
+        . In a moment of luck they picked it up. In many moments of staring at a blank 
+        screen, I wrote it. 
+    </p> 
+    <p>
+        Now it's in 
+        <a href="http://www.pragprog.com/titles/trevan/driving-technical-change">print</a>.
+    </p> 
+    <p>
+    I sincerely hope that what's in the book helps people change their workplaces for the 
+    better. 
+	</p>
 
-<div id="content">
-	<section id="primary">		
-		<article>
-			<h1>Driving Technical Change</h1>
-			<img class="image" src="/assets/img/bookfull.png"  width="317" height="377">
-			
-			<h2>About the Book</h2>
-			<p>Ever go to a technology conference, read a coding book, or just get inspired by a 
-            blog post to try something new? You try it, you love it, you want everyone else at 
-            work to do it. 
-            </p>
-            <p>Everyone else says "No- not just no, hell no!"</p> 
-            <p>It's easy to blame your coworkers. But the responsibility lies with you. If 
-                something is great, and your coworkers aren't buying, then you need to up your game.</p> 
-            <p>I had this problem. I worked through it. I started changing what I did. If it 
-                worked, I did it more. </p> 
-            <p>I started recording what I was doing and started shaping it into a presentation and 
-                a book.</p> 
-            <p>In a moment of hubris, I pitched the book to 
-                <a href="http://www.pragprog.com/">
-                    Pragmatic Bookshelf
-                </a>
-                . In a moment of luck they picked it up. In many moments of staring at a blank 
-                screen, I wrote it. 
-            </p> 
-            <p>
-                Now it's in 
-                <a href="http://www.pragprog.com/titles/trevan/driving-technical-change">print</a>.
-            </p> 
-            <p>
-            I sincerely hope that what's in the book helps people change their workplaces for the 
-            better. 
-			</p>
-
-			<h2>Reader Comments</h2> 
-		    <blockquote><p>At its core, <em>Driving Technical Change</em> is a fantastic book about design patterns. In it, Terrence Ryan clearly outlines common, problematic personalities&mdash;"skeptics" &mdash;and provides proven solutions for bringing about progressive change. It is certainly an unfortunate fact of human behavior that people are oftentimes resistant to implementing best practices; however, using Terry's book as a guide, you will now be able to identify why people push back against change and what you can do to remain successful in the face of adversity.</p></blockquote> 
-		    <p class="quotesource">
-				<span class="source">&#8212;<a href="http://www.bennadel.com/">Ben Nadel</a></span> 
-			    <span class="title">Chief Software Engineer</span> 
-			    <span class="company">Epicenter Consulting</span>
-			</p>
-		    <blockquote><p>Politics is one of the most challenging and underestimated subjects in the field of technology. Terrence Ryan has tackled this problem courageously and with a methodical approach. His book can help you understand many types of resistance (both rational and irrational) and make a strategy for getting people on board with your technology vision.</p></blockquote>
-		    <p class="quotesource">
-				<span class="source">&#8212;<a href="http://karwin.blogspot.com/">Bill Karwin</a></span> 
-			    <span class="title">Author of &quot;<a href="http://www.pragprog.com/titles/bksqla/sql-antipatterns">SQL Antipatterns: Avoiding the Pitfalls of Database Programming</a>&quot;</span> 
-			    <span class="company"></span>
-			</p>	 
-		    <blockquote><p>Ryan combines the eye of an engineer, the insight of a psychotherapist, and the experience of a soldier in the trenches to provide a
-		flowchart approach to your most immediate problem, as well as a fascinating overview of how to be more productive and less frustrated with your technical work. <em>Driving Technical Change</em> speaks in the language of the people who have the most to learn from Ryan's success with organizational management.</p></blockquote>
-		    <p class="quotesource">
-				<span class="source">&#8212;<a href="http://www.jeffporten.com/">Jeff Porten</a></span> 
-			    <span class="title">Internet consultant and author, &quot;Twentysomething Guide to Creative Self-Employment&quot;</span> 
-			    <span class="company"></span>
-			</p> 
-		    <blockquote><p>This book covers a very important topic I have never seen covered in book form and answers questions every one of us in application or web development has asked. Terrence Ryan manages to create a fun and easy-to-read narrative with examples so accurate and familiar they that will often leave you wondering whether he was sitting next to you in a recent office meeting.</p></blockquote>
-		    <p class="quotesource">
-				<span class="source">&#8212;<a href="http://www.remotesynthesis.com/">Brian Rinaldi</a></span> 
-			    <span class="title">Web community manager</span> 
-			    <span class="company">Adobe Systems, Inc.</span>
-			</p>	 
+	<h2>Reader Comments</h2> 
+    <blockquote><p>At its core, <em>Driving Technical Change</em> is a fantastic book about design patterns. In it, Terrence Ryan clearly outlines common, problematic personalities&mdash;"skeptics" &mdash;and provides proven solutions for bringing about progressive change. It is certainly an unfortunate fact of human behavior that people are oftentimes resistant to implementing best practices; however, using Terry's book as a guide, you will now be able to identify why people push back against change and what you can do to remain successful in the face of adversity.</p></blockquote> 
+    <p class="quotesource">
+		<span class="source">&#8212;<a href="http://www.bennadel.com/">Ben Nadel</a></span> 
+	    <span class="title">Chief Software Engineer</span> 
+	    <span class="company">Epicenter Consulting</span>
+	</p>
+    <blockquote><p>Politics is one of the most challenging and underestimated subjects in the field of technology. Terrence Ryan has tackled this problem courageously and with a methodical approach. His book can help you understand many types of resistance (both rational and irrational) and make a strategy for getting people on board with your technology vision.</p></blockquote>
+    <p class="quotesource">
+		<span class="source">&#8212;<a href="http://karwin.blogspot.com/">Bill Karwin</a></span> 
+	    <span class="title">Author of &quot;<a href="http://www.pragprog.com/titles/bksqla/sql-antipatterns">SQL Antipatterns: Avoiding the Pitfalls of Database Programming</a>&quot;</span> 
+	    <span class="company"></span>
+	</p>	 
+    <blockquote><p>Ryan combines the eye of an engineer, the insight of a psychotherapist, and the experience of a soldier in the trenches to provide a
+flowchart approach to your most immediate problem, as well as a fascinating overview of how to be more productive and less frustrated with your technical work. <em>Driving Technical Change</em> speaks in the language of the people who have the most to learn from Ryan's success with organizational management.</p></blockquote>
+    <p class="quotesource">
+		<span class="source">&#8212;<a href="http://www.jeffporten.com/">Jeff Porten</a></span> 
+	    <span class="title">Internet consultant and author, &quot;Twentysomething Guide to Creative Self-Employment&quot;</span> 
+	    <span class="company"></span>
+	</p> 
+    <blockquote><p>This book covers a very important topic I have never seen covered in book form and answers questions every one of us in application or web development has asked. Terrence Ryan manages to create a fun and easy-to-read narrative with examples so accurate and familiar they that will often leave you wondering whether he was sitting next to you in a recent office meeting.</p></blockquote>
+    <p class="quotesource">
+		<span class="source">&#8212;<a href="http://www.remotesynthesis.com/">Brian Rinaldi</a></span> 
+	    <span class="title">Web community manager</span> 
+	    <span class="company">Adobe Systems, Inc.</span>
+	</p>	 
 
 
 
-		  <h2>Get Your Copy</h2>
-			<a href="http://www.pragprog.com/titles/trevan/driving-technical-change"><img src="/assets/img/pragprog.png" width="192" height="56"></a>
-			<p>The publisher, <a href="http://www.pragprog.com/">Pragmatic Bookshelf</a>, 
-			sells both the paper copy of the book and the electronic copy. 
-			<strong>It is the only place to puchase the <a href="http://www.pragprog.com/titles/trevan/driving-technical-change">electronic copy</a>.</strong>  
-			However doing so entitles you to any 
-			electronic version of the book that is availaibe.  They have formats for Kindle, the Nook, the iPad 
-			and whereever else you like to read your books.</p>
-			<p>In addition to being able to 
-			purchase the book on this site, you can access the forum for the book, connect with other readers, and get tips on other great books.</p>
-			
-			
-			<a href="http://www.amazon.com/Driving-Technical-Change-Terrence-Ryan/dp/1934356603/ref=sr_1_1?ie=UTF8&qid=1291412156&sr=8-1"><img src="/assets/img/amazon.png" ></a>
-			<p>For many people, books, means Amazon. If that's you, have no fear, 
-			<a href="http://www.amazon.com/Driving-Technical-Change-Terrence-Ryan/dp/1934356603/ref=sr_1_1?ie=UTF8&qid=1291412156&sr=8-1">you can get the book from them</a>.  
-			But please note 
-			<strong>the book is not available in the Kindle store.</strong> If you wish to get a Kindle version, you have to 
-			go through the publisher <em>as noted above</em>.</p>  
+  <h2>Get Your Copy</h2>
+	<a href="http://www.pragprog.com/titles/trevan/driving-technical-change"><img src="/assets/img/pragprog.png" width="192" height="56"></a>
+	<p>The publisher, <a href="http://www.pragprog.com/">Pragmatic Bookshelf</a>, 
+	sells both the paper copy of the book and the electronic copy. 
+	<strong>It is the only place to puchase the <a href="http://www.pragprog.com/titles/trevan/driving-technical-change">electronic copy</a>.</strong>  
+	However doing so entitles you to any 
+	electronic version of the book that is availaibe.  They have formats for Kindle, the Nook, the iPad 
+	and whereever else you like to read your books.</p>
+	<p>In addition to being able to 
+	purchase the book on this site, you can access the forum for the book, connect with other readers, and get tips on other great books.</p>
+	
+	
+	<a href="http://www.amazon.com/Driving-Technical-Change-Terrence-Ryan/dp/1934356603/ref=sr_1_1?ie=UTF8&qid=1291412156&sr=8-1"><img src="/assets/img/amazon.png" ></a>
+	<p>For many people, books, means Amazon. If that's you, have no fear, 
+	<a href="http://www.amazon.com/Driving-Technical-Change-Terrence-Ryan/dp/1934356603/ref=sr_1_1?ie=UTF8&qid=1291412156&sr=8-1">you can get the book from them</a>.  
+	But please note 
+	<strong>the book is not available in the Kindle store.</strong> If you wish to get a Kindle version, you have to 
+	go through the publisher <em>as noted above</em>.</p>  
  
-		</article>		
-	</section>				
 </div>
-<footer>
-	<nav>
-		<ul>
-			<li><a href="/">Home</a></li>
-			<li><a href="/sitemap">Sitemap</a></li>      
-			<li><a href="/search">Search</a></li>
-			<li><a href="/contact">Contact</a></li>
-		</ul>
-	</nav>
-	<small id="copyright">Copyright 2008 - 2012 Terrence Ryan</small>
-	<small id="disclaimer">This is a personal blog. While Adobe paying my salary might 
-	not make me completely  objective, the opinions expressed here are mine and not theirs.</small>
-</footer>
+<?php include '../modules/page-footer.php';?>
 <?php include '../modules/google.php';?>
 </body>
 </html>

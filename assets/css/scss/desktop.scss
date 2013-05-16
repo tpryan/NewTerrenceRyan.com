@@ -1,84 +1,168 @@
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 700px) {
+	.sub-page{
 
-	.desktop_centered{
-		width: 1000px;
-		margin: 0 auto;
-	}
-
-	#masthead{
-		@extend .desktop_centered;
-		position: relative;
-	}
-
-	#content > section{
-		@extend .desktop_centered;
-	}
-
-	footer nav, footer small{
-		@extend .desktop_centered;
-	}
-
-	hr{
-		@extend .desktop_centered;
-	}
-
-	header{
-		hgroup{
+		.content{
 			h1{
-				padding-right: .3em;
-				font-size: 5em;
+				margin: 0;
 			}
 		}
-		nav{
-			position:absolute;
-			right: 0;
-			padding-right: 20px;
-		}
-	}	
 
-	#home{
-		header{
-
-			hgroup{
-				width: 515px;
-				h1{
-					font-size: 5em;
-					margin-bottom: 0;
-
-				}
-				p{
-					padding-top: 0;
-					font-size: 2.6em;
-					line-height: 1.1;
-				}
-				h2{
-					padding-top: 0;
-					font-size: 2.6em;
-					line-height: 1.1;
-				}
+		.page-header{
+			padding-bottom: 10px;
+			.hidesmall{
+				display: none;
 			}
+
+			
+			.title{
+				margin: 0;
+				padding: 0;
+			}
+
 			nav{
-				padding-top: 15px;
-				position: static;
+				ul{
+					li{
+						a{
+							border: none;
+							position: static;
+							span{
+								border: none;
+								background: none;
+								text-shadow: none;
+								position: static;
+								text-align: right;
+							}
+						}
+					}
+				}
 			}
-		}	
+
+		}
+
 	}
 
-	#job blockquote{
-		max-width: 600px;
+	.picture{
+		width: 30%;
+		float: right;
+		border: 10px solid #FFFFFF;
+		box-shadow: 1px 1px 6px #000;
+		margin: 10px 0 10px 10px;;
 	}
 
-	#content {
-		section{
-			section{
-				vertical-align: top;
-				display: inline-block;
-				width: 455px;
+	.image{
+		width: 30%;
+		float: right;
+		margin: 10px 0 10px 10px;;
+	}
 
-				&:first-child{ padding-right: 40px; margin-right: 0; };
-				&:last-child{ padding-left: 40px; margin-left: 0; };
+	.page-header{
+
+
+		.title{
+			width: 50%;
+			float: left;
+			
+			h1{
+				font-size: 3.5rem;
+			}
+			p{
+				font-size: 2rem;
 			}
 		}
+
+		nav ul li a span{
+			font-size: 2.0rem;
+			line-height: .4;
+		}
+
+
+
 	}
+
+	.content{
+		h1{
+			font-size: 3.2rem;
+		}
+		h2{
+			margin-top: 1rem;;
+			font-size: 2.1rem;
+		}
+
+		section{
+			hr{
+				display: none;
+			}
+			section:nth-child(1){
+				padding-right: 3rem;
+			}
+			section:nth-child(3){
+				padding-left: 3rem;
+			}
+			section{
+				float: left;
+				width: 50%;
+				clear: none;
+				article{
+					font-size: 1.4rem;
+					padding-bottom: 1.5rem;
+					h1{
+						font-size: 1.7rem;
+						margin-bottom:.5rem;
+					}
+					time{
+						margin: 0;
+						padding: 0;
+					}
+					p{
+						margin: 0.5rem 0;
+					}
+
+				}
+
+				.externalref{
+					float:right;
+					display: inline-block;
+					padding-right: 2rem;
+				}
+			}
+		}
+		&:after{
+			content: "";
+			display: table;
+			clear: both;
+		}
+	}
+
+	.page-footer{
+		nav{
+			font-size: 1.5rem;
+			ul{
+				&:after{
+					content: "";
+					display: table;
+					clear: both;
+				}
+				li{
+					display: inline-block;
+					float: left;
+					padding-right: 2rem;
+
+				}
+			}
+		}
+
+
+		.copyright{
+			font-size: 1.5rem;
+			display: block;
+		}
+		.disclaimer{
+			font-size: 1.5rem;
+			display: block;
+		}
+
+	}
+
+
 }	

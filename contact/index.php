@@ -5,6 +5,7 @@
 <?php $show_images=false; $show_tagline=false;  include '../modules/page-header.php';?> 
 
 <div class="content">
+	<article>
 	<h1>Contact Me</h1>
 	<p>Looking to drop me a line?  Best way is probably on Twitter. Email is a giant black 
 		hole for me, but I will get back to you eventually. </p>
@@ -64,7 +65,7 @@
 			
 		
 			
-
+	</article>
 	 
 </div>
 <?php include '../modules/page-footer.php';?>

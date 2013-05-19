@@ -5,6 +5,7 @@
 <?php $show_images=false; $show_tagline=false;  include '../modules/page-header.php';?>  
 
 <div class="content">
+	<article>
 			<h1>Site Map</h1>
 			<ul>
 				<li><h2><a href="/">Home</a></h2>
@@ -22,7 +23,7 @@
 					<?php include '../modules/sitemap.php';?>
 				</li>	
 			</ul>
-
+	</article>
 </div>
 <?php include '../modules/page-footer.php';?>
 <?php include '../modules/google.php';?>

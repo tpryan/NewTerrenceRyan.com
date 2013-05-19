@@ -5,6 +5,7 @@
 <?php $show_images=false; $show_tagline=false;  include '../modules/page-header.php';?>  
 
 <div class="content">
+	<article>
 	<h1>Job</h1>
 	<img class="image" src="/assets/img/adobelogo.png" id="adobelogo">
 	
@@ -20,6 +21,7 @@
 	
 	<p>My major goal is to help developers using Adobe technologies to be successful. Hopefully they'll be using 
 	Adobe tools to do that, but it's important to keep in mind that sometimes they can't.</p>
+</article>
 </div>
 <?php include '../modules/page-footer.php';?>
 <?php include '../modules/google.php';?>

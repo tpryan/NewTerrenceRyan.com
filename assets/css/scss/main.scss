@@ -124,7 +124,6 @@ blockquote {
 
 	color: #FFFFFF;
 	background-color: #000000;
-	border-bottom: 2px solid #FF0000;
 
 	h1{
 		margin: 0;
@@ -280,7 +279,7 @@ blockquote {
 }
 
 @import 'desktop';
-@import 'desktop-large';
+//@import 'desktop-large';
 @import 'tablet';
 @import 'phone';
 @import 'transitions';

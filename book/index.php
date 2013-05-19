@@ -5,6 +5,7 @@
 <?php $show_images=false; $show_tagline=false;  include '../modules/page-header.php';?>  
 
 <div class="content">
+	<article>
 	<h1>Driving Technical Change</h1>
 	<img class="image" src="/assets/img/bookfull.png">
 	
@@ -83,7 +84,7 @@ flowchart approach to your most immediate problem, as well as a fascinating over
 	But please note 
 	<strong>the book is not available in the Kindle store.</strong> If you wish to get a Kindle version, you have to 
 	go through the publisher <em>as noted above</em>.</p>  
- 
+ 	</article>
 </div>
 <?php include '../modules/page-footer.php';?>
 <?php include '../modules/google.php';?>

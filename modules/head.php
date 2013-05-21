@@ -18,8 +18,8 @@ if (!isset($page_title)) {
 	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 	<script type="text/javascript" src="http://use.typekit.com/puk0eup.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-	<?php if ($include_contact) 
+	<?php if ($include_contact) {
 			echo '<script type="text/javascript" src="/assets/js/jquery-1.8.0.min.js"></script>' , chr(10);
 			echo chr(9),'<script type="text/javascript" src="/assets/js/contact.js"></script>';
-			 ?>
+			} ?>
 </head>

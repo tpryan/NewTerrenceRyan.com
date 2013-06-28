@@ -26,6 +26,7 @@
 		<copy todir="${build.dir}" preservelastmodified="true" verbose="true" >
 			<fileset dir="${basedir}/">
 				<exclude name='.gitignore'/>
+				<exclude name='/examples'/>
 				<exclude name='.git/**'/>
 				<exclude name='build.properties'/>
 				<exclude name='build.xml'/>

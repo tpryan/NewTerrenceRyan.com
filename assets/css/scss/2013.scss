@@ -1,18 +1,82 @@
-body{
-	font-family: "museo-sans";
+@import 'all';
+@import '2013-fonts';
+
+*{
+	@include box-sizing(border-box);
 }
 
-header{
-		h1{
-			font-family: "museo-slab";
-			font-weight: 100;
-			strong{
-				font-weight: 700;
+body{
+	margin: 0;
+	padding: 0;
+}
+
+.centered{
+	margin: 0 auto;
+	padding: 0 10px; 
+}
+
+.main{
+	@extend .centered;
+	.column{
+		
+		width: 24.5%;
+		display: inline-block;
+		margin: 0;	
+
+	}
+}
+
+header, footer, .tweet{
+	@extend .centered;
+}
+
+.tweet-bar{
+	background-color: #444;
+	color: #fff;
+
+	.icon{
+		display: inline-block;
+		font-size: 4rem;
+	}
+	.content{
+		display: inline-block;
+		vertical-align: top;
+		width: 90%;
+	}
+
+}
+
+.main{
+	
+	.column{
+		vertical-align: top;
+		padding: 0 5px;
+
+		article{
+			h1{
+				font-size: 1.2rem;
+				margin: .5rem 0;	
+			}
+			time{
+				margin: 0;
+				font-style: italic;
+			}
+			address{
+				margin: .5rem 0;
+				font-style: normal;
+
+			}
+			div{
+				margin: 0;
+			}
+			p{
+				margin: .5rem 0 1rem 0;	
 			}
 		}
+		
+	}
 }
 
-footer{
-	font-family: "museo-slab";
-	font-weight: 100;
-}
+
+
+@import '2013-desktop';

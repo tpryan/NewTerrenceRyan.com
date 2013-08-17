@@ -36,17 +36,22 @@ function refreshGitHubHTML($github_url, $count, $github_cache){
 }
 
 function generateGithubHTML($github_content, $count){
+	date_default_timezone_set('America/New_York');
 	$result = "";
 	$result .=  "<!-- pulled in from github -->" ."\n";
 	for ($i=0; $i<$count; $i++){
+		$raw_date = strtotime($github_content[$i]['pushed_at']);
+		$date_string = date("F j, Y", $raw_date);
 		$item = "";
-		$item .= "<!-- pushed_at" . $github_content[$i]['pushed_at'] . " -->" ."\n";
 		$item .= '			<article>' . "\n";
 		$item .= '				<h1>';
 		$item .= '<a href="' . $github_content[$i]['html_url'] . '">';
 		$item .= $github_content[$i]['name'];
 		$item .= '</a>';
 		$item .= '</h1>' . "\n";
+		$item .= '			<time datetime="' . date("Y-m-d", $raw_date) .'">';
+		$item .= $date_string;
+		$item .= '</time>' . "\n";
 		$item .= '				<p>';
 		$item .= $github_content[$i]['description'];
 		$item .= '</p>' . "\n";

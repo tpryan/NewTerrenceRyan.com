@@ -10,3 +10,70 @@ header h1 {
 footer {
   font-family: "museo-slab";
   font-weight: 100; }
+
+@font-face {
+  font-family: "entypo";
+  src: url("fonts/entypo.eot");
+  src: url("fonts/entypo.eot?#iefix") format("embedded-opentype"), url("fonts/entypo.woff") format("woff"), url("fonts/entypo.ttf") format("truetype"), url("fonts/entypo.svg#$name") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "entypo-social";
+  src: url("fonts/entypo-social.eot");
+  src: url("fonts/entypo-social.eot?#iefix") format("embedded-opentype"), url("fonts/entypo-social.woff") format("woff"), url("fonts/entypo-social.ttf") format("truetype"), url("fonts/entypo-social.svg#$name") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+.icon {
+  font-family: entypo-social; }
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0; }
+
+.centered, .main, header, footer, .tweet {
+  margin: 0 auto;
+  padding: 0 10px; }
+
+.main .column {
+  width: 24.5%;
+  display: inline-block;
+  margin: 0; }
+
+.tweet-bar {
+  background-color: #444;
+  color: #fff; }
+  .tweet-bar .icon {
+    display: inline-block;
+    font-size: 4rem; }
+  .tweet-bar .content {
+    display: inline-block;
+    vertical-align: top;
+    width: 90%; }
+
+.main .column {
+  vertical-align: top;
+  padding: 0 5px; }
+  .main .column article h1 {
+    font-size: 1.2rem;
+    margin: .5rem 0; }
+  .main .column article time {
+    margin: 0;
+    font-style: italic; }
+  .main .column article address {
+    margin: .5rem 0;
+    font-style: normal; }
+  .main .column article div {
+    margin: 0; }
+  .main .column article p {
+    margin: .5rem 0 1rem 0; }
+
+@media screen and (min-width: 1024px) {
+  .centered, .main, header, footer, .tweet {
+    max-width: 1024px; } }

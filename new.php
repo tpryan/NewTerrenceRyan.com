@@ -14,7 +14,7 @@
 <body>
 
 	<header>
-		<h1>My name is <strong>Terrence Ryan</strong>. I&rsquo;m an Education Evangelist for <em>Adobe</em>. I help students &amp; educators create with our software. </h1>
+		<h1>My name is <strong><a href="/">Terrence Ryan</a></strong>. I&rsquo;m an <a href="">Education Evangelist</a> for <em>Adobe</em>. I help students &amp; educators create with our software. I also wrote <a href="">Driving Technical Change</a>. </h1>
 	</header>
 	<div class="tweet-bar">
 		<div class="tweet">
@@ -25,19 +25,24 @@
 
 	<div class="main">
 		<div class="articles column">
-			<h2>Articles</h2>
+			<h2><a href="http://blog.terrenceryan.com">Blog <span class="icon">&#59194;</span></a></h2>
 			<?php include './modules/blog.php';?>
+			<p class="externalref">View more on <a href="http://blog.terrenceryan.com">my blog</a>.</p>
 		</div>	
 		<div class="events column">
-			<h2>Events</h2>
+			<h2><a href="http://lanyrd.com/profile/tpryan/">Events <span class="icon">&#128197;</span></a></h2>
 			<?php include './modules/events.php';?>
+			<p class="externalref">View more on <a href="http://lanyrd.com/profile/tpryan/">lanyrd.com</a></p>
 		</div>
 		<div class="design column">
-			<h2>Design</h2>
+			<h2><a href="http://www.behance.net/tpryan">Design <span class="icon">&#62286;</span></a></h2>
+			<?php include './modules/behance.php';?>
+			<p class="externalref">View more on <a href="http://www.behance.net/tpryan">Behance.com</a>.</p>
 		</div>	
 		<div class="code column">
-			<h2>Code</h2>
+			<h2><a href="https://github.com/tpryan">Code <span class="icon">&#62208;</span></a></h2>
 			<?php include './modules/projects.php';?>
+			<p class="externalref">View more on <a href="https://github.com/tpryan">github.com</a>.</p>
 		</div>
 	</div>		
 

@@ -1,13 +1,26 @@
 @import 'all';
 @import '2013-fonts';
 
+
+$main-highlight-color: #000;
+
 *{
 	@include box-sizing(border-box);
 }
 
+
+
 body{
 	margin: 0;
 	padding: 0;
+}
+
+a{
+	color: $main-highlight-color;
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: underline;
 }
 
 .centered{
@@ -18,11 +31,15 @@ body{
 .main{
 	@extend .centered;
 	.column{
-		
-		width: 24.5%;
-		display: inline-block;
-		margin: 0;	
-
+		width: 25%;
+		display: block;
+		float: left;
+		padding: 0 15px;	
+	}
+	&:after{
+		clear: both;
+		display: table;
+		content: "";
 	}
 }
 
@@ -50,9 +67,25 @@ header, footer, .tweet{
 	
 	.column{
 		vertical-align: top;
-		padding: 0 5px;
 
+		h2{
+			vertical-align: bottom;
+			.icon{
+				font-size: 3rem;
+				margin-left: .5rem;
+				line-height: .8;
+				text-align: center;
+				font-weight: normal;
+				border: 1px solid #ccc;
+				height: 2.5rem;
+				width: 2.5rem;
+				border-radius: 2rem;
+				display: inline-block;
+				background-color: #dedede;
+			}
+		}
 		article{
+			margin-bottom: 2rem;
 			h1{
 				font-size: 1.2rem;
 				margin: .5rem 0;	
@@ -70,7 +103,18 @@ header, footer, .tweet{
 				margin: 0;
 			}
 			p{
+				font-size: 1.1rem;
 				margin: .5rem 0 1rem 0;	
+			}
+			img{
+				margin-top: .5rem;
+				border: 2px solid $main-highlight-color;
+				border-radius: 4000px;
+				max-height: 200px;
+				max-width: 200px;
+				-webkit-filter: grayscale(100%);
+				display: block;
+				margin: 0 auto;;
 			}
 		}
 		

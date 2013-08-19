@@ -26,7 +26,7 @@ footer {
   font-style: normal; }
 
 .icon {
-  font-family: entypo-social; }
+  font-family: entypo-social, entypo; }
 
 * {
   -moz-box-sizing: border-box;
@@ -37,14 +37,26 @@ body {
   margin: 0;
   padding: 0; }
 
+a {
+  color: black;
+  text-decoration: none; }
+
+a:hover {
+  text-decoration: underline; }
+
 .centered, .main, header, footer, .tweet {
   margin: 0 auto;
   padding: 0 10px; }
 
 .main .column {
-  width: 24.5%;
-  display: inline-block;
-  margin: 0; }
+  width: 25%;
+  display: block;
+  float: left;
+  padding: 0 15px; }
+.main:after {
+  clear: both;
+  display: table;
+  content: ""; }
 
 .tweet-bar {
   background-color: #444;
@@ -58,22 +70,50 @@ body {
     width: 90%; }
 
 .main .column {
-  vertical-align: top;
-  padding: 0 5px; }
-  .main .column article h1 {
-    font-size: 1.2rem;
-    margin: .5rem 0; }
-  .main .column article time {
-    margin: 0;
-    font-style: italic; }
-  .main .column article address {
-    margin: .5rem 0;
-    font-style: normal; }
-  .main .column article div {
-    margin: 0; }
-  .main .column article p {
-    margin: .5rem 0 1rem 0; }
+  vertical-align: top; }
+  .main .column h2 {
+    vertical-align: bottom; }
+    .main .column h2 .icon {
+      font-size: 3rem;
+      margin-left: .5rem;
+      line-height: .8;
+      text-align: center;
+      font-weight: normal;
+      border: 1px solid #ccc;
+      height: 2.5rem;
+      width: 2.5rem;
+      border-radius: 2rem;
+      display: inline-block;
+      background-color: #dedede; }
+  .main .column article {
+    margin-bottom: 2rem; }
+    .main .column article h1 {
+      font-size: 1.2rem;
+      margin: .5rem 0; }
+    .main .column article time {
+      margin: 0;
+      font-style: italic; }
+    .main .column article address {
+      margin: .5rem 0;
+      font-style: normal; }
+    .main .column article div {
+      margin: 0; }
+    .main .column article p {
+      font-size: 1.1rem;
+      margin: .5rem 0 1rem 0; }
+    .main .column article img {
+      margin-top: .5rem;
+      border: 2px solid black;
+      border-radius: 4000px;
+      max-height: 200px;
+      max-width: 200px;
+      -webkit-filter: grayscale(100%);
+      display: block;
+      margin: 0 auto; }
 
 @media screen and (min-width: 1024px) {
   .centered, .main, header, footer, .tweet {
     max-width: 1024px; } }
+@media screen and (min-width: 1400px) {
+  .centered, .main, header, footer, .tweet {
+    max-width: 1400px; } }

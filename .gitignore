@@ -22,3 +22,13 @@ assets/cache/presos.html
 assets/cache/sitemap.html
 
 assets/css/main.css
+
+assets/cache/behance.html
+
+assets/cache/*.jpg
+
+assets/cache/error.log
+
+modules/projects.js
+
+modules/wips.js

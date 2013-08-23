@@ -66,13 +66,19 @@ header{
 	}
 }
 
-header, footer, .tweet{
+header, footer, .tweet, .page-title{
 	@extend .centered;
 }
 
-.tweet-bar{
+.top-bar{
+
+
 	background-color: #000;
 	color: #bbb;
+
+	h1{
+		color: #FFF;
+	}
 
 	strong{
 		color: #FFF;
@@ -180,6 +186,13 @@ $color-events: #85B5FF;
 
 .main{
 	
+	.contact{
+		img{
+			border-radius: 0;
+			border: 0;
+		}
+	}
+
 	.column{
 		vertical-align: top;
 
@@ -204,51 +217,58 @@ $color-events: #85B5FF;
 			}
 		}
 		
-		article{
-			margin-bottom: 2rem;
-			h1{
-				font-size: 1.2rem;
-				margin: .5rem 0;	
-			}
-			time{
-				margin: 0;
-				font-style: italic;
-			}
-			address{
-				margin: .5rem 0;
-				font-style: normal;
-			}
-			div{
-				margin: 0;
-			}
-			p{
-				font-size: 1.1rem;
-				margin: .5rem 0 1rem 0;	
-			}
-			img{
-				margin-top: .5rem;
-				border: 2px solid $color-design;
-				border-radius: 4000px;
-				max-height: 250px;
-				max-width: 250px;
-				// -webkit-filter: grayscale(100%);
-				display: block;
-				margin: 0 auto;
-			}
-			.flag{
-				margin-left: 5px;
-				display: inline;
-				border: 1px solid #ccc;
-				width: 30px;
-				border-radius: 0;
-				vertical-align: bottom;
-				
-			}
-		}
+		
 		.externalref {
 			text-align: right;
 		}
 	}
+	article{
+		margin-bottom: 2rem;
+		h1{
+			font-size: 1.2rem;
+			margin: .5rem 0;	
+		}
+		time{
+			margin: 0;
+			font-style: italic;
+		}
+		address{
+			margin: .5rem 0;
+			font-style: normal;
+		}
+		div{
+			margin: 0;
+		}
+		p{
+			font-size: 1.1rem;
+			margin: .5rem 0 1rem 0;	
+		}
+		img{
+			margin-top: .5rem;
+			border: 2px solid #ccc;
+			border-radius: 4000px;
+			max-height: 250px;
+			max-width: 250px;
+			display: block;
+			margin: 0 auto;
+		}
+		.flag{
+			margin-left: 5px;
+			display: inline;
+			border: 1px solid #ccc;
+			width: 30px;
+			border-radius: 0;
+			vertical-align: bottom;
+			
+		}
+		.picture{
+			width: 300px;
+			height: 300px;
+			max-height: none;
+			max-width: none;
+		}
+	}
+
 }
 
 footer{

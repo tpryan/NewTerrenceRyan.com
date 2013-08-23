@@ -19,6 +19,14 @@
 				}
 			}
 		}
+		.bio{
+			width: 50%;
+			.picture{
+				float: right;
+				-webkit-shape-outside: circle(50%, 50%, 50%);
+
+			}
+		}
 	}
 
 
@@ -44,6 +52,9 @@
 					max-width: 250px;
 				}
 			}
+		}
+		.column.about{
+			width: 50%;
 		}
 	}
 

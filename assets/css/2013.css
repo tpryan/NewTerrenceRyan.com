@@ -49,7 +49,7 @@ a:hover {
   color: red;
   text-decoration: underline; }
 
-.centered, .main, header, footer, .tweet {
+.centered, .main, header, footer, .tweet, .page-title {
   margin: 0 auto;
   padding: 0 10px; }
 
@@ -72,12 +72,14 @@ header .short {
   display: table;
   content: ""; }
 
-.tweet-bar {
+.top-bar {
   background-color: #000;
   color: #bbb; }
-  .tweet-bar strong {
+  .top-bar h1 {
     color: #FFF; }
-  .tweet-bar .icon {
+  .top-bar strong {
+    color: #FFF; }
+  .top-bar .icon {
     color: #00ABF0;
     margin-top: .8rem;
     margin-right: .5rem;
@@ -90,15 +92,15 @@ header .short {
     background-color: #eee;
     line-height: .7;
     text-align: center; }
-  .tweet-bar .content {
+  .top-bar .content {
     display: inline-block;
     vertical-align: top;
     width: calc(100% - 3.5rem); }
-  .tweet-bar .tweet {
+  .top-bar .tweet {
     margin: 0 auto; }
-  .tweet-bar strong a {
+  .top-bar strong a {
     color: #FFF; }
-  .tweet-bar a {
+  .top-bar a {
     color: #bbb; }
 
 .main .column.code h2 a {
@@ -149,6 +151,9 @@ header .short {
 .main .column.events h1 a:hover {
   color: #5296ff; }
 
+.main .contact img {
+  border-radius: 0;
+  border: 0; }
 .main .column {
   vertical-align: top; }
   .main .column h2 {
@@ -168,45 +173,50 @@ header .short {
       background-color: #dedede; }
     .main .column h2 a {
       color: #000; }
-  .main .column article {
-    margin-bottom: 2rem; }
-    .main .column article h1 {
-      font-size: 1.2rem;
-      margin: .5rem 0; }
-    .main .column article time {
-      margin: 0;
-      font-style: italic; }
-    .main .column article address {
-      margin: .5rem 0;
-      font-style: normal; }
-    .main .column article div {
-      margin: 0; }
-    .main .column article p {
-      font-size: 1.1rem;
-      margin: .5rem 0 1rem 0; }
-    .main .column article img {
-      margin-top: .5rem;
-      border: 2px solid #1a72af;
-      border-radius: 4000px;
-      max-height: 250px;
-      max-width: 250px;
-      display: block;
-      margin: 0 auto; }
-    .main .column article .flag {
-      margin-left: 5px;
-      display: inline;
-      border: 1px solid #ccc;
-      width: 30px;
-      border-radius: 0;
-      vertical-align: bottom; }
   .main .column .externalref {
     text-align: right; }
+.main article {
+  margin-bottom: 2rem; }
+  .main article h1 {
+    font-size: 1.2rem;
+    margin: .5rem 0; }
+  .main article time {
+    margin: 0;
+    font-style: italic; }
+  .main article address {
+    margin: .5rem 0;
+    font-style: normal; }
+  .main article div {
+    margin: 0; }
+  .main article p {
+    font-size: 1.1rem;
+    margin: .5rem 0 1rem 0; }
+  .main article img {
+    margin-top: .5rem;
+    border: 2px solid #ccc;
+    border-radius: 4000px;
+    max-height: 250px;
+    max-width: 250px;
+    display: block;
+    margin: 0 auto; }
+  .main article .flag {
+    margin-left: 5px;
+    display: inline;
+    border: 1px solid #ccc;
+    width: 30px;
+    border-radius: 0;
+    vertical-align: bottom; }
+  .main article .picture {
+    width: 300px;
+    height: 300px;
+    max-height: none;
+    max-width: none; }
 
 footer {
   padding-bottom: 1rem; }
 
 @media screen and (max-width: 700px) {
-  .centered, .main, header, footer, .tweet {
+  .centered, .main, header, footer, .tweet, .page-title {
     max-width: 700px; }
 
   header h1 {
@@ -224,7 +234,7 @@ footer {
     .main .column article .flag {
       width: 40px; } }
 @media screen and (min-width: 700px) and (max-width: 1024px) {
-  .centered, .main, header, footer, .tweet {
+  .centered, .main, header, footer, .tweet, .page-title {
     max-width: 800px; }
 
   header h1 {
@@ -244,23 +254,30 @@ footer {
         display: inline-block;
         vertical-align: top; } }
 @media screen and (min-width: 1024px) {
-  .centered, .main, header, footer, .tweet {
+  .centered, .main, header, footer, .tweet, .page-title {
     max-width: 1024px; }
 
   .main .column {
     width: 25%; }
     .main .column article img {
       max-height: 200px;
-      max-width: 200px; } }
+      max-width: 200px; }
+  .main .bio {
+    width: 50%; }
+    .main .bio .picture {
+      float: right;
+      -webkit-shape-outside: circle(50%, 50%, 50%); } }
 @media screen and (min-width: 1400px) {
-  .centered, .main, header, footer, .tweet {
+  .centered, .main, header, footer, .tweet, .page-title {
     max-width: 1400px; }
 
   .main .column article img {
     max-height: 250px;
-    max-width: 250px; } }
+    max-width: 250px; }
+  .main .column.about {
+    width: 50%; } }
 @media screen and (max-width: 499px) {
-  .centered, .main, header, footer, .tweet {
+  .centered, .main, header, footer, .tweet, .page-title {
     max-width: 100%; }
 
   .main .column {

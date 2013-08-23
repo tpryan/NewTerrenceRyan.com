@@ -19,7 +19,7 @@
 			<span class="short">I&rsquo;m an <a href=""><em>Adobe</em> Education Evangelist</a>. </span> 
 			<span class="extra">I help students &amp; educators create with our software.</span> I <span class="extra">also</span> wrote <a href="">Driving Technical Change</a>.</h1>
 	</header>
-	<div class="tweet-bar">
+	<div class="top-bar">
 		<div class="tweet">
 			<div class="icon">&#62217;</div>
 			<?php include './modules/twitter.php';?>

@@ -1,0 +1,28 @@
+@media screen and (max-width: 499px) {
+	body{
+		
+	}
+
+	.centered{
+		max-width: 100%;
+	}
+
+	.main{
+	
+		.column{
+			width: 100%;
+			article{
+
+				img{
+					margin-top: 1rem;
+					max-height: none;
+					max-width: 100%;
+					border-radius: 4px;
+				}
+			}
+		}
+	}
+
+
+
+}		

@@ -95,7 +95,7 @@ function generateEventHTML($lanyrd_content,$count){
 		$entry .= '				<img class="flag" src="';
 		$entry .= "/assets/img/flags/" . $lanyrd_content[$i]['location_fixed']['country_code'] . ".svg";
 		$entry .= '" />' . "\n";
-		$entry .= '</address>' . "\n";
+		$entry .= '				</address>' . "\n";
 
 		$entry .= '				<p>';
 		$entry .= str_replace("\,", ",", convert_smart_quotes($lanyrd_content[$i]['description']));
@@ -112,14 +112,18 @@ function generateEventHTML($lanyrd_content,$count){
 }
 
 function format_address($address_info){
-	$results = $address_info['city'] . ",";
+	$results = $address_info['city'];
 
-	if ($address_info['state'] !== ""){
-		$results .=  " " . $address_info['state'] . ",";
+	if ($address_info['country'] == "United Kingdom"){
+		$address_info['country'] = "UK";
 	}
 
-	$results .=  " " . $address_info['country'];
-
+	if ($address_info['country'] !== "United States"){
+		$results .=  ", " . $address_info['country'];
+	}
+	else{
+		$results .=  ", " . $address_info['state'];
+	}
 	return $results;
 }
 

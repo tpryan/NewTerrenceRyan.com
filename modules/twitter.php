@@ -5,7 +5,7 @@ require_once('TwitterAPIExchange.php');
 require_once('util.php');
 
 $service_url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
-$service_params = '?screen_name=tpryan&count=1&trim_user=true&exclude_replies=false&include_rts=true';
+$service_params = '?screen_name=tpryan&count=1&trim_user=true&exclude_replies=true&include_rts=true';
 $cache_dir = $_SERVER['DOCUMENT_ROOT'] . "/assets/cache/";
 $service_cache = $cache_dir . "twitter.html";
 $cache_age = 2 * 60 * 60;

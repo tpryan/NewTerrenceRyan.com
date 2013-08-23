@@ -53,6 +53,9 @@ a:hover {
   margin: 0 auto;
   padding: 0 10px; }
 
+header .short {
+  display: none; }
+
 .main a {
   color: #333; }
 .main .column {
@@ -193,7 +196,7 @@ a:hover {
       margin-left: 5px;
       display: inline;
       border: 1px solid #ccc;
-      width: 40px;
+      width: 30px;
       border-radius: 0;
       vertical-align: bottom; }
   .main .column .externalref {
@@ -202,9 +205,68 @@ a:hover {
 footer {
   padding-bottom: 1rem; }
 
+@media screen and (max-width: 700px) {
+  .centered, .main, header, footer, .tweet {
+    max-width: 700px; }
+
+  header h1 {
+    font-size: 1.4rem; }
+  header .extra {
+    display: none; }
+  header .short {
+    display: inline; }
+
+  .main .column {
+    width: 50%; }
+    .main .column article img {
+      max-height: 200px;
+      max-width: 200px; }
+    .main .column article .flag {
+      width: 40px; } }
+@media screen and (min-width: 700px) and (max-width: 1024px) {
+  .centered, .main, header, footer, .tweet {
+    max-width: 800px; }
+
+  header h1 {
+    font-size: 1.5rem; }
+
+  .main .column {
+    width: 33%; }
+    .main .column article img {
+      max-height: 200px;
+      max-width: 200px; }
+    .main .column article .flag {
+      width: 40px; }
+    .main .column:last-of-type {
+      width: 100%; }
+      .main .column:last-of-type article {
+        width: 32%;
+        display: inline-block;
+        vertical-align: top; } }
 @media screen and (min-width: 1024px) {
   .centered, .main, header, footer, .tweet {
-    max-width: 1024px; } }
+    max-width: 1024px; }
+
+  .main .column {
+    width: 25%; }
+    .main .column article img {
+      max-height: 200px;
+      max-width: 200px; } }
 @media screen and (min-width: 1400px) {
   .centered, .main, header, footer, .tweet {
-    max-width: 1400px; } }
+    max-width: 1400px; }
+
+  .main .column article img {
+    max-height: 250px;
+    max-width: 250px; } }
+@media screen and (max-width: 499px) {
+  .centered, .main, header, footer, .tweet {
+    max-width: 100%; }
+
+  .main .column {
+    width: 100%; }
+    .main .column article img {
+      margin-top: 1rem;
+      max-height: none;
+      max-width: 100%;
+      border-radius: 4px; } }

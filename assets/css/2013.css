@@ -189,6 +189,13 @@ a:hover {
       max-width: 250px;
       display: block;
       margin: 0 auto; }
+    .main .column article .flag {
+      margin-left: 5px;
+      display: inline;
+      border: 1px solid #ccc;
+      width: 40px;
+      border-radius: 0;
+      vertical-align: bottom; }
   .main .column .externalref {
     text-align: right; }
 

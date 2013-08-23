@@ -143,10 +143,4 @@ function generateBehanceHTML($service_json, $count ){
 	return $result;
 }
 
-
-function get_content_from_service($url) {
-	$content = url_get_contents($url);
-	return json_decode($content, true);
-}
-
 ?>

@@ -1,5 +1,5 @@
 <?php
-include_once 'module_common.php';
+require_once 'module_common.php';
 
 $lanyrd_url = "http://lanyrd.com/people/tpryan/tpryan.ics";
 $count = 3;
@@ -20,7 +20,7 @@ else{
 		$lanyrd_html = refreshLanyrdHTML($lanyrd_url, $count,$lanyrd_cache);
 	} catch (Exception $e) {
 		$lanyrd_html = "<article><p>No upcoming events</p></article>";
-		//var_dump($e);
+		var_dump($e);
 	}
 }
 
@@ -88,13 +88,19 @@ function generateEventHTML($lanyrd_content,$count){
 		$entry .= $date_string;
 		$entry .= '</time>' . "\n";
 
+
+
 		$entry .= '				<address>';
-		$entry .= str_replace("\,", ",", $lanyrd_content[$i]['location']);
+		$entry .= str_replace("\,", ",", format_address($lanyrd_content[$i]['location_fixed'])). "\n";
+		$entry .= '				<img class="flag" src="';
+		$entry .= "/assets/img/flags/" . $lanyrd_content[$i]['location_fixed']['country_code'] . ".svg";
+		$entry .= '" />' . "\n";
 		$entry .= '</address>' . "\n";
 
 		$entry .= '				<p>';
-		$entry .= convert_smart_quotes($lanyrd_content[$i]['description']);
+		$entry .= str_replace("\,", ",", convert_smart_quotes($lanyrd_content[$i]['description']));
 		$entry .= '</p>' . "\n";
+		
 		
 		$entry .= '			</article>' . "\n";
 		if (strpos($lanyrd_content[$i]['location'], "Amsterdam") !== false){
@@ -103,6 +109,18 @@ function generateEventHTML($lanyrd_content,$count){
 		$result .= $entry;
 	}
 	return $result;
+}
+
+function format_address($address_info){
+	$results = $address_info['city'] . ",";
+
+	if ($address_info['state'] !== ""){
+		$results .=  " " . $address_info['state'] . ",";
+	}
+
+	$results .=  " " . $address_info['country'];
+
+	return $results;
 }
 
 function convert_smart_quotes($string) 
@@ -129,6 +147,8 @@ function get_content_from_lanyrd($url) {
 	date_default_timezone_set('Europe/London');
 	
 	$content = file_get_contents($url);
+
+
 	$content = explode("\n", $content);
 	$j = 0;
 
@@ -178,10 +198,21 @@ function get_content_from_lanyrd($url) {
 
 	}
 
-
-
-	return sort_lanyrd_results($data);
+	$results = sort_lanyrd_results($data);
+	$results = fix_addresses($results);
+	return $results;
 }
+
+function fix_addresses($lanyrd_details){
+
+	for ($i=0; $i<count($lanyrd_details); $i++){
+		$lanyrd_details[$i]['location_fixed'] = normalize_address($lanyrd_details[$i]['location']);
+	}
+
+
+	return $lanyrd_details;
+}
+
 
 function sort_lanyrd_results($lanyrd_content){
 	$dates = array();
@@ -192,6 +223,42 @@ function sort_lanyrd_results($lanyrd_content){
 	array_multisort($dates, SORT_ASC, $lanyrd_content);
 	return $lanyrd_content;
 }
+
+function normalize_address($address){
+	$address = urlencode($address);
+	$base_url ="http://maps.googleapis.com/maps/api/geocode/json?sensor=false&address=";
+	$map_data = get_content_from_service($base_url . $address);
+	$results = extracts_geo_details($map_data);
+	return $results;
+
+}
+
+
+function extracts_geo_details($googleinfo){
+	$results = array('city'=>"",'state'=>"",'country'=>"",'country_code'=>"");
+	
+
+	
+	$address_components = $googleinfo['results'][0]['address_components'];
+
+	for ($i=0; $i<count($address_components); $i++){
+	
+		if($address_components[$i]['types'][0] == "country"){
+			$results["country"] = $address_components[$i]['long_name'];
+			$results["country_code"] = $address_components[$i]['short_name'];
+		}
+		if($address_components[$i]['types'][0] == "locality"){
+			$results["city"] = $address_components[$i]['long_name'];
+		}
+		if($address_components[$i]['types'][0] == "administrative_area_level_1"){
+			$results["state"] = $address_components[$i]['short_name'];
+		}		
+		
+	}
+	return $results;
+}
+
+
 
 
 

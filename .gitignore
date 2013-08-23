@@ -34,3 +34,5 @@ modules/projects.js
 modules/wips.js
 
 assets/cache/twitter.html
+
+modules/maps.php

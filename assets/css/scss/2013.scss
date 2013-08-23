@@ -211,7 +211,6 @@ $color-events: #85B5FF;
 			address{
 				margin: .5rem 0;
 				font-style: normal;
-
 			}
 			div{
 				margin: 0;
@@ -228,7 +227,16 @@ $color-events: #85B5FF;
 				max-width: 250px;
 				// -webkit-filter: grayscale(100%);
 				display: block;
-				margin: 0 auto;;
+				margin: 0 auto;
+			}
+			.flag{
+				margin-left: 5px;
+				display: inline;
+				border: 1px solid #ccc;
+				width: 40px;
+				border-radius: 0;
+				vertical-align: bottom;
+				
 			}
 		}
 		.externalref {

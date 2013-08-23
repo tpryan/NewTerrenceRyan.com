@@ -1,14 +1,14 @@
 body {
-  font-family: "museo-sans"; }
+  font-family: "museo-sans", "Museo Sans", "Helvetica"; }
 
 header h1 {
-  font-family: "museo-slab";
+  font-family: "museo-slab", "Museo Slab", "Georgia";
   font-weight: 100; }
   header h1 strong {
     font-weight: 700; }
 
 footer {
-  font-family: "museo-slab";
+  font-family: "museo-slab", "Museo Slab", "Georgia";
   font-weight: 100; }
 
 @font-face {
@@ -35,43 +35,121 @@ footer {
 
 body {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  color: #000; }
+
+strong, em {
+  color: red; }
 
 a {
-  color: black;
+  color: red;
   text-decoration: none; }
 
 a:hover {
+  color: red;
   text-decoration: underline; }
 
 .centered, .main, header, footer, .tweet {
   margin: 0 auto;
   padding: 0 10px; }
 
+.main a {
+  color: #333; }
 .main .column {
   width: 25%;
   display: block;
   float: left;
   padding: 0 15px; }
+  .main .column:first-of-type {
+    padding-left: 0; }
+  .main .column:last-of-type {
+    padding-right: 0; }
 .main:after {
   clear: both;
   display: table;
   content: ""; }
 
 .tweet-bar {
-  background-color: #444;
-  color: #fff; }
+  background-color: #000;
+  color: #bbb; }
+  .tweet-bar strong {
+    color: #FFF; }
   .tweet-bar .icon {
+    color: #00ABF0;
+    margin-top: .8rem;
+    margin-right: .5rem;
+    margin-bottom: .8rem;
     display: inline-block;
-    font-size: 4rem; }
+    font-size: 4rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 2rem;
+    background-color: #eee;
+    line-height: .7;
+    text-align: center; }
   .tweet-bar .content {
     display: inline-block;
     vertical-align: top;
-    width: 90%; }
+    width: calc(100% - 3.5rem); }
+  .tweet-bar .tweet {
+    margin: 0 auto; }
+  .tweet-bar strong a {
+    color: #FFF; }
+  .tweet-bar a {
+    color: #bbb; }
+
+.main .column.code h2 a {
+  color: #b2eeb5; }
+  .main .column.code h2 a .icon {
+    background-color: #dcf7dd;
+    color: #000; }
+
+.main .column.code .externalref a {
+  color: #b2eeb5; }
+
+.main .column.code h1 a:hover {
+  color: #b2eeb5; }
+
+.main .column.blog h2 a {
+  color: #e65c00; }
+  .main .column.blog h2 a .icon {
+    background-color: #ff6600;
+    color: #FFF; }
+
+.main .column.blog .externalref a {
+  color: #cc5200; }
+
+.main .column.blog h1 a:hover {
+  color: #cc5200; }
+
+.main .column.design h2 a {
+  color: #176499; }
+  .main .column.design h2 a .icon {
+    background-color: #1a72af;
+    color: #FFF; }
+
+.main .column.design .externalref a {
+  color: #135583; }
+
+.main .column.design h1 a:hover {
+  color: #135583; }
+
+.main .column.events h2 a {
+  color: #6ca6ff; }
+  .main .column.events h2 a .icon {
+    background-color: #85b5ff;
+    color: #FFF; }
+
+.main .column.events .externalref a {
+  color: #5296ff; }
+
+.main .column.events h1 a:hover {
+  color: #5296ff; }
 
 .main .column {
   vertical-align: top; }
   .main .column h2 {
+    color: #000;
     vertical-align: bottom; }
     .main .column h2 .icon {
       font-size: 3rem;
@@ -85,6 +163,8 @@ a:hover {
       border-radius: 2rem;
       display: inline-block;
       background-color: #dedede; }
+    .main .column h2 a {
+      color: #000; }
   .main .column article {
     margin-bottom: 2rem; }
     .main .column article h1 {
@@ -103,13 +183,17 @@ a:hover {
       margin: .5rem 0 1rem 0; }
     .main .column article img {
       margin-top: .5rem;
-      border: 2px solid black;
+      border: 2px solid #1a72af;
       border-radius: 4000px;
-      max-height: 200px;
-      max-width: 200px;
-      -webkit-filter: grayscale(100%);
+      max-height: 250px;
+      max-width: 250px;
       display: block;
       margin: 0 auto; }
+  .main .column .externalref {
+    text-align: right; }
+
+footer {
+  padding-bottom: 1rem; }
 
 @media screen and (min-width: 1024px) {
   .centered, .main, header, footer, .tweet {

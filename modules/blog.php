@@ -1,13 +1,14 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'] . '/config/creds.php';
 include_once 'module_common.php';
-$count = 3;
+$count = 1;
 $blog_cache = $_SERVER['DOCUMENT_ROOT'] . "/assets/cache/blog.html";
 $cache_age = 2 * 60 * 60;
 
+
 $dbInfo = $newDB;
-$entries = getPostsFromDataBase($newDB, $count);
-$blogHTML = generateBlogHTML($entries);
+// $entries = getPostsFromDataBase($newDB, $count);
+// $blogHTML = generateBlogHTML($entries);
 
 
 
@@ -48,7 +49,36 @@ function getPostsFromDataBase($dbInfo, $count){
 	mysql_select_db($dbInfo['db'], $dbConn) or die(mysql_error());
 
 	// Retrieve all the data from the "example" table
-	$entries = mysql_query("SELECT post_title, post_excerpt, guid, post_date, DATE_FORMAT(post_date, '%M %d, %Y') as formatted_post_date FROM wp_posts WHERE LENGTH(post_excerpt) > 0 AND post_status = 'publish'  ORDER BY post_date desc LIMIT 0, ". $count, $dbConn) or die(mysql_error()); 
+	$entries = mysql_query(" SELECT
+        p1.post_title, p1.post_excerpt, p1.guid, p1.post_date, DATE_FORMAT(p1.post_date, '%M %d, %Y') as formatted_post_date, p2.guid as thumbnail
+        
+    FROM 
+        wp_posts p1
+    LEFT JOIN 
+        wp_postmeta wm1
+        ON (
+            wm1.post_id = p1.id 
+            AND wm1.meta_value IS NOT NULL 
+            AND wm1.meta_key = '_thumbnail_id'             
+        )
+    LEFT JOIN 
+        wp_postmeta wm2
+        ON (
+            wm1.meta_value = wm2.post_id
+            AND wm2.meta_key = '_wp_attached_file'
+            AND wm2.meta_value IS NOT NULL  
+        )
+	LEFT JOIN 
+    	wp_posts p2 
+    	ON (
+    		 wm1.meta_value = p2.id
+    	)
+    WHERE
+        p1.post_status='publish' 
+        AND p1.post_type='post'
+    ORDER BY 
+        p1.post_date DESC
+    LIMIT 0,". $count, $dbConn) or die(mysql_error()); 
 
 	return $entries;
 }
@@ -65,12 +95,16 @@ function generateBlogHTML($entries){
 		$post_date = $row['post_date'];
 		$excerpt = $row['post_excerpt'];
 		$url = $row['guid'];
+		$thumb = $row['thumbnail'];
 		$date = $row['formatted_post_date'];
 		$item = "";
 		$item .= '			<article>'. "\n";
 		$item .= '				<h1><a href="' . $url . '">' . $title .'</a></h1>'. "\n";
 		$item .= '				<time datetime="' . $post_date . '">' . $date . '</time>'. "\n";
+		$item .= '				<img src="' . $thumb . '" />'. "\n";
+
 		$item .= '				<div><p>' . strip_tags($excerpt) . '</p></div>'. "\n";
+
 		$item .= '			</article>'. "\n";	
 		$results .= $item; 
 	}

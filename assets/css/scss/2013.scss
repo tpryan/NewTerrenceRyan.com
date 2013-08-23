@@ -2,7 +2,7 @@
 @import '2013-fonts';
 
 
-$main-highlight-color: #000;
+$main-highlight-color: #F00;
 
 *{
 	@include box-sizing(border-box);
@@ -13,13 +13,19 @@ $main-highlight-color: #000;
 body{
 	margin: 0;
 	padding: 0;
+	color: #000;
+}
+
+strong, em{
+	color: $main-highlight-color;
 }
 
 a{
-	color: $main-highlight-color;
+	color: $main-highlight-color;	
 	text-decoration: none;
 }
 a:hover{
+	color: $main-highlight-color;
 	text-decoration: underline;
 }
 
@@ -29,13 +35,24 @@ a:hover{
 }
 
 .main{
+	a{
+		color: #333;
+	}
 	@extend .centered;
 	.column{
 		width: 25%;
 		display: block;
 		float: left;
-		padding: 0 15px;	
+		padding: 0 15px;
+
+		&:first-of-type{
+			padding-left: 0;
+		}
+		&:last-of-type{
+			padding-right: 0;
+		}	
 	}
+
 	&:after{
 		clear: both;
 		display: table;
@@ -48,20 +65,112 @@ header, footer, .tweet{
 }
 
 .tweet-bar{
-	background-color: #444;
-	color: #fff;
+	background-color: #000;
+	color: #bbb;
+
+	strong{
+		color: #FFF;
+	}
 
 	.icon{
+		color: #00ABF0;
+		margin-top: .8rem;
+		margin-right: .5rem;
+		margin-bottom: .8rem;
 		display: inline-block;
 		font-size: 4rem;
+		height: 2.5rem;
+		width: 2.5rem;
+		border-radius: 2rem;
+		background-color: #eee;
+		line-height: .7;
+		text-align: center;
 	}
 	.content{
 		display: inline-block;
 		vertical-align: top;
-		width: 90%;
+		width: calc(100% - 3.5rem);
+	}
+	.tweet{
+		margin: 0 auto;
+	}
+	strong{
+		a{
+		color: #FFF;
+		}
+	}
+	a{
+		color: #bbb;
 	}
 
 }
+
+$color-code: #dcf7dd;
+.main .column.code h2  a{
+	color: darken($color-code, 10%);
+	.icon{
+		background-color: $color-code;
+		color: #000;	
+	}
+}
+.main .column.code .externalref a{
+	color: darken($color-code, 10%);
+}
+
+.main .column.code h1 a:hover{
+	color: darken($color-code, 10%);
+}
+
+$color-blog: #FF6600;
+.main .column.blog h2 a{
+	color: darken($color-blog, 5%);
+	.icon{
+		background-color: $color-blog;
+		color: #FFF;	
+	}
+}
+
+.main .column.blog .externalref a{
+	color: darken($color-blog, 10%);
+}
+
+.main .column.blog h1 a:hover{
+	color: darken($color-blog, 10%);
+}
+
+$color-design: #1A72AF;
+.main .column.design h2 a{
+	color: darken($color-design, 5%);
+	.icon{
+		background-color: $color-design;
+		color: #FFF;	
+	}
+}
+
+.main .column.design .externalref a{
+	color: darken($color-design, 10%);
+}
+.main .column.design h1 a:hover{
+	color: darken($color-design, 10%);
+}
+
+$color-events: #85B5FF;
+.main .column.events h2 a{
+	color: darken($color-events, 5%);
+	.icon{
+		background-color: $color-events;
+		color: #FFF;	
+	}
+}
+
+.main .column.events .externalref a{
+	color: darken($color-events, 10%);
+}
+
+.main .column.events h1 a:hover{
+	color: darken($color-events, 10%);
+}
+
 
 .main{
 	
@@ -69,6 +178,7 @@ header, footer, .tweet{
 		vertical-align: top;
 
 		h2{
+			color: #000;
 			vertical-align: bottom;
 			.icon{
 				font-size: 3rem;
@@ -83,7 +193,11 @@ header, footer, .tweet{
 				display: inline-block;
 				background-color: #dedede;
 			}
+			a{
+				color: #000;
+			}
 		}
+		
 		article{
 			margin-bottom: 2rem;
 			h1{
@@ -108,19 +222,24 @@ header, footer, .tweet{
 			}
 			img{
 				margin-top: .5rem;
-				border: 2px solid $main-highlight-color;
+				border: 2px solid $color-design;
 				border-radius: 4000px;
-				max-height: 200px;
-				max-width: 200px;
-				-webkit-filter: grayscale(100%);
+				max-height: 250px;
+				max-width: 250px;
+				// -webkit-filter: grayscale(100%);
 				display: block;
 				margin: 0 auto;;
 			}
 		}
-		
+		.externalref {
+			text-align: right;
+		}
 	}
 }
 
+footer{
+	padding-bottom: 1rem;
 
+}
 
 @import '2013-desktop';

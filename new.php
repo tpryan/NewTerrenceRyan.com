@@ -19,21 +19,11 @@
 	<div class="tweet-bar">
 		<div class="tweet">
 			<div class="icon">&#62217;</div>
-			<p class="content"><strong>Latest:</strong> Oooh. A blog behind the VPN where all of the important info is posted in ppt files. Can you punch me in the throat when I open them too?</p>
+			<?php include './modules/twitter.php';?>
 		</div>
 	</div>
 
 	<div class="main">
-		<div class="articles column">
-			<h2><a href="http://blog.terrenceryan.com">Blog <span class="icon">&#59194;</span></a></h2>
-			<?php include './modules/blog.php';?>
-			<p class="externalref">View more on <a href="http://blog.terrenceryan.com">my blog</a>.</p>
-		</div>	
-		<div class="events column">
-			<h2><a href="http://lanyrd.com/profile/tpryan/">Events <span class="icon">&#128197;</span></a></h2>
-			<?php include './modules/events.php';?>
-			<p class="externalref">View more on <a href="http://lanyrd.com/profile/tpryan/">lanyrd.com</a></p>
-		</div>
 		<div class="design column">
 			<h2><a href="http://www.behance.net/tpryan">Design <span class="icon">&#62286;</span></a></h2>
 			<?php include './modules/behance.php';?>
@@ -44,10 +34,20 @@
 			<?php include './modules/projects.php';?>
 			<p class="externalref">View more on <a href="https://github.com/tpryan">github.com</a>.</p>
 		</div>
+		<div class="blog column">
+			<h2><a href="http://blog.terrenceryan.com">Blog <span class="icon">&#59194;</span></a></h2>
+			<?php include './modules/blog.php';?>
+			<p class="externalref">View more on <a href="http://blog.terrenceryan.com">my blog</a>.</p>
+		</div>
+		<div class="events column">
+			<h2><a href="http://lanyrd.com/profile/tpryan/">Events <span class="icon">&#128197;</span></a></h2>
+			<?php include './modules/events.php';?>
+			<p class="externalref">View more on <a href="http://lanyrd.com/profile/tpryan/">lanyrd.com</a></p>
+		</div>
 	</div>		
 
 	<footer>
-		<p class="copyright">Copyright 2008 - 2013 <strong>Terrence Ryan</strong></p>
+		<p class="copyright">Copyright 2008 - 2013 &nbsp;<strong>Terrence Ryan</strong></p>
 		<small class="disclaimer">This is a personal site. While Adobe paying my salary might 
 		not make me completely  objective, the opinions expressed here are mine and not theirs.</small>
 	</footer>

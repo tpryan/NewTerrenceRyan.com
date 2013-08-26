@@ -15,7 +15,7 @@
 		
 		
 		
-		<div class="column bio">
+		<div class="column full">
 			<h2>Current</h2>
 			<img class="picture" src="/assets/img/headshot.jpg" >	
 			<p>I'm a Worldwide Developer Evangelist for <a href="http://www.adobe.com/">Adobe</a>.  
@@ -53,7 +53,7 @@
 			<li>I also used <a href="http://sass-lang.com/">Sass</a> to speed up my CSS work.</p>	
 		 	</ul>
 	 	</div>
-	 	<div class="column contact">
+	 	<div class="column secondary">
 	 		<h2>Social Networks</h2>
 			<table id="socialnetworks">
 				<tr>

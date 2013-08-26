@@ -151,7 +151,7 @@ header .short {
 .main .column.events h1 a:hover {
   color: #5296ff; }
 
-.main .contact img {
+.main .secondary img {
   border-radius: 0;
   border: 0; }
 .main .column {
@@ -211,6 +211,11 @@ header .short {
     height: 300px;
     max-height: none;
     max-width: none; }
+  .main article .book {
+    border-radius: 0;
+    width: 300px;
+    height: auto;
+    border: none; }
 
 footer {
   padding-bottom: 1rem; }
@@ -262,9 +267,9 @@ footer {
     .main .column article img {
       max-height: 200px;
       max-width: 200px; }
-  .main .bio {
+  .main .full {
     width: 50%; }
-    .main .bio .picture {
+    .main .full .picture {
       float: right;
       -webkit-shape-outside: circle(50%, 50%, 50%); } }
 @media screen and (min-width: 1400px) {

@@ -4,38 +4,46 @@
 <body class="sub-page">
 <?php $show_images=false; $show_tagline=false;  include '../modules/page-header.php';?>  
 
-<div class="content">
+<div class="top-bar">
+	<div class="page-title">
+		<h1>Driving Technical Change</h1>
+	</div>	
+</div>
+
+<div class="main">
 	<article>
-	<h1>Driving Technical Change</h1>
-	<img class="image" src="/assets/img/bookfull.png">
 	
-	<h2>About the Book</h2>
-	<p>Ever go to a technology conference, read a coding book, or just get inspired by a 
-    blog post to try something new? You try it, you love it, you want everyone else at 
-    work to do it. 
-    </p>
-    <p>Everyone else says "No- not just no, hell no!"</p> 
-    <p>It's easy to blame your coworkers. But the responsibility lies with you. If 
-        something is great, and your coworkers aren't buying, then you need to up your game.</p> 
-    <p>I had this problem. I worked through it. I started changing what I did. If it 
-        worked, I did it more. </p> 
-    <p>I started recording what I was doing and started shaping it into a presentation and 
-        a book.</p> 
-    <p>In a moment of hubris, I pitched the book to 
-        <a href="http://www.pragprog.com/">
-            Pragmatic Bookshelf
-        </a>
-        . In a moment of luck they picked it up. In many moments of staring at a blank 
-        screen, I wrote it. 
-    </p> 
-    <p>
-        Now it's in 
-        <a href="http://www.pragprog.com/titles/trevan/driving-technical-change">print</a>.
-    </p> 
-    <p>
-    I sincerely hope that what's in the book helps people change their workplaces for the 
-    better. 
-	</p>
+	<div class="column primary full">
+		<img class="picture book" src="/assets/img/bookfull.png">
+		
+		<h2>About the Book</h2>
+		<p>Ever go to a technology conference, read a coding book, or just get inspired by a 
+	    blog post to try something new? You try it, you love it, you want everyone else at 
+	    work to do it. 
+	    </p>
+	    <p>Everyone else says "No- not just no, hell no!"</p> 
+	    <p>It's easy to blame your coworkers. But the responsibility lies with you. If 
+	        something is great, and your coworkers aren't buying, then you need to up your game.</p> 
+	    <p>I had this problem. I worked through it. I started changing what I did. If it 
+	        worked, I did it more. </p> 
+	    <p>I started recording what I was doing and started shaping it into a presentation and 
+	        a book.</p> 
+	    <p>In a moment of hubris, I pitched the book to 
+	        <a href="http://www.pragprog.com/">
+	            Pragmatic Bookshelf
+	        </a>
+	        . In a moment of luck they picked it up. In many moments of staring at a blank 
+	        screen, I wrote it. 
+	    </p> 
+	    <p>
+	        Now it's in 
+	        <a href="http://www.pragprog.com/titles/trevan/driving-technical-change">print</a>.
+	    </p> 
+	    <p>
+	    I sincerely hope that what's in the book helps people change their workplaces for the 
+	    better. 
+		</p>
+
 
 	<h2>Reader Comments</h2> 
     <blockquote><p>At its core, <em>Driving Technical Change</em> is a fantastic book about design patterns. In it, Terrence Ryan clearly outlines common, problematic personalities&mdash;"skeptics" &mdash;and provides proven solutions for bringing about progressive change. It is certainly an unfortunate fact of human behavior that people are oftentimes resistant to implementing best practices; however, using Terry's book as a guide, you will now be able to identify why people push back against change and what you can do to remain successful in the face of adversity.</p></blockquote> 
@@ -63,9 +71,9 @@ flowchart approach to your most immediate problem, as well as a fascinating over
 	    <span class="title">Web community manager</span> 
 	    <span class="company">Adobe Systems, Inc.</span>
 	</p>	 
+</div>
 
-
-
+<div class="column secondary full">
   <h2>Get Your Copy</h2>
 	<a href="http://www.pragprog.com/titles/trevan/driving-technical-change"><img src="/assets/img/pragprog.png" width="192" height="56"></a>
 	<p>The publisher, <a href="http://www.pragprog.com/">Pragmatic Bookshelf</a>, 
@@ -85,6 +93,7 @@ flowchart approach to your most immediate problem, as well as a fascinating over
 	<strong>the book is not available in the Kindle store.</strong> If you wish to get a Kindle version, you have to 
 	go through the publisher <em>as noted above</em>.</p>  
  	</article>
+ </div>	
 </div>
 <?php include '../modules/page-footer.php';?>
 <?php include '../modules/google.php';?>

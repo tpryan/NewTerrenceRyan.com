@@ -186,7 +186,7 @@ $color-events: #85B5FF;
 
 .main{
 	
-	.contact{
+	.secondary{
 		img{
 			border-radius: 0;
 			border: 0;
@@ -266,6 +266,13 @@ $color-events: #85B5FF;
 			height: 300px;
 			max-height: none;
 			max-width: none;
+		}
+
+		.book{
+			border-radius: 0;
+			width: 300px;
+			height: auto;
+			border: none;
 		}
 	}
 

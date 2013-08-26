@@ -28,7 +28,6 @@ else{
 		$service_html = refreshServiceHTML($behance,  $count, $service_cache, $cache_dir);
 	} catch (Exception $e) {
 		$service_html = "<article><p>No current projects</p></article>";
-		var_dump($e);
 	}
 }
 
@@ -54,18 +53,16 @@ function cache_images($service_content, $cache_dir, $count){
 
 	for ($i=0; $i<$count; $i++){
 		$target = $service_content[$i]['img'];
-		$destination = $cache_dir .$service_content[$i]['id']  .   '.jpg';
+		$extension = get_file_extention($target);
+		$destination = $cache_dir .$service_content[$i]['id']  .   '.' . $extension;
 
 		if (!file_exists($destination)){
+			echo $target ."\n";
+			echo $destination ."\n";
 			$image = file_get_contents($target);
 			file_put_contents($destination, $image);
 		}
-		
-
-		
-		
 	}
-	
 }	
 
 
@@ -76,8 +73,6 @@ function get_wips($behance){
 
 	$result_array = array();
 
-
-
 	for ($i=0; $i<count($wips); $i++){
 		$revision = array_shift($wips['wips'][$i]['revisions']);
 		$comment_url = $behance['base'] . "wips/" . $wips['wips'][$i]['id'] . "/" .  $revision['id'] ."/comments?api_key=" . $behance['key'];
@@ -85,14 +80,15 @@ function get_wips($behance){
 		$comments = get_content_from_service($comment_url);
 
 
-		$first_comment = array_pop($comments["comments"]);
 		$entry = array();
 		$entry['id']  = "wip" . $revision['id'];
 		$entry['name']  = $wips['wips'][$i]['title'];
 		$entry['date']  = $wips['wips'][$i]['created_on'];
 		$entry['url']  = $revision['url'];
 		$entry['img']  = $revision['images']['thumbnail']['url'];
-		$entry['desc']  = $first_comment['comment'];
+		$entry['desc']  = $revision['description'];
+		$entry['img']  = $revision['images']['thumbnail']['url'];
+		$entry['img_type']  = get_file_extention($revision['images']['thumbnail']['url']);
 
 		
 
@@ -107,7 +103,9 @@ function sortByOrder($a, $b) {
     return $b['date'] - $a['date'];
 }
 
-
+function get_file_extention($filename) {
+	return substr($filename, strrpos($filename, '.')+1);
+}
 
 
 function generateBehanceHTML($service_json, $count ){
@@ -134,12 +132,13 @@ function generateBehanceHTML($service_json, $count ){
 		$item .= $date_string;
 		$item .= '</time>' . "\n";
 		$item .= '				<a href="' . $service_json[$i]['url'] . '">'. "\n";
-		$item .= '					<img src="/assets/cache/' . $service_json[$i]['id']  .   '.jpg" />'. "\n";
+		$item .= '					<img src="/assets/cache/' . $service_json[$i]['id'] . '.' . $service_json[$i]['img_type'] . '" />'. "\n";
 		$item .= '				</a>'. "\n";
 		$item .= '				<div><p>' . $service_json[$i]['desc'] . '</p></div>'. "\n";
 		$item .= '			</article>' . "\n";
 		$result .= $item;
 	}
+
 	return $result;
 }
 

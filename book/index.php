@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+
 <?php $page_title="Book - TerrenceRyan.com";  include '../modules/head.php';?>
-<body class="sub-page">
+<body>
 <?php $show_images=false; $show_tagline=false;  include '../modules/page-header.php';?>  
 
 <div class="top-bar">
 	<div class="page-title">
 		<h1>Driving Technical Change</h1>
+		<?php include '../modules/nav.php';?>
 	</div>	
 </div>
 
@@ -14,7 +14,7 @@
 	<article>
 	
 	<div class="column primary full">
-		<img class="picture book" src="/assets/img/bookfull.png">
+		<img class="picture logo" src="/assets/img/bookfull.png">
 		
 		<h2>About the Book</h2>
 		<p>Ever go to a technology conference, read a coding book, or just get inspired by a 

@@ -66,7 +66,7 @@ header{
 	}
 }
 
-header, footer, .tweet, .page-title{
+header, footer, .tweet, .page-title, .top-bar nav{
 	@extend .centered;
 }
 
@@ -86,9 +86,9 @@ header, footer, .tweet, .page-title{
 
 	.icon{
 		color: #00ABF0;
-		margin-top: .8rem;
+		margin-top: .5rem;
 		margin-right: .5rem;
-		margin-bottom: .8rem;
+		margin-bottom: .5rem;
 		display: inline-block;
 		font-size: 4rem;
 		height: 2.5rem;
@@ -99,13 +99,13 @@ header, footer, .tweet, .page-title{
 		text-align: center;
 	}
 	.content{
+		margin: 0;
 		display: inline-block;
 		vertical-align: top;
 		width: calc(100% - 3.5rem);
+		margin-top: .5rem;
 	}
-	.tweet{
-		margin: 0 auto;
-	}
+	
 	strong{
 		a{
 		color: #FFF;
@@ -115,18 +115,68 @@ header, footer, .tweet, .page-title{
 		color: #bbb;
 	}
 
+	.page-title{
+		h1{
+			width: 49%;
+			display: inline-block;
+			margin: 0 0;
+		}
+		.tweet{
+			width: 70%;
+			display: inline-block;
+			margin: 0 0;
+		}
+
+		
+	}
+
+
+	nav{
+			vertical-align: top;
+			margin-top: 8px;
+			text-align: right;
+			width: 49%;
+			display: inline-block;
+			ul{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				li{
+					display: inline-block;
+					border-right: 1px solid #fff;;
+					padding-right: 5px;
+					padding-left: 1px;
+					a{
+						&:hover{
+							color: $main-highlight-color;
+						}
+					}
+				}
+				li:last-of-type{
+					border-right: 0;
+				}
+			}
+
+
+		}
+
+	.home{
+		nav{
+			width: 29%;
+		}
+	}	
 }
 
 $color-code: #dcf7dd;
 .main .column.code h2  a{
-	color: darken($color-code, 10%);
+	color: darken($color-code, 20%);
 	.icon{
-		background-color: $color-code;
+		background-color: darken($color-code, 15%);
 		color: #000;	
 	}
 }
 .main .column.code .externalref a{
-	color: darken($color-code, 10%);
+	color: darken($color-code, 20%);
 }
 
 .main .column.code h1 a:hover{
@@ -160,7 +210,7 @@ $color-design: #1A72AF;
 }
 
 .main .column.design .externalref a{
-	color: darken($color-design, 10%);
+	color: lighten($color-design, 10%);
 }
 .main .column.design h1 a:hover{
 	color: darken($color-design, 10%);
@@ -223,6 +273,9 @@ $color-events: #85B5FF;
 		}
 	}
 	article{
+		
+		border-bottom: 2px dotted #ccc;
+
 		margin-bottom: 2rem;
 		h1{
 			font-size: 1.2rem;
@@ -268,11 +321,12 @@ $color-events: #85B5FF;
 			max-width: none;
 		}
 
-		.book{
+		.logo{
 			border-radius: 0;
 			width: 300px;
 			height: auto;
 			border: none;
+			margin: 0 10px;
 		}
 	}
 
@@ -281,6 +335,11 @@ $color-events: #85B5FF;
 footer{
 	padding-bottom: 1rem;
 
+}
+
+blockquote{
+	font-style: italic;
+	font-weight: 600;
 }
 
 

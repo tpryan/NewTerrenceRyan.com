@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
 <?php $page_title="About - TerrenceRyan.com";  include '../modules/head.php';?>
 <?php include '../modules/page-header.php';?>  
 
@@ -7,7 +5,9 @@
 <div class="top-bar">
 	<div class="page-title">
 		<h1>About Me</h1>
-	</div>	
+		<?php include '../modules/nav.php';?>	
+	</div>
+
 </div>
 <div class="main">
 	

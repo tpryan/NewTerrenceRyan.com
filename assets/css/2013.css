@@ -49,7 +49,7 @@ a:hover {
   color: red;
   text-decoration: underline; }
 
-.centered, .main, header, footer, .tweet, .page-title {
+.centered, .main, header, footer, .tweet, .page-title, .top-bar nav {
   margin: 0 auto;
   padding: 0 10px; }
 
@@ -81,9 +81,9 @@ header .short {
     color: #FFF; }
   .top-bar .icon {
     color: #00ABF0;
-    margin-top: .8rem;
+    margin-top: .5rem;
     margin-right: .5rem;
-    margin-bottom: .8rem;
+    margin-bottom: .5rem;
     display: inline-block;
     font-size: 4rem;
     height: 2.5rem;
@@ -93,24 +93,53 @@ header .short {
     line-height: .7;
     text-align: center; }
   .top-bar .content {
+    margin: 0;
     display: inline-block;
     vertical-align: top;
-    width: calc(100% - 3.5rem); }
-  .top-bar .tweet {
-    margin: 0 auto; }
+    width: calc(100% - 3.5rem);
+    margin-top: .5rem; }
   .top-bar strong a {
     color: #FFF; }
   .top-bar a {
     color: #bbb; }
+  .top-bar .page-title h1 {
+    width: 49%;
+    display: inline-block;
+    margin: 0 0; }
+  .top-bar .page-title .tweet {
+    width: 70%;
+    display: inline-block;
+    margin: 0 0; }
+  .top-bar nav {
+    vertical-align: top;
+    margin-top: 8px;
+    text-align: right;
+    width: 49%;
+    display: inline-block; }
+    .top-bar nav ul {
+      margin: 0;
+      padding: 0;
+      list-style: none; }
+      .top-bar nav ul li {
+        display: inline-block;
+        border-right: 1px solid #fff;
+        padding-right: 5px;
+        padding-left: 1px; }
+        .top-bar nav ul li a:hover {
+          color: red; }
+      .top-bar nav ul li:last-of-type {
+        border-right: 0; }
+  .top-bar .home nav {
+    width: 29%; }
 
 .main .column.code h2 a {
-  color: #b2eeb5; }
+  color: #89e48c; }
   .main .column.code h2 a .icon {
-    background-color: #dcf7dd;
+    background-color: #9ee9a1;
     color: #000; }
 
 .main .column.code .externalref a {
-  color: #b2eeb5; }
+  color: #89e48c; }
 
 .main .column.code h1 a:hover {
   color: #b2eeb5; }
@@ -134,7 +163,7 @@ header .short {
     color: #FFF; }
 
 .main .column.design .externalref a {
-  color: #135583; }
+  color: #218fdb; }
 
 .main .column.design h1 a:hover {
   color: #135583; }
@@ -176,6 +205,7 @@ header .short {
   .main .column .externalref {
     text-align: right; }
 .main article {
+  border-bottom: 2px dotted #ccc;
   margin-bottom: 2rem; }
   .main article h1 {
     font-size: 1.2rem;
@@ -211,17 +241,22 @@ header .short {
     height: 300px;
     max-height: none;
     max-width: none; }
-  .main article .book {
+  .main article .logo {
     border-radius: 0;
     width: 300px;
     height: auto;
-    border: none; }
+    border: none;
+    margin: 0 10px; }
 
 footer {
   padding-bottom: 1rem; }
 
+blockquote {
+  font-style: italic;
+  font-weight: 600; }
+
 @media screen and (max-width: 700px) {
-  .centered, .main, header, footer, .tweet, .page-title {
+  .centered, .main, header, footer, .tweet, .page-title, .top-bar nav {
     max-width: 700px; }
 
   header h1 {
@@ -239,7 +274,7 @@ footer {
     .main .column article .flag {
       width: 40px; } }
 @media screen and (min-width: 700px) and (max-width: 1024px) {
-  .centered, .main, header, footer, .tweet, .page-title {
+  .centered, .main, header, footer, .tweet, .page-title, .top-bar nav {
     max-width: 800px; }
 
   header h1 {
@@ -259,7 +294,7 @@ footer {
         display: inline-block;
         vertical-align: top; } }
 @media screen and (min-width: 1024px) {
-  .centered, .main, header, footer, .tweet, .page-title {
+  .centered, .main, header, footer, .tweet, .page-title, .top-bar nav {
     max-width: 1024px; }
 
   .main .column {
@@ -273,7 +308,7 @@ footer {
       float: right;
       -webkit-shape-outside: circle(50%, 50%, 50%); } }
 @media screen and (min-width: 1400px) {
-  .centered, .main, header, footer, .tweet, .page-title {
+  .centered, .main, header, footer, .tweet, .page-title, .top-bar nav {
     max-width: 1400px; }
 
   .main .column article img {
@@ -282,7 +317,15 @@ footer {
   .main .column.about {
     width: 50%; } }
 @media screen and (max-width: 499px) {
-  .centered, .main, header, footer, .tweet, .page-title {
+  .top-bar .page-title .tweet {
+    display: none; }
+  .top-bar .page-title nav {
+    width: 100%;
+    text-align: left;
+    font-size: 1.4rem;
+    margin-bottom: 0.4rem; }
+
+  .centered, .main, header, footer, .tweet, .page-title, .top-bar nav {
     max-width: 100%; }
 
   .main .column {

@@ -1,13 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
 <?php $page_title="Job - TerrenceRyan.com";  include '../modules/head.php';?>
-<body class="sub-page">
-<?php $show_images=false; $show_tagline=false;  include '../modules/page-header.php';?>  
+<?php include '../modules/page-header.php';?>  
 
-<div class="content">
+
+<div class="top-bar">
+	<div class="page-title">
+		<h1>Job</h1>
+		<?php include '../modules/nav.php';?>
+	</div>	
+</div>
+
+<div class="main">
 	<article>
-	<h1>Job</h1>
-	<img class="image" src="/assets/img/adobelogo.png" id="adobelogo">
+		<div class="column full">
+	<img class="picture logo" src="/assets/img/adobelogo.png" id="adobelogo">
 	
 	<p>I work as a Worldwide Developer Evangelist for Adobe Systems. My job basically entails me traveling the world and 
 	talking about the developer tools and technologies that Adobe has to offer or that we support.</p> 
@@ -21,6 +26,7 @@
 	
 	<p>My major goal is to help developers using Adobe technologies to be successful. Hopefully they'll be using 
 	Adobe tools to do that, but it's important to keep in mind that sometimes they can't.</p>
+</div>	
 </article>
 </div>
 <?php include '../modules/page-footer.php';?>

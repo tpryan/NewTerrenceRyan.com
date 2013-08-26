@@ -3,6 +3,19 @@
 		
 	}
 
+	.top-bar {	
+		.page-title {
+			.tweet{
+				display: none;
+			}
+		nav{
+			width: 100%;
+			text-align: left;
+			font-size: 1.4rem;
+			margin-bottom: .4rem
+		}	
+		}
+	}
 	.centered{
 		max-width: 100%;
 	}

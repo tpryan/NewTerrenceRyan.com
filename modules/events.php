@@ -93,7 +93,7 @@ function generateEventHTML($lanyrd_content,$count){
 		$entry .= '				<address>';
 		$entry .= str_replace("\,", ",", format_address($lanyrd_content[$i]['location_fixed'])). "\n";
 		$entry .= '				<img class="flag" src="';
-		$entry .= "/assets/img/flags/" . $lanyrd_content[$i]['location_fixed']['country_code'] . ".svg";
+		$entry .= "/assets/img/flags/" . strtolower($lanyrd_content[$i]['location_fixed']['country_code']) . ".svg";
 		$entry .= '" />' . "\n";
 		$entry .= '				</address>' . "\n";
 

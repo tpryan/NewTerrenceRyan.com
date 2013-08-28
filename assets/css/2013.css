@@ -432,3 +432,12 @@ textarea {
       max-height: none;
       max-width: 100%;
       border-radius: 4px; } }
+@media screen and (max-width: 399px) {
+  .top-bar .page-title nav {
+    font-size: 1.1rem; } }
+@media screen and (max-width: 299px) {
+  .top-bar .page-title nav {
+    font-size: 2.1rem; }
+    .top-bar .page-title nav li {
+      display: block;
+      border-right: 0; } }

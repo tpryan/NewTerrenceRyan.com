@@ -426,7 +426,8 @@ textarea {
     max-width: 100%; }
 
   .main .column {
-    width: 100%; }
+    width: 100%;
+    padding: 0; }
     .main .column article img {
       margin-top: 1rem;
       max-height: none;

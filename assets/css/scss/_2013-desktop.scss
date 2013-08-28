@@ -19,11 +19,25 @@
 				}
 			}
 		}
-		.full{
+		.half{
 			width: 50%;
 			.picture{
 				float: right;
 				-webkit-shape-outside: circle(50%, 50%, 50%);
+
+			}
+		}
+		.full{
+			width: 100%;
+			padding: 0;
+			.picture{
+				float: right;
+				-webkit-shape-outside: circle(50%, 50%, 50%);
+
+			}
+			.logo{
+				float: right;
+				-webkit-shape-outside: 0;
 
 			}
 		}

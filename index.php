@@ -11,7 +11,7 @@
 		
 	</div>
 
-	<div class="main">
+	<div class="main home">
 		<div class="design column">
 			<h2><a href="http://www.behance.net/tpryan">Design <span class="icon">&#62286;</span></a></h2>
 			<?php include './modules/behance.php';?>

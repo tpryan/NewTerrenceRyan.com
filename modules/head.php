@@ -20,8 +20,8 @@ if (!isset($page_title)) {
 	<script type="text/javascript" src="//use.typekit.net/rbx8rox.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	<?php if ($include_contact) {
-			echo '<script type="text/javascript" src="/assets/js/jquery-1.8.0.min.js"></script>' , chr(10);
-			echo chr(9),'<script type="text/javascript" src="/assets/js/contact.js"></script>';
-			} ?>
+	echo '<script type="text/javascript" src="/assets/js/jquery-1.8.0.min.js"></script>' , chr(10);
+	echo chr(9),'<script type="text/javascript" src="/assets/js/contact.js"></script>';
+	} ?>
 </head>
 <body>

@@ -16,9 +16,7 @@ body{
 	color: #000;
 }
 
-strong, em{
-	color: $main-highlight-color;
-}
+
 
 a{
 	color: $main-highlight-color;	
@@ -41,9 +39,12 @@ header{
 }
 
 .main{
-	a{
-		color: #333;
+	h1,h2{
+		a{
+			color: #333;
+		}
 	}
+
 	@extend .centered;
 	.column{
 		width: 25%;
@@ -72,7 +73,7 @@ header, footer, .tweet, .page-title, .top-bar nav{
 
 .top-bar{
 
-
+	padding: .5rem 0 .5rem 0;
 	background-color: #000;
 	color: #bbb;
 
@@ -86,13 +87,13 @@ header, footer, .tweet, .page-title, .top-bar nav{
 
 	.icon{
 		color: #00ABF0;
-		margin-top: .5rem;
+		margin-top: .2rem;
 		margin-right: .5rem;
 		margin-bottom: .5rem;
 		display: inline-block;
-		font-size: 4rem;
-		height: 2.5rem;
-		width: 2.5rem;
+		font-size: 2.5rem;
+		height: 1.8rem;
+		width: 1.8rem;
 		border-radius: 2rem;
 		background-color: #eee;
 		line-height: .7;
@@ -103,12 +104,11 @@ header, footer, .tweet, .page-title, .top-bar nav{
 		display: inline-block;
 		vertical-align: top;
 		width: calc(100% - 3.5rem);
-		margin-top: .5rem;
 	}
 	
 	strong{
 		a{
-		color: #FFF;
+			color: #FFF;
 		}
 	}
 	a{
@@ -233,9 +233,13 @@ $color-events: #85B5FF;
 	color: darken($color-events, 10%);
 }
 
+.main.home .column h2{
+	margin-top: .5rem;
+}
 
 .main{
-	
+	overflow: auto;
+	margin-top: .5rem;
 	.secondary{
 		img{
 			border-radius: 0;
@@ -246,7 +250,14 @@ $color-events: #85B5FF;
 	.column{
 		vertical-align: top;
 
+
+		article{
+			border-bottom: 2px dotted #ccc;
+			
+		}
+
 		h2{
+			margin-top: .5rem;
 			color: #000;
 			vertical-align: bottom;
 			.icon{
@@ -268,13 +279,14 @@ $color-events: #85B5FF;
 		}
 		
 		
+		
 		.externalref {
 			text-align: right;
 		}
 	}
 	article{
 		
-		border-bottom: 2px dotted #ccc;
+		
 
 		margin-bottom: 2rem;
 		h1{
@@ -326,7 +338,7 @@ $color-events: #85B5FF;
 			width: 300px;
 			height: auto;
 			border: none;
-			margin: 0 10px;
+			margin: 0 0 0 2rem;
 		}
 	}
 
@@ -339,10 +351,57 @@ footer{
 
 blockquote{
 	font-style: italic;
-	font-weight: 600;
+	background-color: #DDD;
+	padding: 2px 5px;
+	border-radius: 4px;
+	border: 1px dotted lighten($main-highlight-color,30%);
+	overflow: auto;
+	margin: 0 2rem;
 }
 
+#socialnetworks {
+	width: 100%;
+	img{
+		border-radius: 0;
+		border: none;
+	}
+}
 
+.alert{
+	background-color: #FFFFCC;
+	color: #FF0000;
+	font-weight: bold;
+	
+}
+
+.delay{
+	-moz-transition-property: background-color, color;
+	-moz-transition-duration: 2s, 2s;
+	-moz-transition-delay: 0s, 0s;
+	-o-transition-property: background-color, color;
+	-o-transition-duration: 2s, 2s;
+	-o-transition-delay: 0s, 0s;
+	-webkit-transition-property: background-color, color;
+	-webkit-transition-duration: 2s, 2s;
+	-webkit-transition-delay: 0s, 0s;
+	transition-property: background-color, color;
+	transition-duration: 2s, 2s;
+	transition-delay: 0s, 0s;
+}
+
+.alertclear{
+	background-color: #FFFFFF;
+	color: #000000;
+}
+
+input{
+	width: 100%;
+	font-size: 1.5rem;
+}
+textarea{
+	width: 100%;
+	font-size: 1.5rem;
+}
 
 @import '2013-tablet';
 @import '2013-desktop';

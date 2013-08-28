@@ -6,7 +6,7 @@
 				<div class="icon">&#62217;</div>
 				<?php include './modules/twitter.php';?>
 			</div>
-			<?php include './modules/nav.php';?>	
+			<?php $active="home"; include './modules/nav.php';?>	
 		</div>
 		
 	</div>

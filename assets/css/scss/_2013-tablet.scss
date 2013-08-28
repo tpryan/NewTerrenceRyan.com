@@ -39,7 +39,34 @@
 
 }
 
-@media screen and (min-width: 700px) and (max-width: 1024px) {
+@media screen and (min-width: 500px) and (max-width: 599px) {
+	.main article .picture{
+		float: right;
+		max-width: 100%;
+	}
+
+	.main article .portrait{
+		float: right;
+		width: 250px;
+		height: 250px;
+	}
+
+}
+@media screen and (min-width: 600px) and (max-width: 699px) {
+	.main article .picture{
+		float: right;
+		max-width: 100%;
+	}
+
+	.main article .portrait{
+		float: right;
+		width: 295px;
+		height: 295px;
+	}
+
+}		
+
+@media screen and (min-width: 500px) and (max-width: 1024px) {
 	body{
 		
 	}
@@ -52,6 +79,14 @@
 		h1{
 			font-size: 1.5rem;
 		}
+	}
+
+	.main article .logo{
+		float: right;
+	}
+
+	.main article .book{
+		float: none;
 	}
 
 	.main{
@@ -68,6 +103,9 @@
 				.flag{
 					width: 40px;
 				}
+				.picture{
+					float: right;
+				}
 			}
 			&:last-of-type{
 				width: 100%;
@@ -75,8 +113,15 @@
 					width: 32%;
 					display: inline-block;
 					vertical-align: top;
+					border-bottom: 0;
 				}
 			}
+		}
+		.half{
+			width: 50%;
+		}
+		.full{
+			padding: 0;
 		}
 		
 	}

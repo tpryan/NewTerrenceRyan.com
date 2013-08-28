@@ -5,8 +5,8 @@
 
 <div class="top-bar">
 	<div class="page-title">
-		<h1>Driving Technical Change</h1>
-		<?php include '../modules/nav.php';?>
+		<h1>Book</h1>
+		<?php $active="book"; include '../modules/nav.php';?>	
 	</div>	
 </div>
 
@@ -14,9 +14,9 @@
 	<article>
 	
 	<div class="column primary half">
-		<img class="picture logo" src="/assets/img/bookfull.png">
+		<img class="picture logo book" src="/assets/img/bookfull.png">
 
-		<h2>About the Book</h2>
+		<h2>Driving Technical Change</h2>
 		<p>Ever go to a technology conference, read a coding book, or just get inspired by a 
 		blog post to try something new? You try it, you love it, you want everyone else at 
 		work to do it. 

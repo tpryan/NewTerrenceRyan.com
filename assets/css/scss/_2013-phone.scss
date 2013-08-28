@@ -8,17 +8,29 @@
 			.tweet{
 				display: none;
 			}
-		nav{
-			width: 100%;
-			text-align: left;
-			font-size: 1.4rem;
-			margin-bottom: .4rem
-		}	
+			h1{
+				display: none;
+			}	
+			nav{
+				width: 100%;
+				text-align: left;
+				font-size: 1.4rem;
+				margin-bottom: .4rem;
+				a{
+					text-decoration: none;
+				}
+				.active{
+					color: #666;
+					border-bottom: 4px solid $main-highlight-color;
+				}
+
+			}		
 		}
 	}
 	.centered{
 		max-width: 100%;
 	}
+
 
 	.main{
 	

@@ -5,7 +5,7 @@
 <div class="top-bar">
 	<div class="page-title">
 		<h1>About Me</h1>
-		<?php include '../modules/nav.php';?>	
+		<?php $active="about"; include '../modules/nav.php';?>	
 	</div>
 
 </div>
@@ -17,7 +17,7 @@
 		
 		<div class="column half">
 			<h2>Current</h2>
-			<img class="picture" src="/assets/img/headshot.jpg" >	
+			<img class="picture portrait" src="/assets/img/headshot.jpg" >	
 			<p>I'm a Worldwide Developer Evangelist for <a href="http://www.adobe.com/">Adobe</a>.  
 			My job basically entails me traveling the world and 
 			talking about the developer tools and technologies that Adobe has to offer or that we support. 

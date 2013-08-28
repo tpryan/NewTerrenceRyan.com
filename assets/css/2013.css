@@ -302,6 +302,9 @@ textarea {
   width: 100%;
   font-size: 1.5rem; }
 
+.error404 article p {
+  font-size: 1.5rem; }
+
 @media screen and (max-width: 700px) {
   .centered, .main, header, footer, .tweet, .page-title, .top-bar nav {
     max-width: 700px; }
@@ -320,12 +323,36 @@ textarea {
       max-width: 200px; }
     .main .column article .flag {
       width: 40px; } }
-@media screen and (min-width: 700px) and (max-width: 1024px) {
+@media screen and (min-width: 500px) and (max-width: 599px) {
+  .main article .picture {
+    float: right;
+    max-width: 100%; }
+
+  .main article .portrait {
+    float: right;
+    width: 250px;
+    height: 250px; } }
+@media screen and (min-width: 600px) and (max-width: 699px) {
+  .main article .picture {
+    float: right;
+    max-width: 100%; }
+
+  .main article .portrait {
+    float: right;
+    width: 295px;
+    height: 295px; } }
+@media screen and (min-width: 500px) and (max-width: 1024px) {
   .centered, .main, header, footer, .tweet, .page-title, .top-bar nav {
     max-width: 800px; }
 
   header h1 {
     font-size: 1.5rem; }
+
+  .main article .logo {
+    float: right; }
+
+  .main article .book {
+    float: none; }
 
   .main .column {
     width: 33%; }
@@ -334,12 +361,19 @@ textarea {
       max-width: 200px; }
     .main .column article .flag {
       width: 40px; }
+    .main .column article .picture {
+      float: right; }
     .main .column:last-of-type {
       width: 100%; }
       .main .column:last-of-type article {
         width: 32%;
         display: inline-block;
-        vertical-align: top; } }
+        vertical-align: top;
+        border-bottom: 0; }
+  .main .half {
+    width: 50%; }
+  .main .full {
+    padding: 0; } }
 @media screen and (min-width: 1024px) {
   .centered, .main, header, footer, .tweet, .page-title, .top-bar nav {
     max-width: 1024px; }
@@ -375,11 +409,18 @@ textarea {
 @media screen and (max-width: 499px) {
   .top-bar .page-title .tweet {
     display: none; }
+  .top-bar .page-title h1 {
+    display: none; }
   .top-bar .page-title nav {
     width: 100%;
     text-align: left;
     font-size: 1.4rem;
-    margin-bottom: 0.4rem; }
+    margin-bottom: .4rem; }
+    .top-bar .page-title nav a {
+      text-decoration: none; }
+    .top-bar .page-title nav .active {
+      color: #666;
+      border-bottom: 4px solid red; }
 
   .centered, .main, header, footer, .tweet, .page-title, .top-bar nav {
     max-width: 100%; }

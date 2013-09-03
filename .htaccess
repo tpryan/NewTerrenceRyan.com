@@ -1,6 +1,7 @@
 ErrorDocument 404 /error/404.php
 Redirect 301 /dear-coldfusion-skeptic/ http://blog.terrenceryan.com/dear-coldfusion-skeptic/
 Redirect 301 /blog http://blog.terrenceryan.com/
+Redirect 301 /contact http://terrenceryan.com/about
 
 AddDefaultCharset UTF-8
 

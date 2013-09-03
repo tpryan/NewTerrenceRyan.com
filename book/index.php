@@ -104,5 +104,4 @@
 </div>	
 <?php include '../modules/page-footer.php';?>
 <?php include '../modules/google.php';?>
-</body>
-</html>
+<?php include '../modules/foot.php';?>

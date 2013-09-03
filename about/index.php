@@ -105,12 +105,11 @@
 			<li>The responsive part of the site was planned using <a href="http://html.adobe.com/edge/reflow/">Adobe Edge Reflow</a>.</li>
 			<li>The code was written using <a href="http://www.sublimetext.com/2">Sublime Text 2</a> 
 				and <a href="http://www.brackets.io">Brackets</a>.</li>
-			<li>I also used <a href="http://sass-lang.com/">Sass</a> to speed up my CSS work.</p>	
+			<li>I also used <a href="http://sass-lang.com/">Sass</a> to speed up my CSS work.</li>	
 		 	</ul>
 	 	</div>	
 	</article> 	
 </div>
 <?php include '../modules/page-footer.php';?>
 <?php include '../modules/google.php';?>
-</body>
-</html>
+<?php include '../modules/foot.php';?>

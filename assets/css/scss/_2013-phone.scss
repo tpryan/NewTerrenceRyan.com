@@ -1,10 +1,5 @@
 
-
-
-@media screen and (max-width: 499px) {
-	body{
-		
-	}
+@media screen and (max-width: 699px) {
 
 	.top-bar {	
 		.page-title {
@@ -30,6 +25,16 @@
 			}		
 		}
 	}
+
+
+
+}
+
+@media screen and (max-width: 650px) {
+	body{
+		
+	}
+
 	.centered{
 		max-width: 100%;
 	}

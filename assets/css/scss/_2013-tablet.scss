@@ -64,6 +64,18 @@
 		height: 295px;
 	}
 
+}
+
+@media screen and (min-width: 700px) and (max-width: 799px) {
+	.top-bar{
+		.page-title .tweet{
+			width: 60%;
+		}
+		.home nav{
+			width: 39%;
+		}
+
+	}	
 }		
 
 @media screen and (min-width: 500px) and (max-width: 1024px) {

@@ -346,6 +346,9 @@ $color-events: #85B5FF;
 
 footer{
 	padding-bottom: 1rem;
+    strong{
+        color: $main-highlight-color;
+    }    
 
 }
 

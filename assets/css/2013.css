@@ -255,6 +255,8 @@ header .short {
 
 footer {
   padding-bottom: 1rem; }
+  footer strong {
+    color: red; }
 
 blockquote {
   font-style: italic;

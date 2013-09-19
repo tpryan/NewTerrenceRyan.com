@@ -344,6 +344,17 @@ $color-events: #85B5FF;
 
 }
 
+.main.thanks {
+	article{
+		h1{
+			font-size: 2.5rem;
+		}
+		time{
+			font-size: 1.5rem;
+		}
+	}
+}
+
 footer{
 	padding-bottom: 1rem;
     strong{

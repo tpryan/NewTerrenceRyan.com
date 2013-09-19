@@ -253,6 +253,11 @@ header .short {
       border: none;
       margin: 0 0 0 2rem; }
 
+.main.thanks article h1 {
+  font-size: 2.5rem; }
+.main.thanks article time {
+  font-size: 1.5rem; }
+
 footer {
   padding-bottom: 1rem; }
   footer strong {

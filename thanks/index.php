@@ -25,6 +25,7 @@
 				<li><a href="http://www.adobe.com/products/photoshop/features.html">Photoshop Features</a></li>
 				<li><a href="http://www.adobe.com/products/illustrator/features.html">Illustrator Features</a></li>
 				<li><a href="http://typekit.com">Typekit</a></li>
+				<li><a href="http://behance.com">Behance</a></li>
 			</ul>
 			<h2>Inspiration</h2>
 			<ul>

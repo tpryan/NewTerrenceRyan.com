@@ -70,7 +70,7 @@
 					</a>	
 					</td>
 					<td>
-						<a href="https://github.com/tpryan" title="Behance: Terrence Ryan">
+						<a href="http://www.behance.net/tpryan" title="Behance: Terrence Ryan">
 						<img src="/assets/img/behance.png" height="56" width="150" alt="behance" />
 					</a>	
 					</td>

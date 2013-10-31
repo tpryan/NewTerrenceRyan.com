@@ -1,4 +1,18 @@
-<article>
+<?php $page_title="Thanks UArts - TerrenceRyan.com";  include '../modules/head.php';?>
+<?php include '../modules/page-header.php';?>  
+
+
+<div class="top-bar">
+	<div class="page-title">
+		<h1>Thank You - UArts!</h1>
+		<?php include '../modules/nav.php';?>
+	</div>	
+</div>
+
+<div class="main thanks">
+    <p>Thanks for still being interested.  I gave this talk back in September of 2013.</p>
+    
+    <article>
 		<div class="column full">
 			<h1>University of the Arts in Philadelphia</h1>
 			<time>September 19, 2013</time>
@@ -28,4 +42,9 @@
 				<li><a href="http://tv.adobe.com/">Adobe TV</a></li>
 			</ul>	
 		</div>	
-	</article>
+	</article>       
+	
+</div>
+<?php include '../modules/page-footer.php';?>
+<?php include '../modules/google.php';?>
+<?php include '../modules/foot.php';?>

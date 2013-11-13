@@ -88,15 +88,15 @@
 	 	<div class="column full">
 			<h2>Site</h2>
 			<h3>Front End</h3>
-			<p>This is my third attempt at building a semantic HTML5 site.</p>
-			<p>I use <a href="https://typekit.com/">Typekit</a> to render <a href="https://typekit.com/fonts/myriad-pro-condensed">Myriad Pro Condensed</a> 
-			as a the header font and <a href="https://typekit.com/fonts/adobe-caslon-pro">Adobe Caslon Pro</a> for the copy font. </p>
+			<p>This is my fourth attempt at building a semantic HTML5 site.</p>
+			<p>I use <a href="https://typekit.com/">Typekit</a> to render <a href="https://typekit.com/fonts/museo-slab">Museo Slab</a> 
+			as a the header font and <a href="https://typekit.com/fonts/museo-sans">Museo Sans</a> for the copy font. </p>
 		 
 			
 			<h3>Tools</h3>
 			<ul>
-			<li>I used <a href="http://browserlab.adobe.com">Browser Lab</a> to get the site working cross platform/browser.</li>	
-			<li>The site was composed using <a href="http://www.adobe.com/products/fireworks/">Fireworks</a>.</li>
+			<li>I used <a href="http://html.adobe.com/edge/inspect/">Edge Inspect</a> to get the site working cross device.</li>	
+			<li>The site was composed using <a href="http://www.adobe.com/products/photoshop/">Photoshop</a>.</li>
 			<li>The responsive part of the site was planned using <a href="http://html.adobe.com/edge/reflow/">Adobe Edge Reflow</a>.</li>
 			<li>The code was written using <a href="http://www.sublimetext.com/2">Sublime Text 2</a> 
 				and <a href="http://www.brackets.io">Brackets</a>.</li>

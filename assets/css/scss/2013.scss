@@ -375,6 +375,16 @@ blockquote{
 
 #socialnetworks {
 	width: 100%;
+    
+    li{
+        list-style: none;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 10px 20px;
+        width: 160px;
+        text-align:center;
+    }    
+    
 	img{
 		border-radius: 0;
 		border: none;

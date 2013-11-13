@@ -274,6 +274,13 @@ blockquote {
 
 #socialnetworks {
   width: 100%; }
+  #socialnetworks li {
+    list-style: none;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 10px 20px;
+    width: 160px;
+    text-align: center; }
   #socialnetworks img {
     border-radius: 0;
     border: none; }

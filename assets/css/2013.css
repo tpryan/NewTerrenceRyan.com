@@ -33,6 +33,9 @@ footer {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
+.wf-loading {
+  visibility: hidden; }
+
 body {
   margin: 0;
   padding: 0;

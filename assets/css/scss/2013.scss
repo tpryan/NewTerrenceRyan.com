@@ -8,7 +8,9 @@ $main-highlight-color: #F00;
 	@include box-sizing(border-box);
 }
 
-
+.wf-loading  {
+  visibility: hidden;
+}
 
 body{
 	margin: 0;

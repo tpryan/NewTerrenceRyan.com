@@ -24,3 +24,7 @@ ExpiresByType image/svg+xml "now plus 1 months"
 
 
 ExpiresDefault "access plus 1 days"
+
+
+Header unset ETag
+FileETag None

@@ -14,7 +14,6 @@ $service_cache = $cache_dir . "behance.html";
 $cache_age = 2 * 60 * 60;
 
 
-
 if (isset($_GET['reset_cache']) && file_exists($service_cache)){
 	unlink($service_cache);
 }
@@ -27,6 +26,7 @@ else{
 	try {
 		$service_html = refreshServiceHTML($behance,  $count, $service_cache, $cache_dir);
 	} catch (Exception $e) {
+		echo ($e);
 		$service_html = "<article><p>No current projects</p></article>";
 	}
 }
@@ -37,7 +37,7 @@ echo $service_html;
 
 
 function refreshServiceHTML($behance, $count, $service_cache, $cache_dir){
-	$service_content = get_wips($behance);
+	$service_content = get_wips($behance,$cache_dir);
 	$service_html = generateBehanceHTML($service_content, $count);
 	$cache_html = "<!-- From Cache -->" . $service_html;
 	file_put_contents($service_cache, $cache_html);
@@ -47,30 +47,59 @@ function refreshServiceHTML($behance, $count, $service_cache, $cache_dir){
 
 function cache_images($service_content, $cache_dir, $count){
 	
+	
+	
 	if (count($service_content) < $count){
 		$count = count($service_content);
 	}
+	
+	
+	
 
 	for ($i=0; $i<$count; $i++){
 		$target = $service_content[$i]['img'];
 		$extension = get_file_extention($target);
-		$destination = $cache_dir .$service_content[$i]['id']  .   '.' . $extension;
+		$destination = $cache_dir . $service_content[$i]['id']  .   '.' . $extension;
 
 		if (!file_exists($destination)){
-			echo $target ."\n";
-			echo $destination ."\n";
-			$image = file_get_contents($target);
-			file_put_contents($destination, $image);
+			//echo $target ."\n";
+			//echo $destination ."\n";
+			
+            $fp = fopen($cache_dir . "behance.log", "w");
+            
+            $ch = curl_init($target);
+            curl_setopt($ch, CURLOPT_HEADER, 0);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($ch, CURLOPT_BINARYTRANSFER,1);
+            curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+            curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+            curl_setopt($ch, CURLOPT_VERBOSE, true);
+            curl_setopt($ch, CURLOPT_STDERR , $fp);
+            curl_setopt($ch, CURLOPT_USERAGENT,'PHP Client of Behance API User: tpryan' );
+            $image = curl_exec($ch);
+            curl_close($ch);
+            
+            
+            
+            if ($extension == "png") {
+                $image = imagepng(imagecreatefromstring($image), $destination, 9,PNG_NO_FILTER );
+            } else {
+                file_put_contents($destination, $image);
+            }   
+            
+			
 		}
 	}
 }	
 
 
-function get_wips($behance){
+function get_wips($behance,$cache_dir){
 	$wips_url = $behance['base'] . "users/" . $behance['user'] . "/wips?api_key=" . $behance['key'];
+	$wips_url = "http://new.terrenceryan.dev/assets/cache/behance.static.json";
+	
 	$wips = get_content_from_service($wips_url);
-
-
+	file_put_contents($cache_dir . "behance.json", json_encode($wips));
+	
 	$result_array = array();
 
 	for ($i=0; $i<count($wips); $i++){

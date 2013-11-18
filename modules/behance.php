@@ -37,16 +37,21 @@ echo $service_html;
 
 
 function refreshServiceHTML($behance, $count, $service_cache, $cache_dir){
+	echo "<!-- refreshServiceHTML started -->" ."\n";
+	error_log("refreshServiceHTML started", 0);
 	$service_content = get_wips($behance,$cache_dir);
 	$service_html = generateBehanceHTML($service_content, $count);
 	$cache_html = "<!-- From Cache -->" . $service_html;
 	file_put_contents($service_cache, $cache_html);
 	cache_images($service_content, $cache_dir, $count);
+	echo "<!-- refreshServiceHTML ended -->" ."\n";
+	error_log("refreshServiceHTML ended", 0);
 	return $service_html;
 }
 
 function cache_images($service_content, $cache_dir, $count){
-	
+	echo "<!-- cache_images started -->" ."\n";
+	error_log("cache_images started", 0);
 	
 	
 	if (count($service_content) < $count){
@@ -90,10 +95,14 @@ function cache_images($service_content, $cache_dir, $count){
 			
 		}
 	}
+	error_log("cache_images ended", 0);
+	echo "<!-- cache_images ended -->" ."\n";
 }	
 
 
 function get_wips($behance,$cache_dir){
+	echo "<!-- get_wips started -->" ."\n";
+	error_log("get_wips started", 0);
 	$wips_url = $behance['base'] . "users/" . $behance['user'] . "/wips?api_key=" . $behance['key'];
 	$wips_url = "http://new.terrenceryan.dev/assets/cache/behance.static.json";
 	
@@ -125,6 +134,8 @@ function get_wips($behance,$cache_dir){
 	}
 
 	usort($result_array, 'sortByOrder');
+	echo "<!-- get_wips ended -->" ."\n";
+	error_log("get_wips ended", 0);
 	return $result_array;
 }
 
@@ -138,6 +149,8 @@ function get_file_extention($filename) {
 
 
 function generateBehanceHTML($service_json, $count ){
+	echo "<!-- generateBehanceHTML started -->" ."\n";
+	error_log("generateBehanceHTML started", 0);
 	date_default_timezone_set('America/New_York');
 	$result = "";
 	$result .=  "<!-- pulled in from Behance -->" ."\n";
@@ -167,7 +180,8 @@ function generateBehanceHTML($service_json, $count ){
 		$item .= '			</article>' . "\n";
 		$result .= $item;
 	}
-
+    echo "<!-- generateBehanceHTML ended -->" ."\n";
+    error_log("generateBehanceHTML ended", 0);
 	return $result;
 }
 

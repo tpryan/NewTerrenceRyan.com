@@ -26,7 +26,7 @@ else{
 	try {
 		$service_html = refreshServiceHTML($behance,  $count, $service_cache, $cache_dir);
 	} catch (Exception $e) {
-		echo ($e);
+		broadcast($e);
 		$service_html = "<article><p>No current projects</p></article>";
 	}
 }
@@ -37,21 +37,18 @@ echo $service_html;
 
 
 function refreshServiceHTML($behance, $count, $service_cache, $cache_dir){
-	echo "<!-- refreshServiceHTML started -->" ."\n";
-	error_log("refreshServiceHTML started", 0);
+	broadcast("refreshServiceHTML started ");
 	$service_content = get_wips($behance,$cache_dir);
 	$service_html = generateBehanceHTML($service_content, $count);
 	$cache_html = "<!-- From Cache -->" . $service_html;
 	file_put_contents($service_cache, $cache_html);
 	cache_images($service_content, $cache_dir, $count);
-	echo "<!-- refreshServiceHTML ended -->" ."\n";
-	error_log("refreshServiceHTML ended", 0);
+	broadcast("refreshServiceHTML ended ");
 	return $service_html;
 }
 
 function cache_images($service_content, $cache_dir, $count){
-	echo "<!-- cache_images started -->" ."\n";
-	error_log("cache_images started", 0);
+	broadcast("cache_images started ");
 	
 	
 	if (count($service_content) < $count){
@@ -66,11 +63,12 @@ function cache_images($service_content, $cache_dir, $count){
 		$extension = get_file_extention($target);
 		$destination = $cache_dir . $service_content[$i]['id']  .   '.' . $extension;
 
+		broadcast("Target : " . $target);
+        broadcast("Destination : " . $destination);
+		
 		if (!file_exists($destination)){
-			//echo $target ."\n";
-			//echo $destination ."\n";
+			broadcast("Image needs caching");
 			
-            $fp = fopen($cache_dir . "behance.log", "w");
             
             $ch = curl_init($target);
             curl_setopt($ch, CURLOPT_HEADER, 0);
@@ -79,7 +77,6 @@ function cache_images($service_content, $cache_dir, $count){
             curl_setopt($ch, CURLOPT_TIMEOUT, 5);
             curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
             curl_setopt($ch, CURLOPT_VERBOSE, true);
-            curl_setopt($ch, CURLOPT_STDERR , $fp);
             curl_setopt($ch, CURLOPT_USERAGENT,'PHP Client of Behance API User: tpryan' );
             $image = curl_exec($ch);
             curl_close($ch);
@@ -94,18 +91,20 @@ function cache_images($service_content, $cache_dir, $count){
             
 			
 		}
+		else{
+		    broadcast("Image does not need caching");
+        }
 	}
-	error_log("cache_images ended", 0);
-	echo "<!-- cache_images ended -->" ."\n";
+	broadcast("cache_images ended ");
 }	
 
 
 function get_wips($behance,$cache_dir){
-	echo "<!-- get_wips started -->" ."\n";
-	error_log("get_wips started", 0);
+	broadcast("get_wips started ");
 	$wips_url = $behance['base'] . "users/" . $behance['user'] . "/wips?api_key=" . $behance['key'];
-	$wips_url = "http://new.terrenceryan.dev/assets/cache/behance.static.json";
+	//$wips_url = "http://new.terrenceryan.dev/assets/cache/behance.static.json";
 	
+	broadcast("wips_url: " . $wips_url);
 	$wips = get_content_from_service($wips_url);
 	file_put_contents($cache_dir . "behance.json", json_encode($wips));
 	
@@ -134,8 +133,7 @@ function get_wips($behance,$cache_dir){
 	}
 
 	usort($result_array, 'sortByOrder');
-	echo "<!-- get_wips ended -->" ."\n";
-	error_log("get_wips ended", 0);
+	broadcast("get_wips ended ");
 	return $result_array;
 }
 
@@ -149,8 +147,7 @@ function get_file_extention($filename) {
 
 
 function generateBehanceHTML($service_json, $count ){
-	echo "<!-- generateBehanceHTML started -->" ."\n";
-	error_log("generateBehanceHTML started", 0);
+	broadcast("generateBehanceHTML started ");
 	date_default_timezone_set('America/New_York');
 	$result = "";
 	$result .=  "<!-- pulled in from Behance -->" ."\n";
@@ -180,9 +177,14 @@ function generateBehanceHTML($service_json, $count ){
 		$item .= '			</article>' . "\n";
 		$result .= $item;
 	}
-    echo "<!-- generateBehanceHTML ended -->" ."\n";
-    error_log("generateBehanceHTML ended", 0);
+    broadcast("generateBehanceHTML ended");
 	return $result;
+}
+
+
+function broadcast($message) {
+    echo "<!--" . $message . " -->" . "\n";
+    error_log($message, 0);
 }
 
 ?>

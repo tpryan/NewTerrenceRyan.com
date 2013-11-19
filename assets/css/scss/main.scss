@@ -4,6 +4,17 @@
 
 $main-highlight-color: #F00;
 
+$color-design: #1A72AF;
+$color-code: #dcf7dd;
+$color-blog: #FF6600;
+$color-events: #85B5FF;
+
+$color-text: #200000;
+$color-toolbar-background: #200000;
+$color-white: #FFF;
+
+
+
 *{
 	@include box-sizing(border-box);
 }
@@ -15,7 +26,7 @@ $main-highlight-color: #F00;
 body{
 	margin: 0;
 	padding: 0;
-	color: #000;
+	color: $color-text;
 }
 
 
@@ -76,7 +87,7 @@ header, footer, .tweet, .page-title, .top-bar nav{
 .top-bar{
 
 	padding: .5rem 0 .5rem 0;
-	background-color: #000;
+	background-color: $color-toolbar-background;
 	color: #bbb;
 
 	h1{
@@ -169,71 +180,46 @@ header, footer, .tweet, .page-title, .top-bar nav{
 	}	
 }
 
-$color-code: #dcf7dd;
-.main .column.code h2  a{
-	color: darken($color-code, 20%);
-	.icon{
-		background-color: darken($color-code, 15%);
-		color: #000;	
-	}
-}
-.main .column.code .externalref a{
-	color: darken($color-code, 20%);
+
+
+@mixin column-css($name, $base-color, $icon-color) {
+    .main .column.#{$name} h2  a{
+        color: darken($base-color, 20%);
+    
+        .icon{
+            background-color: darken($base-color, 15%);
+            color: $icon-color;	
+        }
+    }
+    .main .column.#{$name} .externalref a{
+        color: darken($base-color, 20%);
+    }
+    
+    .main .column.#{$name} h1 a:hover{
+        color: darken($base-color, 10%);
+    }
 }
 
-.main .column.code h1 a:hover{
-	color: darken($color-code, 10%);
-}
 
-$color-blog: #FF6600;
+
+@include column-css("design", $color-design, $color-white);
+@include column-css("code", $color-code, $color-text);
+@include column-css("blog", $color-blog, $color-white);
+@include column-css("events", $color-events, $color-white);
+
+
 .main .column.blog h2 a{
 	color: darken($color-blog, 5%);
 	.icon{
 		background-color: $color-blog;
-		color: #FFF;	
-	}
-}
-
-.main .column.blog .externalref a{
-	color: darken($color-blog, 10%);
-}
-
-.main .column.blog h1 a:hover{
-	color: darken($color-blog, 10%);
-}
-
-$color-design: #1A72AF;
-.main .column.design h2 a{
-	color: darken($color-design, 5%);
-	.icon{
-		background-color: $color-design;
-		color: #FFF;	
 	}
 }
 
 .main .column.design .externalref a{
 	color: lighten($color-design, 10%);
 }
-.main .column.design h1 a:hover{
-	color: darken($color-design, 10%);
-}
 
-$color-events: #85B5FF;
-.main .column.events h2 a{
-	color: darken($color-events, 5%);
-	.icon{
-		background-color: $color-events;
-		color: #FFF;	
-	}
-}
 
-.main .column.events .externalref a{
-	color: darken($color-events, 10%);
-}
-
-.main .column.events h1 a:hover{
-	color: darken($color-events, 10%);
-}
 
 .main.home .column h2{
 	margin-top: .5rem;

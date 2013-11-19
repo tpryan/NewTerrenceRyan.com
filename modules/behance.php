@@ -78,13 +78,20 @@ function cache_images($service_content, $cache_dir, $count){
             curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
             curl_setopt($ch, CURLOPT_VERBOSE, true);
             curl_setopt($ch, CURLOPT_USERAGENT,'PHP Client of Behance API User: tpryan' );
-            $image = curl_exec($ch);
+            $data = curl_exec($ch);
             curl_close($ch);
             
             
             
             if ($extension == "png") {
-                $image = imagepng(imagecreatefromstring($image), $destination, 9,PNG_NO_FILTER );
+                $image = imagecreatefromstring($data);
+                $image_scalled = imagecreatetruecolor(200,200);
+                list($width_orig, $height_orig) = getimagesizefromstring ($data);
+                imagecopyresampled($image_scalled, $image, 0, 0, 0, 0, 200, 200, $width_orig, $height_orig);
+                
+                
+                
+                imagepng($image_scalled, $destination, 9,PNG_NO_FILTER );
             } else {
                 file_put_contents($destination, $image);
             }   

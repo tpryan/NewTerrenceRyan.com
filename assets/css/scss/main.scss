@@ -286,6 +286,15 @@ $color-events: #85B5FF;
 			text-align: right;
 		}
 	}
+
+    .design{
+         article{
+             img{
+                  margin-top: .5rem;   
+            }    
+        }    
+    } 
+
 	article{
 		
 		
@@ -311,13 +320,13 @@ $color-events: #85B5FF;
 			margin: .5rem 0 1rem 0;	
 		}
 		img{
-			margin-top: .5rem;
 			border: 2px solid #ccc;
 			border-radius: 4000px;
 			max-height: 250px;
 			max-width: 250px;
 			display: block;
 			margin: 0 auto;
+           
 		}
 		.flag{
 			margin-left: 5px;
@@ -345,6 +354,8 @@ $color-events: #85B5FF;
 	}
 
 }
+
+   
 
 .main.thanks {
 	article{

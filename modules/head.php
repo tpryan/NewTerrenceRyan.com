@@ -16,7 +16,7 @@ if (!isset($page_title)) {
 	<title><?php echo $page_title;?></title>
     <?php include 'typekit.php';?>  
 	<link rel="alternate" type="application/rss+xml" title="RSS Feeds" href="http://feeds.feedburner.com/Terrenceryan" />
-	<link rel="stylesheet" href="/assets/css/2013.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="/assets/css/main.css" type="text/css" media="screen" />
 	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 	
 	<?php if ($include_contact) {

@@ -283,6 +283,7 @@ $color-events: #85B5FF;
 		
 		
 		.externalref {
+            margin: 0;
 			text-align: right;
 		}
 	}
@@ -294,12 +295,22 @@ $color-events: #85B5FF;
             }    
         }    
     } 
+    .blog{
+         article{
+             img{
+                  margin-top: .5rem;   
+            }    
+        }    
+    } 
 
 	article{
 		
 		
 
-		margin-bottom: 2rem;
+		margin-bottom: 1.5rem;
+        &:last-of-type{
+            margin-bottom:.3rem;
+        }
 		h1{
 			font-size: 1.2rem;
 			margin: .5rem 0;	

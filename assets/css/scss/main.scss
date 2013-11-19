@@ -10,7 +10,7 @@ $color-blog: #FF6600;
 $color-events: #85B5FF;
 
 $color-text: #200000;
-$color-toolbar-background: #200000;
+$color-toolbar-background: #130000;
 $color-white: #FFF;
 
 
@@ -125,7 +125,7 @@ header, footer, .tweet, .page-title, .top-bar nav{
 		}
 	}
 	a{
-		color: #bbb;
+		color: #c4bbbb;
 	}
 
 	.page-title{
@@ -145,10 +145,12 @@ header, footer, .tweet, .page-title, .top-bar nav{
 
 
 	nav{
+            padding-left: 0;
+            font-size: 2rem;
+            margin-bottom: .4rem;
 			vertical-align: top;
 			margin-top: 8px;
-			text-align: right;
-			width: 49%;
+			text-align: left;
 			display: inline-block;
 			ul{
 				margin: 0;
@@ -169,15 +171,17 @@ header, footer, .tweet, .page-title, .top-bar nav{
 					border-right: 0;
 				}
 			}
+            a{
+                text-decoration: none;
+            }
+            .active{
+                color: #433;
+            }
 
 
 		}
 
-	.home{
-		nav{
-			width: 29%;
-		}
-	}	
+
 }
 
 

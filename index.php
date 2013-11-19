@@ -2,10 +2,6 @@
 <?php include './modules/page-header.php';?> 
 	<div class="top-bar">
 		<div class="page-title home">
-			<div class="tweet">
-				<div class="icon">&#62217;</div>
-				<?php include './modules/twitter.php';?>
-			</div>
 			<?php $active="home"; include './modules/nav.php';?>	
 		</div>
 		

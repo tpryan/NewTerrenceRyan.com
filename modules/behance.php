@@ -82,18 +82,52 @@ function cache_images($service_content, $cache_dir, $count){
             curl_close($ch);
             
             
+            $image = imagecreatefromstring($data);
+            
+            
+            $thumb_width = 200;
+            $thumb_height = 200;
+            
+            $width = imagesx($image);
+            $height = imagesy($image);
+            
+            $original_aspect = $width / $height;
+            $thumb_aspect = $thumb_width / $thumb_height;
+            
+            if ( $original_aspect >= $thumb_aspect )
+            {
+               // If image is wider than thumbnail (in aspect ratio sense)
+               $new_height = $thumb_height;
+               $new_width = $width / ($height / $thumb_height);
+            }
+            else
+            {
+               // If the thumbnail is wider than the image
+               $new_width = $thumb_width;
+               $new_height = $height / ($width / $thumb_width);
+            }
+            
+            
+            $image_scalled = imagecreatetruecolor(200,200);
+            imagecopyresampled($image_scalled,
+                   $image,
+                   0 - ($new_width - $thumb_width) / 2, // Center the image horizontally
+                   0 - ($new_height - $thumb_height) / 2, // Center the image vertically
+                   0, 0,
+                   $new_width, $new_height,
+                   $width, $height);
+                
+            
             
             if ($extension == "png") {
-                $image = imagecreatefromstring($data);
-                $image_scalled = imagecreatetruecolor(200,200);
-                list($width_orig, $height_orig) = getimagesizefromstring ($data);
-                imagecopyresampled($image_scalled, $image, 0, 0, 0, 0, 200, 200, $width_orig, $height_orig);
-                
-                
-                
                 imagepng($image_scalled, $destination, 9,PNG_NO_FILTER );
-            } else {
-                file_put_contents($destination, $image);
+            } 
+            else if ($extension == "jpg" ||  $extension == "jpeg") {    
+                imagejpeg($image_scalled, $destination, 90 );
+                
+            }    
+            else {
+                file_put_contents($destination, $data);
             }   
             
 			

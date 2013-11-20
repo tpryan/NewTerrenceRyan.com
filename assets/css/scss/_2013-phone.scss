@@ -46,7 +46,7 @@
 			width: 100%;
 			padding: 0;
 			article{
-
+                
 				img{
 					float:right;
                     position: relative;
@@ -57,7 +57,13 @@
                     content: "";
                     display:table;
                     clear:both;
-                }            
+                }
+
+                .flag{
+                    float: none;
+                    position: static;
+    vertical-align:middle;
+                }
     
 			}
 		}
@@ -79,7 +85,7 @@
 }		
 
 
-@media screen and (max-width: 299px) {
+@media screen and (max-width: 320px) {
 	.top-bar {	
 		.page-title {
 			nav{
@@ -92,6 +98,12 @@
 			}		
 		}
 	}
+    
+
+}
+
+
+@media screen and (max-width: 299px) {
     
     .main{
 	    .externalref{

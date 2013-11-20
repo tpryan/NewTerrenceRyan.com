@@ -159,7 +159,7 @@ header, footer, .tweet, .page-title, .top-bar nav{
 				li{
 					display: inline-block;
 					border-right: 1px solid #fff;;
-					padding-right: 5px;
+					padding-right: 10px;
 					padding-left: 1px;
 					a{
 						&:hover{
@@ -175,7 +175,7 @@ header, footer, .tweet, .page-title, .top-bar nav{
                 text-decoration: none;
             }
             .active{
-                color: #433;
+                color: #766;
             }
 
 
@@ -253,14 +253,14 @@ header, footer, .tweet, .page-title, .top-bar nav{
 			color: #000;
 			vertical-align: bottom;
 			.icon{
-				font-size: 3rem;
+				font-size: 2.8rem;
 				margin-left: .5rem;
 				line-height: .8;
 				text-align: center;
 				font-weight: normal;
 				border: 1px solid #ccc;
-				height: 2.5rem;
-				width: 2.5rem;
+				height: 2.3rem;
+				width: 2.3rem;
 				border-radius: 2rem;
 				display: inline-block;
 				background-color: #dedede;
@@ -327,6 +327,7 @@ header, footer, .tweet, .page-title, .top-bar nav{
 			max-width: 250px;
 			display: block;
 			margin: 0 auto;
+            -webkit-shape-outside: circle(50%, 50%, 55%);
            
 		}
 		.flag{

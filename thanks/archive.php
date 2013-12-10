@@ -13,6 +13,7 @@
     <ul>
         <li><a href="092013-uarts.php">University of the Arts in Philadelphia</a></li>
         <li><a href="102013-html5devconf.php">HTML5Dev Conf in San Francisco</a></li>
+        <li><a href="120913-devcon5.php">Devcon 5 Conference in Los Angeles</a></li>
     </ul>
      
 	

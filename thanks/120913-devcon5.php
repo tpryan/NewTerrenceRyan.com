@@ -1,19 +1,16 @@
-<?php $page_title="Most Recent Thanks - TerrenceRyan.com";  include '../modules/head.php';?>
+<?php $page_title="Thanks UArts - TerrenceRyan.com";  include '../modules/head.php';?>
 <?php include '../modules/page-header.php';?>  
 
 
 <div class="top-bar">
 	<div class="page-title">
-		<h1>Thank You</h1>
+		<h1>Thank You - Devcon5 attendees!</h1>
 		<?php include '../modules/nav.php';?>
 	</div>	
 </div>
 
-
-
 <div class="main thanks">
-    <p><a href="archive.php">Previous Events</a></p>
-    <p>Thanks for coming out to see me today! I hope my talk was helpful for you. </p>
+    <p>Thanks for still being interested.  I gave this talk back in December of 2013.</p>
     
     <article>
 		<div class="column full">
@@ -50,7 +47,8 @@
             <li><a href="http://www.html5rocks.com/en/tutorials/filters/understanding-css/">Understanding CSS Filter Effects</a></li>
             
         </ul>
-    </article>    
+    </article> 
+    
 	
 </div>
 <?php include '../modules/page-footer.php';?>

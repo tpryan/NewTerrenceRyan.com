@@ -4,7 +4,7 @@
 
 <div class="top-bar">
 	<div class="page-title">
-		<h1>Thank You - UArts!</h1>
+		<h1>Thank You - HTML5 Developers Conference attendees!</h1>
 		<?php include '../modules/nav.php';?>
 	</div>	
 </div>

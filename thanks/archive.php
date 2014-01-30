@@ -10,6 +10,7 @@
 </div>
 
 <div class="main thanks">
+    <h2>2013</h2>
     <ul>
         <li><a href="092013-uarts.php">University of the Arts in Philadelphia</a></li>
         <li><a href="102013-html5devconf.php">HTML5Dev Conf in San Francisco</a></li>

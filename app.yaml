@@ -17,3 +17,17 @@ handlers:
 
 - url: /assets/css/
   static_dir: assets/css/
+  
+  
+- url: /
+  script: index.php  
+  
+- url: /about
+  script: about/index.php
+  
+- url: /job
+  script: job/index.php
+
+- url: /book
+  script: book/index.php
+  

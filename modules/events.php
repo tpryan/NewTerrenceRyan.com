@@ -31,7 +31,7 @@ function refreshLanyrdHTML($lanyrd_url, $count, $lanyrd_cache){
 	$lanyrd_content = get_content_from_lanyrd($lanyrd_url);
 	$lanyrd_html = generateEventHTML($lanyrd_content,$count);
 	$cache_html = "<!-- From Cache -->" . $lanyrd_html;
-	file_put_contents($lanyrd_cache, $cache_html);
+	place_in_cache($lanyrd_cache, $cache_html);
 	return $lanyrd_html;
 }
 
@@ -149,7 +149,7 @@ function convert_smart_quotes($string)
 function get_content_from_lanyrd($url) {
 	date_default_timezone_set('Europe/London');
 	
-	$content = file_get_contents($url);
+	$content = url_get_contents($url);
 
 
 	$content = explode("\n", $content);
@@ -239,8 +239,6 @@ function normalize_address($address){
 
 function extracts_geo_details($googleinfo){
 	$results = array('city'=>"",'state'=>"",'country'=>"",'country_code'=>"");
-	
-
 	
 	$address_components = $googleinfo['results'][0]['address_components'];
 

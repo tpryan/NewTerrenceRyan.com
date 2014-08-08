@@ -9,9 +9,9 @@ handlers:
   script: \1
 
 # Needed for static image files
-- url: /(.+\.(gif|png|jpg))$
+- url: /(.+\.(gif|png|jpg|jpeg))$
   static_files: \1
-  upload: .+\.(gif|png|jpg)$
+  upload: .+\.(gif|png|jpg|jpeg)$
   application_readable: true
 
 

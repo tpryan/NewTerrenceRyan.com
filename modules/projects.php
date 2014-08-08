@@ -31,7 +31,7 @@ function refreshGitHubHTML($github_url, $count, $github_cache){
 	$github_content = get_content_from_github($github_url);
 	$github_html = generateGithubHTML($github_content,$count);
 	$cache_html = "<!-- From Cache --->" . $github_html;
-	file_put_contents($github_cache, $cache_html);
+	place_in_cache($github_cache, $cache_html);
 	return $github_html;
 }
 

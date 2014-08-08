@@ -15,6 +15,14 @@
 		}
 	}
 	
+	function place_in_cache($location, $content) {
+	    $parent = dirname($location);
+	    if (!file_exists($location) ){
+	        mkdir($parent); 
+        }
+	    
+	    file_put_contents($location, $content);
+    }
 
 	function url_get_contents ($url) {
         $options  = array('http' => array('user_agent'=> $_SERVER['HTTP_USER_AGENT']));

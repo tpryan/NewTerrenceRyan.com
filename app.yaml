@@ -1,0 +1,19 @@
+application: helloworld
+version: 1
+runtime: php
+api_version: 1
+
+handlers:
+# Needed for PHP
+- url: /(.+\.php)$
+  script: \1
+
+# Needed for static image files
+- url: /(.+\.(gif|png|jpg))$
+  static_files: \1
+  upload: .+\.(gif|png|jpg)$
+  application_readable: true
+
+
+- url: /assets/css/
+  static_dir: assets/css/

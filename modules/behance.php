@@ -70,18 +70,7 @@ function cache_images($service_content, $cache_dir, $count){
 			broadcast("Image needs caching");
 			
             
-            $ch = curl_init($target);
-            curl_setopt($ch, CURLOPT_HEADER, 0);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-            curl_setopt($ch, CURLOPT_BINARYTRANSFER,1);
-            curl_setopt($ch, CURLOPT_TIMEOUT, 5);
-            curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
-            curl_setopt($ch, CURLOPT_VERBOSE, true);
-            curl_setopt($ch, CURLOPT_USERAGENT,'PHP Client of Behance API User: tpryan' );
-            $data = curl_exec($ch);
-            curl_close($ch);
-            
-            
+            $data = url_get_contents($target);
             $image = imagecreatefromstring($data);
             
             
@@ -99,9 +88,7 @@ function cache_images($service_content, $cache_dir, $count){
                // If image is wider than thumbnail (in aspect ratio sense)
                $new_height = $thumb_height;
                $new_width = $width / ($height / $thumb_height);
-            }
-            else
-            {
+            } else {
                // If the thumbnail is wider than the image
                $new_width = $thumb_width;
                $new_height = $height / ($width / $thumb_width);
@@ -157,8 +144,7 @@ function get_wips($behance,$cache_dir){
 
 		$comments = get_content_from_service($comment_url);
 
-
-		$entry = array();
+				$entry = array();
 		$entry['id']  = "wip" . $revision['id'];
 		$entry['name']  = $wips['wips'][$i]['title'];
 		$entry['date']  = $wips['wips'][$i]['created_on'];
@@ -167,8 +153,6 @@ function get_wips($behance,$cache_dir){
 		$entry['desc']  = $revision['description'];
 		$entry['img']  = $revision['images']['thumbnail']['url'];
 		$entry['img_type']  = get_file_extention($revision['images']['thumbnail']['url']);
-
-		
 
 		array_push($result_array, $entry);
 	}

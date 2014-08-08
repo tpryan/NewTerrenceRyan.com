@@ -14,19 +14,13 @@
 			return false;
 		}
 	}
+	
 
-	function url_get_contents ($Url) {
-	    if (!function_exists('curl_init')){ 
-	        die('CURL is not installed!');
-	    }
-	    $ch = curl_init();
-	    curl_setopt($ch, CURLOPT_URL, $Url);
-	    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-	    curl_setopt($ch,CURLOPT_USERAGENT,'PHP_Curl');
-	    $output = curl_exec($ch);
-	    curl_close($ch);
-
-	    return $output;
+	function url_get_contents ($url) {
+        $options  = array('http' => array('user_agent'=> $_SERVER['HTTP_USER_AGENT']));
+        $context  = stream_context_create($options);	    
+        $response = file_get_contents($url, false, $context);
+	    return $response;
 	}
 
 	function get_content_from_service($url) {

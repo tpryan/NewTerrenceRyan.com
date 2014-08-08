@@ -17,7 +17,7 @@
 	
 	function place_in_cache($location, $content) {
 	    $parent = dirname($location);
-	    if (!file_exists($location) ){
+	    if (!file_exists($parent) ){
 	        mkdir($parent); 
         }
 	    

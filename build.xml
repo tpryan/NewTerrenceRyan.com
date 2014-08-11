@@ -153,6 +153,7 @@
 			<arg line="--database ${database.schema.prod}"/>
 			<arg line="--tables"/>
 			<arg line="--host ${database.host.prod}"/>
+			<arg line="--port ${database.port.prod}"/>
 			<arg line="--user ${database.username.prod}"/>
 			<arg line="--password=${database.password.prod}"/>
 			<arg line="--no-create-db" />
@@ -168,7 +169,20 @@
 			<arg line="--password=${database.password.local}"/>
 		</exec>
 	</target>
+	
+	<target name="importToNewProd" depends="exportProdDatabase" description="Imports the prod database locally">
+		<echo message="Importing entries into new prod" />
+		<exec executable="${mysql.mysql.exe}" spawn="false" dir="${mysql.dir}" input="${database.dir}prodexport.sql">
+			<arg line="--database ${database.schema.newprod}"/>
+			<arg line="--host ${database.host.newprod}"/>
+			<arg line="--user ${database.username.newprod}"/>
+			<arg line="--password=${database.password.newprod}"/>
+		</exec>
+	</target>
 
+	<target name="projectInt" description="Makes folders needed but that aren't stored in git.">
+	    <mkdir dir="${database.dir}" />
+	</target>
 	
 
 </project>	

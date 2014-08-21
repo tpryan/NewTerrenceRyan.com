@@ -19,9 +19,9 @@
 			<p class="externalref">View more on <a href="https://github.com/tpryan">github.com</a>.</p>
 		</div>
 		<div class="blog column">
-			<h2><a href="http://blog.terrenceryan.com">Blog <span class="icon">&#59194;</span></a></h2>
+			<h2><a href="/blog">Blog <span class="icon">&#59194;</span></a></h2>
 			<?php include './modules/blog.php';?>
-			<p class="externalref">View more on <a href="http://blog.terrenceryan.com">my blog</a>.</p>
+			<p class="externalref">View more on <a href="/blog">my blog</a>.</p>
 		</div>
 		<div class="events column">
 			<h2><a href="http://lanyrd.com/profile/tpryan/">Events <span class="icon">&#128197;</span></a></h2>

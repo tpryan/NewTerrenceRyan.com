@@ -4,7 +4,7 @@
 
 <div class="top-bar">
 	<div class="page-title">
-		<h1>Job</h1>
+		<h1>Resume</h1>
 		<?php $active="job"; include '../modules/nav.php';?>	
 	</div>	
 </div>

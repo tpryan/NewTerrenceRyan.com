@@ -25,7 +25,10 @@ handlers:
   script: about/index.php
 
 - url: /job
-  script: job/index.php
+  script: resume/index.php
+
+- url: /resume
+  script: resume/index.php 
 
 - url: /book
   script: book/index.php

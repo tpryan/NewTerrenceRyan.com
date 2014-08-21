@@ -14,38 +14,37 @@ handlers:
 
 - url: /assets/css/
   static_dir: assets/css/
-  
+
 - url: /assets/cache/
   static_dir: assets/cache/
 
-  
-  
 - url: /
   script: index.php  
-  
+
 - url: /about
   script: about/index.php
-  
+
 - url: /job
   script: job/index.php
 
 - url: /book
   script: book/index.php
-  
-  
-- url: /(.*\.(htm|html|css|js))$
+
+- url: /blog/(.*\.(htm|html|css|js))$
   static_files: wordpress/\1
   upload: wordpress/.*\.(htm|html|css|js)$
   application_readable: true
+
+- url: /blog/(.*\.(ico|jpg|png|gif))$
+  static_files: wordpress/\1
+  upload: wordpress/.*\.(htm|html|css|js)$
+  application_readable: true  
 
 - url: /wp-content/(.*\.(ico|jpg|png|gif))$
   static_files: wordpress/wp-content/\1
   upload: wordpress/wp-content/.*\.(ico|jpg|png|gif)$
   application_readable: true
 
-#- url: /(.*\.(ico|jpg|png|gif))$
-#  static_files: wordpress/\1
-#  upload: wordpress/.*\.(ico|jpg|png|gif)$
 
 - url: /wp-admin/(.+)
   script: wordpress/wp-admin/\1

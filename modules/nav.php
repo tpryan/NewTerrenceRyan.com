@@ -12,6 +12,6 @@ if (!isset($active)) {
 		<li><a href="/about"<?php if ($active == "about") {echo ' class="active"';} ?>>About</a></li>
 		<li><a href="/job"<?php if ($active == "job") {echo ' class="active"';} ?>>Job</a></li>
 		<li><a href="/book"<?php if ($active == "book") {echo ' class="active"';} ?>>Book</a></li>
-		<li><a href="http://blog.terrenceryan.com/">Blog</a></li>
+		<li><a href="/blog">Blog</a></li>
 	</ul>
 </nav>	

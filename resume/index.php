@@ -4,12 +4,12 @@
 
 <div class="top-bar">
 	<div class="page-title">
-		<h1>Resume</h1>
 		<?php $active="job"; include '../modules/nav.php';?>	
 	</div>	
 </div>
 
 <div class="main">
+	<h1>Resume</h1>
 	<article>
 		<div class="column full">
 			<img class="picture logo" src="/assets/img/adobelogo.png" id="adobelogo">

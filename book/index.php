@@ -5,12 +5,13 @@
 
 <div class="top-bar">
 	<div class="page-title">
-		<h1>Book</h1>
+		
 		<?php $active="book"; include '../modules/nav.php';?>	
 	</div>	
 </div>
 
 <div class="main book">
+	<h1>Book</h1>
 	<article>
 	
 	<div class="column primary half">

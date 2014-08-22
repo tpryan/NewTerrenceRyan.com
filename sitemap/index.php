@@ -1,12 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<?php $page_title="Site Map - TerrenceRyan.com";  include '../modules/head.php';?>
-<body class="sub-page">
-<?php $show_images=false; $show_tagline=false;  include '../modules/page-header.php';?>  
+<?php $page_title="Sitemap - TerrenceRyan.com";  include '../modules/head.php';?>
+<?php include '../modules/page-header.php';?>  
 
-<div class="content">
+
+<div class="top-bar">
+	<div class="page-title">
+		<?php $active="sitemap"; include '../modules/nav.php';?>	
+	</div>	
+</div>
+
+<div class="main">
+	<h1>Site Map</h1>
 	<article>
-			<h1>Site Map</h1>
+			
 			<ul>
 				<li><h2><a href="/">Home</a></h2>
 					<ul>
@@ -27,5 +32,4 @@
 </div>
 <?php include '../modules/page-footer.php';?>
 <?php include '../modules/google.php';?>
-</body>
-</html>
+<?php include '../modules/foot.php';?>

@@ -4,17 +4,13 @@
 
 <div class="top-bar">
 	<div class="page-title">
-		<h1>About Me</h1>
 		<?php $active="about"; include '../modules/nav.php';?>	
 	</div>
 
 </div>
 <div class="main">
-	
+	<h1>About Me</h1>
 	<article>
-		
-		
-		
 		<div class="column half">
 			<h2>Current</h2>
 			<img class="picture portrait" src="/assets/img/headshot.jpg" >	

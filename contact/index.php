@@ -1,16 +1,16 @@
-<?php $page_title="About - TerrenceRyan.com"; $include_contact= true;  include '../modules/head.php';?>
+<?php $page_title="Contact - TerrenceRyan.com"; $include_contact= true;  include '../modules/head.php';?>
 <?php include '../modules/page-header.php';?>  
 
 
 <div class="top-bar">
 	<div class="page-title">
-		<h1>Contact</h1>
+		
 		<?php $active="contact"; include '../modules/nav.php';?>	
 	</div>
 
 </div>
 <div class="main">
-	
+	<h1>Contact</h1>
 	<article>
 		
 		

@@ -23,7 +23,7 @@ function handleFailure(e){
 function send(datastr){
 	$.ajax({
 		type: "POST",
-		url: "process.php",
+		url: "/contact/process.php",
 		data: datastr,
 		cache: false,
 		success: handleSuccess,

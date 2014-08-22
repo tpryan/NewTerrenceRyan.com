@@ -1,4 +1,5 @@
 <?php
+use \google\appengine\api\mail\Message;
 
 if (strlen($_POST['email']) < 1){
 	throw new Exception('Mail Faiure');
@@ -35,6 +36,8 @@ $vars["comment_author"]			= $name;
 $vars["comment_author_email"]	= $mail;
 
 set_error_handler("warning_handler", E_WARNING);
+
+
 if ( $akismet->check( $vars ) ) {
     echo "SPAM!!!";
     die( "The message was spam!" );
@@ -44,13 +47,21 @@ else {
     $message =" You received  a mail from ".$name ."<" .$mail .">" .  "\n";
     $message .= $text;
     
-    if(mail($to, $subject,$message)){
-        echo "Success";
+
+    try
+    {
+      $messageObj = new Message();
+      $messageObj->setSender($to);
+      $messageObj->addTo($to);
+      $messageObj->setSubject($subject);
+      $messageObj->setTextBody($message);
+      $messageObj->send();
+      echo "Success";
+    } catch (InvalidArgumentException $e) {
+        echo "Error";
+        var_dump($e);
     }
-    else{
-        echo "Failure";
-        throw new Exception('Mail Faiure');
-    }
+
 }
 
 restore_error_handler();
@@ -63,7 +74,7 @@ restore_error_handler();
 
 
 function warning_handler($errno, $errstr) { 
-    echo "Warning Caught";
+    echo "<!-- Warning Caught -->";
 }
 
 

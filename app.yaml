@@ -24,6 +24,12 @@ handlers:
 - url: /about
   script: about/index.php
 
+- url: /contact
+  script: contact/index.php
+
+- url: /contact/process.php
+  script: contact/process.php
+
 - url: /job
   script: resume/index.php
 

@@ -39,6 +39,10 @@ handlers:
 - url: /book
   script: book/index.php
 
+- url: /sitemap
+  script: sitemap/index.php
+
+
 - url: /blog/(.*\.(htm|html|css|js))$
   static_files: wordpress/\1
   upload: wordpress/.*\.(htm|html|css|js)$

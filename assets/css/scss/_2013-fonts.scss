@@ -1,5 +1,6 @@
-$basefont : "museo-sans", "Museo Sans", "Helvetica";
-$slabfont : "museo-slab", "Museo Slab", "Georgia";
+$basefont : "myriad-pro", "Helvetica";
+$slabfont : "myriad-pro", "Helvetica";
+$headfont : "myriad-pro-condensed";
 
 body{
 	font-family: $basefont;
@@ -14,6 +15,30 @@ header{
 			}
 		}
 }
+
+article{
+	h1{
+		font-family: $headfont;
+		font-weight: 900;
+
+	}
+
+
+}
+.main{
+	h2{
+		font-family: $headfont;
+		font-weight: 900;
+	}
+
+}
+
+.top-bar nav{
+	font-family: $headfont;
+	font-weight: 100;
+
+}
+
 
 footer{
 	font-family: $slabfont;

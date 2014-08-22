@@ -49,15 +49,15 @@ handlers:
   application_readable: true
 
 
-- url: /wp-admin/(.+)
+- url: /blog/wp-admin/(.+)
   script: wordpress/wp-admin/\1
   secure: always
 
-- url: /wp-admin/
+- url: /blog/wp-admin/
   script: wordpress/wp-admin/index.php
   secure: always
 
-- url: /wp-login.php
+- url: /blog/wp-login.php
   script: wordpress/wp-login.php
   secure: always
 

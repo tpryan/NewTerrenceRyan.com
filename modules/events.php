@@ -1,9 +1,10 @@
 <?php
 require_once 'module_common.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/config/creds.php';
 
 $lanyrd_url = "http://lanyrd.com/people/tpryan/tpryan.ics";
 $count = 3;
-$lanyrd_cache = $_SERVER['DOCUMENT_ROOT'] . "/assets/cache/events.html";
+$lanyrd_cache = "gs://" . $googleprojectname . "/assets/cache/events.html";
 $cache_age = 2 * 60 * 60;
 
 

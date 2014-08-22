@@ -1,9 +1,10 @@
 <?php
 include_once 'module_common.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/config/creds.php';
 
 $count = 3;
 $github_url = "https://api.github.com/users/tpryan/repos?sort=pushed";
-$github_cache = $_SERVER['DOCUMENT_ROOT'] . "/assets/cache/projects.html";
+$github_cache = "gs://" . $googleprojectname .  "/assets/cache/projects.html";
 $cache_age = 2 * 60 * 60;
 
 

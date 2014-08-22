@@ -24,6 +24,9 @@ handlers:
 - url: /about
   script: about/index.php
 
+- url: /test.php
+  script: test.php 
+
 - url: /contact
   script: contact/index.php
 

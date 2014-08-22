@@ -2,13 +2,11 @@
 include_once $_SERVER['DOCUMENT_ROOT'] . '/config/creds.php';
 include_once 'module_common.php';
 $count = 1;
-$blog_cache = $_SERVER['DOCUMENT_ROOT'] . "/assets/cache/blog.html";
+$blog_cache = "gs://" . $googleprojectname . "/assets/cache/blog.html";
 $cache_age = 2 * 60 * 60;
 
 
 $dbInfo = $newDB;
-// $entries = getPostsFromDataBase($newDB, $count);
-// $blogHTML = generateBlogHTML($entries);
 
 
 

@@ -1,5 +1,8 @@
 <?php
 include_once 'module_common.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/config/creds.php';
+require_once 'google/appengine/api/cloud_storage/CloudStorageTools.php';
+use google\appengine\api\cloud_storage\CloudStorageTools;
 flush();
 $count = 1;
 
@@ -9,7 +12,7 @@ $behance = array(
 	    'key' => "lVyYO1uqnBR27R8IkVJkwvDOWKz9qvSm"
 	);
 
-$cache_dir = $_SERVER['DOCUMENT_ROOT'] . "/assets/cache/";
+$cache_dir = "gs://" . $googleprojectname .  "/assets/cache/";
 $service_cache = $cache_dir . "behance.html";
 $cache_age = 2 * 60 * 60;
 
@@ -39,7 +42,7 @@ echo $service_html;
 function refreshServiceHTML($behance, $count, $service_cache, $cache_dir){
 	broadcast("refreshServiceHTML started ");
 	$service_content = get_wips($behance,$cache_dir);
-	$service_html = generateBehanceHTML($service_content, $count);
+	$service_html = generateBehanceHTML($service_content, $count, $cache_dir);
 	$cache_html = "<!-- From Cache -->" . $service_html;
 	file_put_contents($service_cache, $cache_html);
 	cache_images($service_content, $cache_dir, $count);
@@ -171,7 +174,7 @@ function get_file_extention($filename) {
 }
 
 
-function generateBehanceHTML($service_json, $count ){
+function generateBehanceHTML($service_json, $count, $cache_dir ){
 	broadcast("generateBehanceHTML started ");
 	date_default_timezone_set('America/New_York');
 	$result = "";
@@ -183,6 +186,9 @@ function generateBehanceHTML($service_json, $count ){
 	}
 
 	for ($i=0; $i<$count; $i++){
+		$icon_image_url = CloudStorageTools::getImageServingUrl($cache_dir . $service_json[$i]['id'] . '.' . $service_json[$i]['img_type'] );
+
+
 		$raw_date = $service_json[$i]['date'];
 		$date_string = date("F j, Y", $raw_date);
 		$item = "";
@@ -196,7 +202,7 @@ function generateBehanceHTML($service_json, $count ){
 		$item .= $date_string;
 		$item .= '</time>' . "\n";
 		$item .= '				<a href="' . $service_json[$i]['url'] . '">'. "\n";
-		$item .= '					<img src="/assets/cache/' . $service_json[$i]['id'] . '.' . $service_json[$i]['img_type'] . '" />'. "\n";
+		$item .= '					<img src="'. $icon_image_url .'" />'. "\n";
 		$item .= '				</a>'. "\n";
 		$item .= '				<div><p>' . $service_json[$i]['desc'] . '</p></div>'. "\n";
 		$item .= '			</article>' . "\n";

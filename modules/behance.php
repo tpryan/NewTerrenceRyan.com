@@ -42,10 +42,11 @@ echo $service_html;
 function refreshServiceHTML($behance, $count, $service_cache, $cache_dir){
 	broadcast("refreshServiceHTML started ");
 	$service_content = get_wips($behance,$cache_dir);
+	cache_images($service_content, $cache_dir, $count);
 	$service_html = generateBehanceHTML($service_content, $count, $cache_dir);
 	$cache_html = "<!-- From Cache -->" . $service_html;
 	file_put_contents($service_cache, $cache_html);
-	cache_images($service_content, $cache_dir, $count);
+	
 	broadcast("refreshServiceHTML ended ");
 	return $service_html;
 }
@@ -186,6 +187,7 @@ function generateBehanceHTML($service_json, $count, $cache_dir ){
 	}
 
 	for ($i=0; $i<$count; $i++){
+		broadcast($cache_dir . $service_json[$i]['id'] . '.' . $service_json[$i]['img_type']);
 		$icon_image_url = CloudStorageTools::getImageServingUrl($cache_dir . $service_json[$i]['id'] . '.' . $service_json[$i]['img_type'] );
 
 

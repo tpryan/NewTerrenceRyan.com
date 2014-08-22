@@ -3,6 +3,9 @@ version: 1
 runtime: php
 api_version: 1
 
+skip_files:
+- ^(.*/)?\.scss$
+
 handlers:
 # Needed for PHP
 #- url: /(.+\.php)$
@@ -86,3 +89,5 @@ handlers:
 
 - url: /(.+)?/?
   script: wordpress/index.php
+
+

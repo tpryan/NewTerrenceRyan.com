@@ -10,6 +10,7 @@ $dbInfo = $newDB;
 
 
 
+
 if (isset($_GET['reset_cache']) && file_exists($blog_cache)){
 	unlink($blog_cache);
 }

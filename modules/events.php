@@ -6,15 +6,22 @@ $lanyrd_url = "http://lanyrd.com/people/tpryan/tpryan.ics";
 $count = 3;
 $lanyrd_cache = "gs://" . $googleprojectname . "/assets/cache/events.html";
 $cache_age = 2 * 60 * 60;
-
+$try_cache = true;
 
 
 if (isset($_GET['reset_cache']) && file_exists($lanyrd_cache)){
+	$try_cache = false;
 	unlink($lanyrd_cache);
+
 }
 
-if (shouldStillBeCached($lanyrd_cache, $cache_age)){
-	$lanyrd_html = file_get_contents($lanyrd_cache);
+if ($try_cache && shouldStillBeCached($lanyrd_cache, $cache_age)){
+	
+	try {
+		$lanyrd_html = file_get_contents($lanyrd_cache);
+	} catch (Exception $e) {
+		$lanyrd_html = "<article><p>No upcoming events</p></article>";
+	}
 }
 else{
 	try {

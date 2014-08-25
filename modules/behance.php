@@ -5,6 +5,7 @@ require_once 'google/appengine/api/cloud_storage/CloudStorageTools.php';
 use google\appengine\api\cloud_storage\CloudStorageTools;
 flush();
 $count = 1;
+$try_cache = true;
 
 $behance = array(
 	    'base' => "http://www.behance.net/v2/",
@@ -18,14 +19,22 @@ $cache_age = 2 * 60 * 60;
 
 
 if (isset($_GET['reset_cache']) && file_exists($service_cache)){
+	$try_cache = false;
 	unlink($service_cache);
 }
 
 
-if (shouldStillBeCached($service_cache, $cache_age)){
-	$service_html = file_get_contents($service_cache);
+if ($try_cache && shouldStillBeCached($service_cache, $cache_age)){
+	try {
+		$service_html = file_get_contents($service_cache);
+	} catch (Exception $e) {
+		broadcast($e);
+		$service_html = "<article><p>No current projects</p></article>";
+	}
+	
 }
 else{
+	broadcast("Have to get it from scratch");
 	try {
 		$service_html = refreshServiceHTML($behance,  $count, $service_cache, $cache_dir);
 	} catch (Exception $e) {

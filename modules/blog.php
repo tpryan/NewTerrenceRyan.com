@@ -4,6 +4,7 @@ include_once 'module_common.php';
 $count = 1;
 $blog_cache = "gs://" . $googleprojectname . "/assets/cache/blog.html";
 $cache_age = 2 * 60 * 60;
+$try_cache = true;
 
 
 $dbInfo = $newDB;
@@ -12,11 +13,18 @@ $dbInfo = $newDB;
 
 
 if (isset($_GET['reset_cache']) && file_exists($blog_cache)){
+	$try_cache = false;
 	unlink($blog_cache);
 }
 
-if (shouldStillBeCached($blog_cache, $cache_age)){
-	$blog_html = file_get_contents($blog_cache);
+if ($try_cache && shouldStillBeCached($blog_cache, $cache_age)){
+	try {
+		$blog_html = file_get_contents($blog_cache);
+	} catch (Exception $e) {
+		$blog_html = "<p>No posts</p>";
+	}
+
+
 }
 else{
 	try {

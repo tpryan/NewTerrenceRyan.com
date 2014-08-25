@@ -6,23 +6,29 @@ $count = 3;
 $github_url = "https://api.github.com/users/tpryan/repos?sort=pushed";
 $github_cache = "gs://" . $googleprojectname .  "/assets/cache/projects.html";
 $cache_age = 2 * 60 * 60;
+$try_cache = true;
 
 
 
 if (isset($_GET['reset_cache']) && file_exists($github_cache)){
+	$try_cache = false;
 	unlink($github_cache);
 }
 
 
-if (shouldStillBeCached($github_cache, $cache_age)){
-	$github_html = file_get_contents($github_cache);
+if ($try_cache && shouldStillBeCached($github_cache, $cache_age)){
+	try {
+		$github_html = file_get_contents($github_cache);
+	}
+	catch (Exception $e) {
+		$github_html = "<article><p>No current projects</p></article>";
+	}
 }
 else{
 	try {
 		$github_html = refreshGitHubHTML($github_url, $count,$github_cache);
 	} catch (Exception $e) {
 		$github_html = "<article><p>No current projects</p></article>";
-		var_dump($e);
 	}
 }
 

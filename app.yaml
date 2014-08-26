@@ -5,6 +5,7 @@ api_version: 1
 
 skip_files:
 - ^(.*/)?.*\.scss$
+- ^(.*/)?.*\.sql$
 - ^(.*/)?.*\.git
 - ^(.*/)?.*\.DS_Store
 

@@ -446,6 +446,44 @@ textarea{
 	font-size: 1.5rem;
 }
 
+.position{
+	&:after{
+		content: "";
+		display: table;
+		clear: both;
+	}
+	header{
+		display: inline-block;
+		vertical-align: top;
+		width: 20%;
+		max-width: 200px;
+		padding: 0 20px 0 0;
+		margin: 0;
+		h4{
+			padding: 3px 0 0 0;
+			margin: 0;
+			color: $main-highlight-color;
+			font-style: italic;
+		}
+		time{
+			display: block;
+			margin-top: 10px;
+		}
+	}
+	.details{
+		display: inline-block;
+		vertical-align: top;
+		width: 70%;
+		max-width: 700px;
+		h3{
+			padding: 0;
+			margin: 0;
+			color: $main-highlight-color;
+		}
+	}
+}
+
+
 @import '2013-tablet';
 @import '2013-desktop';
 @import '2013-phone';

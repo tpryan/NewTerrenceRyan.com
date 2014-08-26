@@ -1,4 +1,4 @@
-<?php $page_title="Job - TerrenceRyan.com";  include '../modules/head.php';?>
+<?php $page_title="Resume - TerrenceRyan.com";  include '../modules/head.php';?>
 <?php include '../modules/page-header.php';?>  
 
 
@@ -14,12 +14,12 @@
 		<div class="column full">
 			<h2>Objective</h2>
 			<p><em>I love technology that helps people extract ideas from their heads 
-				and into something real &mdashh; be it code, design, or hardware. I’m looking for a 
+				and into something real &mdash; be it code, design, or hardware. I’m looking for a 
 				position that allows me use my people skills and technical knowledge to 
 				inspire people make their ideas concrete. </em></p>
 			<h2>Publications</h2>
 			
-			<article class="position">
+			<div class="position">
 				<header>
 					<h4>Pragmatic Bookshelf</h4>
 					<time>11/2010</time>
@@ -32,10 +32,10 @@
 						anti-patterns.  It then presents solutions as positive patterns and outlines a 
 						broader strategy to run a comapaign to effect change inside one’s organization.</p>
 				</div>
-			</article>
+			</div>
 
 			<h2>Experience</h2>
-			<article class="position">
+			<div class="position">
 				<header>
 					<h4>Adobe Systems</h4>
 					<time>11/2012 &mdash; Now</time>
@@ -51,8 +51,8 @@
 						<li>Coordinate enterprise marketing and greater evangelism team</li>
 					</ul>
 				</div>	
-			</article>	
-			<article class="position">
+			</div>	
+			<div class="position">
 				<header>
 					<h4>Adobe Systems</h4>
 					<time>09/2009 &mdash; 11/2012</time>
@@ -74,8 +74,8 @@
 						<li>Writing code that shipped with Adobe ColdFusion</li>
 					</ul>
 				</div>		
-			</article>
-			<article class="position">
+			</div>
+			<div class="position">
 				<header>
 					<h4>The Wharton School</h4>
 					<time>08/2008 &mdash; 01/2009</time>
@@ -92,8 +92,8 @@
 						<li>Performance boosts that reduced average page load time from 2000ms to 16ms</li>
 					</ul>
 				</div>	
-			</article>	
-			<article class="position">
+			</div>	
+			<div class="position">
 				<header>
 					<h4>The Wharton School</h4>
 					<time>6/2007 &mdash; 8/2008</time>
@@ -111,8 +111,8 @@
 						<li>Managing a staff to facilitate those goals</li>
 					</ul>
 				</div>	
-			</article>
-			<article class="position">
+			</div>
+			<div class="position">
 				<header>
 					<h4>The Wharton School</h4>
 					<time>6/1999 &mdash; 6/2007</time>
@@ -133,10 +133,10 @@
 
 					</ul>
 				</div>	
-			</article>			
+			</div>			
 
 			<h2>Education</h2>
-			<article class="position">
+			<div class="position">
 				<header>
 					<h4>The University of Pennsylvania</h4>
 					<time>9/1995 &mdash; 5/1999</time>
@@ -145,7 +145,7 @@
 					<h3>Bachelor of Arts</h3>
 					<p>Psychology</p>
 				</div>	
-			</article>	
+			</div>	
 			<h2>Skills</h2>
 			<table>
 				<thead>

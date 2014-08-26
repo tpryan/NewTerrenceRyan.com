@@ -57,7 +57,7 @@ function getPostsFromDataBase($dbInfo, $count){
 
 	// Retrieve all the data from the "example" table
 	$entries = mysql_query(" SELECT
-        p1.post_title, p1.post_excerpt, p1.guid, p1.post_date, DATE_FORMAT(p1.post_date, '%M %d, %Y') as formatted_post_date, p2.guid as thumbnail
+        p1.post_title, p1.post_excerpt, p1.post_name, p1.guid, p1.post_date, DATE_FORMAT(p1.post_date, '%M %d, %Y') as formatted_post_date, p2.guid as thumbnail
         
     FROM 
         wp_posts p1
@@ -101,7 +101,7 @@ function generateBlogHTML($entries){
 		$title = $row['post_title'];
 		$post_date = $row['post_date'];
 		$excerpt = $row['post_excerpt'];
-		$url = $row['guid'];
+		$url = "http://" . $_SERVER["HTTP_HOST"] ."/blog/index.php/" . $row['post_name'];
 		$thumb = $row['thumbnail'];
 		$date = $row['formatted_post_date'];
 		$item = "";

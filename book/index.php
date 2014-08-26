@@ -12,9 +12,8 @@
 
 <div class="main book">
 	<h1>Book</h1>
-	<article>
 	
-	<div class="column primary half">
+	<div class="column full">
 		<img class="picture logo book" src="/assets/img/bookfull.png">
 
 		<h2>Driving Technical Change</h2>
@@ -44,12 +43,6 @@
 		I sincerely hope that what's in the book helps people change their workplaces for the 
 		better. 
 		</p>
-	</div>
-
-	
-
-
-	<div class="column secondary half">
 		<h2>Get Your Copy</h2>
 		<a href="http://www.pragprog.com/titles/trevan/driving-technical-change"><img src="/assets/img/pragprog.png" width="192" height="56"></a>
 		<p>The publisher, <a href="http://www.pragprog.com/">Pragmatic Bookshelf</a>, 
@@ -68,10 +61,7 @@
 		But please note 
 		<strong>the book is not available in the Kindle store.</strong> If you wish to get a Kindle version, you have to 
 		go through the publisher <em>as noted above</em>.</p>  
-	 </div>
-
-
-	<div class="column full">
+		
 		<h2>Reader Comments</h2> 
 		<blockquote><p>At its core, <em>Driving Technical Change</em> is a fantastic book about design patterns. In it, Terrence Ryan clearly outlines common, problematic personalities&mdash;"skeptics" &mdash;and provides proven solutions for bringing about progressive change. It is certainly an unfortunate fact of human behavior that people are oftentimes resistant to implementing best practices; however, using Terry's book as a guide, you will now be able to identify why people push back against change and what you can do to remain successful in the face of adversity.</p></blockquote> 
 		<p class="quotesource">
@@ -100,7 +90,6 @@
 	</div>
 
 
-	</article>
 
 </div>	
 <?php include '../modules/page-footer.php';?>

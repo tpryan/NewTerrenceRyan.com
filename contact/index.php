@@ -15,7 +15,7 @@
 		
 		
 		
-		<div class="column half">
+		<div class="column full">
 			<h2>Drop me an email</h2>
 			<p id="response">Use form to send email. </p>
 			<form name="contact_form" id="contact_form" action="/contact/process.php" method="post" >
@@ -27,10 +27,7 @@
 				<textarea name="text" rows="7" columns="50" cols="23" id="text" ></textarea><br />
 				<input name="Submit" type="submit" value="Submit" class="submit" id="submit" /><br />
 			</form>		
-		</div>
-		
-		
-	 	<div class="column half">
+	 		
 	 		<h2>Social Networks</h2>
 			<ul id="socialnetworks">
 				<li>

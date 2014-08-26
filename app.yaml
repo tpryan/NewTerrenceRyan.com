@@ -4,7 +4,11 @@ runtime: php
 api_version: 1
 
 skip_files:
-- ^(.*/)?\.scss$
+- ^(.*/)?.*\.scss$
+- ^(.*/)?.*\.git
+- ^(.*/)?.*\.DS_Store
+
+
 
 handlers:
 # Needed for PHP

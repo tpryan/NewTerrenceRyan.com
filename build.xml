@@ -180,6 +180,29 @@
 		</exec>
 	</target>
 
+	<target name="backupLocalDatabase" description="Backs up the script of the local database to file">
+		<echo message="Getting MySQL database struture" />
+		<exec executable="${mysql.mysqldump.exe}" spawn="false" dir="${mysql.dir}" output="${database.dir}localbackup.sql">
+			<arg line="--database ${database.schema.local}"/>
+			<arg line="--tables"/>
+			<arg line="--host ${database.host.local}"/>
+			<arg line="--user ${database.username.local}"/>
+			<arg line="--password=${database.password.local}"/>
+			<arg line="--no-create-db" />
+		</exec>
+	</target>
+
+	<target name="restoreLocalDatabase" description="Restores the script of the local database from file">
+		<echo message="Importing entries into local" />
+		<exec executable="${mysql.mysql.exe}" spawn="false" dir="${mysql.dir}" input="${database.dir}localbackup.sql">
+			<arg line="--database ${database.schema.local}"/>
+			<arg line="--host ${database.host.local}"/>
+			<arg line="--user ${database.username.local}"/>
+			<arg line="--password=${database.password.local}"/>
+		</exec>
+	</target>
+
+
 	<target name="projectInt" description="Makes folders needed but that aren't stored in git.">
 	    <mkdir dir="${database.dir}" />
 	</target>

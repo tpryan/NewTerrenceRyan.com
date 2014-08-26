@@ -10,10 +10,10 @@
 
 <div class="main">
 	<h1>Resume</h1>
-	<article>
+	<article class="resume">
 		<div class="column full">
 			<h2>Objective</h2>
-			<p><em>I love technology that helps people extract ideas from their heads 
+			<p class="toplevel"><em>I love technology that helps people extract ideas from their heads 
 				and into something real &mdash; be it code, design, or hardware. I’m looking for a 
 				position that allows me use my people skills and technical knowledge to 
 				inspire people make their ideas concrete. </em></p>
@@ -147,7 +147,7 @@
 				</div>	
 			</div>	
 			<h2>Skills</h2>
-			<table>
+			<table class="toplevel skills">
 				<thead>
 					<tr>
 						<th>Evangelism</th>
@@ -193,45 +193,57 @@
 			</table>
 			
 			<h2>Interests</h2>
-			<p>Code Generation; Semantic HTML; Webstandards; Web related technologies 
+			<p class="toplevel">Code Generation; Semantic HTML; Webstandards; Web related technologies 
 				and languages; Converting people to new technologies; Mentoring developers; 
 				Process improvement; Automation; Cloud Services; Higher Education; </p>
 
 			<h2>Content</h2>
-			<ul id="socialnetworks">
-				<li>
-                    <a href="http://www.facebook.com/terry.ryan" title="Facebook | Terrence Ryan">
-                        <img src="/assets/img/facebookicon.png" height="55" width="116" alt="Facebook" />
-                    </a>
-                </li>
+				<table id="socialnetworks"  class="toplevel socialnetworks">
+					<tr>
+						<td>
+							<a href="http://www.facebook.com/terry.ryan" title="Facebook | Terrence Ryan">
+                        		<img src="/assets/img/facebookicon.png" height="55" width="116" alt="Facebook" />
+                    		</a>							
+						</td>
+						<td>
+							<a href="http://twitter.com/tpryan" title="Twitter / tpryan">
+                        		<img src="/assets/img/twitter.png" height="55" width="155" alt="Twitter" class="twitter" />
+                    		</a>
+						</td>
+						<td>
+							<a href="http://twitter.com/tpryan" title="Lanyrd / tpryan">
+                        		<img src="/assets/img/lanyrd.png" height="36" width="150" alt="Lanyrd" class="lanyrd" />
+                    		</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="http://www.linkedin.com/in/terrencepryan" title="LinkedIn: Terrence Ryan">
+                    			<img src="/assets/img/linkedin-icon.png" height="35" width="121" alt="LinkedIn" />
+                			</a>	
+						</td>
+						<td>
+							<a href="https://github.com/tpryan" title="github: Terrence Ryan">
+                    			<img src="/assets/img/githublogo.png" height="45" width="100" alt="github" />
+                		</a>	
+						</td>
+						<td>
+							<a href="http://www.behance.net/tpryan" title="Behance: Terrence Ryan">
+                    			<img src="/assets/img/behance.png" height="56" width="150" alt="behance" />
+                			</a>
+						</td>
+					</tr>
+				</table>
+
+
+                    
             
-                <li>
-                    <a href="http://twitter.com/tpryan" title="Twitter / tpryan">
-                        <img src="/assets/img/twitter.png" height="55" width="155" alt="Twitter" class="twitter" />
-                    </a>
-                </li>
-                <li>
-                    <a href="http://twitter.com/tpryan" title="Lanyrd / tpryan">
-                        <img src="/assets/img/lanyrd.png" height="36" width="150" alt="Lanyrd" class="lanyrd" />
-                    </a>
-                </li>
-                <li>
-                    <a href="http://www.linkedin.com/in/terrencepryan" title="LinkedIn: Terrence Ryan">
-                    <img src="/assets/img/linkedin-icon.png" height="35" width="121" alt="LinkedIn" />
-                </a>	
-                </li>
-                <li>
-                    <a href="https://github.com/tpryan" title="github: Terrence Ryan">
-                    <img src="/assets/img/githublogo.png" height="45" width="100" alt="github" />
-                </a>	
-                </li>
-                <li>
-                    <a href="http://www.behance.net/tpryan" title="Behance: Terrence Ryan">
-                    <img src="/assets/img/behance.png" height="56" width="150" alt="behance" />
-                </a>	
-                </li>
+                    
+                    
+                    
+                    
+                    	
 			
-			</ul>
 		</div>	
 </article>
 </div>

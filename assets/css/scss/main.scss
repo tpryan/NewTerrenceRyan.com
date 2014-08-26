@@ -389,7 +389,6 @@ blockquote{
 }
 
 #socialnetworks {
-	width: 100%;
     
     li{
         list-style: none;
@@ -446,6 +445,43 @@ textarea{
 	font-size: 1.5rem;
 }
 
+.book{
+	img{
+		float: right;
+	}
+}
+
+.resume {
+	h2{
+		padding: 25px 0 10px 25%;
+		margin-left: 2px;
+		margin-bottom: 0;
+	}
+	.toplevel{
+		margin-left: 25%;
+	}
+
+	.skills{
+		th{
+			color: $main-highlight-color;
+			text-align: left;
+		}
+		td{
+			width: 25%
+		}
+		ul{
+			margin: 0 0 0 20px;
+			padding: 0;
+		}
+	}
+	.socialnetworks{
+		width: 60%;
+		td{
+			width: 33%;
+		}
+	}	 
+}
+
 .position{
 	&:after{
 		content: "";
@@ -455,8 +491,8 @@ textarea{
 	header{
 		display: inline-block;
 		vertical-align: top;
-		width: 20%;
-		max-width: 200px;
+		width: 25%;
+		max-width: 300px;
 		padding: 0 20px 0 0;
 		margin: 0;
 		h4{
@@ -473,8 +509,7 @@ textarea{
 	.details{
 		display: inline-block;
 		vertical-align: top;
-		width: 70%;
-		max-width: 700px;
+		width: 73%;
 		h3{
 			padding: 0;
 			margin: 0;

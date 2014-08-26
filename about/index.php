@@ -11,13 +11,13 @@
 <div class="main">
 	<h1>About Me</h1>
 	<article>
-		<div class="column half">
+		<div class="column full">
 			<h2>Current</h2>
 			<img class="picture portrait" src="/assets/img/headshot.jpg" >	
 			<p>I'm a Worldwide Developer Evangelist for <a href="http://www.adobe.com/">Adobe</a>.  
 			My job basically entails me traveling the world and 
 			talking about the developer tools and technologies that Adobe has to offer or that we support. 
-			To find out more, see about my <a href="/job">Job</a>. 
+			To find out more about my work history, see my <a href="/resume">Resume</a>. 
 			</p>
 			
 			<p>I'm also the author of <em>Driving Technical Change.</em> It's about convincing reluctant co-workers 

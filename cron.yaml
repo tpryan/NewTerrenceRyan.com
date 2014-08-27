@@ -2,3 +2,7 @@ cron:
 - description: wordpress cron tasks
   url: /wp-cron.php
   schedule: every 2 hours
+
+- description: build the cached files.
+  url: /index.php
+  schedule: every 1 hours 

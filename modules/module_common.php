@@ -1,4 +1,11 @@
 <?php
+
+	use google\appengine\api\app_identity\AppIdentityService;
+	$app_name = AppIdentityService::getApplicationId();
+
+	$memcache = new Memcached;
+	
+
 	set_error_handler(
 	    create_function(
 	        '$severity, $message, $file, $line',
@@ -34,6 +41,13 @@
 	function get_content_from_service($url) {
 		$content = url_get_contents($url);
 		return json_decode($content, true);
+	}
+
+	function broadcast($message) {
+		syslog(LOG_DEBUG, $message);
+	    echo "<!--" . $message . " -->" . "\n";
+	    
+
 	}
 
 ?>

@@ -1,52 +1,44 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'] . '/config/creds.php';
 include_once 'module_common.php';
+
+
 $count = 1;
-$blog_cache = "gs://" . $googleprojectname . "/assets/cache/blog.html";
+$cache_name = $app_name . "_blog";
 $cache_age = 2 * 60 * 60;
-$try_cache = true;
-
-
 $dbInfo = $newDB;
+$cached_content = $memcache->get($cache_name);
 
 
 
+$rebuild = ($cached_content == false) ||  isset($_GET['reset_cache']);
 
-if (isset($_GET['reset_cache']) && file_exists($blog_cache)){
-	$try_cache = false;
-	unlink($blog_cache);
-}
+broadcast("Rebuild? " . $rebuild);
 
-if ($try_cache && shouldStillBeCached($blog_cache, $cache_age)){
+if ($rebuild){
+	broadcast("It's not in the cache");
 	try {
-		$blog_html = file_get_contents($blog_cache);
+		$blog_html = refreshBlogHTML($dbInfo, $count);
+		$cache_html = "<!-- From Cache -->" . $blog_html;
+		$memcache->set($cache_name, $cache_html, $cache_age);
 	} catch (Exception $e) {
 		$blog_html = "<p>No posts</p>";
+		broadcast($e->getMessage());
 	}
-
-
-}
-else{
-	try {
-		$blog_html = refreshBlogHTML($dbInfo, $count,$blog_cache);
-	} catch (Exception $e) {
-		$blog_html = "<p>No posts</p>";
-	}
+} else {
+	broadcast("It's in the cache");
+	$blog_html = $cached_content;
 }
 
 echo $blog_html;
 
 
 
-function refreshBlogHTML($dbInfo, $count, $blog_cache){
+function refreshBlogHTML($dbInfo, $count){
 	$blog_content = getPostsFromDataBase($dbInfo, $count);
 	$blog_html = generateBlogHTML($blog_content);
-	$cache_html = "<!-- From Cache -->" . $blog_html;
-	file_put_contents($blog_cache, $cache_html);
 	return $blog_html;
 }
-
-
 
 
 

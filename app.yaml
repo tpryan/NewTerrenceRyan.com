@@ -19,6 +19,9 @@ handlers:
 # Needed for static image files
 - url: /assets/
   static_dir: assets/
+  expiration: "30d"
+  http_headers:
+    Vary: Accept-Encoding
 
 - url: /
   script: index.php
@@ -56,12 +59,19 @@ handlers:
 - url: /blog/(.*\.(ico|jpg|png|gif))$
   static_files: wordpress/\1
   upload: wordpress/.*\.(htm|html|css|js)$
+  application_readable: true
+  expiration: "30d"  
+
+- url: /blog/assets/(.*\.(ico|jpg|png|gif))$
+  static_files: wordpress/assets/\1
+  upload: wordpress/assets/.*\.(htm|html|css|js)$
   application_readable: true  
 
 - url: /wp-content/(.*\.(ico|jpg|png|gif))$
   static_files: wordpress/wp-content/\1
   upload: wordpress/wp-content/.*\.(ico|jpg|png|gif)$
   application_readable: true
+  expiration: "30d"
 
 
 - url: /blog/wp-admin/(.+)

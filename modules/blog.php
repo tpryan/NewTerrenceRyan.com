@@ -9,8 +9,6 @@ $cache_age = 2 * 60 * 60;
 $dbInfo = $newDB;
 $cached_content = $memcache->get($cache_name);
 
-
-
 $rebuild = ($cached_content == false) ||  isset($_GET['reset_cache']);
 
 broadcast("Rebuild? " . $rebuild);
@@ -32,15 +30,11 @@ if ($rebuild){
 
 echo $blog_html;
 
-
-
 function refreshBlogHTML($dbInfo, $count){
 	$blog_content = getPostsFromDataBase($dbInfo, $count);
 	$blog_html = generateBlogHTML($blog_content);
 	return $blog_html;
 }
-
-
 
 function getPostsFromDataBase($dbInfo, $count){
 	// Make a MySQL Connection
@@ -81,9 +75,6 @@ function getPostsFromDataBase($dbInfo, $count){
 
 	return $entries;
 }
-
-
-
 
 function generateBlogHTML($entries){
 	

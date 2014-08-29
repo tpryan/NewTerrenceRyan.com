@@ -87,8 +87,8 @@ function cache_images($service_content, $cache_dir, $count){
             $image = imagecreatefromstring($data);
             
             
-            $thumb_width = 200;
-            $thumb_height = 200;
+            $thumb_width = 196;
+            $thumb_height = 196;
             
             $width = imagesx($image);
             $height = imagesy($image);
@@ -224,9 +224,5 @@ function generateBehanceHTML($service_json, $count, $cache_dir ){
 }
 
 
-function broadcast($message) {
-    echo "<!--" . $message . " -->" . "\n";
-    error_log($message, 0);
-}
 
 ?>

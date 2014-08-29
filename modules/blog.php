@@ -7,28 +7,22 @@ $count = 1;
 $cache_name = $app_name . "_blog";
 $cache_age = 2 * 60 * 60;
 $dbInfo = $newDB;
-$cached_content = $memcache->get($cache_name);
 
-$rebuild = ($cached_content == false) ||  isset($_GET['reset_cache']);
+$contentCreationFunction = function ($dbInfo, $count){return refreshBlogHTML($dbInfo, $count);};
 
-broadcast("Rebuild? " . $rebuild);
+$contentCreationStore = $dbInfo;
 
-if ($rebuild){
-	broadcast("It's not in the cache");
-	try {
-		$blog_html = refreshBlogHTML($dbInfo, $count);
-		$cache_html = "<!-- From Cache -->" . $blog_html;
-		$memcache->set($cache_name, $cache_html, $cache_age);
-	} catch (Exception $e) {
-		$blog_html = "<p>No posts</p>";
-		broadcast($e->getMessage());
-	}
-} else {
-	broadcast("It's in the cache");
-	$blog_html = $cached_content;
-}
+$content_html = getFromCacheOrCreate($memcache, $cache_name, $cache_age, $contentCreationFunction, $contentCreationStore, $count);
 
-echo $blog_html;
+echo $content_html;
+
+
+
+
+
+
+
+
 
 function refreshBlogHTML($dbInfo, $count){
 	$blog_content = getPostsFromDataBase($dbInfo, $count);

@@ -1,45 +1,28 @@
 <?php
-require_once 'module_common.php';
+
+include_once 'module_common.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/config/creds.php';
 
 $lanyrd_url = "http://lanyrd.com/people/tpryan/tpryan.ics";
+$cache_name = $app_name . "_lanyrd";
 $count = 3;
-$lanyrd_cache = "gs://" . $googleprojectname . "/assets/cache/events.html";
 $cache_age = 2 * 60 * 60;
-$try_cache = true;
 
+$contentCreationStore = $lanyrd_url;
+$contentCreationFunction = function ($lanyrd_url, $count){return refreshLanyrdHTML($lanyrd_url, $count);};
 
-if (isset($_GET['reset_cache']) && file_exists($lanyrd_cache)){
-	$try_cache = false;
-	unlink($lanyrd_cache);
-
-}
-
-if ($try_cache && shouldStillBeCached($lanyrd_cache, $cache_age)){
-	
-	try {
-		$lanyrd_html = file_get_contents($lanyrd_cache);
-	} catch (Exception $e) {
-		$lanyrd_html = "<article><p>No upcoming events</p></article>";
-	}
-}
-else{
-	try {
-		$lanyrd_html = refreshLanyrdHTML($lanyrd_url, $count,$lanyrd_cache);
-	} catch (Exception $e) {
-		$lanyrd_html = "<article><p>No upcoming events</p></article>";
-	}
-}
-
-echo $lanyrd_html;
+$content_html = getFromCacheOrCreate($memcache, $cache_name, $cache_age, $contentCreationFunction, $contentCreationStore, $count);
 
 
 
-function refreshLanyrdHTML($lanyrd_url, $count, $lanyrd_cache){
+
+echo $content_html;
+
+
+
+function refreshLanyrdHTML($lanyrd_url, $count){
 	$lanyrd_content = get_content_from_lanyrd($lanyrd_url);
 	$lanyrd_html = generateEventHTML($lanyrd_content,$count);
-	$cache_html = "<!-- From Cache -->" . $lanyrd_html;
-	place_in_cache($lanyrd_cache, $cache_html);
 	return $lanyrd_html;
 }
 

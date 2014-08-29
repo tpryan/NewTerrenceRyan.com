@@ -2,43 +2,24 @@
 include_once 'module_common.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/config/creds.php';
 
-$count = 3;
 $github_url = "https://api.github.com/users/tpryan/repos?sort=pushed";
-$github_cache = "gs://" . $googleprojectname .  "/assets/cache/projects.html";
+$cache_name = $app_name . "_github";
+$count = 3;
 $cache_age = 2 * 60 * 60;
-$try_cache = true;
+
+$contentCreationStore = $github_url;
+$contentCreationFunction = function ($github_url, $count){return refreshGitHubHTML($github_url, $count);};
+
+$content_html = getFromCacheOrCreate($memcache, $cache_name, $cache_age, $contentCreationFunction, $contentCreationStore, $count);
+
+echo $content_html;
 
 
 
-if (isset($_GET['reset_cache']) && file_exists($github_cache)){
-	$try_cache = false;
-	unlink($github_cache);
-}
 
-
-if ($try_cache && shouldStillBeCached($github_cache, $cache_age)){
-	try {
-		$github_html = file_get_contents($github_cache);
-	}
-	catch (Exception $e) {
-		$github_html = "<article><p>No current projects</p></article>";
-	}
-}
-else{
-	try {
-		$github_html = refreshGitHubHTML($github_url, $count,$github_cache);
-	} catch (Exception $e) {
-		$github_html = "<article><p>No current projects</p></article>";
-	}
-}
-
-echo $github_html;
-
-function refreshGitHubHTML($github_url, $count, $github_cache){
+function refreshGitHubHTML($github_url, $count){
 	$github_content = get_content_from_github($github_url);
 	$github_html = generateGithubHTML($github_content,$count);
-	$cache_html = "<!-- From Cache --->" . $github_html;
-	place_in_cache($github_cache, $cache_html);
 	return $github_html;
 }
 

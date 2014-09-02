@@ -3,7 +3,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/config/creds.php';
 include_once 'module_common.php';
 
 
-$count = 1;
+$count = 2;
 $cache_name = $app_name . "_blog";
 $cache_age = 2 * 60 * 60;
 $dbInfo = $newDB;

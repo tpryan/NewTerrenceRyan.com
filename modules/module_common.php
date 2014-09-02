@@ -52,20 +52,17 @@
 
 		$cached_content = $memcache->get($cache_name);
 		$rebuild = ($cached_content == false) ||  isset($_GET['reset_cache']);
-		broadcast("Rebuild? " . $rebuild);
 
 		if ($rebuild){
-			broadcast("It's not in the cache");
-			// try {
+			try {
 				$content_html = $contentCreationFunction($contentCreationStore, $count);
 				$cache_html = "<!-- From Cache -->" . $content_html;
 				$memcache->set($cache_name, $cache_html, $cache_age);
-			// } catch (Exception $e) {
-			// 	$content_html = "<p>No posts</p>";
-			// 	broadcast($e->getMessage());
-			// }
+			} catch (Exception $e) {
+				$content_html = "<p>No entries</p>";
+			 	broadcast($e->getMessage());
+			}
 		} else {
-			broadcast("It's in the cache");
 			$content_html = $cached_content;
 		}
 

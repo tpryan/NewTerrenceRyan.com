@@ -9,9 +9,9 @@
 
 	<div class="main home">
 		<div class="design column">
-			<h2><a href="http://www.behance.net/tpryan">Design <span class="icon">&#62286;</span></a></h2>
-			<?php include './modules/behance.php';?>
-			<p class="externalref">View more on <a href="http://www.behance.net/tpryan">Behance.com</a>.</p>
+			<h2><a href="https://speakerdeck.com/tpryan">Presentations <span class="icon">&#128187;</span></a></h2>
+			<?php include './modules/presos.php';?>
+			<p class="externalref">View more on <a href="http://www.speakerdeck.net/tpryan">speakerdeck.com</a>.</p>
 		</div>	
 		<div class="code column">
 			<h2><a href="https://github.com/tpryan">Code <span class="icon">&#62208;</span></a></h2>

@@ -3,6 +3,8 @@ version: 1
 runtime: php
 api_version: 1
 
+default_expiration: "30d"
+
 skip_files:
 - ^(.*/)?.*\.scss$
 - ^(.*/)?.*\.sql$
@@ -49,6 +51,11 @@ handlers:
 
 - url: /sitemap/?
   script: sitemap/index.php
+
+- url: /(.*\.(svg|svgz))
+  mime_type: images/svg+xml
+  static_files: static/\1
+  upload: static/(.*\.(svg|svgz))
 
 
 - url: /blog/(.*\.(htm|html|css|js))$

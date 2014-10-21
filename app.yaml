@@ -105,6 +105,10 @@ handlers:
 - url: /xmlrpc.php
   script: wordpress/xmlrpc.php
 
+- url: /blog/wp-comments-post.php
+  script: wordpress/wp-comments-post.php
+
+
 - url: /wp-(.+).php
   script: wordpress/wp-\1.php
 

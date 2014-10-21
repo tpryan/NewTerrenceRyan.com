@@ -80,6 +80,11 @@ handlers:
   application_readable: true
   expiration: "30d"
 
+- url: /blog/assets/content/(.*\.(ico|jpg|png|gif))$
+  static_files: wordpress/assets/content/\1
+  upload: assets/content/.*\.(ico|jpg|png|gif)$
+  application_readable: true
+  expiration: "30d"
 
 - url: /blog/wp-admin/(.+)
   script: wordpress/wp-admin/\1

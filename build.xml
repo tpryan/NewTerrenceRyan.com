@@ -20,6 +20,14 @@
 	<target name="build" depends="compressCSS,copyFilesToBuild,polish" description="Creating a clean copy of the site" />
 
 
+	<target name="deploy">
+		<echo message="Deploying to Google Cloud."/>
+		<exec executable="${gcs.exe}" spawn="false" dir="${basedir}">
+			<arg line="update"/>
+			<arg line="."/>
+		</exec>
+	</target>
+
 	
 	<target name="copyFilesToBuild" description="Create a gitless version of the source code.">
 		<echo message="Copying Files to Build Location"/>

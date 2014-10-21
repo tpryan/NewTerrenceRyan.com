@@ -51,6 +51,7 @@ function generateGithubHTML($github_content, $count){
 
 
 function get_content_from_github($url) {
+	broadcast($url);
 	$content = url_get_contents($url);
 	return json_decode($content, true);
 }

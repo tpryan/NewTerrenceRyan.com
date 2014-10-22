@@ -1,0 +1,332 @@
+<!DOCTYPE html> 
+<html> 
+   <head> 
+   <title>Responsive Design in Action Lab - Code Exercise 1</title>
+   <link href="../_style/main.css" rel="stylesheet"  />
+   <link href="../_style/prettify.css" rel="stylesheet" />
+   <link href="../_style/tomorrow.css" rel="stylesheet" />
+   <script src="http://use.edgefonts.net/source-sans-pro.js"></script>
+   <script src="http://use.edgefonts.net/source-code-pro.js"></script>
+   <script type="text/javascript" src="../_style/prettify.js"></script> 
+   <script type="text/javascript" src="../_style/main.js"></script> 
+</head> 
+<body>
+
+
+<h1>Code Exercise 1 - Flexible Grid</h1>
+
+<p>Over the course of this exercise we will be taking the code in the working directly from how it appears in step_0 to how it appears in step_1</p>
+
+
+<ul>
+   <li>Start with code in <em>/lab/code/working</em></li>
+   <li>Open <em>index.html</em> in Adobe Edge Code (or code editor of your choice)</li>
+   <li>Open <em>index.html</em> in Chrome.</li>
+</ul>
+
+<p>All of the color, background, and font choices have been brought over from Reflow. None of the layout has been done. We're going to code that by hand. 
+
+<figure>
+   <img src="img/01.png" />
+   <figcaption>Figure 1</figcaption>
+</figure>
+
+
+<h2>Add a layout.css file to the project</h2>
+
+<ul>
+   <li>In the folder lab/code/working/css add a file named layout.css</li>
+   <li>In index.html add the following line of code to the HTML header:</li>
+</ul>
+
+<code>
+<pre class="prettyprint lang-html">&lt;link rel="stylesheet" href="css/layout.css"/&gt; 
+</pre></code>
+
+<figure>
+   <img src="img/02.png" />
+   <figcaption>Figure 2</figcaption>
+</figure>
+
+<p>Now we're going to add some CSS rules to make things layout as a grid. </p>
+
+
+<h2>Layout content as a grid</h2>
+
+<p>Add any rules below to layout.css.</p>
+
+
+<code>
+<pre class="prettyprint lang-css">*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+</pre></code>
+
+<aside>
+  <p><em>What is the deal with box-sizing: border-box?</em><p>
+
+  <p>Basically we're changing the way the width of an item is calculated by the browser.  Normally the width excludes padding. So if I make a box, set width: 300px then set padding: 20px in real terms my box will be 340px wide. </p>
+
+  <code><pre>20px of left padding + 300px of width + 20px of right padding = 340px. 
+  </pre></code>
+  <p>Setting border box changes this. It forces the browser to include the padding inside the 300px width.  So it changes the equation to this:</p>
+
+  <code><pre>300px =  20px of left padding + Xpx of width + 20px of right padding
+  Solve for X = 260.
+  </pre></code>
+  <p><em>What does this have to do with responsive designs?</em>  We normally want to set widths to a percentage so as we resize the browser column sizes resize.  However that leads untenable paddings.  Like setting all padding to 1% and then taking that 1% out of our column widths so they never add up to above 100%. It starts to get difficult to track, and quite frankly you can make the argument that padding like that should be in pixels and not percents.</p>
+
+  <p>Well now you can do that, with Border Box. </p>
+
+  <p>More on Border Box</p>
+
+
+  <ul>
+    <li><a href="http://paulirish.com/2012/box-sizing-border-box-ftw/">http://paulirish.com/2012/box-sizing-border-box-ftw/</a></li>
+    <li><a href="http://css-tricks.com/box-sizing/">http://css-tricks.com/box-sizing/</a></li>
+  </ul>
+</aside> 
+
+<p>That's all great but it doesn't change the appearance of the page. </p>
+
+<p>Next we're going to make the 3 sections in content each take up a third of the screen. </p>
+
+<code>
+<pre class="prettyprint lang-css">#description{
+     width: 33%;   
+}
+
+#halloffame{
+     width: 33%;
+}
+
+#hallofshame{
+     width: 33%;
+} 
+</pre></code>
+
+<figure>
+   <img src="img/03.png" />
+   <figcaption>Figure 3</figcaption>
+</figure>
+
+<p>Now we're going to make them slide next to each other using float:left;</p>
+
+<code>
+<pre class="prettyprint lang-css">#description{
+     width: 33%;
+     float:left;    
+}
+
+#halloffame{
+     width: 33%;
+     float:left;    
+}
+
+#hallofshame{
+     width: 33%;
+     float:left;    
+}
+</pre></code>
+
+<figure>
+   <img src="img/04.png" />
+   <figcaption>Figure 4</figcaption>
+</figure>
+<p>Looking good, but we need a little more space between the "halls." We'll do it with padding.  Because we are using the border-box model we can add padding without fiddling with column widths.</p>
+
+<code>
+<pre class="prettyprint lang-css">#description{
+    width: 33%;
+    float:left;   
+}
+
+#halloffame{
+    width: 33%;
+    float:left;
+    padding: 0 5px;
+}
+
+#hallofshame{
+    width: 33%;
+    float:left;
+    padding: 0 5px;
+}
+</pre></code>
+
+<figure>
+   <img src="img/05.png" />
+   <figcaption>Figure 5</figcaption>
+</figure>
+
+<p>Much better. Now we'll take on the navigation. Same idea as with the content columns, but instead of thirds, we'll be using quarters</p>
+
+<code>
+<pre class="prettyprint lang-css">nav ul li a{
+     width: 25%;
+     float: left;
+}
+</pre></code>
+
+<figure>
+   <img src="img/06.png" />
+   <figcaption>Figure 6</figcaption>
+</figure>
+
+<p>Looks okay, but because we're floating those navigation links they no longer expand the box they are sitting in. To fix that we'll use a clearfix</p>
+
+
+<aside>
+  
+  <p>When you float an element it no longer has any impact on the height of it's parent. If you float all of the children of element it's height becomes 0.  To fix this you need to basically add a fake element past the floated children and clear it completely. This will force the height of the containing element to take up all of the height of the children.  A clearfix does this:</p>
+
+<code><pre class="prettyprint lang-css">
+*:after{
+      content: "";
+     display: block;
+     clear: both;
+}
+</pre></code>
+
+  <dl>
+    <dt>after</dt><dd>adds it via css, so no HTML hackery needed.</dd>
+    <dt>content</dt><dd>adds a blank piece of content</dd>
+    <dt>display</dt><dd>table reduces impact on margins</dd>
+    <dt>clear</dt><dd>clears out the float</dd>
+  </dl>
+
+  <p>More on Clearfix</p>
+
+  <ul>
+    <li><a href="http://css-tricks.com/snippets/css/clear-fix/">http://css-tricks.com/snippets/css/clear-fix/</a></li>
+    <li><a href="http://nicolasgallagher.com/micro-clearfix-hack/">http://nicolasgallagher.com/micro-clearfix-hack/</a></li>
+  </ul>
+</aside> 
+
+<code>
+<pre class="prettyprint lang-css">nav ul:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+</pre></code>
+
+<figure>
+   <img src="img/07.png" />
+   <figcaption>Figure 7</figcaption>
+</figure>
+
+
+<p>There, almost perfect.  The last thing we need to do (and this isn't necessarily a responsive thing,) is make the light colored body extend all the way to the end of the page. </p>
+
+<code>
+<pre class="prettyprint lang-css">html { height: 100%; }
+body { min-height: 100%; }
+</pre></code>
+
+<p>Once we do that, we should have a fluid grid that flexes and extends the full height of the viewport. </p>
+
+<figure>
+   <img src="img/08.png" />
+   <figcaption>Figure 8</figcaption>
+</figure>
+
+<p>If you resize the browser you should see an issue crop up when browsers is about 800px or so.   The footer floats up to the hall of shame. It looks terrible. We'll have to fix that with another clearfix.</p>
+
+<figure>
+   <img src="img/09.png" />
+   <figcaption>Figure 9</figcaption>
+</figure>
+
+<code>
+<pre class="prettyprint lang-css">#content:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+</pre></code>
+
+
+<p>Now fixed. </p>
+
+<figure>
+   <img src="img/10.png" />
+   <figcaption>Figure 10</figcaption>
+</figure>
+
+<p>All the CSS for this Exercise:</p>
+
+<code>
+<pre class="prettyprint lang-css">*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#description{
+    width: 33%;
+    float:left;   
+}
+
+#halloffame{
+    width: 33%;
+    float:left;
+    padding: 0 5px;
+}
+
+#hallofshame{
+    width: 33%;
+    float:left;
+    padding: 0 5px;
+}
+
+nav ul li a{
+     width: 25%;
+     float: left;
+}
+
+nav ul:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+html { height: 100%; }
+body { min-height: 100%; }
+
+#content:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+</pre></code>
+
+<aside>
+
+  <p><em>Wait a minute, shouldn't I be using a framework for my grids?</em></p> 
+
+  <p>Well here in code land we like to answer every yes or no question with "It depends."</p>
+
+  <p>Grid frameworks like responsive.js, and other UI frameworks that contain a grid system like Bootstrap will make it easier for you to deliver write your code a grid&hellip; if you write your code the way they want you to. And that's fine &mdash; they are great productivity boosters.  But if I used them in this session then I would be teaching you Bootstrap or responsive.js and not the underlying theory. Once you get the underlying theory, feel free to use a framework. </p>
+
+  <p>Responsive Grid Systems</p>  
+  <ul>
+    <li><a href="http://responsive.gs/">http://responsive.gs/</a></li>
+    <li><a href="http://twitter.github.com/bootstrap">http://twitter.github.com/bootstrap</a></li>
+    <li><a href="http://www.getskeleton.com/">http://www.getskeleton.com/</a></li>
+  </ul>
+</aside>  
+
+
+<footer>
+   <div class="prev"><a href="../design_exercise_1/index.html">&larr; Design Exercise 1</a></div>
+   <div class="next"><a href="../code_exercise_2/index.html">Code Exercise 2 &rarr;</a></div>
+</footer>
+
+
+
+</body>
+</html>

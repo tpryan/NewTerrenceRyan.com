@@ -1,0 +1,1349 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Goal Oriented CSS</title>
+
+		<meta name="description" content="An exploration accomplishing certain design elements with CSS.">
+		<meta name="author" content="Terry Ryan">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">	
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+
+			if (location.hostname == "max2013.dev" && navigator.userAgent.indexOf("Chrome") >= 0 ){
+				alert("You want to open this up in Safari, so your Chrome doesn't get messed up.");
+			}
+			if (location.hostname == "max2013.dev" ){
+				alert("Run the Ant script to comment all of the code samples.");
+			}
+
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+			<img src="css/theme/max2013/adobelogo_redtag.svg" class="adobelogo" id="adobelogo" />
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<section class="titleslide">
+						<hgroup>
+							<h1>Goal Oriented CSS</h1>
+							<h2>Terry Ryan | Creative Cloud Evangelist | @tpryan</h2>
+						</hgroup>
+						<img src="css/theme/max2013/logo.png" class="transparent" id="logo" />
+						<img src="css/theme/max2013/bird.png" class="transparent" id="bird" />
+					</section>
+					<section class="question">
+						<div class="content">
+							<h1>Who are you?</h1>
+						</div>	
+					</section>
+				</section>
+				<section>
+					<section class="question">
+						<div class="content">
+							<h1>Important Ideas</h1>
+						</div>	
+					</section>
+					<section class="question">
+						<div class="content">
+							<dl>
+								<dt>Avoid</dt>
+								<dd>Consider other options before choosing.</dd>
+								<dd class="fragment">Does not mean "never"</dd>
+							</dl>	
+						</div>	
+					</section>
+					<section class="question">
+						<div class="content">
+							<dl>
+								<dt>Prefer</dt>
+								<dd>Try to settle on solutions that include.</dd>
+								<dd class="fragment">Does not mean "always"</dd>
+							</dl>	
+						</div>	
+					</section>
+					<section class="question">
+						<div class="content">
+							<h1>Avoid adding extra HTML</h1>
+						</div>	
+					</section>
+					<section class="question">
+						<div class="content">
+							<h1>Prefer using CSS for all display</h1>
+						</div>	
+					</section>
+
+				</section>
+
+				<style>
+					.col33{
+						width: 33%;
+						height: 200px;
+						float: left;
+						text-align: left;
+					}
+					.a{
+						background-color: #FF0000;
+					}
+					.b{
+						background-color: #00FF00;
+						color: #999999;
+					}
+					.c{
+						background-color: #0000FF;
+						color: #FFFFFF;
+					}
+					.reveal .split-screen{
+						width: 45%;
+						margin-right: 20px;
+						float: left;
+
+					}
+					.reveal .regularbox{
+						padding: 0 10px;
+					}
+					.reveal .borderbox{
+						 -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+					}
+					.reveal .with-background{
+						background-color: #CC00CC;
+						height: auto;
+					}
+					.reveal .clearfix:after{
+						content: "";
+						display: table;
+						clear: both;
+					}
+				</style>
+				<section>
+					<section class="question">
+							<h1>Columns</h1>
+							<img src="img/columns.jpg" />
+					</section>
+					<style>
+						.flexible-grid{
+							width: 100%;
+						}
+						.flexible-grid td{
+							border: 1px solid #999;
+							width: 12%;
+							height: 400px;
+							background-color: rgba(200,200,200,.4);
+						}
+					</style>
+					<section>
+						<h1>Flexible Grid</h1>
+						<div class="content">
+							<table class="flexible-grid">
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+							</table>	
+						</div>					
+					</section>
+					<section class="question">
+						<div class="content">
+							<div class="col33 a">
+								Col1 Col1 Col1 Col1 Col1 Col1 Col1 Col1 Col1 
+							</div>
+							<div class="col33 b">
+								Col2 Col2 Col2 Col2 Col2 Col2 Col2 Col2 Col2 
+							</div>	
+							<div class="col33 c">
+								Col3 Col3 Col3 Col3 Col3 Col3 Col3 Col3 Col3 
+							</div>		
+						</div>	
+					</section>
+
+					<section>
+						<pre class="split-screen"><code contenteditable>
+&lt;div class="col33 a"&gt;
+	Col1 Col1 Col1 Col1  
+&lt;/div&gt;
+&lt;div class="col33 b"&gt;
+	Col2 Col2 Col2 Col2 
+&lt;/div&gt;	
+&lt;div class="col33 c"&gt;
+	Col3 Col3 Col3 Col3 
+&lt;/div&gt;	
+
+
+
+
+							
+						</code></pre>
+						<pre class="split-screen"><code contenteditable>
+.col33{
+	width: 33%;
+	height: 200px;
+	float: left;
+}
+
+
+
+
+
+
+
+
+							
+						</code></pre>
+					</section>
+					<section class="question">
+						<div class="content">
+							<div class="col33 a">
+								Col1 Col1 Col1 Col1 Col1 Col1 Col1 Col1 Col1 
+							</div>
+							<div class="col33 b">
+								Col2 Col2 Col2 Col2 Col2 Col2 Col2 Col2 Col2 
+							</div>	
+							<div class="col33 c">
+								Col3 Col3 Col3 Col3 Col3 Col3 Col3 Col3 Col3 
+							</div>		
+						</div>	
+					</section>
+					<section>
+						<pre class="split-screen"><code contenteditable>
+&lt;div class="col33 a"&gt;
+	Col1 Col1 Col1 Col1 
+&lt;/div&gt;
+&lt;div class="col33 b"&gt;
+	Col2 Col2 Col2 Col2  
+&lt;/div&gt;	
+&lt;div class="col33 c"&gt;
+	Col3 Col3 Col3 Col3  
+&lt;/div&gt;	
+
+
+
+
+							
+						</code></pre>
+						<pre class="split-screen"><code contenteditable>
+.col33{
+	width: 33%;
+	height: 200px;
+	float: left;
+	<strong>padding: 0 10px;</strong>
+}
+
+
+
+
+
+
+
+
+
+
+							
+						</code></pre>
+					</section>
+					<section>
+						<div class="content">
+							<div class="col33 a regularbox">
+								Col1 Col1 Col1 Col1 Col1 Col1 Col1 Col1 Col1 
+							</div>
+							<div class="col33 b regularbox" >
+								Col2 Col2 Col2 Col2 Col2 Col2 Col2 Col2 Col2 
+							</div>	
+							<div class="col33 c regularbox">
+								Col3 Col3 Col3 Col3 Col3 Col3 Col3 Col3 Col3 
+							</div>		
+						</div>	
+					</section>
+					<section>
+						<div class"content">
+							<figure>
+								<img src="img/balloonexplosion.jpg">
+								<figcaption>Float?</figcaption>
+							</figure>
+						</div>
+					</section>
+					<section>
+						<div class="content">
+							<div class="col33 a regularbox borderbox">
+								Col1 Col1 Col1 Col1 Col1 Col1 Col1 Col1 Col1 
+							</div>
+							<div class="col33 b regularbox borderbox" >
+								Col2 Col2 Col2 Col2 Col2 Col2 Col2 Col2 Col2 
+							</div>	
+							<div class="col33 c regularbox borderbox">
+								Col3 Col3 Col3 Col3 Col3 Col3 Col3 Col3 Col3 
+							</div>		
+						</div>	
+					</section>
+					<section>
+						<div class="content">
+							<pre><code contenteditable>
+.borderbox{
+ 	-moz-box-sizing: border-box; 
+ 	-webkit-box-sizing: border-box; 
+ 	box-sizing: border-box;
+}
+							
+						</code></pre>
+						</div>
+					</section>
+					<section>
+						<figure>
+							<img src="img/widthbox.png" height="500">
+							<figcaption>Taken from <a href="http://css-tricks.com/box-sizing/">CSS Tricks</a></figcaption>
+						</figure>
+					</section>	
+					<section>
+						<div class="content with-background">
+							<div class="col33 a regularbox borderbox">
+								Col1 Col1 Col1 Col1 Col1 Col1 Col1 Col1 Col1 
+							</div>
+							<div class="col33 b regularbox borderbox" >
+								Col2 Col2 Col2 Col2 Col2 Col2 Col2 Col2 Col2 
+							</div>	
+							<div class="col33 c regularbox borderbox">
+								Col3 Col3 Col3 Col3 Col3 Col3 Col3 Col3 Col3 
+							</div>
+
+						</div>	
+					</section>
+					<section>
+					<pre><code contenteditable>
+&lt;div&gt;
+	&lt;div class="col33 a" /&gt;
+	&lt;div class="col33 b" /&gt;
+	&lt;div class="col33 c" /&gt;
+	&lt;br style="clear:both;" /&gt;
+&lt;/div&gt;
+
+
+
+
+							
+						</code></pre>
+					</section>
+					<section>
+						<div class="content with-background">
+							<div class="col33 a regularbox borderbox">
+								Col1 Col1 Col1 Col1 Col1 Col1 Col1 Col1 Col1 
+							</div>
+							<div class="col33 b regularbox borderbox" >
+								Col2 Col2 Col2 Col2 Col2 Col2 Col2 Col2 Col2 
+							</div>	
+							<div class="col33 c regularbox borderbox">
+								Col3 Col3 Col3 Col3 Col3 Col3 Col3 Col3 Col3 
+							</div>
+							<br style="clear:both;" />
+						</div>	
+					</section>						
+					<section>
+						<pre class="split-screen"><code contenteditable>
+&lt;div class="clearfix"&gt;
+	&lt;div class="col33 a" /&gt;
+	&lt;div class="col33 b" /&gt;
+	&lt;div class="col33 c" /&gt;
+&lt;/div&gt;
+
+							
+						</code></pre>
+						<pre class="split-screen"><code contenteditable>
+.clearfix:after{
+	content: "";
+	display: table;
+	clear: both;
+}
+
+							
+						</code></pre>
+					</section>
+					<section>
+						<div class="content with-background clearfix">
+							<div class="col33 a regularbox borderbox">
+								Col1 Col1 Col1 Col1 Col1 Col1 Col1 Col1 Col1 
+							</div>
+							<div class="col33 b regularbox borderbox" >
+								Col2 Col2 Col2 Col2 Col2 Col2 Col2 Col2 Col2 
+							</div>	
+							<div class="col33 c regularbox borderbox">
+								Col3 Col3 Col3 Col3 Col3 Col3 Col3 Col3 Col3 
+							</div>
+
+						</div>	
+					</section>
+					<section>
+						<h1>Concepts</h1>
+						<div class="content">
+							<ul>
+								<li class="fragment">Border Box <br /><a href="http://css-tricks.com/box-sizing/">More Info</a></li>
+								<li class="fragment">Clearfix <br /><a href="http://css-tricks.com/snippets/css/clear-fix/">More Info</a></li>
+							</ul>	
+						</div>	
+					</section>
+				</section>
+				<section>
+					<section class="question">
+							<h1>Powerpoint</h1>
+							<img src="img/powerpoint.png" width="300" />
+					</section>
+					<section>
+						<div class="content">
+							<img src="img/ppt.png" />
+						</div>	
+					</section>
+					
+					<section class="question">
+						<div class="content">
+							<h1>Psuedo Elements</h1>
+						</div>	
+					</section>
+					<section>
+						
+						<pre class="split-screen"><code contenteditable>
+&lt;div class="psuedotest"&gt;
+	&lt;p&gt;PithyQuote&lt;/p&gt; 
+&lt;/div&gt;
+
+
+
+
+
+
+							
+						</code></pre>
+						<style>
+							.reveal .bordered{
+								border: 1px solid red;
+							}
+						</style>
+						<div class="split-screen fragment bordered">
+							<p>Pithy Quote</p>
+
+						</div>
+					</section>
+					<section>
+						
+						<pre class="split-screen"><code contenteditable>
+&lt;div class="psuedotest"&gt;
+	&lt;p&gt;PithyQuote&lt;/p&gt; 
+&lt;/div&gt;
+
+.psuedotest:before, 
+.psuedotest:after{
+	border: 1px solid green;
+	display: inline-block;
+	content: "#";
+}
+							
+						</code></pre>
+						<style>
+							.reveal .bordered{
+								border: 1px solid red;
+							}
+							.reveal .psuedotest:before,.reveal .psuedotest:after{
+								border: 1px solid green;
+								display: inline-block;
+								content: "#";
+							}
+						</style>
+						<div class="split-screen fragment bordered psuedotest">
+							<p>Pithy Quote</p>
+
+						</div>
+					</section>
+
+					<section class="question">
+						<div class="content">
+							<h1>Character Entities</h1>
+						</div>	
+					</section>
+					<section>
+						<h1>HTML Entities</h1>
+						<div class="content">
+							<h1>Ampersand</h1>
+							<table>
+								<tr><th>HTML</th> <td class="fragment">&amp;amp;</td></tr>
+								<tr><th>HTML(Numeric)</th> <td class="fragment">&#38;#38;</td></tr>
+								<tr><th>CSS</th> <td class="fragment">content:"\0026";</td></tr>
+								<tr><th>Javascript<td class="fragment">alert("\46")</td></tr>
+							</table>	
+							<!-- &amp;&#38;&ampersandu+0026 ISOnump:before { content:"\0026"; }alert("\46") -->
+						</div>
+					</section>
+					<section class="question">
+						<div class="content">
+							<h1>Why are none of the numbers the same?</h1>
+						</div>	
+					</section>
+					<section class="question">
+						<div class="content">
+							<h1>Standards writers hate you.</h1>
+						</div>	
+					</section>
+
+					<section>
+						<div class="content">
+							<img src="img/ppt-cropping.png" />
+						</div>	
+					</section>
+					<section class="question">
+						<h1>Position</h1>
+					</section>
+					<section>
+						<h1>Static</h1>
+						<pre class="split-screen"><code contenteditable>
+&lt;div&gt;
+	&lt;p&gt;PithyQuote&lt;/p&gt; 
+&lt;/div&gt;
+
+position: static;
+top:30px;
+
+
+
+
+							
+						</code></pre>
+
+						<style>
+							.reveal .static{
+								border: 1px solid green;
+								position: static;
+								top:30px;
+								background-color: rgba(255,255,255,.5);
+							}
+						</style>
+						<div class="split-screen fragment bordered">
+							<p class="static">Pithy Quote</p>
+
+						</div>
+					</section>
+					<section>
+						<h1>Relative</h1>
+						<pre class="split-screen"><code contenteditable>
+&lt;div&gt;
+	&lt;p&gt;PithyQuote&lt;/p&gt; 
+&lt;/div&gt;
+
+position: relative;
+top:30px;
+
+
+
+
+							
+						</code></pre>
+
+						<style>
+							.reveal .relative{
+								border: 1px solid green;
+								position: relative;
+								top:30px;
+								background-color: rgba(255,255,255,.5);
+							}
+						</style>
+						<div class="split-screen fragment bordered">
+							<p class="relative">Pithy Quote</p>
+
+						</div>
+					</section>
+					<section>
+						<h1>Absolute</h1>
+						<pre class="split-screen"><code contenteditable>
+&lt;div&gt;
+	&lt;p&gt;PithyQuote&lt;/p&gt; 
+&lt;/div&gt;
+
+position: absolute;
+top:30px;
+
+
+
+
+							
+						</code></pre>
+
+						<style>
+							.reveal .absolute{
+								border: 1px solid green;
+								position: absolute;
+								top:30px;
+								background-color: rgba(255,255,255,.5);
+							}
+						</style>
+						<div class="split-screen fragment bordered">
+							<p class="absolute">Pithy Quote</p>
+
+						</div>
+					</section>
+					<section>
+						<h1>Fixed</h1>
+						<pre class="split-screen"><code contenteditable>
+&lt;div&gt;
+	&lt;p&gt;PithyQuote&lt;/p&gt; 
+&lt;/div&gt;
+
+position: fixed;
+top:0;
+right: 0;
+
+
+
+
+							
+						</code></pre>
+
+						<style>
+							.reveal .fixed{
+								border: 1px solid green;
+								position: fixed;
+								top:0;
+								right: 0;
+								background-color: rgba(255,255,255,.5);
+							}
+						</style>
+						<div class="split-screen fragment bordered">
+							<p class="fixed">Pithy Quote</p>
+
+						</div>
+					</section>
+					<section class="question">
+						<h1>Transforms</h1>
+					</section>
+					<section>
+						<h1>Rotate</h1>
+						<pre class="split-screen"><code contenteditable>
+&lt;div&gt;
+	&lt;p&gt;PithyQuote&lt;/p&gt; 
+&lt;/div&gt;
+
+-webkit-transform:rotate(10deg);
+-moz-transform:rotate(10deg);
+-o-transform:rotate(10deg);
+transform:rotate(10deg);
+
+
+
+
+							
+						</code></pre>
+
+						<style>
+							.reveal .rotate{
+								border: 1px solid green;
+								background-color: rgba(255,255,255,.5);
+								-webkit-transform:rotate(10deg);
+								-moz-transform:rotate(10deg);
+								-o-transform:rotate(10deg);
+								transform:rotate(10deg);
+							}
+						</style>
+						<div class="split-screen fragment">
+							<p class="rotate">Pithy Quote</p>
+
+						</div>
+					</section>
+					<section>
+						<h1>Skew</h1>
+						<pre class="split-screen"><code contenteditable>
+&lt;div&gt;
+	&lt;p&gt;PithyQuote&lt;/p&gt; 
+&lt;/div&gt;
+
+-webkit-transform:skew(35deg);
+-moz-transform:skew(35deg);
+-o-transform:skew(35deg);
+transform:skew(35deg);
+
+
+
+
+							
+						</code></pre>
+
+						<style>
+							.reveal .skew{
+								border: 1px solid green;
+								background-color: rgba(255,255,255,.5);
+								-webkit-transform:skew(35deg);
+								-moz-transform:skew(35deg);
+								-o-transform:skew(35deg);
+								transform:skew(35deg);
+							}
+						</style>
+						<div class="split-screen fragment">
+							<p class="skew">Pithy Quote</p>
+
+						</div>
+					</section>
+					<section>
+						<h1>Multiple</h1>
+						<pre class="split-screen"><code contenteditable>
+&lt;div&gt;
+	&lt;p&gt;PithyQuote&lt;/p&gt; 
+&lt;/div&gt;
+
+
+transform:	
+	skew(30deg) 
+	scale(1.1,1.1) 
+	rotate(40deg) 
+	translate(10px, 20px);
+
+
+
+
+							
+						</code></pre>
+
+						<style>
+							.reveal .multi-transform{
+								border: 1px solid green;
+								background-color: rgba(255,255,255,.5);
+								-webkit-transform:skew(30deg) scale(1.1,1.1) rotate(40deg) translate(10px, 20px);;
+								-moz-transform:skew(30deg) scale(1.1,1.1) rotate(40deg) translate(10px, 20px);;
+								-o-transform:skew(30deg) scale(1.1,1.1) rotate(40deg) translate(10px, 20px);;
+								transform:skew(30deg) scale(1.1,1.1) rotate(40deg) translate(10px, 20px);;
+							}
+						</style>
+						<div class="split-screen fragment">
+							<p class="multi-transform">Pithy Quote</p>
+
+						</div>
+					</section>
+					<section>
+						<h1>Options</h1>
+						<pre><code contenteditable>
+matrix() matrix3d()
+
+translate() translateX() translateY() translateZ() translate3d()
+
+scale() scaleX() scaleY() scaleZ() scale3d()
+
+rotate() rotateX() rotateY() rotateZ() rotate3d()
+
+skewX() skewY()
+
+perspective()
+
+						</code></pre>
+
+					</section>
+					<section class="question">
+						<h1>Filters</h1>
+					</section>
+					<section>
+						<h1>Base</h1>
+						<pre class="split-screen"><code contenteditable>
+&lt;img src="locationmarker.svg" /&gt;
+
+
+
+
+
+							
+						</code></pre>
+
+						<div class="split-screen fragment">
+							<img class="transparent" src="img/locationmarker.svg" width="200" />
+
+						</div>
+					</section>
+					<section>
+						<h1>Sepia</h1>
+						<pre class="split-screen"><code contenteditable>
+&lt;img src="locationmarker.svg" /&gt;
+
+-webkit-filter:sepia(100%);
+
+
+
+							
+						</code></pre>
+
+						<style>
+							.reveal .sepia{
+								-webkit-filter:sepia(100%);
+							}
+						</style>
+						<div class="split-screen fragment">
+							<img class="sepia transparent" src="img/locationmarker.svg" width="200" />
+
+						</div>
+					</section>
+					<section>
+						<h1>Saturate</h1>
+						<pre class="split-screen"><code contenteditable>
+&lt;img src="locationmarker.svg" /&gt;
+
+-webkit-filter:saturate(100);
+
+
+
+							
+						</code></pre>
+
+						<style>
+							.reveal .saturate{
+								-webkit-filter:saturate(100);
+							}
+						</style>
+						<div class="split-screen fragment">
+							<img class="saturate transparent" src="img/locationmarker.svg" width="200" />
+
+						</div>
+					</section>
+
+					<section>
+						<h1>Box Shadow</h1>
+						<pre class="split-screen"><code contenteditable>
+&lt;img src="locationmarker.svg" /&gt;
+
+box-shadow:  3px 3px 5px #000;
+
+
+
+							
+						</code></pre>
+
+						<style>
+							.reveal section .box-shadow{
+								box-shadow: 3px 3px 5px #000;
+								background: none;
+								border:none;
+							}
+						</style>
+						<div class="split-screen fragment">
+							<img class="box-shadow" src="img/locationmarker.svg" width="200" />
+
+						</div>
+					</section>
+
+					<section>
+						<h1>Drop Shadow</h1>
+						<pre class="split-screen"><code contenteditable>
+&lt;img src="locationmarker.svg" /&gt;
+
+-webkit-filter:
+drop-shadow(3px 3px 10px #000);
+
+
+
+							
+						</code></pre>
+
+						<style>
+							.reveal .drop-shadow{
+								-webkit-filter:drop-shadow(3px 3px 10px #000);
+							}
+						</style>
+						<div class="split-screen fragment">
+							<img class="drop-shadow transparent" src="img/locationmarker.svg" width="200" />
+
+						</div>
+					</section>
+					<section>
+						<h1>Options</h1>
+						<pre><code contenteditable>
+grayscale
+sepia
+saturate
+hue-rotate
+invert
+opacity
+brightness
+contrast
+blur
+drop-shadow
+						</code></pre>
+
+					</section>
+
+
+
+
+					<section>
+						<h1>Concepts</h1>
+						<div class="content">
+							<ul>
+								<li class="fragment">Psuedo Elements<br /><a href="http://coding.smashingmagazine.com/2011/07/13/learning-to-use-the-before-and-after-pseudo-elements-in-css/">More Info</a></li>
+								<li class="fragment">HTML Entities in CSS<br /><a href="http://www.evotech.net/blog/2007/04/named-html-entities-in-numeric-order/">More Info</a></li>
+								<li class="fragment">SVG <br /><a href="http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/getting-started-with-scalable-vector-graphics-svg/">More Info</a></li>
+								<li class="fragment">Position<br /><a href="http://alistapart.com/article/css-positioning-101"/>More Info</a></li>
+								
+								<li class="fragment">Transforms<br /><a href="http://css3.bradshawenterprises.com/">More Info</a></li>
+								<li class="fragment">Filters<br /><a href="http://www.html5rocks.com/en/tutorials/filters/understanding-css/">More Info</a></li>
+							</ul>	
+						</div>	
+					</section>
+				</section>
+
+
+				
+
+
+
+				<section>
+					<section class="question">
+						<h1>Facebook</h1>
+						<img src="img/facebook.jpg" width="500"/>
+					</section>
+					<section>
+						<div class="content">
+							<img src="img/facebook-chathead-single.png" />
+							<img src="img/facebook-chathead-single-closeup.png" style="vertical-align:top" class="fragment" />
+
+						</div>	
+					</section>
+					<section>
+						<div class="content">
+							<img src="img/facebook-chathead-multi.png" />
+							<img src="img/facebook-chathead-multi-closeup.png" style="vertical-align:top" class="fragment" />
+
+						</div>	
+					</section>
+
+					<section>
+						<h1>Concepts</h1>
+						<div class="content">
+							<ul>
+								<li class="fragment">Border Radius<br /><a href="http://css-tricks.com/almanac/properties/b/border-radius/"/>More Info</a></li>
+								<li class="fragment">Box Shadow<br /><a href="http://css-tricks.com/snippets/css/css-box-shadow/"/>More Info</a></li>
+								<li class="fragment">Nth Child<br /><a href="http://css-tricks.com/how-nth-child-works/"/>More Info</a></li>
+								
+								<li class="fragment">Float<br /><a href="http://css-tricks.com/all-about-floats/"/>More Info</a></li>
+								<li class="fragment">Shape Outside<br /><a href="http://blogs.adobe.com/webplatform/2013/03/27/freeing-the-floats-of-the-future-from-the-tyranny-of-the-rectangle"/>More Info</a></li>
+							</ul>	
+						</div>	
+					</section>
+				</section>
+				<section>
+					<section class="question">
+						<h1>iOS</h1>	
+						<img src="img/ios-family-2013.png" width="500" />
+					</section>
+					<section>
+						<div class="content">
+							<img src="img/ios-settings.png" />
+							<img src="img/ios-background.png"  style="vertical-align:top" class="fragment" />
+						</div>	
+					</section>
+					<section>
+						<div class="content">
+							<img src="img/ios-settings.png" />
+							<img src="img/ios-rounded.png"  style="vertical-align:top" class="fragment" />
+						</div>	
+					</section>
+					<section>
+						<div class="content">
+							<img src="img/ios-home.png" />
+							<img src="img/ios-badge.png"  style="vertical-align:top" class="fragment" />
+						</div>	
+					</section>
+					<section>
+						<div class="content">
+							<img src="img/ios-settings.png" />
+							<img src="img/ios-airplane.png"  style="vertical-align:top" class="fragment" />
+						</div>	
+					</section>
+					<section class="question">
+						<div class="content">
+							<h1>CSS Patterns</h1>
+						</div>	
+					</section>
+					<section>
+						
+						<pre class="split-screen"><code contenteditable>
+&lt;div class="pattern"&gt;
+	&lt;p&gt;PithyQuote&lt;/p&gt; 
+&lt;/div&gt;
+
+
+background: #F00;
+
+
+
+							
+						</code></pre>
+						<style>
+							.reveal .patterned{
+								background: #F00;
+							}
+
+						</style>
+						<div class="split-screen fragment" style="background: #F00">
+							<p class="patterned">Pithy Quote</p>
+
+						</div>
+					</section>
+					<section>
+						
+						<pre class="split-screen"><code contenteditable>
+&lt;div class="pattern"&gt;
+	&lt;p&gt;PithyQuote&lt;/p&gt; 
+&lt;/div&gt;
+
+
+background: 
+linear-gradient(#0FF,#F0F);
+
+
+
+							
+						</code></pre>
+						<div class="split-screen fragment" style="background: -webkit-linear-gradient(#0FF,#F0F)">
+							<p>Pithy Quote</p>
+
+						</div>
+					</section>
+					<section>
+						
+						<pre class="split-screen"><code contenteditable>
+&lt;div class="pattern"&gt;
+	&lt;p&gt;PithyQuote&lt;/p&gt; 
+&lt;/div&gt;
+
+
+background: 
+linear-gradient(#0FF,#F0F);
+background-size:5px 5px; 
+
+
+							
+						</code></pre>
+						<div class="split-screen fragment" style="background-size:5px 5px; background: -webkit-linear-gradient(#0FF,#F0F)">
+							<p>Pithy Quote</p>
+
+						</div>
+					</section>
+					<section>
+						<pre class="split-screen"><code contenteditable>
+&lt;div class="pattern"&gt;
+	&lt;p&gt;PithyQuote&lt;/p&gt; 
+&lt;/div&gt;
+
+
+background: 
+linear-gradient(#0FF 10px,#F0F);
+background-size:12px 12px;
+
+
+							
+						</code></pre>
+						<div class="split-screen fragment" style="background-size:12px 12px; background: -webkit-linear-gradient(#0FF 10px,#F0F)">
+							<p>Pithy Quote</p>
+
+						</div>
+					</section>
+					<section class="question">
+						<a href="http://lea.verou.me/css3patterns/"><img src="img/css-gallery.png" target="_blank" /></a>
+					</section>
+
+					<section class="question">
+						<div class="content">
+							<h1>CSS Transitions</h1>
+						</div>	
+					</section>
+
+					<section>
+						<pre class="split-screen"><code contenteditable>
+&lt;script&gt;
+function toggleOpacity(){
+	Set to 1 or 0
+}
+function toggleMargin(){
+	Set to 140 or 0
+}
+&lt;/script&gt;
+&lt;p id="trans1"&gt;Pithy Quote&lt;/p&gt;
+&lt;button onclick="toggleOpacity()"&gt;
+	Opacity
+&lt;/button&gt;
+&lt;button onclick="toggleMargin()"&gt;
+	Margin
+&lt;/button&gt;
+
+
+							
+						</code></pre>
+						<script>
+							function toggleOpacity1(){
+								var el = document.querySelector('#trans1');
+								if (el.style.opacity != 0 || el.style.opacity == ""){
+									el.style.opacity = 0;
+								}
+								else{
+									el.style.opacity = 1;
+								}
+							}
+							function toggleMargin1(){
+								var el = document.querySelector('#trans1');
+								if (el.style.marginTop == "" || el.style.marginTop == "0px"){
+									el.style.marginTop = "100px";
+								}
+								else{
+									el.style.marginTop = "0px";
+								}
+							}
+						</script>
+						<div class="split-screen fragment">
+							<p id="trans1">Pithy Quote</p>
+							<button onclick="toggleOpacity1()">Opacity</button>
+							<button onclick="toggleMargin1()">Margin</button>
+						</div>
+
+					</section>
+					<section>
+						<pre class="split-screen"><code contenteditable>
+transition: all 1s ease-in-out;
+
+&lt;p id="trans1"&gt;Pithy Quote&lt;/p&gt;
+&lt;button onclick="toggleOpacity()"&gt;
+	Opacity
+&lt;/button&gt;
+&lt;button onclick="toggleMargin()"&gt;
+	Margin
+&lt;/button&gt;
+
+
+							
+						</code></pre>
+						<style>
+							#trans2{
+								-webkit-transition: all 1s ease-in-out;
+
+							}
+
+						</style>
+						<script>
+							function toggleOpacity2(){
+								var el = document.querySelector('#trans2');
+								if (el.style.opacity != 0 || el.style.opacity == ""){
+									el.style.opacity = 0;
+								}
+								else{
+									el.style.opacity = 1;
+								}
+							}
+							function toggleMargin2(){
+								var el = document.querySelector('#trans2');
+								if (el.style.marginTop == "" || el.style.marginTop == "0px"){
+									el.style.marginTop = "100px";
+								}
+								else{
+									el.style.marginTop = "0px";
+								}
+							}
+						</script>
+						<div class="split-screen fragment">
+							<p id="trans2">Pithy Quote</p>
+							<button onclick="toggleOpacity2()">Opacity</button>
+							<button onclick="toggleMargin2()">Margin</button>
+						</div>
+
+					</section>
+
+
+
+
+					<section>
+						<h1>Concepts</h1>
+						<div class="content">
+							<ul>
+								<li class="fragment">CSS Patterns<br /><a href="http://lea.verou.me/css3patterns/">More Info</a></li>
+								<li class="fragment">CSS Transitions<br /><a href="http://css3.bradshawenterprises.com/">More Info</a></li>
+							</ul>	
+						</div>	
+					</section>
+					
+				</section>
+
+				
+
+
+
+
+
+				<section>
+					<section class="question">
+						<div class="content">
+							<h1>Conclusions</h1>
+						</div>	
+					</section>
+					<section class="question">
+						<div class="content">
+							<h1>Why?</h1>
+						</div>	
+					</section>
+					<section class="question">
+						<img src="img/zen1.png" />
+					</section>
+					<section class="question">
+						<img src="img/zen2.png" />
+					</section>
+					<section class="question">
+						<img src="img/zen3.png" />
+					</section>
+					<section class="question">
+						<img class="transparent" src="img/edge_reflow_concept.png" />
+					</section>
+					<style>
+						.screens{
+							height: 700px;
+						}
+						.screen{
+							position: absolute;
+						}
+						.crt{
+							bottom: 40px;
+							right: 0;
+							z-index: 100;
+						}
+						.laptop{
+							bottom: 100px;
+							left: 0;
+							z-index: 0;
+							z-index: 100;
+						}
+						.iphone{
+							top: 0;
+							left: 300px;
+							z-index: 50;
+						}
+						.aphone{
+							top: 0;
+							left: 450px;
+							z-index: 50;
+						}
+						.tablet{
+							top: 175px;
+							left: 50px;
+							z-index: 175;
+						}
+						.tablet_ls{
+							top: 175px;
+							left:300px;
+							z-index: 175;
+						}
+						.ereader{
+							top: 175px;
+							right: 50px;
+							z-index: 175;
+						}
+						.tv{
+							top: 100px;
+							left: 90px;
+							z-index: 0;
+						}
+					</style>
+					<section>
+						<div class="screens">
+							<img src="img/crt.png" class="screen crt transparent" />
+							<img src="img/laptop.png" class="screen laptop transparent" />
+							<img src="img/iphone.png" class="screen iphone transparent" />
+							<img src="img/aphone.png" class="screen aphone transparent" />
+							<img src="img/tablet.png" class="screen tablet transparent" />
+							<img src="img/tablet_ls.png" class="screen tablet_ls transparent" />
+							<img src="img/ereader.png" class="screen ereader transparent" />
+							<img src="img/tv.png" class="screen tv transparent" />
+						</div>
+					</section>
+					<section class="question">
+						<img src="img/glass.jpg" />
+					</section>
+					<section class="question">
+						<img src="img/iwrist.jpg" />
+					</section>
+					<section class="question">
+						<img src="img/minority.jpg" />
+					</section>
+					<section class="question">
+						<div class="content">
+							<h1>Prepare for <br />the unknown</h1>
+						</div>	
+					</section>
+
+					<section>
+						<h1>Questions?</h1>
+						<div class="content-with-bg">
+							<p>Source, Presentation &amp; References:</p>
+							<ul>
+								<li><a href="http://bit.ly/max-tr-1">http://bit.ly/max-tr-1</a></li>
+							</ul>
+							<br /><br />	
+							<p>Preso also availalble at:</p>
+							<ul>
+								<li><a href="http://max.adobe.com">Adobe Max Site</a></li>
+							</ul>
+							<br /><br />
+							<p>Contact Me?</p>
+							<ul>
+								<li><a href="http://terrenceryan.com">http://terrenceryan.com</a></li>
+								<li><a href="mailto:terry.ryan@adobe.com">terry.ryan@adobe.com</a></li>
+								<li><a href="http://twitter.com/tpryan">Twitter @tpryan</a></li>
+							</ul>	
+						</div>					
+					</section>
+				</section>	
+			</div>
+
+		</div>
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				margin: 0,
+
+				theme: 'max2013', // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

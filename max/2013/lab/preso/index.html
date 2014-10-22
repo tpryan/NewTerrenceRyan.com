@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Responsive Design in Action</title>
+
+		<meta name="description" content="The short presentation I'll be giving with the Responsive Design Lab">
+		<meta name="author" content="Terry Ryan">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">	
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+			<img src="css/theme/max2013/adobelogo_redtag.svg" class="adobelogo" id="adobelogo" />
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<section class="titleslide">
+						<hgroup>
+							<h1>Responsive Design in Action</h1>
+							<h2>Terry Ryan | Creative Cloud Evangelist | @tpryan</h2>
+						</hgroup>
+						<img src="css/theme/max2013/logo.png" class="transparent" id="logo" />
+						<img src="css/theme/max2013/bird.png" class="transparent" id="bird" />
+					</section>
+					<section class="question">
+						<div class="content">
+							<h1>Who are you?</h1>
+						</div>	
+					</section>
+					<section>
+						<h1>Agenda</h1>
+						<div class="content-with-bg">
+							<ul>
+								<li>Introduction</li>
+								<li>Design
+									<ul>
+										<li>Comp</li>
+										<li>Adobe Edge Reflow</li>
+									</ul>
+								</li>
+								<li>Code</li>
+
+
+							</ul>
+						</div>					
+					</section>
+					<section>
+						<h1>Not a Reflow Lab</h1>
+						<div class="content">
+							<img src="img/reflow.svg" class="transparent mneumonic-large" />
+						</div>					
+					</section>
+					<section class="question">
+						<div class="content">
+							<h1>There will be code!</h1>
+						</div>	
+					</section>
+
+				</section>
+				<section>
+					<section class="question">
+						<div class="content">
+							<h1>3 features of Responsive Web Design</h1>
+						</div>	
+					</section>
+					<style>
+						.flexible-grid{
+							width: 100%;
+						}
+						.flexible-grid td{
+							border: 1px solid #999;
+							width: 12%;
+							height: 400px;
+							background-color: rgba(200,200,200,.4);
+						}
+					</style>
+					<section>
+						<h1>Flexible Grid</h1>
+						<div class="content">
+							<table class="flexible-grid">
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+							</table>	
+						</div>					
+					</section>
+					<section>
+						<h1>Flexible Media</h1>
+						<div class="content">
+							<img src="img/reflow.svg" class="transparent" width="80%" />
+						</div>					
+					</section>
+					<section>
+						<h1>Media Queries</h1>
+						<div class="content">
+							<img src="img/mediaqueries.png" class="transparent"/>
+						</div>					
+					</section>
+				</section>
+				<section>
+					<section class="question">
+						<div class="content">
+							<h1>Step 1 &mdash; Design*</h1>
+							<p>*Comprised of many smaller steps.</p>
+						</div>	
+					</section>
+				</section>
+				<section>
+					<section class="question">
+						<div class="content">
+							<h1>Step 2 &mdash; Code*</h1>
+							<p>*Once again many smaller steps.</p>
+						</div>	
+					</section>
+					<style>
+					.col33{
+						width: 33%;
+						height: 200px;
+						float: left;
+						text-align: left;
+					}
+					.a{
+						background-color: #FF0000;
+					}
+					.b{
+						background-color: #00FF00;
+						color: #999999;
+					}
+					.c{
+						background-color: #0000FF;
+						color: #FFFFFF;
+					}
+					.reveal .split-screen{
+						width: 45%;
+						margin-right: 20px;
+						float: left;
+
+					}
+					.reveal .regularbox{
+						padding: 0 10px;
+					}
+					.reveal .borderbox{
+						 -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+					}
+					.reveal .with-background{
+						background-color: #CC00CC;
+						height: auto;
+					}
+					.reveal .clearfix:after{
+						content: "";
+						display: table;
+						clear: both;
+					}
+				</style>
+
+					<section class="question">
+							<h1>Columns</h1>
+							<img src="img/columns.jpg" />
+					</section>
+					<style>
+						.flexible-grid{
+							width: 100%;
+						}
+						.flexible-grid td{
+							border: 1px solid #999;
+							width: 12%;
+							height: 400px;
+							background-color: rgba(200,200,200,.4);
+						}
+					</style>
+					<section>
+						<h1>Flexible Grid</h1>
+						<div class="content">
+							<table class="flexible-grid">
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+							</table>	
+						</div>					
+					</section>
+					<section class="question">
+						<div class="content">
+							<div class="col33 a">
+								Col1 Col1 Col1 Col1 Col1 Col1 Col1 Col1 Col1 
+							</div>
+							<div class="col33 b">
+								Col2 Col2 Col2 Col2 Col2 Col2 Col2 Col2 Col2 
+							</div>	
+							<div class="col33 c">
+								Col3 Col3 Col3 Col3 Col3 Col3 Col3 Col3 Col3 
+							</div>		
+						</div>	
+					</section>
+
+					<section>
+						<pre class="split-screen"><code contenteditable>
+&lt;div class="col33 a"&gt;
+	Col1 Col1 Col1 Col1  
+&lt;/div&gt;
+&lt;div class="col33 b"&gt;
+	Col2 Col2 Col2 Col2 
+&lt;/div&gt;	
+&lt;div class="col33 c"&gt;
+	Col3 Col3 Col3 Col3 
+&lt;/div&gt;	
+
+
+
+
+							
+						</code></pre>
+						<pre class="split-screen"><code contenteditable>
+.col33{
+	width: 33%;
+	height: 200px;
+	float: left;
+}
+
+
+
+
+
+
+
+
+							
+						</code></pre>
+					</section>
+					<section class="question">
+						<div class="content">
+							<div class="col33 a">
+								Col1 Col1 Col1 Col1 Col1 Col1 Col1 Col1 Col1 
+							</div>
+							<div class="col33 b">
+								Col2 Col2 Col2 Col2 Col2 Col2 Col2 Col2 Col2 
+							</div>	
+							<div class="col33 c">
+								Col3 Col3 Col3 Col3 Col3 Col3 Col3 Col3 Col3 
+							</div>		
+						</div>	
+					</section>
+					<section>
+						<pre class="split-screen"><code contenteditable>
+&lt;div class="col33 a"&gt;
+	Col1 Col1 Col1 Col1 
+&lt;/div&gt;
+&lt;div class="col33 b"&gt;
+	Col2 Col2 Col2 Col2  
+&lt;/div&gt;	
+&lt;div class="col33 c"&gt;
+	Col3 Col3 Col3 Col3  
+&lt;/div&gt;	
+
+
+
+
+							
+						</code></pre>
+						<pre class="split-screen"><code contenteditable>
+.col33{
+	width: 33%;
+	height: 200px;
+	float: left;
+	<strong>padding: 0 10px;</strong>
+}
+
+
+
+
+
+
+
+
+
+
+							
+						</code></pre>
+					</section>
+					<section>
+						<div class="content">
+							<div class="col33 a regularbox">
+								Col1 Col1 Col1 Col1 Col1 Col1 Col1 Col1 Col1 
+							</div>
+							<div class="col33 b regularbox" >
+								Col2 Col2 Col2 Col2 Col2 Col2 Col2 Col2 Col2 
+							</div>	
+							<div class="col33 c regularbox">
+								Col3 Col3 Col3 Col3 Col3 Col3 Col3 Col3 Col3 
+							</div>		
+						</div>	
+					</section>
+					<section>
+						<div class"content">
+							<figure>
+								<img src="img/balloonexplosion.jpg">
+								<figcaption>Float?</figcaption>
+							</figure>
+						</div>
+					</section>
+					<section>
+						<div class="content">
+							<div class="col33 a regularbox borderbox">
+								Col1 Col1 Col1 Col1 Col1 Col1 Col1 Col1 Col1 
+							</div>
+							<div class="col33 b regularbox borderbox" >
+								Col2 Col2 Col2 Col2 Col2 Col2 Col2 Col2 Col2 
+							</div>	
+							<div class="col33 c regularbox borderbox">
+								Col3 Col3 Col3 Col3 Col3 Col3 Col3 Col3 Col3 
+							</div>		
+						</div>	
+					</section>
+					<section>
+						<div class="content">
+							<pre><code contenteditable>
+.borderbox{
+ 	-moz-box-sizing: border-box; 
+ 	-webkit-box-sizing: border-box; 
+ 	box-sizing: border-box;
+}
+							
+						</code></pre>
+						</div>
+					</section>
+					<section>
+						<figure>
+							<img src="img/widthbox.png" height="500">
+							<figcaption>Taken from <a href="http://css-tricks.com/box-sizing/">CSS Tricks</a></figcaption>
+						</figure>
+					</section>	
+					<section>
+						<div class="content with-background">
+							<div class="col33 a regularbox borderbox">
+								Col1 Col1 Col1 Col1 Col1 Col1 Col1 Col1 Col1 
+							</div>
+							<div class="col33 b regularbox borderbox" >
+								Col2 Col2 Col2 Col2 Col2 Col2 Col2 Col2 Col2 
+							</div>	
+							<div class="col33 c regularbox borderbox">
+								Col3 Col3 Col3 Col3 Col3 Col3 Col3 Col3 Col3 
+							</div>
+
+						</div>	
+					</section>
+					<section>
+					<pre><code contenteditable>
+&lt;div&gt;
+	&lt;div class="col33 a" /&gt;
+	&lt;div class="col33 b" /&gt;
+	&lt;div class="col33 c" /&gt;
+	&lt;br style="clear:both;" /&gt;
+&lt;/div&gt;
+
+
+
+
+							
+						</code></pre>
+					</section>
+					<section>
+						<div class="content with-background">
+							<div class="col33 a regularbox borderbox">
+								Col1 Col1 Col1 Col1 Col1 Col1 Col1 Col1 Col1 
+							</div>
+							<div class="col33 b regularbox borderbox" >
+								Col2 Col2 Col2 Col2 Col2 Col2 Col2 Col2 Col2 
+							</div>	
+							<div class="col33 c regularbox borderbox">
+								Col3 Col3 Col3 Col3 Col3 Col3 Col3 Col3 Col3 
+							</div>
+							<br style="clear:both;" />
+						</div>	
+					</section>						
+					<section>
+						<pre class="split-screen"><code contenteditable>
+&lt;div class="clearfix"&gt;
+	&lt;div class="col33 a" /&gt;
+	&lt;div class="col33 b" /&gt;
+	&lt;div class="col33 c" /&gt;
+&lt;/div&gt;
+
+							
+						</code></pre>
+						<pre class="split-screen"><code contenteditable>
+.clearfix:after{
+	content: "";
+	display: table;
+	clear: both;
+}
+
+							
+						</code></pre>
+					</section>
+					<section>
+						<div class="content with-background clearfix">
+							<div class="col33 a regularbox borderbox">
+								Col1 Col1 Col1 Col1 Col1 Col1 Col1 Col1 Col1 
+							</div>
+							<div class="col33 b regularbox borderbox" >
+								Col2 Col2 Col2 Col2 Col2 Col2 Col2 Col2 Col2 
+							</div>	
+							<div class="col33 c regularbox borderbox">
+								Col3 Col3 Col3 Col3 Col3 Col3 Col3 Col3 Col3 
+							</div>
+
+						</div>	
+					</section>
+
+
+
+
+				</section>
+				<section>
+					<section>
+						<h1>Questions?</h1>
+						<div class="content-with-bg">
+							<p>Source, Presentation &amp; References:</p>
+							<ul>
+								<li><a href="http://bit.ly/max-tr-3">http://bit.ly/max-tr-3</a></li>
+							</ul>
+							<br /><br />	
+							<p>Preso also availalble at:</p>
+							<ul>
+								<li><a href="http://max.adobe.com">Adobe Max Site</a></li>
+							</ul>
+							<br /><br />
+							<p>Contact Me?</p>
+							<ul>
+								<li><a href="http://terrenceryan.com">http://terrenceryan.com</a></li>
+								<li><a href="mailto:terry.ryan@adobe.com">terry.ryan@adobe.com</a></li>
+								<li><a href="http://twitter.com/tpryan">Twitter @tpryan</a></li>
+							</ul>	
+						</div>					
+					</section>
+				</section>		
+
+			</div>
+
+		</div>
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				margin: 0,
+
+				theme: 'max2013', // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

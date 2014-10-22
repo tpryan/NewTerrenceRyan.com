@@ -1,0 +1,17 @@
+img{
+    max-width:none;  
+}
+
+img{
+    max-width:100%;  
+}
+
+@media (-webkit-min-device-pixel-ratio: 2){ 
+    .person img{
+		max-width: 180px;
+	}
+}
+
+.person img{
+    width:50%;
+}    

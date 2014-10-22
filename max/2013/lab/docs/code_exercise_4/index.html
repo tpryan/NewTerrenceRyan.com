@@ -1,0 +1,237 @@
+<!DOCTYPE html> 
+<html> 
+   <head> 
+   <title>Responsive Design in Action Lab - Code Exercise 4</title>
+   <link href="../_style/main.css" rel="stylesheet"  />
+   <link href="../_style/prettify.css" rel="stylesheet" />
+   <link href="../_style/tomorrow.css" rel="stylesheet" />
+   <script src="http://use.edgefonts.net/source-sans-pro.js"></script>
+   <script src="http://use.edgefonts.net/source-code-pro.js"></script>
+   <script type="text/javascript" src="../_style/prettify.js"></script> 
+   <script type="text/javascript" src="../_style/main.js"></script> 
+</head> 
+<body>
+
+
+<h1>Code Exercise 4 - Tweaks</h1>
+
+
+
+<p>Okay so we've implemented a responsive design using:</p>
+
+<ul>
+   <li>Flexible Grid</li>
+   <li>Flexiible Media</li>
+   <li>Media Queries</li>
+</ul>
+
+<p>But there is a little more to consider. We've been showing this design in a browser on a desktop under what are almost ideal conditions. On a real mobile device things like glare and reduced attention will make us want to make sure there is a little more contrast.  Consider where the halloffame meets the hallofshame.</p>
+
+<figure>
+   <img src="img/01.png" />
+   <figcaption>Figure 1</figcaption>
+</figure>
+
+<p>You have a body with a #eeeeee background with Cousin Larry on a #ffffff background and Bobcat on a #d9d9d9.  In short there is little difference between these and maybe we want to increase the contrast for a better on the go experience. </p>
+
+<p>Over the course of this exercise we will be taking the code in the working directly from how it appears in step_3 to how it appears in step_4.</p>
+
+<ul>
+   <li>Start with code in <em>/lab/code/working</em></li>
+   <li>Open <em>index.html</em> in Adobe Edge Code (or code editor of your choice)</li>
+   <li>Open <em>index.html</em> in Chrome.</li>
+</ul>
+
+
+<h2>Add a tweaks.css file to the project</h2>
+
+<ul>
+   <li>In the folder lab/code/working/css add a file named tweaks.css</li>
+   <li>In index.html add the following line of code to the HTML header:</li>
+</ul>
+
+<code>
+<pre class="prettyprint lang-html">&lt;link rel="stylesheet" href="css/tweaks.css"/&gt; 
+</pre></code>
+
+<figure>
+   <img src="img/02.png" />
+   <figcaption>Figure 2</figcaption>
+</figure>
+
+<p>Let's add some css to tweaks.css.  Start with a media query. </p>
+
+<code><pre class="prettyprint lang-css">@media all and (max-width: 550px) {
+   
+}
+</pre></code>
+
+<p>Add let's adjust the contrast for those sections. </p>
+
+ <code><pre class="prettyprint lang-css">body{
+        background-color: #CCCCCC;
+    }
+   
+    #halloffame .person{
+        background-color: #eeeeee;
+    }
+   
+    #hallofshame .person{
+        background-color: #FFFFFF;
+    }
+</pre></code>
+
+
+<p>We get that extra contrast we want. </p>
+
+<aside>
+  <p>Normally you cannot get Chrome to resize below 400px, which is aggravating if you need to test on resolutions lower then that.  However there is a little trick you can do to get it to.  </p>
+
+  <p>Open Chrome &rarr; View &rarr; Developer &rarr; Developer Tools</p>
+
+  <figure>
+    <img src="img/a01.png" />
+   <figcaption>Figure A1</figcaption>
+  </figure>
+
+
+  <p>This will open the Chrome Developer Tools</p>
+
+  <p>In the lower left corner there is an icon that allow you to undock the panel.</p>
+
+  <figure>
+    <img src="img/a02.png" />
+   <figcaption>Figure A2</figcaption>
+  </figure>
+
+  <p>If you hold the button down you have the option of docking the tools on the right of the browser. Do that.</p>.
+
+  <figure>
+    <img src="img/a03.png" />
+   <figcaption>Figure A3</figcaption>
+  </figure>
+
+  <p>Now that the panel is on the right, you can resize the viewport below 400px.</p>
+
+   <figure>
+    <img src="img/a04.png" />
+   <figcaption>Figure A4</figcaption>
+  </figure> 
+
+  <p><em>How do you know its width?</em></p>
+
+
+  <p>Hover over the HTML code in the Developer Tools. Specifically hover over the &lt;body&gt;. When you do this you will get a popover that tells you the dimensions of the body. </p>
+
+   <figure>
+    <img src="img/a05.png" />
+   <figcaption>Figure A5</figcaption>
+  </figure> 
+
+</aside>
+
+<p>Let's go to a smaller extreme.  Let's talk about the iPhone 3g generation of devices.  A lot of them are still out there.  The standard resolution for those devices is 320px X 480px.  At that size the screen is still usable, but leaves a little bit to be desired. </p>
+
+<figure>
+   <img src="img/03.png" />
+   <figcaption>Figure 3</figcaption>
+</figure>
+
+<p>So we should really shrink down the heading and other top places items again.</p>
+
+
+<code><pre class="prettyprint lang-css">@media all and (max-width: 330px) {
+   
+    h1{
+        font-size: 3em;  
+    }
+    #description p {
+        font-size: 2.5em;  
+    }
+    nav ul li {
+        font-size: 1.9em;  
+    }
+} 
+</pre></code>
+
+<figure>
+   <img src="img/04.png" />
+   <figcaption>Figure 4</figcaption>
+</figure>
+
+
+
+<p>Looks better, but I'm not happy with how the font looks at this size.  On a iPhone this small, I'm better off using a font that has been optimized for the iPhone. </p>
+
+
+<code><pre class="prettyprint lang-css">@media all and (max-width: 330px) {
+   
+    h1{
+        font-size: 3em;
+        font-family:MarkerFelt-Thin, sans-serif;
+    }
+    #description p {
+        font-size: 2.5em;
+        font-family:MarkerFelt-Thin, sans-serif;
+    }
+    nav ul li {
+        font-size: 1.9em;
+        font-family:MarkerFelt-Thin, sans-serif;
+    }
+   
+}
+</pre></code>
+
+
+<figure>
+   <img src="img/05.png" />
+   <figcaption>Figure 5</figcaption>
+</figure>
+
+<p>You now have a design that can stretch and scale over a wide variety of devices. It's usable at all views. It's tweaked to deal with certain edge cases:  very small screens, retina displays. And it's a great starting spot for your own responsive sites.</p>
+
+
+<p>Complete CSS for this exercise:</p>
+
+<code><pre class="prettyprint lang-css">@media all and (max-width: 550px) {
+    
+    body{
+     background-color: #CCCCCC;
+    }
+    
+    #halloffame .person{
+        background-color: #eeeeee;
+    }
+    
+    #hallofshame .person{
+        background-color: #FFFFFF;
+    }
+    
+    
+}
+
+@media all and (max-width: 330px) {
+    
+    h1{
+        font-size: 3em;
+        font-family:MarkerFelt-Thin, sans-serif;
+    }
+    #description p {
+        font-size: 2.5em;
+        font-family:MarkerFelt-Thin, sans-serif;
+    }
+    nav ul li {
+        font-size: 1.9em;
+        font-family:MarkerFelt-Thin, sans-serif;
+    }
+    
+}
+</pre></code>
+
+<footer>
+   <div class="prev"><a href="../code_exercise_3/index.html">&larr; Code Exercise 3</a></div>
+   <div class="next"></div>
+</footer>
+
+</body>
+</html>

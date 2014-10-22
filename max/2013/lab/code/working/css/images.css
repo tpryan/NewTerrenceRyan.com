@@ -1,0 +1,25 @@
+
+
+img{
+    max-width:none;  
+}
+
+
+img{
+    max-width:100%;  
+}
+
+.person img{
+    width:50%;
+}
+
+
+
+@media (-webkit-min-device-pixel-ratio: 2){ 
+    .person img{
+		max-width: 180px;
+	}
+}
+
+
+

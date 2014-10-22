@@ -1,0 +1,230 @@
+<!DOCTYPE html> 
+<html> 
+   <head> 
+   <title>Responsive Design in Action Lab - Code Exercise 3</title>
+   <link href="../_style/main.css" rel="stylesheet"  />
+   <link href="../_style/prettify.css" rel="stylesheet" />
+   <link href="../_style/tomorrow.css" rel="stylesheet" />
+   <script src="http://use.edgefonts.net/source-sans-pro.js"></script>
+   <script src="http://use.edgefonts.net/source-code-pro.js"></script>
+   <script type="text/javascript" src="../_style/prettify.js"></script> 
+   <script type="text/javascript" src="../_style/main.js"></script> 
+</head> 
+<body>
+
+
+<h1>Code Exercise 3 - Media Queries</h1>
+
+
+
+<p>This section will go deeper into media queries which we touched on in the last section. </p>
+
+<p>Over the course of this exercise we will be taking the code in the working directly from how it appears in step_2 to how it appears in step_3.</p>
+
+<ul>
+   <li>Start with code in <em>/lab/code/working</em></li>
+   <li>Open <em>index.html</em> in Adobe Edge Code (or code editor of your choice)</li>
+   <li>Open <em>index.html</em> in Chrome.</li>
+</ul>
+
+
+<h2>Add a queries.css file to the project</h2>
+
+<ul>
+   <li>In the folder lab/code/working/css add a file named queries.css</li>
+   <li>In index.html add the following line of code to the HTML header:</li>
+</ul>
+
+<code>
+<pre class="prettyprint lang-html">&lt;link rel="stylesheet" href="css/queries.css"/&gt; 
+</pre></code>
+
+<figure>
+   <img src="img/01.png" />
+   <figcaption>Figure 1</figcaption>
+</figure>
+
+
+<p>We're going to resize the browser to about 700px.  When we get there we should see that the description starts to flow under the "Hall Of Fame" similar to what happened in the design portion of this lab. We need to tell the browser to do something different once we get this low on screen width. 
+To do that we'll add a media query based on screen width.</p>
+
+
+<figure>
+   <img src="img/02.png" />
+   <figcaption>Figure 2</figcaption>
+</figure>
+
+<p>Add any rules below to queries.css.</p>
+
+
+<code><pre class="prettyprint lang-css">@media all and (max-width: 850px) {
+     #description{
+          width: 100%;
+     }
+}
+</pre></code>
+
+<figure>
+   <img src="img/03.png" />
+   <figcaption>Figure 3</figcaption>
+</figure>
+ 
+
+<p>Now we'll want to go back and make sure that the other columns fill up their space properly.</p>
+<code><pre class="prettyprint lang-css">@media all and (max-width: 850px) {
+     #description{
+          width: 100%;
+     }
+    #hallofshame, #halloffame{
+          width: 50%;
+     }
+}
+</pre></code>
+
+
+<figure>
+   <img src="img/04.png" />
+   <figcaption>Figure 4</figcaption>
+</figure>
+
+<p>Resizing looks good, but we'll want to go even lower. Take the browser down as skinny as it will go. On Chrome this is 400px. </p>
+
+
+<figure>
+   <img src="img/05.png" />
+   <figcaption>Figure 5</figcaption>
+</figure>
+
+
+<p>It's not unusable, but on the skinny columns just really don't feel right. At some point we'll want to just go to a one column layout. (It's not a coincidence that the original un-laid out version of the site was one long column.)</p>
+
+
+
+
+<p>We'll add another media query</p>
+
+
+<code><pre class="prettyprint lang-css">@media all and (max-width: 550px) {
+
+
+}
+</pre></code>
+
+<p>The the rest of the CSS will go inside that query:</p>
+<code><pre class="prettyprint lang-css">#hallofshame, #halloffame{
+      width: 100%;
+ }
+</pre></code>
+
+<figure>
+   <img src="img/06.png" />
+   <figcaption>Figure 6</figcaption>
+</figure>
+
+<p>We'll also want to adjust the navigation.</p>
+
+ <code><pre class="prettyprint lang-css">nav ul li a{
+          width: 100%;
+ }
+</pre></code>
+
+
+<figure>
+   <img src="img/07.png" />
+   <figcaption>Figure 7</figcaption>
+</figure>
+
+<p>Looks good, but if we were to shrink down the height of the screen to a small size (400px by 600px) we'd see that a large amount of the screen is taken up just by header and navigation. Perhaps we want to tone down some of that</p>
+
+
+<p>Let's get rid of the background that peeks through in the navigation.</p>
+
+
+<code><pre class="prettyprint lang-css">nav ul {
+        padding: 0;
+    }
+</pre></code>    
+<p>And let's tweak some of the font-sizes to make a little more content fit on the screen. </p>
+ 
+
+ <code><pre class="prettyprint lang-css">h1{
+        font-size: 4em;
+    }
+   
+    #description p{
+        font-size: 3em;
+    }
+    h2{
+        font-size: 3.5em;
+    }  
+</pre></code>
+
+<figure>
+   <img src="img/08.png" />
+   <figcaption>Figure 8</figcaption>
+</figure>
+
+
+
+<p>Looking much more appropriate on smaller devices. However, if we scale the browser larger then 
+1000px we'll find that the screen is locked into a max-width of 1000px.  We can do a little better for 
+users of large screens. </p>
+
+<code><pre class="prettyprint lang-css">@media all and (min-width: 1100px) {
+    body{
+        max-width: 90%;
+    }
+}
+</pre></code>
+
+<p>There we have defined experiences for larger desktop screens down to the smartphone screen.</p>
+
+
+<p>Complete CSS for this exercise:</p>
+
+<code><pre class="prettyprint lang-css">@media all and (max-width: 850px) {
+     #description{
+          width: 100%;
+     }
+    #hallofshame, #halloffame{
+          width: 50%;
+     }
+}
+
+@media all and (max-width: 550px) {
+    #hallofshame, #halloffame{
+          width: 100%;
+     }
+    nav ul li a{
+          width: 100%;
+     }
+   
+    nav ul {
+        padding: 0;
+    }
+   
+    h1{
+        font-size: 4em;
+    }
+   
+    #description p{
+        font-size: 3em;
+    }
+    h2{
+        font-size: 3.5em;
+    }   
+
+}
+@media all and (min-width: 1100px) {
+    body{
+        max-width: 90%;
+    }
+}
+</pre></code>
+
+<footer>
+   <div class="prev"><a href="../code_exercise_2/index.html">&larr; Code Exercise 2</a></div>
+   <div class="next"><a href="../code_exercise_4/index.html">Code Exercise 4 &rarr;</a></div>
+</footer>
+</body>
+</html>

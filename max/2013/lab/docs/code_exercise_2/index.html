@@ -1,0 +1,194 @@
+<!DOCTYPE html> 
+<html> 
+   <head> 
+   <title>Responsive Design in Action Lab - Code Exercise 2</title>
+   <link href="../_style/main.css" rel="stylesheet"  />
+   <link href="../_style/prettify.css" rel="stylesheet" />
+   <link href="../_style/tomorrow.css" rel="stylesheet" />
+   <script src="http://use.edgefonts.net/source-sans-pro.js"></script>
+   <script src="http://use.edgefonts.net/source-code-pro.js"></script>
+   <script type="text/javascript" src="../_style/prettify.js"></script> 
+   <script type="text/javascript" src="../_style/main.js"></script> 
+</head> 
+<body>
+
+
+<h1>Code Exercise 2 - Flexible Media</h1>
+
+<p>Over the course of this exercise we will be taking the code in the working directly from how it appears in step_1 to how it appears in step_2</p>
+
+
+<ul>
+   <li>Start with code in <em>/lab/code/working</em></li>
+   <li>Open <em>index.html</em> in Adobe Edge Code (or code editor of your choice)</li>
+   <li>Open <em>index.html</em> in Chrome.</li>
+</ul>
+
+
+<h2>Add a images.css file to the project</h2>
+
+<ul>
+   <li>In the folder lab/code/working/css add a file named images.css</li>
+   <li>In index.html add the following line of code to the HTML header:</li>
+</ul>
+
+<code>
+<pre class="prettyprint lang-html">&lt;link rel="stylesheet" href="css/images.css"/&gt; 
+</pre></code>
+
+<figure>
+   <img src="img/01.png" />
+   <figcaption>Figure 1</figcaption>
+</figure>
+
+<p>Now open images.css.</p>
+
+<ul>
+
+<li>In the browser right click on any of the pictures.</li> 
+<li>Choose "Open in image in new tab"</li>
+</ul>
+
+<figure>
+   <img src="img/02.png" />
+   <figcaption>Figure 2</figcaption>
+</figure>
+
+<p>You'll notice that the image is shown to be 360px by 360px.  However that's not how the image shows up on the page.  That's because in the CSS for the main design I set the max-width of the image to 140px.  That was just so I could work with the grid in the beginning without tackling images. We'll want to undo that setting. </p>
+
+<figure>
+   <img src="img/03.png" />
+   <figcaption>Figure 3</figcaption>
+</figure>
+
+<p>Add any rules below to images.css.</p>
+
+<code><pre class="prettyprint lang-css">img{
+    max-width:none; 
+}  
+</pre></code>
+
+
+<p>This overrides the previous directive and results in a messed up page.</p>
+
+<figure>
+   <img src="img/04.png" />
+   <figcaption>Figure 4</figcaption>
+</figure>
+
+ <p>So we want to make sure that an image can never be larger then it's container.  This is done with an pretty easy line of CSS.
+</p>
+
+<code><pre class="prettyprint lang-css">img{
+    max-width:100%; 
+}   
+</pre></code>
+
+<p>Now the images behave properly.</p> 
+
+<figure>
+   <img src="img/05.png" />
+   <figcaption>Figure 5</figcaption>
+</figure>
+
+  <p>It looks better, but if you were viewing on a High Density pixel screen or "Retina" screen, the image would be appear to be lower quality. This is because these screens have 2x as many pixels at most other screens and do some trickery to make images look a lot better, but when forced to render things at scale, they can look a little artifacted.</p>
+
+<p>There is an easy fix to this, you can use a media query to force images on Retina screens to be half sized, so they will look correct.</p> 
+
+<aside>
+  <p>Media queries are a way of selectively applying CSS.  Media queries basically ask a question "Is the answer to this question, true?" You can test a number of features of a browser including the height and width, the orientation, and in the case in this exercise, the pixel density. Typically in responsive web design you are responding to the width of the screen, but in this case we can respond to something more specific. </p>
+
+
+  <p>More on Media Queries</p>
+
+
+  <ul>
+    <li><a href="http://en.wikipedia.org/wiki/Media_queries">http://en.wikipedia.org/wiki/Media_queries</a></li>
+    <li><a href="http://www.adobe.com/devnet/dreamweaver/articles/introducing-media-queries.edu.html">http://www.adobe.com/devnet/dreamweaver/articles/introducing-media-queries.edu.html</a></li>
+    <li><a href="http://css-tricks.com/snippets/css/retina-display-media-query/">http://css-tricks.com/snippets/css/retina-display-media-query/</a></li>
+  </ul>
+</aside>  
+
+<code><pre class="prettyprint lang-css">@media (-webkit-min-device-pixel-ratio: 2){
+    .person img{
+          max-width: 180px;
+     }
+}
+</pre></code>
+
+
+<figure>
+   <img src="img/06.png" />
+   <figcaption>Figure 6 - Normal</figcaption>
+</figure>
+
+<figure>
+   <img src="img/07.png" />
+   <figcaption>Figure 7 - Retina</figcaption>
+</figure>
+
+<p>Finally, we want those images to only take up half of the box they are on all screens, which would agree with the original design. </p>
+
+
+<code><pre class="prettyprint lang-css">.person img{
+    width:50%;
+} 
+</pre></code>
+
+<figure>
+   <img src="img/08.png" />
+   <figcaption>Figure 8</figcaption>
+</figure>
+
+<p>And there, we have a flexible grid, with images that scale properly when the browser shrinks, and won't blow past the outside of any containers they are in. </p>
+ 
+<figure>
+   <img src="img/09.png" />
+   <figcaption>Figure 9</figcaption>
+</figure>
+
+
+<p>All the CSS for this Exercise:</p>
+
+
+<code><pre class="prettyprint lang-css">img{
+    max-width:none; 
+}
+
+img{
+    max-width:100%; 
+}
+
+@media (-webkit-min-device-pixel-ratio: 2){
+    .person img{
+          max-width: 180px;
+     }
+}
+
+.person img{
+    width:50%;
+}   
+</pre></code>
+
+<aside>
+<p>I'll cop to it, the solution I use for images is a bit simplistic. Basically, we serve up the biggest images we can and then down scale for smaller image footprints. It's simple but it has one major problem: I am sending the biggest picture over the wire that I can. On a network connected desktop machine, that's no problem regardless of the display abilities of the device.  But on mobile devices often with poor screens and poor connections that's expensive for an image that the user won't be able to fully appreciate. </p>
+
+<p>This is a common problem, and there are a number of solutions out there.  There is also an effort from the W3C to create a standard that handles this. But dealing with this is outside the scope of this lab. Rest assured there are other minds at work on this problem, and here are some resources to help you explore this topic. </p>
+
+<ul>
+  <li><a href="http://decodize.com/html/simple-responsive-image-technique/">http://decodize.com/html/simple-responsive-image-technique/</a></li>
+  <li><a href="http://adaptive-images.com/">http://adaptive-images.com/</a></li>
+  <li><a href="http://css-tricks.com/which-responsive-images-solution-should-you-use/">http://css-tricks.com/which-responsive-images-solution-should-you-use/</a></li>
+  <li><a href="https://github.com/scottjehl/picturefill/">https://github.com/scottjehl/picturefill/</a></li>
+</ul>
+
+</aside>  
+
+<footer>
+   <div class="prev"><a href="../code_exercise_1/index.html">&larr; Code Exercise 1</a></div>
+   <div class="next"><a href="../code_exercise_3/index.html">Code Exercise 3 &rarr;</a></div>
+</footer>
+
+
+</body>
+</html>

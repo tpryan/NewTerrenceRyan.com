@@ -1,0 +1,44 @@
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+#description{
+    width: 33%;
+    float:left;    
+}
+
+#halloffame{
+    width: 33%;
+    float:left;
+    padding: 0 5px;
+}
+
+#hallofshame{
+    width: 33%;
+    float:left;
+    padding: 0 5px;
+} 
+
+nav ul li a{
+	width: 25%;
+	float: left;
+}
+
+
+nav ul:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+html { height: 100%; }
+body { min-height: 100%; }
+
+#content:after{
+  content: "";
+  display: table;
+  clear: both;
+}

@@ -1,0 +1,192 @@
+<!DOCTYPE html> 
+<html> 
+   <head> 
+   <title>Responsive Design in Action Lab - Design Exercise 1</title>
+   <link href="../_style/main.css" rel="stylesheet"  />
+   <script src="http://use.edgefonts.net/source-sans-pro.js"></script> 
+</head> 
+<body>
+
+
+<h1>Design Exercise 1</h1>
+
+<ul>
+   <li>Open up Reflow Project It should be in folder:  <em>/lab/design/reflow/step_01</em></li>
+   <li>Play with the resize handler.  Move it left and right.  The design area screen will resize.</li>  
+</ul>
+
+<aside>
+   <p>Over the course of this exercise, you will be given pixel targets to hit like <q>resize the design area to about 850px</q>. <strong>Do not worry about hitting any of these exactly.</strong> Don't spend any time perfectly targeting those exact numbers.  You will be frustrated and throw things at me. I would prefer you not. They don't have to be perfect.</p> 
+</aside>   
+
+<figure>
+   <img src="img/01.png" />
+   <figcaption>Figure 1</figcaption>
+</figure>
+<p>Now when your slider gets under about 800 pixels the description (left most section "This is a site&hellip;")  will start to be covered by the <em>halloffame</em> section. </p> 
+
+<p>We're going to add a break point at 850px to fix this.</p>
+
+<h2>Add a break point at 850px</h2>
+
+<ul>
+   <li>Using the grey slider resize the design area to about 850px.</li>
+   <li>Press the plus button in the top right of the screen.</li>
+   <li>Don't worry if it isn't exactly 850px, sometimes it gets stuck at 848px.</li>
+</ul>
+
+<p>You should now have a purple bar at the top of the screen that reads "850". </p>
+
+<figure>
+   <img src="img/02.png" />
+   <figcaption>Figure 2</figcaption>
+</figure>
+
+
+<p>To correct the description, we want it to take up 100% of the design area width once the screen gets below 850px. </p>
+
+
+<h2>Resize description to 100% below 850px</h2>
+
+<ul>
+   <li>Move grey slider so that design area is less then 850px wide.
+   <li>Click on description. At the bottom you should see:
+      <ul>
+         <li>Body &gt; Container &gt; content &gt; description &gt; Text &lt;&gt;</li>
+         <li>This means we targeted the text and not the description container</li>
+         <li>So double click on  "description" indicated in bold: Body &gt; Container &gt; content &gt; description &gt; Text &lt;&gt;</li>
+         <li>You should notice that Layout -> Size (Width) is now 33%.</li>
+      </ul>
+   </li>      
+   <li>Change the Layout -> Size (Width) to 100%</li>
+</ul>
+<p>Great, but now the <em>halloffame</em> and <em>hallofshame</em> look awkward, so we want to change them to each be half and not thirds of the design area. </p>
+<figure>
+   <img src="img/03.png" />
+   <figcaption>Figure 3</figcaption>
+</figure>
+
+<h2>Resize <em>halloffame</em> and <em>hallofshame</em> to 50% below 850px</h2>
+
+<ul>
+   <li>Design Area should still be under 850px.</li>
+   <li>Click on <em>halloffame</em>. Layout &gt; Size (Width) is now 33%.</li>
+   <li>Change Layout -> Size (Width) to 50%.</li>
+   <li>Click on the <em>hallofshame</em>. Layout &gt; Size (Width) is now 33%.</li>
+   <li>Change Layout -> Size (Width) to 50%.</li>
+</ul>
+
+<figure>
+   <img src="img/04.png" />
+   <figcaption>Figure 4</figcaption>
+</figure>
+
+<p>Resize the screen again with the grey slider on the right. When your slider gets to about 500 pixels the text in the nav (Main Blog Search Contact) will start to drop to a second line. 
+So we'll want to add another breakpoint and fix the nav appearance.
+
+<figure>
+   <img src="img/05.png" />
+   <figcaption>Figure 5</figcaption>
+</figure>
+
+<h2>Add a break point at 550px.</h2>
+
+<ul>
+   <li>Using the grey slider resize the design area to about 550px.</li>
+   <li>Press the plus button in the top right of the screen.</li>
+   <li>Don't worry if it isn't exactly 550px, sometimes it gets stuck at 547px</li>
+</ul>
+
+<p>You should now have a purple bar at the top of the screen that reads "550" followed by a blue bar that reads "850". 
+
+<figure>
+   <img src="img/06.png" />
+   <figcaption>Figure 6</figcaption>
+</figure>
+
+<h2>Fix nav below 550px</h2>
+
+<ul>
+   <li>Move grey slider so that design area is less then 550px wide.</li>
+   <li>Click on main. At the bottom you should see:
+      <ul>
+         <li>Body &gt; Container &gt; nav &gt; ul &gt; main &gt; Text &lt;&gt;</li>
+         <li>This means we targeted the text and not the main container</li>
+         <li>So double click on "main" indicated in bold: Body &gt; Container &gt; nav &gt; ul &gt; main &gt; Text &lt;&gt;</li>
+         <li>You should notice that Layout -> Size (Width) is now 25%.</li>
+      </ul>
+   </li>    
+   <li>Change the Layout -> Size (Width) to 100%</li>
+   <li>Repeat for blog</li>
+</ul>
+
+<p>After doing blog you should notice that nav is running into the description. We can fix that by making sure that nav resizes.</p>
+
+<figure>
+   <img src="img/07.png" />
+   <figcaption>Figure 7</figcaption>
+</figure>
+
+<ul>
+   <li>Click on the multi color vertical striped container. At the bottom you should see:
+      <ul>
+         <li>Body &gt; Container &gt; nav &lt;&gt;</li>
+         <li>Layout &gt; Size (Height) should read "213px".</li>
+      </ul>
+   </li>      
+   <li>Change Layout &gt; Size (Height) to "auto".</li>
+   <li>Repeat resize to 100% for search and contact.</li>
+</ul>
+
+<figure>
+   <img src="img/08.png" />
+   <figcaption>Figure 7</figcaption>
+</figure>
+
+<p>At this width, it is most likely that someone is viewing on a phone and not a tablet.  Most times having multiple columns is too much for a phone. We want <em>halloffame</em> and <em>hallofshame</em> to be a single column for each. 
+
+<figure>
+   <img src="img/09.png" />
+   <figcaption>Figure 9</figcaption>
+</figure>
+
+<h2>Set <em>halloffame</em> and <em>hallofshame</em> to be single columns. </h2>
+
+<ul>
+   <li>Design Area should still be under 550px.</li>
+   <li>Mouse scroll down on design area to bring the 2 columns into view</li>
+   <li>Click on <em>halloffame</em>. Layout &gt; Size (Width) should be 50%.</li>
+   <li>Set Layout &gt; Size (Width) to 100%</li>
+   <li>Mouse scroll down on design area to bring the <em>hallofshame</em> into view</li>
+   <li>Click on <em>hallofshame</em>. Layout &gt; Size (Width) should be 50%.</li>
+   <li>Set Layout &gt; Size (Width) to 100%</li>
+</ul>
+
+<p>When you do this, you will notice that the description for a few of the members of the hall of fame now floats up next to the name. We'll fix this, then we'll be done. </p>
+
+<figure>
+   <img src="img/10.png" />
+   <figcaption>Figure 10</figcaption>
+</figure>
+
+<h2>Fix person description layout</h2>
+
+<ul>
+   <li>Click on "Leave Britney Alone."</li>
+   <li>Layout &gt; Min Width should be 0.50em</li>
+   <li>Change  Layout &gt; Min Width to 150px. </li>
+</ul>
+
+<figure>
+   <img src="img/11.png" />
+   <figcaption>Figure 11</figcaption>
+</figure>
+<p>All fixed.</p>
+
+<footer>
+   <div class="prev"><a href="../intro/reflow.html">&larr; Reflow</a></div>
+   <div class="next"><a href="../code_exercise_1/index.html">Code Exercise 1 &rarr;</a></div>
+</footer>
+
+</body>
+</html>

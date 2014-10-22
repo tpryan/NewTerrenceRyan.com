@@ -1,0 +1,43 @@
+.post {
+  color: #333;
+}
+.post .title {
+  font-size: 20px;
+}
+.post .comment {
+  color: #666;
+}
+.post .comment .title {
+  color: #F00;
+}
+
+.alert {
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -moz-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.person, .customer, .employee {
+  border: 1px solid green;
+}
+
+.customer {
+  font-variant: italic;
+}
+
+.employee {
+  font-variant: bold;
+}
+
+.post .title {
+  font-size: 24px;
+}
+
+a {
+  color: #c55c55;
+}
+
+a:hover {
+  color: #d2807b;
+}

@@ -1,0 +1,282 @@
+/****************************************************/
+/* Global  */
+/****************************************************/
+html { 
+	font-size: 62.5%; 
+	font-family: noticia-text, serif;
+	background-color: #777;
+	height: 100%;
+} 
+
+body{
+	background-color: #eee;
+	margin: 0 auto;
+	max-width: 1000px;
+	padding: 0;
+	min-height: 100%;
+}
+
+h1,h2,h3{
+	font-family: ceviche-one, sans;
+	margin-top: 0;
+	margin-bottom: 0;
+
+}
+
+@media all and (max-width: 550px) {
+    h1{
+        font-size: 4em;
+    }
+
+    h2{
+        font-size: 3.5em;
+    }    
+}
+
+h1{
+	font-size: 6rem;
+	text-shadow: rgb(124, 124, 124) 2px 2px 3px;
+	color: #c6d022;
+}
+
+h2{
+	font-size: 4rem;
+	text-shadow: rgb(124, 124, 124) 2px 2px 3px;
+}
+
+h3{
+	font-size: 2rem;
+	text-shadow: rgb(124, 124, 124) 2px 2px 3px;
+}
+
+p{
+	font-size: 1.5rem;
+}
+
+img{
+	 max-width:100%;  
+}
+
+header, #content, footer{
+	padding: 0 10px;
+}
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/****************************************************/
+/* Header  */
+/****************************************************/
+header p{
+	font-size: 2.5rem;
+	margin: 5px 0 10px 0;
+	color: #b874c3;
+}
+
+/****************************************************/
+/* Nav  */
+/****************************************************/
+nav{
+	background-image: url('bg.jpg');
+	background-attachment: scroll;
+	background-size: cover;
+	background-position: 0% 0%;
+	background-repeat: repeat repeat;
+	width: 100%;
+}
+
+nav ul{
+	list-style: none;
+	padding-left: 0;
+	padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+nav ul li{
+	font-family: ceviche-one, sans;
+	font-size: 3rem;
+}
+
+nav ul li a{
+	display: block;
+	background: -webkit-linear-gradient(270deg,rgba(255,255,255,0.952941) 0%,rgba(255,255,255,0.811765) 100%);
+	color: #663070;
+	text-align: center;
+	text-decoration: none;
+	padding: 15px 0;
+	width: 25%;
+	float: left;
+}
+
+nav ul li a:hover{
+	background-image: -webkit-linear-gradient(275deg, rgba(200, 200, 200, .9) 0%, rgba(200, 200, 200, .9) 100%);
+	color: #b874c3;
+}
+
+nav ul:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media all and (max-width: 550px) {
+    nav ul li a{
+		width: 100%;
+	}
+    
+    nav ul {
+        padding: 0;
+    }
+}
+
+/****************************************************/
+/* Content  */
+/****************************************************/
+#content:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Description  */
+#description{
+	width:33%;
+}
+
+#description p {
+	font-family: ceviche-one, sans;
+	font-size: 3.5rem;
+	text-align: center;
+	line-height: 1.3;
+	color: #b874c3;
+	padding: 10px 30px;
+	text-shadow: rgb(83, 83, 83) 2px 2px 3px;
+	float:left;
+}
+
+@media all and (max-width: 850px) {
+	#description{
+		width: 100%;
+	}
+}
+
+@media all and (max-width: 550px) {
+    #description p{
+        font-size: 3em;
+    }
+}
+
+/* Hall of Fame  */
+#halloffame {
+	margin-bottom: 10px;
+	width: 33%;
+	float:left;
+	padding: 0 5px;
+}
+
+#halloffame h2{
+	color: #f96755;
+}
+
+#halloffame h3{
+	color: #fcc4bc;
+}
+
+#halloffame p{
+	margin-left: 5px;
+}
+
+@media all and (max-width: 850px) {
+    #halloffame{
+		width: 50%;
+	}
+}
+@media all and (max-width: 550px) {
+    #halloffame{
+		width: 100%;
+	}
+}
+
+/* Hall of Shame  */
+#hallofshame {
+	margin-bottom: 10px;
+	width: 33%;
+	float:left;
+	padding: 0 5px;
+}
+
+#hallofshame h2{
+	color: #fcc4bc;
+	text-shadow: rgb(83, 83, 83) 1px 1px 3px;
+	margin-left: 5px;
+}
+
+#hallofshame h3{
+	color: #f96755;
+	text-shadow: rgb(50, 50, 50) 1px 1px 2px;
+	margin-left: 5px;
+}
+
+#halloffame .person{
+	background-color: #d9d9d9;
+}
+
+#hallofshame .person{
+	background-color: #FFFFFF;
+}
+
+#hallofshame p{
+	margin-left: 5px;
+}
+
+@media all and (max-width: 850px) {
+	#hallofshame{
+		width: 50%;
+	}
+}
+@media all and (max-width: 550px) {
+    #hallofshame{
+		width: 100%;
+	}
+}
+
+/* Person  */
+.person{
+	padding: 8px;
+	margin-bottom: 10px;
+	clear: both;
+	box-shadow: rgb(83, 83, 83) 2px 2px 3px;
+}
+.person img{
+	margin-right: 10px;
+	float: left;
+	width:50%; 
+}
+@media (-webkit-min-device-pixel-ratio: 2){ 
+    .person img{
+		max-width: 180px;
+	}
+}
+
+.person:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/****************************************************/
+/* Footer  */
+/****************************************************/
+footer p{
+	font-family: ceviche-one, sans;
+	font-size: 3rem;
+	color: #43460b;
+	text-shadow: rgb(124, 124, 124) 2px 2px 3px;
+}
+
+#copyright{
+	margin-bottom: 0px;
+}

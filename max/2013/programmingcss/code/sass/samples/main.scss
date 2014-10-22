@@ -1,0 +1,50 @@
+//Nesting
+.post{
+  color: #333;
+  .title{
+    font-size: 20px;
+  }
+  .comment{
+    color:#666;
+    .title{
+      color: #F00;
+    }
+  }
+}
+
+//Mixin
+@mixin transition($options) {
+  -webkit-transition: $options;
+  -moz-transition: $options;
+  -o-transition: $options;
+  transition: $options;
+}
+.alert{
+  @include transition(opacity .3s ease-in-out);
+}
+
+//Inheritance
+.person {
+  border: 1px solid green;
+}
+ 
+.customer {
+  @extend .person;
+  font-variant: italic;
+}
+
+.employee {
+  @extend .person;
+  font-variant: bold;
+}
+
+//Math
+$basefontsize: 20px;
+.post .title{
+	font-size: $basefontsize + 4px;
+}
+
+// Color Functions
+$highlight: #C55C55;     
+a{color: $highlight;}
+a:hover{color: lighten($highlight, 10%)}  

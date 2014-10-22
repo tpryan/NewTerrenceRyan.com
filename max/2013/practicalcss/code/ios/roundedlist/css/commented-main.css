@@ -1,0 +1,97 @@
+
+.ios-nav-list{
+/*
+	margin: 0 20px;
+	list-style: none;
+	font-family: "Helvetica Neue";
+	font-weight: bold;
+	padding-left: 0;
+	padding-top: 20px;
+*/
+    
+
+}
+
+
+.ios-nav-list li{
+/*
+	border: 2px solid #CCC;
+	border-bottom: none;
+	line-height: 1.8;
+	font-size: 36px;
+	background-color: #FFFFFF;
+*/
+	
+}
+
+.ios-nav-list li:first-child{
+/*	border-radius: 15px 15px 0 0;*/
+}
+
+.ios-nav-list li:last-child{
+/*
+	border-radius: 0 0 15px 15px;
+	border-bottom: 1px solid #CCC;
+*/
+}
+
+
+.ios-nav-list li a{
+/*
+	text-decoration: none;
+	color: #000000;
+	display: inline-block;
+	width: 100%;
+    vertical-align:bottom;
+
+*/
+}
+
+
+.ios-nav-list li a:after{
+/*
+	content: "\203A";
+	float: right;
+	color: #666;
+	padding-right: 5px;
+	font-weight: normal;
+	font-size: 250%;
+	line-height: .9;
+*/
+}
+
+
+.ios-nav-list li .icon{
+/*
+	width: 58px;
+	height: 58px;
+	vertical-align: middle;
+	margin: 12px;
+*/
+}  
+
+.ios-nav-list li a:hover{
+/*
+	color: #FFFFFF;
+	background-color: #0000FF;
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #798DFF),color-stop(1, #0000ff));
+	background-image: -webkit-linear-gradient(top, #798DFF, #0000ff);
+	background-image: -moz-linear-gradient(top, #798DFF, #0000ff);
+	background-image: -ms-linear-gradient(top, #798DFF, #0000ff);
+	background-image: -o-linear-gradient(top, #798DFF, #0000ff);
+	background-image: linear-gradient(top, bottom, #798DFF, #0000ff);
+*/
+
+}
+
+.ios-nav-list li:first-child a{
+/*	border-radius: 14px 14px 0 0;*/
+}
+.ios-nav-list li:last-child a{
+/*	border-radius: 0 0 14px 14px;*/
+}  
+
+.ios-nav-list li a:hover:after{
+/*	color: #FFFFFF;*/
+
+}

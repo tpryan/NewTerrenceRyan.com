@@ -1,0 +1,351 @@
+<!doctype html>  
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Create The Web</title>
+		<meta name="description" content="A template written in reveal.">
+		<meta name="author" content="Terrence Ryan">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/theme/tpryan.css" id="theme">
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<script>
+			// If the query includes 'print-pdf' we'll use the PDF print sheet
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	
+	<body>
+		<img src="img/adobe.gif" class="adobelogo" />
+		<div class="reveal">
+
+			<!-- Used to fade in a background when a specific slide state is reached -->
+			<div class="state-background"></div>
+			
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<section class="title">
+						<h1><br />Create the Web</h1>
+						<hr />
+						<h2>html.adobe.com</h2>
+						<br />
+					</section>
+
+					<section class="question">
+						<h1><br />Who are <strong>you</strong>?</h1>
+					</section>
+
+					<!-- Vegas Event -->
+					<!-- <section class="speakers">
+						<div class="speaker fragment">
+							<img src="img/terry.png" width="180" />
+							<h1>Terry Ryan</h1>
+							<p>Developer Evangelist</p>
+						</div>
+						<div class="speaker fragment">
+							<img src="img/greg.png" width="180" />
+							<h1>Greg Wilson</h1>
+							<p>Developer Evangelist</p>
+						</div>
+						<div class="speaker fragment">
+							<img src="img/garth.png" width="180" />
+							<h1>Garth Braithwaite</h1>
+							<p>Experience Designer</p>
+						</div>
+					</section> -->
+
+					<!-- London Event -->
+					<!-- <section class="speakers">
+						<div class="speaker fragment">
+							<img src="img/michael.png" width="180" />
+							<h1>Michaël Chaize</h1>
+							<p>Developer Evangelist</p>
+						</div>
+						<div class="speaker fragment">
+							<img src="img/terry.png" width="180" />
+							<h1>Terry Ryan</h1>
+							<p>Developer Evangelist</p>
+						</div>
+
+					</section>
+ -->
+ 					<!-- PA Events -->
+					<section class="speakers">
+						<div class="speaker fragment">
+							<img src="img/terry.png" width="180" />
+							<h1>Terry Ryan</h1>
+							<p>Developer Evangelist</p>
+						</div>
+						<!-- <div class="speaker fragment">
+							<img src="img/mihai.png" width="180" />
+							<h1>Mihai Corlan</h1>
+							<p>Developer Evangelist</p>
+						</div> -->
+						
+
+					</section>
+
+				</section>
+
+				<section>
+
+					<section>
+						<img src="img/html5.png" class="transparent" />
+					</section>
+
+					<style>
+						#olddays .crt{
+							left: 50px;
+							position: absolute;
+						}
+
+						#olddays .ie{
+							width: 200px;
+							position: absolute;
+							right: 50px;
+							top: 150px;	
+						}
+
+						#olddays .netscape{
+							width: 200px; 
+							position: absolute;
+							right: 150px;
+							top: 50px;	
+						}
+					</style>
+					<section id="olddays">
+						<img src="img/crt.png" class="transparent crt" />
+						<img src="img/ie.png" class="transparent ie" />
+						<img src="img/netscape.png" class="transparent netscape" />
+					</section>
+
+					<style>
+						#newdays img{
+							position: absolute;
+						}
+						#newdays .crt{
+							width: 250px;
+							bottom: 200px;
+							left: 200px;
+							z-index: 100;
+						}
+						#newdays .laptop{
+							width: 250px;
+							bottom: 250px;
+							left: 0;
+							z-index: 0;
+							z-index: 100;
+						}
+						#newdays .iphone{
+							width: 60px;
+							bottom: 100px;
+							left: 160px;
+							z-index: 250;
+						}
+						#newdays .aphone{
+							width: 70px;
+							bottom: 100px;
+							left: 260px;
+							z-index: 250;
+						}
+						#newdays .tablet{
+							width: 175px;
+							bottom: 150px;
+							left: 280px;
+							z-index: 175;
+						}
+						#newdays .tablet_ls{
+							width: 200px;
+							bottom: 180px;
+							left: 150px;
+							z-index: 175;
+						}
+						#newdays .ereader{
+							width: 125px;
+							bottom: 150px;
+							left: 10px;
+							z-index: 175;
+						}
+						#newdays .tv{
+							width: 400px;
+							bottom: 250px;
+							left: 40px;
+							z-index: 0;
+						}
+
+						#newdays .browser{
+							width: 125px;
+						}
+
+						
+						#newdays .ie{
+							top: 50px;
+							right: 200px;
+							
+						}
+						#newdays .chrome{
+							top: 120px;
+							right: 100px;
+
+						}
+						#newdays .firefox{
+							top: 120px;
+							right: 300px;
+							
+						}
+						#newdays .opera{
+							top: 220px;
+							right: 150px;
+							
+						}
+						#newdays .safari{
+							top: 220px;
+							right: 250px;
+							
+						}
+
+					</style>
+
+
+					<section id="newdays">
+						<img src="img/crt.png" class="transparent crt" />
+						<img src="img/laptop.png" class="transparent laptop" />
+						<img src="img/iphone.png" class="transparent iphone" />
+						<img src="img/aphone.png" class="transparent aphone" />
+						<img src="img/tablet.png" class="transparent tablet" />
+						<img src="img/tablet_ls.png" class="transparent tablet_ls" />
+						<img src="img/ereader.png" class="transparent ereader" />
+						<img src="img/tv.png" class="transparent tv" />
+						<img src="img/ie.png" class="transparent ie browser" />
+						<img src="img/chrome.png" class="transparent chrome browser" />
+						<img src="img/firefox.png" class="transparent firefox browser" />
+						<img src="img/safari.png" class="transparent safari browser" />
+						<img src="img/opera.png" class="transparent opera browser" />
+					</section>
+
+					<style>
+						#webstandards img{
+							position: absolute;
+						}
+
+						#webstandards .w3c{
+							width: 400px;
+							left: 80px;
+							top: 150px;	
+						}
+
+						#webstandards .webkit{
+							width: 300px; 
+							position: absolute;
+							right: 80px;
+							top: 100px;	
+						}
+					</style>
+
+					
+
+					<section>
+						<h2><br /></h2>
+						<img src="img/photoshop.png" width="200" class="transparent" />
+						<img src="img/illustrator.png" width="200" class="transparent" />
+						<img src="img/fireworks.png" width="200" class="transparent" />
+						<img src="img/dreamweaver.png" width="200" class="transparent" />
+					</section>
+
+					<section class="question">
+						<h2><br />Web professionals <br />need <em>better</em> tools.</h2>
+					</section>	
+
+					
+					<section class="keynote-edge">
+						<h1>Adobe Edge Tools &amp; Services</h1>
+						<img src="img/edge_animate_mn.png" width="170" class="transparent" />
+						<img src="img/edge_code_mn.png" width="170" class="transparent" />
+						<img src="img/edge_inspect_mn.png" width="170" class="transparent" />
+						<img src="img/edge_reflow_mn.png" width="170" class="transparent" />
+						<img src="img/edge_web_fonts_mn.png" width="170" class="transparent" />
+						<img src="img/typekit.png" width="170" class="transparent" />
+						<img src="img/phonegap_build_mn.png" width="170" class="transparent" />
+					</section>		
+
+					
+				</section>
+				<section>
+					<section>
+						<img src="img/news1.jpg" />
+					</section>
+					<section>
+						<img src="img/news2.jpg" />
+					</section>
+					<section>
+						<img src="img/mag1.jpg" />
+					</section>
+					<section>
+						<img src="img/mag2.jpg" />
+					</section>
+
+
+					<section class="question">
+						<h2><br />Web professionals <br />need a <em>better</em> medium.</h2>
+					</section>	
+							
+					<section id="webstandards">
+						<img src="img/w3c.png" class="transparent w3c" />
+						<img src="img/webkit.png" class="transparent webkit" />
+					</section>	
+				</section>
+
+						
+				
+
+
+				<section>	
+					
+					<section>
+						<h2>Questions, Comments, Feedback?</h2>
+						
+						<p>Presos will be up at: <br />
+						<a href="http://terrenceryan.com/createtheweb">http://terrenceryan.com/createtheweb</a></p> 
+					</section>
+
+					<section class="title">
+						<h1><br />Create the Web</h1>
+						<hr />
+						<h2>html.adobe.com</h2>
+						<br />
+						<p><img src="img/twitter.png" class="tpng"> #CreateTheWeb</p>
+					</section>
+					<section class="title"><br /><br />
+						<p>http://Adobe.ly/createsurvey2</p>
+						<hr />
+					</section>
+				</section>
+
+			</div>
+
+			<p id="twitter-call">Questions? #CreateTheWeb <img src="img/twitter.png" class="tpng"></p>
+
+			<!-- The navigational controls UI -->
+			<aside class="controls">
+				<a class="left" href="#">&#x25C4;</a>
+				<a class="right" href="#">&#x25BA;</a>
+				<a class="up" href="#">&#x25B2;</a>
+				<a class="down" href="#">&#x25BC;</a>
+			</aside>
+
+			<!-- Presentation progress bar -->
+			<div class="progress"><span></span></div>
+			
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+		<script src="js/config.js"></script>
+	</body>
+</html>

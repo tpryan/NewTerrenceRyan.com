@@ -1,0 +1,270 @@
+/****************************************************/
+/* Fonts  */
+/****************************************************/
+html { 
+	font-size: 62.5%; 
+	font-family: noticia-text, serif;
+} 
+h1,h2,h3{
+	font-family: ceviche-one, sans;
+
+}
+h1{
+	font-size: 6rem;
+}
+h2{
+	font-size: 4rem;
+}
+h3{
+	font-size: 2rem;
+}
+
+p{
+	font-size: 1.5rem;
+}
+
+header p{
+	font-size: 2.5rem;
+}
+#description p {
+	font-family: ceviche-one, sans;
+	font-size: 3.5rem;
+	text-align: center;
+	line-height: 1.3;
+}
+footer p{
+	font-family: ceviche-one, sans;
+	font-size: 3rem;
+}
+
+nav ul li{
+	font-family: ceviche-one, sans;
+	font-size: 3rem;
+}
+
+
+
+
+
+/****************************************************/
+/*Colors*/
+/****************************************************/
+/* 
+	#c6d022 Lime Green
+	#663070 Dark Purple
+	#b874c3 Light Purple
+	#fcc4bc Peachish
+	#43460b Dark Green
+	#f96755 Reddish Orange
+ */
+
+h1{
+	color: #c6d022;
+}
+header p{
+	color: #b874c3;
+}
+#halloffame h2{
+	color: #f96755;
+}
+#hallofshame h2{
+	color: #fcc4bc;
+}
+
+#halloffame h3{
+	color: #fcc4bc;
+}
+#hallofshame h3{
+	color: #f96755;
+}
+
+#description p {
+	color: #b874c3;
+}
+
+
+footer p{
+	color: #43460b;
+}
+/****************************************************/
+/* img tweaking */
+/****************************************************/
+img{
+	max-width: 140px;
+}
+
+/****************************************************/
+/* Backgrounds */
+/****************************************************/
+html{
+	background-color: #777;
+	
+}
+
+nav{
+	background-image: url('bg.jpg');
+	background-attachment: scroll;
+	background-size: cover;
+	background-position: 0% 0%;
+	background-repeat: repeat repeat;
+}
+
+body{
+	background-color: #eee;
+}
+
+#halloffame .person{
+	background-color: #d9d9d9;
+}
+
+#hallofshame .person{
+	background-color: #FFFFFF;
+}
+
+/****************************************************/
+/* margins and padding */
+/****************************************************/
+body{
+	padding: 0;
+
+}
+header, #content, footer{
+	padding: 0 10px;
+}
+
+h1{
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+h2{
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+h3{
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+header p{
+	margin: 5px 0 10px 0;
+}
+
+.person{
+	padding: 8px;
+	margin-bottom: 10px;
+}
+.person img{
+	margin-right: 10px; 
+}
+
+#copyright{
+	margin-bottom: 0px;
+}
+
+#halloffame {
+	margin-bottom: 10px;
+}
+#hallofshame {
+	margin-bottom: 10px;
+}
+
+#description{
+	padding: 10px 30px;
+}
+
+/****************************************************/
+/*Borders and Shadows */ 
+/****************************************************/
+
+h1{
+	text-shadow: rgb(124, 124, 124) 2px 2px 3px;
+	margin-top: 0;
+}
+h2{
+	text-shadow: rgb(124, 124, 124) 2px 2px 3px;
+	margin-top: 0;
+}
+h3{
+	text-shadow: rgb(124, 124, 124) 2px 2px 3px;
+	margin-top: 0;
+}
+
+.person{
+	box-shadow: rgb(83, 83, 83) 2px 2px 3px;
+}
+
+#description p {
+	text-shadow: rgb(83, 83, 83) 2px 2px 3px;
+}
+#halloffame h3{
+	text-shadow: rgb(83, 83, 83) 1px 1px 3px;
+	margin-left: 5px;
+}
+#hallofshame h3{
+	text-shadow: rgb(50, 50, 50) 1px 1px 2px;
+	margin-left: 5px;
+}
+#halloffame p{
+	margin-left: 5px;
+}
+#hallofshame p{
+	margin-left: 5px;
+}
+
+footer p{
+	text-shadow: rgb(124, 124, 124) 2px 2px 3px;
+}
+
+
+/****************************************************/
+/*Non responsive layout tweaks */
+/****************************************************/
+body{
+	margin: 0 auto;
+	max-width: 1000px;
+}
+
+.person{
+	clear: both;
+}
+.person img{
+	float: left;
+}
+.person:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/****************************************************/
+/*Nav  */
+/****************************************************/
+
+
+nav{
+	width: 100%;
+}
+
+nav ul{
+	list-style: none;
+	padding-left: 0;
+	padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+nav ul li a{
+	display: block;
+	background: -webkit-linear-gradient(270deg,rgba(255,255,255,0.952941) 0%,rgba(255,255,255,0.811765) 100%);
+	color: #663070;
+	text-align: center;
+	text-decoration: none;
+	padding: 15px 0;
+}
+
+nav ul li a:hover{
+	background-image: -webkit-linear-gradient(275deg, rgba(200, 200, 200, .9) 0%, rgba(200, 200, 200, .9) 100%);
+	color: #b874c3;
+}
+

@@ -2,6 +2,7 @@
 use \google\appengine\api\mail\Message;
 
 if (strlen($_POST['email']) < 1){
+  syslog(LOG_INFO, 'mail attempt - address: ' . $_POST['email'] . " content: " . $_POST['text']);
 	throw new Exception('Mail Faiure');
 	die("Email invalid");
 

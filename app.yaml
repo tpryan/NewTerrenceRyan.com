@@ -100,7 +100,7 @@ handlers:
 - url: /wp-(.+).php
   script: wordpress/wp-\1.php
 
-- url: /(.+)?/?
-  script: wordpress/index.php
+# - url: /(.+)?/?
+#   script: wordpress/index.php
 
 

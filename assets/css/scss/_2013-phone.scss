@@ -50,7 +50,6 @@
 				img{
 					float:right;
                     position: relative;
-                    top: -20px;
                     margin: 0 0 5px 5px;
 				}
                 &:after{
@@ -89,10 +88,11 @@
 	.top-bar {	
 		.page-title {
 			nav{
-				font-size: 1.7rem;
+				font-size: 1.3rem;
 				li{
 					display: block;
 					border-right: 0;
+					line-height: 1.5;
 				}
 
 			}		

@@ -91,6 +91,10 @@ handlers:
 - url: /blog/wp-comments-post.php
   script: wordpress/wp-comments-post.php
 
+- url: /blog/
+  script: wordpress/index.php
+
+
 - url: /robots.txt
   static_files: robots.txt
   upload: robots.txt
@@ -111,7 +115,19 @@ handlers:
   upload: .*\.(ico|jpg|png|gif)$
   application_readable: true
 
-# - url: /(.+)?/?
-#   script: wordpress/index.php
+- url: /cfmlhandler.php
+  script: cfmlhandler.php
+
+- url: (.+).cfm
+  script: cfmlhandler.php
+
+- url: /(.+)/(.+).cfm/(.+)
+  script: cfmlhandler.php
+
+
+
+
+- url: /(.+)?/?
+  script: wordpress/index.php
 
 

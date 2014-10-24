@@ -37,6 +37,13 @@ function generateEventHTML($lanyrd_content,$count){
 	
 	$result = ""; 
 	$result .=  "<!-- pulled in from lanyrd -->" ."\n";
+
+
+	if (count($lanyrd_content) == 0){
+		$result .= "			<p>No upcoming events</p>";
+	}
+
+
 	for ($i=0; $i<$count; $i++){
 		
 		
@@ -139,9 +146,13 @@ function convert_smart_quotes($string)
 
 function get_content_from_lanyrd($url) {
 	date_default_timezone_set('Europe/London');
-	
+	$results = [];
 	$content = url_get_contents($url);
 
+	if (strpos($content, "VEVENT") == false){
+		return $results;
+
+	}
 
 	$content = explode("\n", $content);
 	$j = 0;
@@ -192,6 +203,7 @@ function get_content_from_lanyrd($url) {
 
 	}
 
+
 	$results = sort_lanyrd_results($data);
 	$results = fix_addresses($results);
 	return $results;
@@ -210,8 +222,8 @@ function fix_addresses($lanyrd_details){
 
 function sort_lanyrd_results($lanyrd_content){
 	$dates = array();
-	foreach ($lanyrd_content as $key => $row)
-	{
+
+	foreach ($lanyrd_content as $key => $row) {
 	    $dates[$key] = $row['start'];
 	}
 	array_multisort($dates, SORT_ASC, $lanyrd_content);

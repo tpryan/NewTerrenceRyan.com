@@ -60,7 +60,8 @@
 				$memcache->set($cache_name, $cache_html, $cache_age);
 			} catch (Exception $e) {
 				$content_html = "<p>No entries</p>";
-			 	broadcast($e->getMessage());
+				//var_dump($e);exit;
+			 	broadcast($e->getMessage() . " " . $e->getFile() . " " . $e->getLine());
 			}
 		} else {
 			$content_html = $cached_content;

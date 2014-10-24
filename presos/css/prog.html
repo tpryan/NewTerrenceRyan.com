@@ -1,0 +1,1492 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Programming CSS</title>
+
+		<meta name="description" content="An exploration of bring more coding productivity to CSS.">
+		<meta name="author" content="Terry Ryan">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">	
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+			<img src="css/theme/max2013/adobelogo_redtag.svg" class="adobelogo" id="adobelogo" />
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section>
+					<section class="titleslide">
+						<hgroup>
+							<h1>Programming CSS</h1>
+							<h2>Terry Ryan | Creative Cloud Evangelist | @tpryan</h2>
+						</hgroup>
+						
+					</section>
+					<section class="question">
+						<div class="content">
+							<h1>Who are you?</h1>
+						</div>	
+					</section>
+				</section>
+				<section>
+					<section class="question">
+						<div class="content">
+							<h1>Important Ideas</h1>
+							<img src="img/blt-weave.jpg" style="max-height:400px" />
+						</div>	
+					</section>
+					<section>
+						<style>
+							.reveal .talking-head{
+								display: inline-block;
+								width: auto;
+								text-align: center;
+							}
+							.reveal .talking-head figcaption{
+								display: inline-block;	
+							}
+							.reveal .talking-head img{
+								width: 100px;
+								display: block;
+							}
+
+							.reveal .molly img{
+								width: 120px;
+								display: block;
+							}
+							.hide-text{
+								opacity: 0;
+							}
+							.reveal .donttable{
+								width: 	550px;
+								position: absolute;
+								top: 25%;
+								right: 50px;
+								margin: 0 auto;
+								background-color: #ddd;
+							}
+
+							.reveal .heads{
+								width: 300px;
+							}
+
+						</style>
+							
+						<div class="heads">
+							<figure class="zeldman talking-head">
+								<img src="img/zeldman.svg" class="transparent" />
+								<figcaption>Zeldman</figcaption>
+							</figure>
+							<figure class="molly talking-head">
+								<img src="img/molly.svg" class="transparent" />
+								<figcaption>Holzschlag</figcaption>
+							</figure>
+							<figure class="shea talking-head">
+								<img src="img/shea.svg" class="transparent" />
+								<figcaption>Shea</figcaption>
+							</figure>
+						</div>
+						<blockquote class="donttable">Don’t use tables for layout, use CSS.
+							Tables are for tabular data.  They are just one of the tools in your toolkit. 
+						</blockquote>		
+						<blockquote class="donttable fragment">Don’t use tables <span class="hide-text">for layout</span>, use CSS.
+							Tables are for <span class="hide-text">tabular data.  They are just one of the </span>tools <span class="hide-text">in your toolkit</span>. 
+						</blockquote>
+						
+					</section>
+					<section>
+						<pre><code contenteditable>
+&lt;p&gt;Sales Figures&lt;/p&gt;						
+&lt;div class="table"&gt;
+	&lt;div class="table-row"&gt;
+		&lt;div class="table-cell"&gt;100,212&lt;/div&gt;
+		&lt;div class="table-cell"&gt;98,021&lt;/div&gt;
+		&lt;div class="table-cell"&gt;110,764&lt;/div&gt;
+		&lt;div class="table-cell"&gt;112,876&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+							
+						</code></pre>
+					</section>
+					<section class="question">
+						<div class="content">
+							<dl>
+								<dt>Avoid</dt>
+								<dd>Consider other options before choosing.</dd>
+								<dd class="fragment">Does not mean "never"</dd>
+							</dl>	
+						</div>	
+					</section>
+					<section class="question">
+						<div class="content">
+							<dl>
+								<dt>Prefer</dt>
+								<dd>Try to settle on solutions that include.</dd>
+								<dd class="fragment">Does not mean "always"</dd>
+							</dl>	
+						</div>	
+					</section>
+
+					<section>
+						<div class="content">
+							<h1>CSS is not a programming language.</h1>
+							<p class="fragment">Missing:</p>
+							<ul>
+								<li class="fragment">Variables</li>
+								<li class="fragment">Loops</li>
+								<li class="fragment">Functions</li>
+							</ul>
+							<br /><br /><br /><br />
+							<h1 class="fragment">Result &mdash; <em>Unproductive</em></h1>
+						</div>	
+					</section>
+
+					<section>
+						<div class="content">
+							<h1 class="fragment">Optimize CSS for human</h1>
+							<ul>
+								<li class="fragment">Many, browser inefficient, style sheets</li>
+							</ul>
+							<br /><br /><br />
+							<h1 class="fragment">Optimize CSS for browser</h1>
+							<ul>
+								<li class="fragment">One long, hard to read CSS file.</li>
+							</ul>
+							<br /><br /><br /><br />
+							<h1 class="fragment">Result &mdash; <em>Bad CSS for someone</em></h1>
+						</div>	
+					</section>
+				</section>	
+
+				<section>
+					<section class="question">
+						<div class="content">
+							<h1>CSS Resets</h1>
+							<img src="img/blank-slate.png" style="max-height:400px" class="transparent" />
+						</div>	
+					</section>
+					<section class="question">
+						<div class="content">
+							<h1>Demo</h1>
+						</div>	
+					</section>
+					<section>
+						<img src="img/chrome.png" />	
+					</section>
+					<section>
+						<img src="img/safari.png" />	
+					</section>
+					<section>
+						<img src="img/compare.png" />	
+					</section>
+					<section>
+						<div class="content">
+							<h1>Browsers render things different</h1>
+							<p class="fragment">Fixes:</p>
+							<ul>
+								<li class="fragment">Browser specific hacks</li>
+								<li class="fragment">Deal with the differences.</li>
+								<li class="fragment">Reset</li>
+							</ul>
+						</div>	
+					</section>
+					<section>
+						<div class="content">
+							<h1>Resets</h1>
+							<ul>
+								<li class="fragment">Start all browsers at zero</li>
+								<li class="fragment">Force you to consider everything</li>
+							</ul>
+						</div>	
+					</section>
+				</section>
+				<section>
+					<section class="question">
+						<div class="content">
+							<h1>Organization</h1>
+							<img src="img/toolbox.png" style="max-height:400px" class="transparent" />
+						</div>	
+					</section>
+
+					<section>
+						<div class="content">
+							<h1>Two Schools</h1>
+							<ul>
+								<li class="fragment">Interfaces</li>
+								<li class="fragment">Design Aspect</li>
+							</ul>
+						</div>	
+					</section>
+					<section>
+						<div class="content">
+							<h1>Interface</h1>
+							<ul>
+								<li class="fragment">Header</li>
+								<li class="fragment">Nav</li>
+								<li class="fragment">Footer</li>
+								<li class="fragment">Content</li>
+								<li class="fragment">Sub Interface</li>
+							</ul>
+						</div>	
+					</section>
+					
+					<section>
+						<div class="content">
+							<h1>Design Aspects</h1>
+							<ul>
+								<li class="fragment">Fonts</li>
+								<li class="fragment">Color</li>
+								<li class="fragment">Background</li>
+								<li class="fragment">Layout</li>
+								<li class="fragment">Media Queries</li>
+							</ul>
+						</div>	
+					</section>
+					<section>
+						<div class="content">
+							<h1>Interfaces - Pros</h1>
+							<ul>
+								<li class="fragment">Slightly less verbose</li>
+								<li class="fragment">Easier to track down</li>
+								<li class="fragment">Easier to focus</li>
+								<li class="fragment">Preference?</li>
+							</ul>
+						</div>	
+					</section>
+					<section>
+						<div class="content">
+							<h1>Design Aspects</h1>
+							<ul>
+								<li class="fragment">Easier to repurpose</li>
+								<li class="fragment">Easier to rebrand</li>
+								<li class="fragment">Easier to make responsive</li>
+								<li class="fragment">Preference?</li>
+							</ul>
+						</div>	
+					</section>
+					
+					<section class="question">
+						<div class="content">
+							<h1>I prefer a hybrid.</h1>
+						</div>	
+					</section>
+
+				</section>
+				<style>
+					.reveal .bigpicture{
+						position: absolute;
+						width: auto;
+						padding-left: 50px;
+						top: 0;
+						left: 0;
+						right: 0;
+						z-index: 0;
+					}
+					.reveal .bigpicture-caption{
+						position: absolute;
+						z-index: 1;
+					}
+				</style>
+				<section>
+					<section class="question">
+						<div class="content">
+							<h1 class="bigpicture-caption" style="right: 60px; top:0;">Class vs ID?</h1>
+							<img src="img/angrycrowd.jpg" class="transparent bigpicture" />
+						</div>	
+					</section>
+					<section class="question">
+						<div class="content">
+							<h1>Use ID's <br />in HTML &amp; JS</h1>
+						</div>	
+					</section>
+					<section class="question">
+						<div class="content">
+							<h1>CSS Specificity</h1>
+						</div>	
+					</section>
+					<section class="question">
+						<div class="content">
+							<h1>Andy Clarke</h1>
+							<p><a href="http://www.stuffandnonsense.co.uk/archives/css_specificity_wars.html">CSS: Specificity Wars</a></p>
+						</div>	
+					</section>
+					<style>
+						.spec img{
+							width: 300px;
+						}
+					</style>
+					<section class="question">
+						<div class="content-with-bg">
+							<figure class="spec fragment">
+								<img src="img/troop.jpg" class="transparent"/>
+								<figcaption>Element</figcaption>
+							</figure>
+							<figure class="spec fragment">
+								<img src="img/darth.jpg" class="transparent"/>
+								<figcaption>.class</figcaption>
+							</figure>
+							<figure class="spec fragment">
+								<img src="img/palp.jpg" class="transparent"/>
+								<figcaption>#id</figcaption>
+							</figure>	
+						</div>	
+					</section>
+					<section>
+						<h1>Element</h1>
+						<pre class="split-screen"><code contenteditable>
+&lt;div&gt;
+&lt;/div&gt;
+
+div{
+	background-image: 
+	url("img/troop.jpg");
+}
+
+
+
+
+							
+						</code></pre>
+
+						<style>
+							.reveal .stormtrooper{
+								background-image: url("img/troop.jpg");
+							}
+							.reveal .character{
+								height: 400px;
+								background-size: 50%;
+							}
+						</style>
+						<div class="split-screen character stormtrooper fragment">
+
+						</div>
+					</section>
+					<section>
+						<h1>Class beats Element</h1>
+						<pre class="split-screen"><code contenteditable>
+&lt;div class="darth"&gt;
+&lt;/div&gt;
+
+div{
+	background-image: 
+	url("img/troop.jpg");
+}
+
+.darth{
+	background-image: 
+	url("img/darth.jpg");
+}
+
+						</code></pre>
+
+						<style>
+						.reveal .darth{
+								background-image: url("img/darth.jpg");
+							}
+							.reveal .character{
+								height: 400px;
+								background-size: 50%;
+								background-repeat: no-repeat;
+								background-color: #FFF;
+							}
+						</style>
+						<div class="split-screen character darth fragment">
+
+						</div>
+					</section>
+					<section>
+						<h1>ID beats Class</h1>
+						<pre class="split-screen"><code contenteditable>
+&lt;div id="palp" class="darth"&gt;
+&lt;/div&gt;
+div{
+	background-image: 
+	url("troop.jpg");
+}
+
+.darth{
+	background-image: 
+	url("darth.jpg");
+}
+
+#palp{
+	background-image: 
+	url("palp.jpg");
+}
+						</code></pre>
+
+						<style>
+						.reveal .palp{
+								background-image: url("img/palp.jpg");
+							}
+						</style>
+						<div class="split-screen character palp fragment">
+
+						</div>
+					</section>					
+					<section>
+						<h1>Inline beats ID</h1>
+						<pre class="split-screen"><code contenteditable>
+&lt;div id="palp" class="darth"
+style="bg-image:url('dstar.jpg')"&gt;
+&lt;/div&gt;
+div...
+
+.darth...
+
+#palp...
+						</code></pre>
+
+						<div class="split-screen character palp fragment" style="background-image: url('img/dstar.jpg')">
+
+						</div>
+					</section>
+					<section>
+						<h1>!important</h1>
+						<pre class="split-screen fragment"><code contenteditable>
+&lt;div id="palp" 
+class="darth batman"
+style="bg-image:url('dstar.jpg')"&gt;
+&lt;/div&gt;
+
+.batman{
+background-image: 
+url("batman.jpg") !important;
+}
+						</code></pre>
+						<style>
+						.reveal .batman{
+								background-image: url("img/batman.jpg") !important;
+							}
+						</style>
+						<div class="split-screen character palp fragment batman" style="background-image: url('img/dstar.jpg')">
+
+						</div>
+					</section>
+					<section>
+						<h1>Why?</h1>
+						<pre class="split-screen"><code contenteditable>
+&lt;div id="header"&gt;
+	&lt;div class="panel"&gt;
+		&lt;p&gt;Panel Text&lt;/p&gt;
+	&lt;/div&gt;	
+&lt;/div&gt;
+
+#header p{
+	color:red;
+}
+.panel p{
+	color:green; 
+}
+						</code></pre>
+						<style>
+							#header-example p{
+								color:red;
+							}
+							.panel-example p{
+								color:green; 
+							}
+						</style>
+						<div id="header-example" class="split-screen fragment">
+							<div class="panel-example">
+								<p>Panel Text</p>
+							</div>	
+						</div>	
+					</section>
+					<style>
+						.spec2 img{
+							width: 180px;
+						}
+					</style>
+					<section class="question">
+						<div class="content-with-bg">
+							<figure class="spec2 fragment">
+								<img src="img/troop.jpg" class="transparent"/>
+								<figcaption>Element</figcaption>
+							</figure>
+							<figure class="spec2 fragment">
+								<img src="img/darth.jpg" class="transparent"/>
+								<figcaption>.class</figcaption>
+							</figure>
+							<figure class="spec2 fragment">
+								<img src="img/palp.jpg" class="transparent"/>
+								<figcaption>#id</figcaption>
+							</figure>
+							<figure class="spec2 fragment">
+								<img src="img/dstar.jpg" class="transparent"/>
+								<figcaption>Inline Style</figcaption>
+							</figure>
+							<figure class="spec2 fragment">
+								<img src="img/batman.jpg" class="transparent"/>
+								<figcaption>!important</figcaption>
+							</figure>	
+						</div>	
+					</section>	
+
+				</section>	
+				<section>
+					<section class="question">
+						<div class="content">
+							<h1>Avoid CSS Smells</h1>
+							<img src="img/css_dog.png" class="transparent" />
+						</div>	
+					</section>
+					<section>
+						<h1>Avoid Magic Numbers</h1>
+						<pre class="split-screen"><code contenteditable>
+li:last-child{
+	position:relative;
+	top: 3px;
+}							
+						</code></pre>
+						<div class="split-screen fragment">
+							<ul>
+								<li>Brittle</li>
+								<li>Something else is broken</li>
+								<li>Might be environmental</li>
+							</ul>	
+						</div>	
+					</section>
+					<section>
+						<h1>Avoid Qualified Selectors</h1>
+						<pre class="split-screen"><code contenteditable>
+li.phone-number{
+	color:red;
+}
+
+						</code></pre>
+						<div class="split-screen fragment">
+							<ul>
+								<li>Not resuable</li>
+								<li>More work for the browser</li>
+							</ul>	
+						</div>	
+					</section>
+					<section>
+						<h1>Avoid Undoing Your CSS</h1>
+						<pre class="split-screen"><code contenteditable>
+h2{
+text-shadow: 2px 2px 4px #CCC;
+}
+.post h2{
+text-shadow: none;
+}
+
+						</code></pre>
+						<div class="split-screen fragment">
+							<ul>
+								<li>You're applying too early</li>
+								<li>Less maintainable</li>
+							</ul>	
+						</div>	
+					</section>
+					<section>
+						<h1>Avoid Super-Broad Rules</h1>
+						<pre class="split-screen"><code contenteditable>
+body{
+text-shadow: 2px 2px 4px #CCC;
+}
+
+
+						</code></pre>
+						<div class="split-screen fragment">
+							<ul>
+								<li>You're applying too early</li>
+								<li>Less maintainable</li>
+							</ul>	
+						</div>	
+					</section>
+					<section>
+						<h1>Prefer Classes to ID's</h1>
+						<pre class="split-screen"><code contenteditable>
+.special-event-notice{
+text-shadow: 2px 2px 4px #CCC;
+}
+
+
+						</code></pre>
+						<div class="split-screen fragment">
+							<ul>
+								<li>Everyone is fighting at the same strength</li>
+								<li>More maintainable</li>
+							</ul>	
+						</div>	
+					</section>
+					<section>
+						<h1>Avoid !important to fix bad CSS</h1>
+						<pre class="split-screen"><code contenteditable>
+#header p{
+	color:red;
+}
+.panel p{
+	color:green !important; 
+}
+
+
+						</code></pre>
+						<div class="split-screen fragment">
+							<ul>
+								<li>More maintainable.</li>
+							</ul>	
+						</div>	
+					</section>
+					<section>
+						<h1>Prefer !important for things that are actually important</h1>
+						<pre class="split-screen"><code contenteditable>
+.error p{
+	color:red !important;
+}
+.panel p{
+	color:green; 
+}
+
+
+						</code></pre>
+						<div class="split-screen fragment">
+							<ul>
+								<li>What is actually used for</li>
+							</ul>	
+						</div>	
+					</section>
+					<section>
+						<h1>Prefer Specific Class Names</h1>
+						<pre class="split-screen"><code contenteditable>
+.card img{
+	border:1px solid #CCC;
+}
+.credit-card img{
+	border:1px solid #CCC;
+}
+
+
+						</code></pre>
+						<div class="split-screen fragment">
+							<ul>
+								<li>Unlikely to be accidently changed.</li>
+								<li>More maintainable.</li>
+							</ul>	
+						</div>	
+					</section>		
+				</section>
+				<section>
+					<section class="question">
+						<div class="content">
+							<h1>OOCSS</h1>
+							<img src="img/oocss.jpg" class="transparent" />
+						</div>	
+					</section>
+					<section>
+						<h1>Object Oriented CSS</h1>
+						<div class="content">
+							<ul>
+								<li class="fragment">Remove Skin from Structure</li>
+								<li class="fragment">Remove Content from Container</li> 
+							</ul>	
+						</div>	
+					</section>
+					<section>
+						<h1>Skin from Structure</h1>
+						<figure class="code-half">
+						<figcaption>Pre OOCSS</figcaption>	
+						<pre><code contenteditable>
+.comment{
+	border: 1px solid #F00;
+	background: #DDD;
+	font-family: Helvetica;
+	font-size: 16px;
+}
+
+.tweet{
+	border: 1px solid #F00;
+	background: #DDD;
+	font-family: Helvetica;
+	font-size: 20px;
+}							
+						</code></pre>
+						</figure>
+						<figure  class="code-half fragment">
+						<figcaption>OOCSS</figcaption>	
+						<pre><code contenteditable>
+.remark{
+	border: 1px solid #F00;
+	background: #DDD;
+	font-family: Helvetica;
+}
+.comment{
+	font-size: 16px;
+}
+
+.tweet{
+	font-size: 20px;
+}	
+
+
+						</code></pre>
+						</figure>
+					</section>
+					<section>
+						<h1>Container from Content</h1>
+						<figure class="code-half">
+						<figcaption>Pre OOCSS</figcaption>	
+						<pre><code contenteditable>
+.footer h2{
+	font-size: 16px;
+	color: #FF0000;
+}
+
+						</code></pre>
+						</figure>
+						<figure  class="code-half fragment">
+						<figcaption>OOCSS</figcaption>	
+						<pre><code contenteditable>
+.secondary-header{
+	font-size: 16px;
+	color: #FF0000;
+}	
+
+
+						</code></pre>
+						</figure>
+					</section>
+					<section class="question">
+						<div class="content">
+							<h1>Should you do this?</h1>
+						</div>	
+					</section>
+				</section>
+
+				<section>
+					<section class="question">
+						<div class="content">
+							<h1>Preprocessors</h1>
+							<img src="img/preprocessors.jpg" />
+						</div>	
+					</section>
+					<style>
+						.file{
+							width: 150px;
+						}
+
+						.package{
+							width: 150px;
+						}
+
+						.reveal .arrow{
+							font-size: 140px;
+							position: relative;
+							top: -70px;	
+							margin: 0 50px;
+							font-weight: bold;
+						}
+
+					</style>
+					<section>
+						<img src="img/notcss.svg" class="transparent file fragment" />
+						<span class="arrow fragment">&rarr;</span>
+						<img src="img/package.svg" class="transparent package fragment" />
+						<span class="arrow fragment">&rarr;</span>
+						<img src="img/css.svg" class="transparent file fragment" />
+					</section>
+					<section>
+						<div class="content">
+							<h1>Preprocessors all do:</h1>
+							<ul>
+								<li class="fragment">Variables</li>
+								<li class="fragment">Nesting</li>
+								<li class="fragment">Functions ("Mixin")</li>
+								<li class="fragment">Concatenation</li>
+							</ul>
+							<br /><br /><br /><br />
+							<h1 class="fragment">Result &mdash; <em>Much more productive</em></h1>
+						</div>	
+					</section>	
+
+
+					<section>
+						<div class="content">
+							<h1>Most Popular Preprocessors</h1>
+							<ul>
+								<li class="fragment"><a href="http://learnboost.github.io/stylus/">Stylus</a></li>
+								<li class="fragment"><a href="http://lesscss.org/">Less</a></li>
+								<li class="fragment"><a href="http://sass-lang.com/">SASS</a></li>
+							</ul>
+						</div>	
+					</section>
+					<section class="question">
+						<div class="content">
+							<h1>What's the difference?</h1>
+						</div>	
+					</section>
+					<section>
+						<div class="content">
+							<h1>The Difference?</h1>
+							<ul>
+								<li class="fragment">Syntax</li>
+								<li class="fragment">Underlying tech</li>
+							</ul>
+						</div>	
+					</section>
+					<style>
+					.reveal .code-half{
+						width: 45%;
+						margin:0 5px 0 5px;
+						float: left;
+						position: static;
+					}
+
+					</style>
+					<section>
+						<figure  class="code-half">
+						<figcaption>Stylus</figcaption>	
+						<pre><code contenteditable>
+alertcolor: #FF0000     
+.alert              
+  color: alertcolor
+  .title 
+    font-weight: bold
+  
+  .description
+    font-variant: italic
+     
+
+							
+						</code></pre>
+						</figure>
+						<figure  class="code-half fragment">
+						<figcaption>CSS</figcaption>	
+						<pre><code contenteditable>
+.alert {             
+  color: #FF0000; 
+}
+.alert .title{
+  font-weight: bold;
+}
+.alert .description{
+  font-variant: italic;
+}
+		
+
+
+
+						</code></pre>
+						</figure>
+					</section>
+					<section>
+						<figure  class="code-half">
+						<figcaption>LESS</figcaption>	
+						<pre><code contenteditable>
+@alertcolor: #FF0000     
+.alert{              
+  color: @alertcolor;
+  .title {
+    font-weight: bold;
+  }
+  .description{
+    font-variant: italic;
+  }   
+}
+							
+						</code></pre>
+						</figure>
+						<figure  class="code-half fragment">
+						<figcaption>CSS</figcaption>	
+						<pre><code contenteditable>
+.alert {             
+  color: #FF0000; 
+}
+.alert .title{
+  font-weight: bold;
+}
+.alert .description{
+  font-variant: italic;
+}
+		
+
+
+
+						</code></pre>
+						</figure>
+					</section>
+					<section>
+						<figure  class="code-half">
+						<figcaption>SASS (SASS)</figcaption>	
+						<pre><code contenteditable>
+$alertcolor: #FF0000     
+.alert              
+  color: $alertcolor
+  .title
+  	font-weight: bold
+  
+  .description
+  	font-variant: italic
+   
+
+							
+						</code></pre>
+						</figure>
+						<figure  class="code-half fragment">
+						<figcaption>CSS</figcaption>	
+						<pre><code contenteditable>
+.alert {             
+  color: #FF0000; 
+}
+.alert .title{
+	font-weight: bold;
+}
+.alert .description{
+	font-variant: italic;
+}
+		
+
+
+
+						</code></pre>
+						</figure>
+					</section>
+					<section>
+						<figure  class="code-half">
+						<figcaption>SASS (SCSS)</figcaption>	
+						<pre><code contenteditable>
+$alertcolor: #FF0000;     
+.alert {             
+  color: $alertcolor;
+  .title{
+  	font-weight: bold;
+  }
+  .description{
+  	font-variant: italic;
+  } 
+}
+							
+						</code></pre>
+						</figure>
+						<figure  class="code-half fragment">
+						<figcaption>CSS</figcaption>	
+						<pre><code contenteditable>
+.alert {             
+  color: #FF0000; 
+}
+.alert .title{
+	font-weight: bold;
+}
+.alert .description{
+	font-variant: italic;
+}
+		
+
+
+
+						</code></pre>
+						</figure>
+					</section>
+					<style>
+						.compare3{
+							width: 100%;
+						}
+						.compare3 th{
+							font-weight: bold;
+							border-bottom: 2px dotted #999;
+						}
+						.compare3 td{
+							width: 33%;
+							padding-bottom: 15px;
+						}
+					</style>
+					<section>
+						<h1>Underlying Technology</h1>
+						<div class="content">
+							<table class="compare3">
+								<thead>
+									<tr>
+										<th>Less</th>
+										<th>Stylus</th>
+										<th>Sass</th>
+									</tr>	
+								</thead>
+								<tbody>
+									<tr>
+										<td>Javascript</td>
+										<td>Javascript</td>
+										<td>Ruby</td>
+									</tr>
+									<tr>
+										<td>Client and Server</td>
+										<td>Server</td>
+										<td>Development</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>Nib</td>
+										<td>Compass</td>
+									</tr>	
+								</tbody>		
+							</table>	
+						</div>
+					</section>
+					<section>		
+						<div class="content">
+							<img src="img/picard.png" />
+						</div>	
+					</section>
+					<section class="question">
+						<div class="content">
+							<h1>Don't worry about that now.</h1>
+						</div>	
+					</section>
+					<section class="question">
+						<div class="content">
+							<h1>I prefer Sass</h1>
+						</div>	
+					</section>
+					<section class="question">
+						<div class="split-screen">
+							<img src="img/nerd_angry.jpg" style="max-height: 600px;" />
+						</div>
+						<div class="split-screen">
+							<br /><br /><br /><br /><br />
+							<h3>I have a strong feeling about another one of these!</h3>
+						</div>	
+					</section>
+					
+					<section class="question">
+						<div class="content">
+							<h1>All examples are SCSS</h1>
+						</div>	
+					</section>
+
+					<section>
+						<h1>Variables</h1>
+						<figure  class="code-half">
+						<figcaption>SCSS</figcaption>	
+						<pre><code contenteditable>
+$highlight: #C55C55;     
+.post .title{
+	color: $highlight;
+}
+.comment .author{
+	color: $highlight;
+}
+.archive .title{
+	color: $highlight;
+}
+     
+
+							
+						</code></pre>
+						</figure>
+						<figure  class="code-half fragment">
+						<figcaption>CSS</figcaption>	
+						<pre><code contenteditable>
+.post .title{
+	color: #C55C55;
+}
+.comment .author{
+	color: #C55C55;
+}
+.archive .title{
+	color: #C55C55;
+}
+		
+
+
+
+
+
+
+						</code></pre>
+						</figure>
+					</section>
+					<section>
+						<h1>Nesting</h1>
+						<figure  class="code-half">
+						<figcaption>SCSS</figcaption>	
+						<pre><code contenteditable>
+.post{
+  color: #333;
+  .title{
+    font-size: 20px;
+  }
+  .comment{
+    color:#666;
+    .title{
+      color: #F00;
+    }
+  }
+}
+     
+
+							
+						</code></pre>
+						</figure>
+						<figure  class="code-half fragment">
+						<figcaption>CSS</figcaption>	
+						<pre><code contenteditable>
+.post {
+  color: #333;
+}
+.post .title {
+  font-size: 20px;
+}
+.post .comment {
+  color: #666;
+}
+.post .comment .title {
+  color: #F00;
+}
+		
+
+
+
+
+
+
+						</code></pre>
+						</figure>
+					</section>
+					<section>
+						<h1>Mixin</h1>
+						<figure  class="code-half">
+						<figcaption>SCSS</figcaption>	
+						<pre><code contenteditable>
+@mixin transition($options) {
+-webkit-transition: $options;
+-moz-transition: $options;
+-o-transition: $options;
+transition: $options;
+}
+
+.alert{
+@include 
+transition(all 1s ease);
+}
+     
+
+							
+						</code></pre>
+						</figure>
+						<figure  class="code-half fragment">
+						<figcaption>CSS</figcaption>	
+						<pre><code contenteditable>
+.alert {
+-webkit-transition:all 1s ease;
+-moz-transition:all 1s ease;
+-o-transition:all 1s ease;
+transition:all 1s ease;
+}
+		
+
+
+
+
+
+
+
+						</code></pre>
+						</figure>
+					</section>
+					<section>
+						<h1>Inheritance</h1>
+						<figure  class="code-half">
+						<figcaption>SCSS</figcaption>	
+						<pre><code contenteditable>
+.person {
+  border: 1px solid green;
+}
+ 
+.customer {
+  @extend .person;
+  font-variant: italic;
+}
+
+.employee {
+  @extend .person;
+  font-variant: bold;
+}
+     
+
+							
+						</code></pre>
+						</figure>
+						<figure  class="code-half fragment">
+						<figcaption>CSS</figcaption>	
+						<pre><code contenteditable>
+.person, .customer, .employee {
+  border: 1px solid green;
+}
+
+.customer {
+  font-variant: italic;
+}
+
+.employee {
+  font-variant: bold;
+}
+		
+
+
+
+
+
+
+
+						</code></pre>
+						</figure>
+					</section>
+					<section>
+						<h1>Color Functions</h1>
+						<figure  class="code-half">
+						<figcaption>SCSS</figcaption>	
+						<pre><code contenteditable>
+$highlight: #C55C55;     
+
+a{color: $highlight;}
+
+a:hover{color: 
+lighten($highlight, 10%)
+}     
+
+
+							
+						</code></pre>
+						</figure>
+						<figure  class="code-half fragment">
+						<figcaption>CSS</figcaption>	
+						<pre><code contenteditable>
+a {
+  color: #c55c55; 
+}
+
+a:hover {
+  color: #d2807b; 
+}
+		
+		
+
+
+
+						</code></pre>
+						</figure>
+					</section>
+					<section>
+						<h1>Math</h1>
+						<figure  class="code-half">
+						<figcaption>SCSS</figcaption>	
+						<pre><code contenteditable>
+$basesize: 20px;
+
+.post .title{
+  font-size: $basesize + 4px;
+}   
+
+
+							
+						</code></pre>
+						</figure>
+						<figure  class="code-half fragment">
+						<figcaption>CSS</figcaption>	
+						<pre><code contenteditable>
+.post .title {
+  font-size: 24px;
+}
+		
+
+
+		
+
+
+
+						</code></pre>
+						</figure>
+					</section>
+
+					<style>
+						.file{
+							width: 150px;
+						}
+
+						.package{
+							width: 150px;
+						}
+
+						.reveal .arrow{
+							font-size: 140px;
+							position: relative;
+							top: -70px;	
+							margin: 0 50px;
+							font-weight: bold;
+						}
+
+						.reveal .import-table{
+							vertical-align: middle;
+						}	
+
+						.reveal .import-table div{
+							display: inline-block;
+							height: 300px;
+							padding: 0 50px;
+						}
+
+
+						.reveal .import-table .file{
+							width: 200px;
+						}
+						.reveal .scss{
+							width: 100px;
+						}
+
+					</style>
+					<section>
+						<h1>Import</h1>
+						<div class="import-table">
+							<div>
+								<img src="img/notcss.svg" class="transparent scss" /><br />
+								<img src="img/notcss.svg" class="transparent scss" /><br />
+								<img src="img/notcss.svg" class="transparent scss" /><br />	
+							</div>
+							<div class="fragment">&rarr;</div>
+							<div class="fragment"><img src="img/package.svg" class="transparent scss" /></div>
+							<div class="fragment">&rarr;</div>
+							<div class="fragment"><img src="img/css.svg" class="transparent scss" /></div>		
+						</div>
+						
+						
+						
+						
+					</section>
+
+					<section class="question">
+						<div class="content">
+							<h1>Demo</h1>
+						</div>	
+					</section>
+
+
+					<section class="question">
+						<div class="split-screen">
+							<img src="img/hipster.jpg" style="max-height: 600px;" />
+						</div>
+						<div class="split-screen">
+							<br /><br /><br /><br /><br />
+							<h3>I hate the Command Line!</h3>
+						</div>	
+					</section>
+					<section class="question">
+							<h1>Codekit on Mac</h1>
+							<img src="img/codekit.png" class="transparent" width="700" />
+					</section>
+
+
+				</section>
+
+
+
+
+
+				<section>
+					<section class="question">
+						<div class="content">
+							<h1>Conclusions</h1>
+						</div>	
+					</section>
+					<section class="question">
+						<div class="content">
+							<h1>Be consistent</h1>
+							<img src="img/consistent.gif" />
+						</div>	
+					</section>
+					<section class="question">
+						<div class="content">
+							<h1>Be deliberate</h1>
+							<img src="img/deliberate.gif" />
+						</div>	
+					</section>
+					<section class="question">
+						<div class="content">
+							<h1>Be productive</h1>
+							<img src="img/productive.gif" />
+						</div>	
+					</section>
+
+
+					<section>
+						<h1>Questions?</h1>
+						<div class="content-with-bg">
+							<p>Source, Presentation &amp; References:</p>
+							<ul>
+								<li><a href="http://bit.ly/max-tr-2">http://bit.ly/max-tr-2</a></li>
+							</ul>
+							<br /><br />	
+							<p>Preso also availalble at:</p>
+							<ul>
+								<li><a href="http://max.adobe.com">Adobe Max Site</a></li>
+							</ul>
+							<br /><br />
+							<p>Contact Me?</p>
+							<ul>
+								<li><a href="http://terrenceryan.com">http://terrenceryan.com</a></li>
+								<li><a href="mailto:terry.ryan@adobe.com">terry.ryan@adobe.com</a></li>
+								<li><a href="http://twitter.com/tpryan">Twitter @tpryan</a></li>
+							</ul>	
+						</div>					
+					</section>
+
+				</section>	
+			</div>
+
+		</div>
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				margin: 0,
+
+				theme: 'max2013', // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

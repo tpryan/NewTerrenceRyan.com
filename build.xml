@@ -19,8 +19,16 @@
 
 	<target name="build" depends="compressCSS,copyFilesToBuild,polish" description="Creating a clean copy of the site" />
 
+	<target name="test-predeploy">
+        <echo message="Running unit tests with PHPUnit" />
 
-	<target name="deploy">
+        <exec executable="phpunit" failonerror="true">
+            <arg value="test/DevURLTest.php"/>
+        </exec>
+    </target>
+
+
+	<target name="deploy" depends="test-predeploy">
 		<echo message="Deploying to Google Cloud."/>
 		<exec executable="${gcs.exe}" spawn="false" dir="${basedir}">
 			<arg line="update"/>

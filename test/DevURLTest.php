@@ -59,10 +59,10 @@ class URLTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($status==200, $status . " " . $urlToTest);
     }
 
-    public function testCredsURL() {
-        $urlToTest = $this->baseURL . "/config/cred.php";
+    public function testHTMLURL() {
+        $urlToTest = $this->baseURL . "/presos/css/design.html";
         $status = $this->getStatusCode($urlToTest);
-        $this->assertTrue($status==404, $status . " " . $urlToTest);
+        $this->assertTrue($status==200, $status . " " . $urlToTest);
     }
 
     public function getStatusCode($url){

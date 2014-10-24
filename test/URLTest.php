@@ -3,40 +3,67 @@ class URLTest extends PHPUnit_Framework_TestCase
 {
     
 
-    private $baseDevURL = "http://localhost:8080";
+    private $baseURL = "http://localhost:8080";
 
     public function testMainURL() {
-        $urlToTest = $this->baseDevURL;
+        $urlToTest = $this->baseURL;
         $status = $this->getStatusCode($urlToTest);
         $this->assertTrue($status==200, $status . " " . $urlToTest);
     }
 
     public function testBlogURL() {
-        $urlToTest = $this->baseDevURL . "/blog/";
+        $urlToTest = $this->baseURL . "/blog/";
         $status = $this->getStatusCode($urlToTest);
         $this->assertTrue($status==200, $status . " " . $urlToTest);
     }
 
     public function testBlogPostURL() {
-        $urlToTest = $this->baseDevURL . "/blog/index.php/little-update-to-brackets-reflow-cleaner-2/";
+        $urlToTest = $this->baseURL . "/blog/index.php/little-update-to-brackets-reflow-cleaner-2/";
         $status = $this->getStatusCode($urlToTest);
         $this->assertTrue($status==200, $status . " " . $urlToTest);
     }
 
     public function testBlogRedirectURL() {
-        $urlToTest = $this->baseDevURL . "/blog";
+        $urlToTest = $this->baseURL . "/blog";
         $status = $this->getStatusCode($urlToTest);
         $this->assertTrue($status==301, $status . " " . $urlToTest);
     }
 
     public function testSVGURL() {
-        $urlToTest = $this->baseDevURL . "/max/2013/programmingcss/preso/img/zeldman.svg";
+        $urlToTest = $this->baseURL . "/max/2013/programmingcss/preso/img/zeldman.svg";
         $status = $this->getStatusCode($urlToTest);
         $this->assertTrue($status==200, $status . " " . $urlToTest);
     }
 
+    public function testJPGURL() {
+        $urlToTest = $this->baseURL . "/assets/img/book.jpg";
+        $status = $this->getStatusCode($urlToTest);
+        $this->assertTrue($status==200, $status . " " . $urlToTest);
+    }
 
+    public function testPNGURL() {
+        $urlToTest = $this->baseURL . "/assets/img/bookfull.png";
+        $status = $this->getStatusCode($urlToTest);
+        $this->assertTrue($status==200, $status . " " . $urlToTest);
+    }
 
+    public function testCSSURL() {
+        $urlToTest = $this->baseURL . "/assets/css/main.css";
+        $status = $this->getStatusCode($urlToTest);
+        $this->assertTrue($status==200, $status . " " . $urlToTest);
+    }
+
+    public function testJSURL() {
+        $urlToTest = $this->baseURL . "/assets/js/contact.js";
+        $status = $this->getStatusCode($urlToTest);
+        $this->assertTrue($status==200, $status . " " . $urlToTest);
+    }
+
+    public function testCredsURL() {
+        $urlToTest = $this->baseURL . "/config/cred.php";
+        $status = $this->getStatusCode($urlToTest);
+        $this->assertTrue($status==404, $status . " " . $urlToTest);
+    }
 
     public function getStatusCode($url){
         $headers = get_headers($url);

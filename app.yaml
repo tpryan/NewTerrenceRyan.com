@@ -25,6 +25,12 @@ handlers:
   http_headers:
     Vary: Accept-Encoding
 
+- url: /max/
+  static_dir: max/
+  expiration: "30d"
+  http_headers:
+    Vary: Accept-Encoding    
+
 - url: /
   script: index.php
 
@@ -51,6 +57,10 @@ handlers:
 
 - url: /sitemap/?
   script: sitemap/index.php
+
+- url: /tests/(.+).php
+  script: tests/\1.php
+
 
 - url: /(.*\.(svg|svgz))
   mime_type: images/svg+xml

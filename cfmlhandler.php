@@ -17,7 +17,11 @@ if (isDateArchive($urlString )) {
 if (isBlogEntry($dbInfo, $urlString )) {
 	$url_to_go_to = getPostUrl($urlString);
 	redirect($url_to_go_to, 301);
-} 
+}
+
+
+$url_to_go_to = "http://" . $_SERVER["HTTP_HOST"] . "/blog/404.php";
+redirect($url_to_go_to, 301);
 
 function getPostUrl($urlString){
 	$search_term = getSearchTerm($urlString);
@@ -38,6 +42,16 @@ function getDateArchiveUrl($urlString){
 function isDateArchive($urlString){
 
 	if (strpos($urlString, "archive") === false || strpos($urlString, "date") === false ){
+		return false;
+	} else {
+		return true;
+	}
+
+}
+
+function isTagArchive($urlString){
+
+	if (strpos($urlString, "/tag/") === false){
 		return false;
 	} else {
 		return true;

@@ -29,7 +29,7 @@ handlers:
   static_dir: max/
   expiration: "30d"
   http_headers:
-    Vary: Accept-Encoding    
+    Vary: Accept-Encoding   
 
 - url: /
   script: index.php

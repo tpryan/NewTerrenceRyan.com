@@ -7,6 +7,8 @@ default_expiration: "30d"
 
 skip_files:
 - ^(.*/)?.*\.scss$
+- ^(.*/)?.*\.scssc$
+- ^(.*/)?.*\.css.map$
 - ^(.*/)?.*\.sql$
 - ^(.*/)?.*\.git
 - ^(.*/)?.*\.DS_Store

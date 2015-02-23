@@ -28,7 +28,7 @@
     </target>
 
 
-	<target name="deploy" depends="test-predeploy">
+	<target name="deploy">
 		<echo message="Deploying to Google Cloud."/>
 		<exec executable="${gcs.exe}" spawn="false" dir="${basedir}">
 			<arg line="update"/>

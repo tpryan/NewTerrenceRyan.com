@@ -142,4 +142,3 @@ handlers:
 - url: /(.+)?/?
   script: wordpress/index.php
 
-

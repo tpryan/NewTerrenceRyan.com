@@ -55,6 +55,9 @@ handlers:
 - url: /resume/?
   script: resume/index.php 
 
+- url: /search/?
+  script: search/index.php   
+
 - url: /book/?
   script: book/index.php
 
@@ -63,6 +66,9 @@ handlers:
 
 - url: /tests/(.+).php
   script: tests/\1.php
+
+- url: /error/(.+).php
+  script: error/\1.php  
 
 - url: /max/
   static_dir: max/
@@ -74,4 +80,12 @@ handlers:
   static_dir: presos/
   expiration: "30d"
   http_headers:
-    Vary: Accept-Encoding       
+    Vary: Accept-Encoding      
+
+- url: /favicon.ico
+  static_files: favicon.ico
+  upload: favicon.ico   
+  expiration: "180d" 
+
+- url: /.*
+  script: error/error404.php   

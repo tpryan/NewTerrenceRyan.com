@@ -1,6 +1,6 @@
 <?php
 
-$url = "http://blog.terrenceryan.dev/search";
+$url = "http://www.terrenceryan.com/blog/search";
 
 header("Location: " . $url);
 

@@ -37,8 +37,19 @@
 			<h2>Experience</h2>
 			<div class="position">
 				<header>
+					<h4>Google</h4>
+					<time>12/2014 &mdash; Now</time>
+				</header>
+				<div class="details">
+					<h3>Developer Advocate</h3>
+					<p>Promote the adoption of Google Cloud Platform, and collect and deliver constructive
+						criticism to make the platform better.</p>
+				</div>	
+			</div>	
+			<div class="position">
+				<header>
 					<h4>Adobe Systems</h4>
-					<time>11/2012 &mdash; Now</time>
+					<time>11/2012 &mdash; 10/2015</time>
 				</header>
 				<div class="details">
 					<h3>Group Manager Evangelism</h3>

@@ -1,0 +1,134 @@
+/*
+Theme Name: TpryanTheme
+Theme URI: http://terrenceryan.com/
+Description: This is a custom child theme I have created.
+Author: Terrence Ryan
+Author URI: http://terrenceryan.com/
+Template: twentythirteen
+Version: 0.1
+*/
+@import url("../twentythirteen/style.css");
+
+
+
+header .short {display: none; }
+
+.site-header h1{
+	margin: 0 auto;
+	padding: 20px 0;
+	max-width: 1055px;
+	font-family: "myriad-pro";
+	font-weight: 100;
+	font-size: 2.3em;
+
+}
+
+.site-header a:visited{
+	color: #d3490f;
+
+}
+
+a{
+	color: #d3490f;
+}
+
+.entry-meta a {
+	color: #d3490f;
+}
+
+.entry-content a, .comment-content a {
+	color: #d3490f;
+}
+
+.navbar{
+	padding: .5rem 0 .5rem 0;
+  	background-color: #130000;
+
+}
+
+
+ .navbar nav {
+     }
+    .navbar nav ul {
+		padding-left: 0;
+		font-size: 2rem;
+		margin-bottom: .4rem;
+		vertical-align: top;
+		margin-top: 8px;
+		text-align: left;
+		display: inline-block;
+		max-width: 1055px;
+		margin: 0 auto;
+		padding: 0;
+		list-style: none; 
+	}
+      .navbar nav ul li {
+      	font-family: "myriad-pro-condensed";
+      	text-transform: uppercase;
+      	border-right: 1px solid #fff;
+      	font-weight: 100;
+        display: inline-block;
+        padding-right: 10px;
+        padding-left: 1px; }
+        .navbar nav ul li a:hover {
+          color: #d3490f; }
+      .navbar nav ul li:last-of-type {
+        border-right: 0; }
+    .navbar nav a {
+      text-decoration: none; }
+    .navbar nav .active {
+      color: #766; }
+
+.site-header .navbar a:visited{
+	color: #c4bbbb;
+
+}
+.site-header .navbar a:active{
+	color: #d3490f;
+
+}
+
+.site-header .navbar nav a.active {
+      color: #766; }
+
+
+.entry-header,
+.entry-content,
+.entry-summary,
+.entry-meta {
+	margin: 0 auto;
+	max-width: 1055px;
+	width: 100%;
+}      
+
+
+.attachment .entry-meta,
+.attachment .entry-description {
+	max-width: 1055px;
+}
+
+
+
+@media screen and (max-width: 700px) {
+	 header .extra {display: none; }
+	 header .short {display: inline;}
+	.site-header h1{
+		font-size: 1.9em;
+	}  
+}	
+
+
+@media screen and (max-width: 320px) {
+	 .navbar nav ul li{
+	 	font-size: 1.6rem;
+	 	width: 28%;
+	 	text-align: center;
+	 }
+	 .site-header .search-form{
+	 	position: static;
+	 	padding-left: 5px;
+	 	margin: 2px 5px;
+	 	background-color: #FFFFFF;
+	 }
+	 
+}	

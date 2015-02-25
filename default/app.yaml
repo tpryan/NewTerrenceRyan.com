@@ -1,7 +1,9 @@
-application: digital-axon-666
+application: arctic-marking-865
+module: default
 version: 1
-runtime: php
 api_version: 1
+runtime: php55
+threadsafe: yes
 
 default_expiration: "30d"
 
@@ -27,14 +29,13 @@ handlers:
   http_headers:
     Vary: Accept-Encoding
 
-- url: /max/
-  static_dir: max/
-  expiration: "30d"
-  http_headers:
-    Vary: Accept-Encoding   
 
 - url: /
   script: index.php
+
+- url: /(.+\.php)$
+  script: \1 
+
 
 - url: /about/?
   script: about/index.php
@@ -63,82 +64,14 @@ handlers:
 - url: /tests/(.+).php
   script: tests/\1.php
 
+- url: /max/
+  static_dir: max/
+  expiration: "30d"
+  http_headers:
+    Vary: Accept-Encoding    
 
-- url: /(.*\.(svg|svgz))
-  mime_type: images/svg+xml
-  static_files: static/\1
-  upload: static/(.*\.(svg|svgz))
-
-
-- url: /blog/(.*\.(htm|html|css|js))$
-  static_files: wordpress/\1
-  upload: wordpress/.*\.(htm|html|css|js)$
-  application_readable: true
-
-- url: /blog/(.*\.(ico|jpg|png|gif))$
-  static_files: wordpress/\1
-  upload: wordpress/.*\.(ico|jpg|png|gif)$
-  application_readable: true
-  expiration: "30d"  
-
-- url: /blog/wp-admin/(.+)
-  script: wordpress/wp-admin/\1
-  secure: always
-
-- url: /blog/wp-admin/
-  script: wordpress/wp-admin/index.php
-  secure: always
-
-- url: /blog/wp-login.php
-  script: wordpress/wp-login.php
-  secure: always
-
-- url: /wp-cron.php
-  script: wordpress/wp-cron.php
-  login: admin
-
-- url: /xmlrpc.php
-  script: wordpress/xmlrpc.php
-
-- url: /blog/wp-comments-post.php
-  script: wordpress/wp-comments-post.php
-
-- url: /blog/
-  script: wordpress/index.php
-
-
-- url: /robots.txt
-  static_files: robots.txt
-  upload: robots.txt
-  application_readable: true
-
-
-- url: /wp-(.+).php
-  script: wordpress/wp-\1.php
-
-
-- url: /(.*\.(htm|html|css|js))$
-  static_files: \1
-  upload: .*\.(htm|html|css|js)$
-  application_readable: true
-
-- url: /(.*\.(ico|jpg|png|gif))$
-  static_files: \1
-  upload: .*\.(ico|jpg|png|gif)$
-  application_readable: true
-
-- url: /cfmlhandler.php
-  script: cfmlhandler.php
-
-- url: (.+).cfm
-  script: cfmlhandler.php
-
-- url: /(.+)/(.+).cfm/(.+)
-  script: cfmlhandler.php
-
-
-
-
-- url: /(.+)?/?
-  script: wordpress/index.php
-
+- url: /presos/
+  static_dir: presos/
+  expiration: "30d"
+  http_headers:
+    Vary: Accept-Encoding       

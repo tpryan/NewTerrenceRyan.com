@@ -3,7 +3,7 @@ class URLTest extends PHPUnit_Framework_TestCase
 {
     
 
-    private $baseURL = "http://localhost:8080";
+    private $baseURL = "http://localhost:8081";
 
     public function testMainURL() {
         $urlToTest = $this->baseURL;
@@ -43,6 +43,12 @@ class URLTest extends PHPUnit_Framework_TestCase
 
     public function testSVGURL() {
         $urlToTest = $this->baseURL . "/max/2013/programmingcss/preso/img/zeldman.svg";
+        $status = $this->getStatusCode($urlToTest);
+        $this->assertTrue($status==200, $status . " " . $urlToTest);
+    }
+
+    public function testMAXURL() {
+        $urlToTest = $this->baseURL . "/max/2013/programmingcss/preso/index.html";
         $status = $this->getStatusCode($urlToTest);
         $this->assertTrue($status==200, $status . " " . $urlToTest);
     }

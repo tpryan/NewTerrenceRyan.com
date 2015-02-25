@@ -35,3 +35,7 @@ test.php
 test1.php
 
 assets/css/main.css.map
+
+blog/wordpress/*
+
+default/config/creds.php

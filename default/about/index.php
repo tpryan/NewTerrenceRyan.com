@@ -13,7 +13,7 @@
 	<article>
 		<div class="column full">
 			<h2>Current</h2>
-			<img class="picture portrait" src="/assets/img/headshot.jpg" >	
+			<img class="picture portrait" src="//storage.googleapis.com/terrenceryan.com/img/headshot.jpg" >	
 			<p>I'm a Worldwide Developer Evangelist for <a href="http://www.adobe.com/">Adobe</a>.  
 			My job basically entails me traveling the world and 
 			talking about the developer tools and technologies that Adobe has to offer or that we support. 

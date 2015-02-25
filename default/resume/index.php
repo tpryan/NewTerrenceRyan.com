@@ -202,34 +202,34 @@
 					<tr>
 						<td>
 							<a href="http://www.facebook.com/terry.ryan" title="Facebook | Terrence Ryan">
-                        		<img src="/assets/img/facebookicon.png" height="55" width="116" alt="Facebook" />
+                        		<img src="//storage.googleapis.com/terrenceryan.com/img/facebookicon.png" height="55" width="116" alt="Facebook" />
                     		</a>							
 						</td>
 						<td>
 							<a href="http://twitter.com/tpryan" title="Twitter / tpryan">
-                        		<img src="/assets/img/twitter.png" height="55" width="155" alt="Twitter" class="twitter" />
+                        		<img src="//storage.googleapis.com/terrenceryan.com/img/twitter.png" height="55" width="155" alt="Twitter" class="twitter" />
                     		</a>
 						</td>
 						<td>
 							<a href="http://twitter.com/tpryan" title="Lanyrd / tpryan">
-                        		<img src="/assets/img/lanyrd.png" height="36" width="150" alt="Lanyrd" class="lanyrd" />
+                        		<img src="//storage.googleapis.com/terrenceryan.com/img/lanyrd.png" height="36" width="150" alt="Lanyrd" class="lanyrd" />
                     		</a>
 						</td>
 					</tr>
 					<tr>
 						<td>
 							<a href="http://www.linkedin.com/in/terrencepryan" title="LinkedIn: Terrence Ryan">
-                    			<img src="/assets/img/linkedin-icon.png" height="35" width="121" alt="LinkedIn" />
+                    			<img src="//storage.googleapis.com/terrenceryan.com/img/linkedin-icon.png" height="35" width="121" alt="LinkedIn" />
                 			</a>	
 						</td>
 						<td>
 							<a href="https://github.com/tpryan" title="github: Terrence Ryan">
-                    			<img src="/assets/img/githublogo.png" height="45" width="100" alt="github" />
+                    			<img src="//storage.googleapis.com/terrenceryan.com/img/githublogo.png" height="45" width="100" alt="github" />
                 		</a>	
 						</td>
 						<td>
 							<a href="http://www.behance.net/tpryan" title="Behance: Terrence Ryan">
-                    			<img src="/assets/img/behance.png" height="56" width="150" alt="behance" />
+                    			<img src="//storage.googleapis.com/terrenceryan.com/img/behance.png" height="56" width="150" alt="behance" />
                 			</a>
 						</td>
 					</tr>

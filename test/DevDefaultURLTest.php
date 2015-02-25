@@ -11,35 +11,6 @@ class URLTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($status==200, $status . " " . $urlToTest);
     }
 
-    public function testBlogURL() {
-        $urlToTest = $this->baseURL . "/blog/";
-        $status = $this->getStatusCode($urlToTest);
-        $this->assertTrue($status==200, $status . " " . $urlToTest);
-    }
-
-    public function testBlogPostURL() {
-        $urlToTest = $this->baseURL . "/blog/index.php/little-update-to-brackets-reflow-cleaner-2/";
-        $status = $this->getStatusCode($urlToTest);
-        $this->assertTrue($status==200, $status . " " . $urlToTest);
-    }
-
-    public function testBlogTagURL() {
-        $urlToTest = $this->baseURL . "/blog/index.php/tag/ant/";
-        $status = $this->getStatusCode($urlToTest);
-        $this->assertTrue($status==200, $status . " " . $urlToTest);
-    }
-
-    public function testBlogArchiveURL() {
-        $urlToTest = $this->baseURL . "/blog/index.php/2014/01/";
-        $status = $this->getStatusCode($urlToTest);
-        $this->assertTrue($status==200, $status . " " . $urlToTest);
-    }
-
-    public function testBlogRedirectURL() {
-        $urlToTest = $this->baseURL . "/blog";
-        $status = $this->getStatusCode($urlToTest);
-        $this->assertTrue($status==301, $status . " " . $urlToTest);
-    }
 
     public function testSVGURL() {
         $urlToTest = $this->baseURL . "/max/2013/programmingcss/preso/img/zeldman.svg";

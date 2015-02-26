@@ -42,7 +42,7 @@ function generateSpeakerDeckHTML($speakerdeck_content, $count){
 			$item .= '</a>';
 			$item .= '</h1>' . "\n";
 			$item .= '				<p>';
-			$item .= $preso->content;
+			$item .= str_replace('img alt', 'img width="210" height="157" alt', $preso->content);
 			$item .= '</p>' . "\n";
 			$item .= '			</article>' . "\n";
 			$result .= $item;

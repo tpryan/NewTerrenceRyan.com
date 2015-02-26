@@ -15,7 +15,8 @@ application: arctic-marking-865
 
 
 dispatch:
-  - url: "*/blog/*"
+
+  - url: "*/blog*"
     module: blog
 
   - url: "*/wp-content/*"

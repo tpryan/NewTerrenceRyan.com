@@ -89,8 +89,10 @@ function generateBlogHTML($entries){
 		$item .= '			<article>'. "\n";
 		$item .= '				<h1><a href="' . $url . '">' . $title .'</a></h1>'. "\n";
 		$item .= '				<time datetime="' . $post_date . '">' . $date . '</time>'. "\n";
-		$item .= '				<img src="' . $thumb . '" />'. "\n";
-
+		
+		if (strlen($thumb) > 0){
+			$item .= '				<img src="' . $thumb . '" />'. "\n";
+		}
 		$item .= '				<div><p>' . strip_tags($excerpt) . '</p></div>'. "\n";
 
 		$item .= '			</article>'. "\n";	

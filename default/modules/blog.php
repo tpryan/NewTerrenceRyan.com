@@ -31,12 +31,16 @@ function refreshBlogHTML($dbInfo, $count){
 }
 
 function getPostsFromDataBase($dbInfo, $count){
-	// Make a MySQL Connection
-	$dbConn = mysql_connect($dbInfo['host'], $dbInfo['username'], $dbInfo['password']) or die(mysql_error());
-	mysql_select_db($dbInfo['db'], $dbConn) or die(mysql_error());
+	// Make a MySQLi Connection
+	if (isset($_SERVER['SERVER_SOFTWARE']) && strpos($_SERVER['SERVER_SOFTWARE'],'Google App Engine') !== false) {
+		$mysqli = mysqli_connect(null, $dbInfo['username'], $dbInfo['password'], $dbInfo['db'], 0, $dbInfo['host']) or die(mysqli_error());
+	} else{
+		$mysqli = mysqli_connect($dbInfo['host'], $dbInfo['username'], $dbInfo['password'], $dbInfo['db']) or die(mysqli_error());
+	}	
+	
 
 	// Retrieve all the data from the "example" table
-	$entries = mysql_query(" SELECT
+	$entries = $mysqli->query(" SELECT
         p1.post_title, p1.post_excerpt, p1.post_name, p1.guid, p1.post_date, DATE_FORMAT(p1.post_date, '%M %d, %Y') as formatted_post_date, p2.guid as thumbnail
         
     FROM 
@@ -65,7 +69,7 @@ function getPostsFromDataBase($dbInfo, $count){
         AND p1.post_type='post'
     ORDER BY 
         p1.post_date DESC
-    LIMIT 0,". $count, $dbConn) or die(mysql_error()); 
+    LIMIT 0,". $count) or die(mysqli_error()); 
 
 	return $entries;
 }
@@ -74,7 +78,7 @@ function generateBlogHTML($entries){
 	
 	$results = "";
 	$results .=  "<!-- pulled in from blog -->" ."\n";
-	while ($row = mysql_fetch_array($entries)) {
+	while ($row = mysqli_fetch_array($entries)) {
 		$title = $row['post_title'];
 		$post_date = $row['post_date'];
 		$excerpt = $row['post_excerpt'];

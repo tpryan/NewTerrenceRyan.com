@@ -95,7 +95,7 @@ function generateEventHTML($lanyrd_content,$count){
 		$entry .= '				</address>' . "\n";
 
 		$entry .= '				<p>';
-		$entry .= str_replace("\,", ",", convert_smart_quotes($lanyrd_content[$i]['description']));
+		$entry .= str_replace("\,", ",", htmlentities($lanyrd_content[$i]['description']));
 		$entry .= '</p>' . "\n";
 		
 		
@@ -123,25 +123,6 @@ function format_address($address_info){
 	}
 	return $results;
 }
-
-function convert_smart_quotes($string) 
-{ 
-    $search = array(chr(145), 
-                    chr(146), 
-                    chr(147), 
-                    chr(148), 
-                    chr(151),
-                    "’"); 
- 
-    $replace = array("'", 
-                     "'", 
-                     '"', 
-                     '"', 
-                     '-',
-                     "'"); 
- 
-    return str_replace($search, $replace, $string); 
-} 
 
 
 function get_content_from_lanyrd($url) {

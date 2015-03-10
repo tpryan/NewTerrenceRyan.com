@@ -29,13 +29,12 @@ handlers:
   http_headers:
     Vary: Accept-Encoding
 
-
 - url: /
   script: index.php
 
+
 - url: /(.+\.php)$
   script: \1 
-
 
 - url: /about/?
   script: about/index.php
@@ -76,11 +75,21 @@ handlers:
   http_headers:
     Vary: Accept-Encoding    
 
+
 - url: /presos/
   static_dir: presos/
   expiration: "30d"
   http_headers:
     Vary: Accept-Encoding      
+
+
+
+  # index files
+- url: /presos/animate_reveal
+  upload: presos/animate_reveal/
+  static_files: presos/animate_reveal/index.html
+
+
 
 - url: /favicon.ico
   static_files: favicon.ico

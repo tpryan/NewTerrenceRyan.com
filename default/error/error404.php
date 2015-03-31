@@ -1,4 +1,4 @@
-
+<?php header("HTTP/1.0 404 Not Found");?>
 <?php $page_title="404 - TerrenceRyan.com";  include '../modules/head.php';?>
 <body>
 <?php $show_images=false; $show_tagline=false;  include '../modules/page-header.php';?>  

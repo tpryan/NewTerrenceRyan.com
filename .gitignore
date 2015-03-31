@@ -27,7 +27,7 @@ assets/cache/wip647947.jpeg
 assets/cache/wip715835.jpeg
 assets/cache/wip781365.jpeg
 assets/cache/wip1007043.jpeg
-wordpress/*
+
 terrenceryan-com-6dc78d46ed67.json
 
 test.php
@@ -36,8 +36,25 @@ test1.php
 
 assets/css/main.css.map
 
-blog/wordpress/*
+wordpress/assets
+wordpress/wp-admin
+wordpress/wp-includes
+wordpress/*.php
+wordpress/*.*
+wordpress/wp-content/plugins
+wordpress/wp-content/uploads
+wordpress/wp-content/themes/*.*
+wordpress/wp-content/themes/twentythirteen
+wordpress/wp-content/themes/twentyeleven
+wordpress/wp-content/themes/twentyten
+wordpress/wp-content/themes/twentytwelve
+wordpress/wp-content/themes/twentyfourteen
+wordpress/wp-content/*.php
 
 default/config/creds.php
 
 default/presos/animate_reveal/
+
+
+
+wordpress/wp-content/debug.log

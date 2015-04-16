@@ -22,6 +22,9 @@ handlers:
 #- url: /(.+\.php)$
 #  script: \1
 
+
+
+
 # Needed for static image files
 - url: /assets/
   static_dir: assets/
@@ -69,12 +72,23 @@ handlers:
 - url: /error/(.+).php
   script: error/\1.php  
 
+- url: /max/2013/practicalcss/preso/
+  static_files: max/2013/practicalcss/preso/index.html
+  upload: max/2013/practicalcss/preso/index.html
+
+- url: /max/2013/programmingcss/preso/
+  static_files: max/2013/programmingcss/preso/index.html
+  upload: max/2013/programmingcss/preso/index.html  
+
 - url: /max/
   static_dir: max/
   expiration: "30d"
   http_headers:
-    Vary: Accept-Encoding    
+    Vary: Accept-Encoding 
 
+- url: /presos/animate_reveal
+  static_files: presos/animate_reveal/index.html
+  upload: /presos/animate_reveal/index.html
 
 - url: /presos/
   static_dir: presos/
@@ -98,3 +112,8 @@ handlers:
 
 - url: /.*
   script: error/error404.php   
+
+
+error_handlers:
+  - file: test.php
+

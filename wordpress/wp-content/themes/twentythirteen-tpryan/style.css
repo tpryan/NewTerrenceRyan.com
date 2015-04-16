@@ -9,7 +9,9 @@ Version: 0.1
 */
 @import url("../twentythirteen/style.css");
 
-
+.wf-loading  {
+    visibility: hidden;
+  }
 
 header .short {display: none; }
 

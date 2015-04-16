@@ -1,15 +1,12 @@
 <?php
 use \google\appengine\api\mail\Message;
 
-if (strlen($_POST['email']) < 1){
-  syslog(LOG_INFO, 'mail attempt - address: ' . $_POST['email'] . " content: " . $_POST['text']);
-	throw new Exception('Mail Faiure');
+if (! array_key_exists("email", $_POST) || strlen($_POST['email']) < 1){
 	die("Email invalid");
 
 }
 
-if (strlen($_POST['text']) < 1){
-	throw new Exception('Mail Faiure');
+if (! array_key_exists("text", $_POST) || strlen($_POST['text']) < 1){
 	die("Message missing");
 }
  

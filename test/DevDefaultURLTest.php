@@ -81,7 +81,17 @@ class URLTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($status==200, $status . " " . $urlToTest);
     }
 
+    public function testStaticPresoURL() {
+        $urlToTest = $this->baseURL . "/max/2013/practicalcss/preso/index.html";
+        $status = $this->getStatusCode($urlToTest);
+        $this->assertTrue($status==200, $status . " " . $urlToTest);
+    }
 
+     public function testStaticPresoFolderDefaultURL() {
+        $urlToTest = $this->baseURL . "/max/2013/practicalcss/preso/";
+        $status = $this->getStatusCode($urlToTest);
+        $this->assertTrue($status==200, $status . " " . $urlToTest);
+    }
 
 
 

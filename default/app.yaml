@@ -14,6 +14,9 @@ skip_files:
 - ^(.*/)?.*\.sql$
 - ^(.*/)?.*\.git
 - ^(.*/)?.*\.DS_Store
+- ^(.*/)?.*\.md$
+- ^(.*/)?.*\LICENSE$
+- ^(.*/)?.*\league_gothic_license$
 
 
 
@@ -31,6 +34,26 @@ handlers:
   expiration: "30d"
   http_headers:
     Vary: Accept-Encoding
+
+- url: /presos/animate_reveal/css/shaders/tile-flip.vs
+  upload: presos/animate_reveal/css/shaders/tile-flip.vs
+  static_files: presos/animate_reveal/css/shaders/tile-flip.vs
+  mime_type: text/plain
+
+- url: /presos/animate_reveal/css/shaders/tile-flip.fs
+  upload: presos/animate_reveal/css/shaders/tile-flip.fs
+  static_files: presos/animate_reveal/css/shaders/tile-flip.fs
+  mime_type: text/plain  
+
+- url: /presos/animate_reveal
+  upload: presos/animate_reveal/
+  static_files: presos/animate_reveal/index.html  
+
+- url: /(.*\.vs)
+  mime_type: text/plain
+  static_files: /\1
+  upload: /(.*\.vs) 
+
 
 - url: /
   script: index.php
@@ -102,6 +125,7 @@ handlers:
 - url: /presos/animate_reveal
   upload: presos/animate_reveal/
   static_files: presos/animate_reveal/index.html
+
 
 
 

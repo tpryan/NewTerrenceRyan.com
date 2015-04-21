@@ -1,55 +1,28 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'] . '/config/creds.php';
 include_once 'module_common.php';
-$count = 3;
-$sitemap_cache = $_SERVER['DOCUMENT_ROOT'] . "/assets/cache/sitemap.html";
+
+$cache_name = $app_name . "_blog";
 $cache_age = 2 * 60 * 60;
-
 $dbInfo = $newDB;
-$entries = getPostsFromDataBase($newDB, $count);
-$blogHTML = generateBlogHTML($entries);
 
 
+$contentCreationFunction = function ($dbInfo){return generateBlogHTML(getPostsFromDataBase($dbInfo));};
+$contentCreationStore = $dbInfo;
+$content_html = getFromCacheOrCreate($memcache, $cache_name, $cache_age, $contentCreationFunction, $contentCreationStore, 0);
 
-if (isset($_GET['reset_cache']) && file_exists($sitemap_cache)){
-	unlink($sitemap_cache);
-}
-
-if (shouldStillBeCached($sitemap_cache, $cache_age)){
-	$blog_html = file_get_contents($sitemap_cache);
-}
-else{
-	try {
-		$blog_html = refreshBlogHTML($dbInfo, $count,$sitemap_cache);
-	} catch (Exception $e) {
-		$blog_html = "<p>No posts</p>";
-		var_dump($e);
-	}
-}
-
-echo $blog_html;
-
-
-
-function refreshBlogHTML($dbInfo, $count, $sitemap_cache){
-	$blog_content = getPostsFromDataBase($dbInfo, $count);
-	$blog_html = generateBlogHTML($blog_content);
-	$cache_html = "<!-- From Cache --->" . $blog_html;
-	file_put_contents($sitemap_cache, $cache_html);
-	return $blog_html;
-}
+echo $content_html;
 
 
 
 
-
-function getPostsFromDataBase($dbInfo, $count){
+function getPostsFromDataBase($dbInfo){
 	// Make a MySQL Connection
-	$dbConn = mysql_connect($dbInfo['host'], $dbInfo['username'], $dbInfo['password']) or die(mysql_error());
-	mysql_select_db($dbInfo['db'], $dbConn) or die(mysql_error());
+	$dbConn = mysqli_connect($dbInfo['host'], $dbInfo['username'], $dbInfo['password']) or die(mysqli_error());
+	mysqli_select_db($dbConn,$dbInfo['db']) or die(mysqli_error());
 
 	// Retrieve all the data from the "example" table
-	$entries = mysql_query("SELECT post_title, guid, DATE_FORMAT(post_date, '%M') as month, DATE_FORMAT(post_date, '%Y') as year FROM wp_posts WHERE post_status = 'publish' AND post_type='post'  ORDER BY post_date desc", $dbConn) or die(mysql_error()); 
+	$entries = mysqli_query($dbConn,"SELECT post_title, guid, DATE_FORMAT(post_date, '%M') as month, DATE_FORMAT(post_date, '%Y') as year FROM wp_posts WHERE post_status = 'publish' AND post_type='post'  ORDER BY post_date desc") or die(mysqli_error()); 
 
 	return $entries;
 }
@@ -62,7 +35,7 @@ function generateBlogHTML($entries){
 	$current_month = "";
 	$results = "";
 	$results .=  "<!-- pulled in from blog -->" ."\n";
-	while ($row = mysql_fetch_array($entries)) {
+	while ($row = mysqli_fetch_array($entries)) {
 		
 
 		$year = $row['year'];

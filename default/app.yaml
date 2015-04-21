@@ -86,7 +86,7 @@ handlers:
   http_headers:
     Vary: Accept-Encoding 
 
-- url: /presos/animate_reveal
+- url: /presos/animate_reveal/
   static_files: presos/animate_reveal/index.html
   upload: /presos/animate_reveal/index.html
 
@@ -114,6 +114,4 @@ handlers:
   script: error/error404.php   
 
 
-error_handlers:
-  - file: test.php
 

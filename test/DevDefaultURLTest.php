@@ -99,8 +99,14 @@ class URLTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($status==200, $status . " " . $urlToTest);
     }
 
-     public function testStaticProgrammingPresoFolderDefaultURL() {
+    public function testStaticProgrammingPresoFolderDefaultURL() {
         $urlToTest = $this->baseURL . "/max/2013/programmingcss/preso/";
+        $status = $this->getStatusCode($urlToTest);
+        $this->assertTrue($status==200, $status . " " . $urlToTest);
+    }
+
+    public function testStaticAnimatePresoFolderDefaultURL() {
+        $urlToTest = $this->baseURL . "/presos/animate_reveal/";
         $status = $this->getStatusCode($urlToTest);
         $this->assertTrue($status==200, $status . " " . $urlToTest);
     }

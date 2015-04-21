@@ -2,7 +2,7 @@
 include_once $_SERVER['DOCUMENT_ROOT'] . '/config/creds.php';
 include_once 'module_common.php';
 
-$cache_name = $app_name . "_blog";
+$cache_name = $app_name . "_blog_sitemap";
 $cache_age = 2 * 60 * 60;
 $dbInfo = $newDB;
 
@@ -18,11 +18,21 @@ echo $content_html;
 
 function getPostsFromDataBase($dbInfo){
 	// Make a MySQL Connection
-	$dbConn = mysqli_connect($dbInfo['host'], $dbInfo['username'], $dbInfo['password']) or die(mysqli_error());
-	mysqli_select_db($dbConn,$dbInfo['db']) or die(mysqli_error());
+	// Make a MySQLi Connection
+	if (isset($_SERVER['SERVER_SOFTWARE']) && strpos($_SERVER['SERVER_SOFTWARE'],'Google App Engine') !== false) {
+		$mysqli = mysqli_connect(null, $dbInfo['username'], $dbInfo['password'], $dbInfo['db'], 0, $dbInfo['host']) or die(mysqli_error());
+	} else{
+		$mysqli = mysqli_connect($dbInfo['host'], $dbInfo['username'], $dbInfo['password'], $dbInfo['db']) or die(mysqli_error());
+	}
 
-	// Retrieve all the data from the "example" table
-	$entries = mysqli_query($dbConn,"SELECT post_title, guid, DATE_FORMAT(post_date, '%M') as month, DATE_FORMAT(post_date, '%Y') as year FROM wp_posts WHERE post_status = 'publish' AND post_type='post'  ORDER BY post_date desc") or die(mysqli_error()); 
+
+
+	$entries = $mysqli->query("	SELECT 		post_title, guid, post_name, 
+											DATE_FORMAT(post_date, '%M') as month, 
+											DATE_FORMAT(post_date, '%Y') as year 
+							   	FROM 		wp_posts 
+							   	WHERE 		post_status = 'publish' AND post_type='post'  
+							   	ORDER BY 	post_date desc") or die(mysqli_error($mysqli)); 
 
 	return $entries;
 }
@@ -41,7 +51,7 @@ function generateBlogHTML($entries){
 		$year = $row['year'];
 		$month = $row['month'];
 		$title = $row['post_title'];
-		$url = $row['guid'];
+		$url = "http://" . "terrenceryan.com" . "/blog/index.php/" . $row['post_name'];
 		if (isset($data[$year][$month]) == false){
 			$data[$year][$month] = "";
 		}	

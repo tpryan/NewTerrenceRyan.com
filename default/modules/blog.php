@@ -82,7 +82,7 @@ function generateBlogHTML($entries){
 		$title = $row['post_title'];
 		$post_date = $row['post_date'];
 		$excerpt = $row['post_excerpt'];
-		$url = "http://" . $_SERVER["HTTP_HOST"] . "/blog/index.php/" . $row['post_name'];
+		$url = "http://" . "terrenceryan.com" . "/blog/index.php/" . $row['post_name'];
 		$thumb = $row['thumbnail'];
 		$date = $row['formatted_post_date'];
 		$item = "";

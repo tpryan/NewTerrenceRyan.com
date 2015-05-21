@@ -65,6 +65,9 @@ handlers:
 - url: /about/?
   script: about/index.php
 
+- url: /thanks/?
+  script: thanks/index.php  
+
 - url: /test.php
   script: test.php 
 

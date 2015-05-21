@@ -2,12 +2,16 @@
 use \google\appengine\api\mail\Message;
 
 if (! array_key_exists("email", $_POST) || strlen($_POST['email']) < 1){
-	die("Email invalid");
+	die("Email invalid == I probably don't care about what you say. ");
 
 }
 
 if (! array_key_exists("text", $_POST) || strlen($_POST['text']) < 1){
 	die("Message missing");
+}
+
+if (! array_key_exists("HTTP_USER_AGENT", $_SERVER) || strlen($_SERVER['HTTP_USER_AGENT']) < 1){
+  die("No user agent == I probably don't care about what you say. ");
 }
  
 include_once("../config/creds.php");

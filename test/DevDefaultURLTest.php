@@ -80,6 +80,11 @@ class URLTest extends PHPUnit_Framework_TestCase
         $status = $this->getStatusCode($urlToTest);
         $this->assertTrue($status==200, $status . " " . $urlToTest);
     }
+    public function testThanksURL() {
+        $urlToTest = $this->baseURL . "/thanks";
+        $status = $this->getStatusCode($urlToTest);
+        $this->assertTrue($status==200, $status . " " . $urlToTest);
+    }
 
     public function testStaticCSSPracticalPresoURL() {
         $urlToTest = $this->baseURL . "/max/2013/practicalcss/preso/index.html";

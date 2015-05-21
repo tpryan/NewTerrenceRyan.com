@@ -20,9 +20,11 @@
     <ul>
         <li><a href="/thanks/2014/2014-01-panma.php">PANMA in Philadelphia</a></li>
     </ul>
-    <h2>2014</h2>
+    <h2>2015</h2>
     <ul>
         <li><a href="/thanks/2015/2015-03-devbootcamp.php">DevBootcamp in San Francisco</a></li>
+        <li><a href="/thanks/2015/2015-04-hackedu.php">Hack Edu in San Jose</a></li>
+        <li><a href="/thanks/2015/2015-05-galvanize.php">Galvanize in San Francisco</a></li>
     </ul>
      
 	

@@ -108,6 +108,10 @@ a{
 	max-width: 1055px;
 }
 
+.schedule td{
+	vertical-align: top;
+}
+
 code{
 	background-color: #dedede;
 	display: block;

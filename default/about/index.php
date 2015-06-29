@@ -13,7 +13,7 @@
 	<article>
 		<div class="column full">
 			<h2>Current</h2>
-			<img class="picture portrait" src="//storage.googleapis.com/terrenceryan.com/img/headshot.jpg" >	
+			<img class="picture portrait" src="//storage.googleapis.com/terrenceryan.com/img/2015-terry-ryan.jpg" >	
 			<p>I'm a Developer Advocate for <a href="https://cloud.google.com/">Google Cloud Platform</a>. 
 			My job is to extol the virtues of Google's Cloud Computing tools, and to talk to customers, 
 			potential customers, and critics to get feedback to the make the platform better.</p> 

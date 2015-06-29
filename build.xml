@@ -59,7 +59,7 @@
 		</exec>
 	</target>
 
-	<target name="deploy-blog" depends="test-predeploy-blog">
+	<target name="deploy-blog">
 		<echo message="Deploying to Blog site to Appengine."/>
 		<exec executable="${gcs.exe}" spawn="false" dir="${basedir}">
 			<arg line="update"/>

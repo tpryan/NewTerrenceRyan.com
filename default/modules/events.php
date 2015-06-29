@@ -29,6 +29,9 @@ function refreshLanyrdHTML($lanyrd_url, $count){
 
 function generateEventHTML($lanyrd_content,$count){
 
+
+
+
 	date_default_timezone_set('America/New_York');
 
 	if ($count > count($lanyrd_content)){
@@ -44,7 +47,7 @@ function generateEventHTML($lanyrd_content,$count){
 	}
 
 
-	for ($i=0; $i<$count; $i++){
+	for ($i=0; $i<=$count; $i++){
 		
 		
 		if (strlen($lanyrd_content[$i]['end']) > 0 ){
